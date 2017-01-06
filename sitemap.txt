@@ -18,5 +18,6 @@ http://education.launchcode.org/skills-back-end-csharp/classes/index.html
 http://education.launchcode.org/skills-back-end-csharp/index.html
 http://education.launchcode.org/skills-back-end-csharp/issues/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/index.html
+http://education.launchcode.org/skills-back-end-csharp/test/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/index.html
 http://education.launchcode.org/skills-back-end-csharp/sitemap.html
