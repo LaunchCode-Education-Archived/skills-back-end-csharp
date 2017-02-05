@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Class 7 Prep :: Unit 3: Back-End C# Skill Track</title>
+        <title>Running Windows on Mac or Linux :: Unit 3: Back-End C# Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-class-7-prep'>
+    <body id='page-running-windows-on-mac-or-linux'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -106,25 +106,42 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>Class 7 Prep</h1>
-                    <table>
-<thead>
-<tr>
-<th>Task</th>
-<th>Resource Type</th>
-<th>Link</th>
-<th>Instructions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Watch</td>
-<td>Lesson</td>
-<td>[Learn C#]()</td>
-<td>Watch lesson X</td>
-</tr>
-</tbody>
-</table>
+                                        <h1>Running Windows on Mac or Linux</h1>
+                    <p>For this unit we'll need to run Visual Studio for Windows. If you use macOS or a Linux-based operating system, you can install an application called a <strong>hypervisor</strong> that allows you to run <strong>virtual machines</strong> that contain other operating systems. This is what we'll do to get Windows running on your machine.</p>
+<blockquote>
+<p><em>NOTE:</em> You may noticed on the Microsoft site that there is a preview version Microsoft Visual Studio for Mac. The .NET development environment on macOS isn't mature enough yet to warrant us to use it in this class.</p>
+</blockquote>
+<h2 id="install-virtualbox">Install VirtualBox</h2>
+<p>The hypervisor we'll use is VirtualBox. <a href="https://www.virtualbox.org/wiki/Downloads">Visit their download page</a> and download the installer for your particular host system (Mac or Linux).</p>
+<h2 id="install-a-windows-virtual-machine">Install A Windows Virtual Machine</h2>
+<p>Download a free Windows 10 Development Virtual Machine (VM) at the <a href="https://developer.microsoft.com/en-us/windows/downloads/virtual-machines">Windows Dev Center</a>. Choose the VirtualBox edition of Windows 10 Enterprise.</p>
+<p>Unzip the downloaded file and install the VM by double-clicking on the resulting .ova file. Follow the prompts within the VM to complete the Windows setup process.</p>
+<h3 id="guest-additions-and-other-tweaks">Guest Additions and Other Tweaks</h3>
+<p>Let's do a few things to make our experience working in this VM a little better.</p>
+<p>Install VirtualBox Guest Additions by selecting the Guest Additions icon from the system tray in the lower right of your Windows VM. This additional package will enable a better experience and closer integration between the host and guest operating systems. You'll then need to restart the VM for the changes to take effect.</p>
+<blockquote>
+<p><em>NOTE:</em> Whenever you want to &quot;shut down&quot; the virtual operating system, you have three choices:</p>
+<ul>
+<li><em>Save the machine state</em> - The equivalent to putting the VM to sleep, or shutting your laptop. You'll want to do this most often. We'll call this <em>pausing</em> your VM.</li>
+<li><em>Send the shutdown signal</em> - The equivalent to shutting down the operating system via the Start Menu's <em>Power Off</em> item. You'll want to do this when you want to reboot your VM, such as after installing the Guest Additions.</li>
+<li><em>Power off the machine</em> - The equivalent of turning off the VM by holding down a physical power button on a computer until it &quot;force quits&quot;. Don't do this unless you absolutely have to.</li>
+</ul>
+</blockquote>
+<p>It's very handy to be able to copy/paste between your host operating system (Mac or Linux) and the guest operating system (Windows). To enable this, pause your VM, and from the main VirtualBox window, select the Settings icon to access the VM's settings. From the <em>General</em> section, choose the <em>Advanced</em> tab, and choose <em>Bidirectional</em> from the <em>Shared Clipboard</em> menu. This will allow you to copy/paste back and forth.</p>
+<blockquote>
+<p><em>NOTE:</em> On a Mac, the copy/paste shortcuts (among others) use the <em>command</em> key, while in Windows they use the <em>control</em> key. Keep this in mind. You'll need to use <em>ctrl+c</em> and <em>ctrl+v</em> from your Mac keyboard to copy/paste within the Windows VM.</p>
+</blockquote>
+<h3 id="visual-studio-setup">Visual Studio Setup</h3>
+<p>Add the GitHub Visual Studio extension by downloading and installing from <a href="https://visualstudio.github.com/">visualstudio.github.com</a> (do this inside your VM). After installation, follow the prompt to sign in to your GitHub account.</p>
+<p>Open Visual Studio. On the view that opens, &quot;Sign in to Visual Studio&quot;, go ahead and create an account (or sign in if you already have one). It's free, and it will unlock the full features of the application.</p>
+<h3 id="install-dropbox">Install Dropbox</h3>
+<p>From within the Windows VM, visit <a href="https://www.dropbox.com/">dropbox.com</a> and install the Dropbox App, creating a free account if you don't already have one. Once the app is installed, create a new folder named <code>lc101</code> within the Dropbox folder.</p>
+<p><strong>Pre-existing Dropbox account</strong>: You likely don't want everything you've stored in Dropbox to download to your VM. To prevent this, open up Dropbox preferences and choose the Account tab. Then click on <em>Selective Sync</em>. From this window, you can make sure that only the <code>lc101</code> folder (and any others you might want) is selected to sync to your VM.</p>
+<p>Why are we doing this? As you may have noticed, the Windows VM that you installed will eventually expire. Microsoft doesn't give out free copies of Windows for indefinite use, and this is the mechanism they put in place to prevent indefinite free usage. Once the VM expires, you will be forced to get a new Windows development VM in order to continue developing on Windows. By storing your project files within Dropbox, you'll have a backup of your files, and it will be easy to sync all of your projects down to your new VM and continue working, with the minimal amount of hassle.</p>
+<p><strong>If you don't store your project files in Dropbox, they will be inaccesible once the VM expires.</strong></p>
+<p>To setup a new image after the current one expires, revisit this page and follow all steps, skipping the VirtualBox install step.</p>
+<h3 id="install-other-apps">Install Other Apps</h3>
+<p>At this point, you'll probably want to install a few more apps that you use frequently, such as <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a> and <a href="https://atom.io/">Atom</a>.</p>
                                     </section>
 
             </div>

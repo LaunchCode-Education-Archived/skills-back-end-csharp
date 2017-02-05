@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Data Structures and Collections :: Unit 3: Back-End C# Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-data-structures-and-collections'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-csharp/"></a>
+
+            <a class="navbar-brand site-title" href="http://education.launchcode.org/skills-back-end-csharp/">
+                <h1>Unit 3: Back-End C# Skill Track</h1>
+            </a>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">
+                      <span id="searchGlyph" class="glyphicon glyphicon-search"></span> <span class="hidden-sm hidden-md hidden-lg">Search</span>
+                    </a>
+                </li>
+            </ul>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End C# Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:-32orsjtyl4";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                
+                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                        <ul class="nav nav-pills nav-stacked">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/csharp4python/">
+                                        C# for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/issues/">
+                                        Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                    </ul>
+
+                    </nav>
+
+                
+                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+                                        <h1>Data Structures and Collections</h1>
+                    <p>C# provides powerful and flexible ways to store data. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with C#.</p>
+<h2 id="ordered-data-lists-and-arrays">Ordered Data: Lists and Arrays</h2>
+<p>Lets look at another early Python program. We are going to read numbers from a file and produce a histogram that shows the frequency of the various numbers. The data file we will use has one number between 0 and 9 on each line of the file. Here is a simple Python program that creates and prints a histogram.</p>
+<pre><code class="language-python"># Python
+def main():
+    count = [0]*10
+    data = open('test.dat')
+
+    for line in data:
+        count[int(line)] = count[int(line)] + 1
+
+    idx = 0
+    for num in count:
+        print idx, " occured ", num, " times."
+        idx += 1
+
+if __name__ == '__main__':
+    main()</code></pre>
+<p>Let's use a data file that contains the following text:</p>
+<pre><code class="language-nohighlight">9 8 4 5 3 5 2 1 5</code></pre>
+<blockquote>
+<p><em>NOTE:</em> When running the example code, note that <code>test.dat</code> is located at the root of the project, since this is where the <code>File</code> class will look for it by default. To use a file in another directory, we would need to provide a specific path to the file.</p>
+</blockquote>
+<p>We will get output that looks like this:</p>
+<pre><code class="language-nohighlight">0 occurred 0 times
+1 occurred 1 times
+2 occurred 1 times
+3 occurred 1 times
+4 occurred 1 times
+5 occurred 3 times
+6 occurred 0 times
+7 occurred 0 times
+8 occurred 1 times
+9 occurred 1 times</code></pre>
+<p>Let's review what is happening in this little program. In the first line we create a list and initialize the first 10 positions in the list to be 0. Next we open the data file called <code>test.dat</code>. We then have a loop that reads each line of the file. As we read each line, we convert it to an integer and increment the counter at the position in the list indicated by the number on the line we just read. Finally, we iterate over each element in the list printing out both the position in the list and the total value stored in that position.</p>
+<h3 id="list">List</h3>
+<p>To write the C# version of this program we will have to introduce several new C# concepts. We will see the C# equivalent of a list, called an <code>ArrayList.</code> We will also introduce three different kinds of loops used in C#.</p>
+<p>Here is the C# code needed to write the exact same program:</p>
+<pre><code class="language-csharp">// C#
+namespace Histo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Pull in data from a file as configured as a project resource
+            string rawData = Histo.Properties.Resources.test_data;
+            string[] data = rawData.Split(' ');
+
+            // Fill the list with zeros
+            List&lt;int&gt; count = new List&lt;int&gt;();
+            for (int i = 0; i &lt; data.Length; i++) {
+                count.Add(0);
+            }
+
+            // Count occurences of each number in the file
+            for (int j = 0; j &lt; data.Length; j++) {
+                int val = int.Parse(data[j]);
+                count[val] = count[val] + 1;
+            }
+
+            // Display results
+            int idx = 0;
+            foreach (int k in count) {
+                Console.WriteLine(idx + " occurred " + k + " times");
+                idx++;
+            }
+
+            Console.ReadLine();
+        }
+    }
+}</code></pre>
+<p>Before going any further, I suggest you try to compile the above program and run it. Try altering the test data in <code>Histo/Resources/test_data.txt</code>.</p>
+<p>Let's look at what is happening in the C# source. Here are the first two lines.</p>
+<pre><code class="language-csharp">// C#
+string rawData = Histo.Properties.Resources.test_data;
+string[] data = rawData.Split(' ');</code></pre>
+<p>They pull in data from a file that is configured as a <strong>project resources</strong>. We won't go into how this file input mechanism works since we'll only use it in a couple of instances. The important thing for you to know is that the contents of the file are pulled into a string. In this case, our data has the form of a collection of integers separated by single spaces, so we can use <code>string.Split</code> to separate it into individual strings, one for each &quot;number&quot; (the data is still stored as an array of strings).</p>
+<p>Moving on to the next segment, we consider these lines:</p>
+<pre><code class="language-csharp">// C#
+List&lt;int&gt; count = new List&lt;int&gt;();
+for (int i = 0; i &lt; data.Length; i++) {
+    count.Add(0);
+}</code></pre>
+<p>Here we declare an initialize <code>count</code>, which appears to be of type <code>List&lt;int&gt;</code>. A <code>List</code> in C# is very similar to a list in Python, with one imporant difference. Unlike Python, where lists can contain just about anything, in C# we must let the compiler know what kind of objects our list is going to contain. In this case, the <code>List</code> will contain integers, so we use the <code>List&lt;int&gt;</code> syntax to inform the compiler that we intend to fill our list with integers.</p>
+<p>TODO - finish explaining code above</p>
+<p>The following lines are required to pull in data from the file.</p>
+<pre><code class="language-csharp">// C#
+string rawData = Histo.Properties.Resources.test_data;</code></pre>
+<p>TODO - explain this and other file i/o approach</p>
+<p>Let's consider the next segment of our program:</p>
+<pre><code class="language-csharp">// C#
+List&lt;int&gt; count = new List&lt;int&gt;();
+
+for (int i = 0; i &lt; data.Length; i++) {
+    count.Add(0);
+}</code></pre>
+<p>We create a <code>List</code> that will hold integers by calling the <code>List</code> constructor. The list will grow or shrink dynamically as needed, just like a list in Python. It's possible to give the <code>List</code> constructor a size, but omitting a size allows for more flexibility. We then start the first of three loops. The first is <strong>for loop</strong> that serves the same purpose as the Python statement <code>count = [0]*10</code>. That is, it initializes the first 10 positions in the <code>List</code> to hold the value <code>0</code>.</p>
+<p>The syntax of this for loop probably looks very strange to you, but in fact it is not too different from what happens in Python using <code>range</code>. They syntax <code>for(Integer i = 0; i &lt; 10; i++)</code> is exactly equivalent to the Python <code>for i in range(10)</code>. The first statement inside the parenthesis declares and initializes a loop variable <code>i</code>. The second statement is a Boolean expression that is our exit condition. In other words, we will keep looping as long as this expression evaluates to true. The third statement is used to increment the value of the loop variable at the end of iteration through the loop. The syntax <code>i++</code> is C# shorthand for <code>i + 1</code>. C# also supports the shorthand <code>i--</code> to decrement the value of <code>i</code>. Like Python, you can also write <code>i += 2</code> as shorthand for <code>i = i + 2</code>.</p>
+<p>Try to rewrite the following Python for loops as C# for loops. We've provided you a place to do this in the <code>ForLoopPractice</code> project in the example code solution.</p>
+<pre><code class="language-python"># Python
+for i in range(2,101,2)
+    print(i)</code></pre>
+<pre><code class="language-python"># Python
+for i in range(1,100)
+    print(i)</code></pre>
+<pre><code class="language-python"># Python
+for i in range(100,0,-1)
+    print(i)</code></pre>
+<p>Consider the next segment:</p>
+<pre><code class="language-csharp">// C#
+for (int j = 0; j &lt; data.Length; j++) {
+    int val = int.Parse(data[j]);
+    count[val] = count[val] + 1;
+}</code></pre>
+<p>We are iterating through the <code>data</code> array in order to update the number of occurences of each value.</p>
+<p>The line <code>count[val] = count[val] + 1;</code> illustrates another important difference between Python and C#. Notice that while <code>count</code> is of type <code>List</code> we can still use the square bracket operator <code>[]</code> to retrieve a value from the list, just as we can with Python lists.</p>
+<p>Let's consider the last loop in this program:</p>
+<pre><code class="language-csharp">// C#
+int idx = 0;
+foreach (int k in count) {
+    Console.WriteLine(idx + " occurred " + k + " times");
+    idx++;
+}</code></pre>
+<p>This is similar to the Python for loop where the object of the loop is a sequence. In C# we can use this kind of for loop over all kinds of sequences, which are called Collection classes in C#. The loop <code>for(Integer i : count)</code> is equivalent to the Python loop <code>for i in count:</code>. This loop iterates through each of the elements in the <code>List</code> named <code>count</code>. Each time through the loop, the <code>Integer</code> variable <code>i</code> is assigned the value of the next element of the <code>List</code>. If you tried the experiment of removing the <code>&lt;int&gt;</code> part of the <code>List</code> declaration you probably noticed that you had an error on this line. Why?</p>
+<h3 id="arrays">Arrays</h3>
+<p>As we noted at that beginning of this section, we are going to use the C# <code>List</code> type to store simple sets of data. They are easy to use and more closely match the way that Python lists behave.</p>
+<p>However, you should be aware that C# also has a more primitive data structure called an array. In fact, you have already seen one example of an array declared in the Hello World program (<code>string[] args</code>).</p>
+<p>Why does C# have both arrays and <code>List</code>? The answer is likely historical, in part at least. C# is a C-style language, and arrays are the most basic data structure in C. Additionally, using an array over a <code>List</code> might be preferred in some circumstances, primarily for performance reasons (arrays operations are generally faster). Also note that arrays are of fixed size. You can not expand or contract an array after it is created, so you must no exactly how many elements it will need to hold.</p>
+<p>To illustrate array usage, here is a version of the <code>Histo</code> program/class that uses primitive arrays instead of a <code>List</code>:</p>
+<pre><code class="language-csharp">// C#
+</code></pre>
+<p>The main difference between this example and the previous example is that we declare count to be an array of integers: <code>int[] count = {0,0,0,0,0,0,0,0,0,0};</code>. This syntax initializes an array directly. Notice that we use the square bracket notation to index into an array: <code>count[idx]</code>.</p>
+<h2 id="keyvalue-data-dictionaries">Key/Value Data: Dictionaries</h2>
+<p>Just as Python provides the dictionary structure to allow us to store data as key/value pairs, C# also provides us a similar mechanism. Rather than the dictionary terminology, C# calls these objects Maps. There are multiple types of maps, but we'll focus only on the most general purpose map type: <code>HashMap</code>.</p>
+<p>Let's stick with a simple frequency counting example, only this time we will count the frequency of words in a document. A simple Python program for this job could look like this:</p>
+<pre><code class="language-python"># Python
+def main():
+    data = open('alice.txt')
+    wordList = data.read().split()
+    count = {}
+    for w in wordList:
+        w = w.lower()
+        count[w] = count.get(w,0) + 1
+
+    keyList = sorted(count.keys())
+    for k in keyList:
+        print("%-20s occurred %4d times" % (k, count[k]))
+
+if __name__ == '__main__':
+    main()</code></pre>
+<p>The file <code>alice.txt</code> contains a short snippet from the beginning of <em>Alice In Wonderland</em>. You may <a href="TODO">view the file's contents</a>.</p>
+<p>Notice that the structure of the program is very similar to the numeric histogram program.</p>
+<p>Here's the C# version, using instances of the <code>Dictionary</code> class:</p>
+<pre><code class="language-csharp">// C#
+</code></pre>
+<p>As an exercise, see if you can improve the program above to ignore punctuation.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>[List (msdn.microsoft.com)]()</li>
+<li>[Dictionary (msdn.microsoft.com)]()</li>
+<li>[Array (msdn.microsoft.com)]()</li>
+</ul>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="http://education.launchcode.org/skills-back-end-csharp/js/bootstrap.min.js"></script>
+        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-6", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

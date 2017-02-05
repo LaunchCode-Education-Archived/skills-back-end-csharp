@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Class 7 Prep :: Unit 3: Back-End C# Skill Track</title>
+        <title>Naming Conventions :: Unit 3: Back-End C# Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-class-7-prep'>
+    <body id='page-naming-conventions'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -70,7 +70,7 @@
                     <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
 
                         <ul class="nav nav-pills nav-stacked">
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
                                         Classes
                                     </a>
@@ -85,7 +85,7 @@
                                         Assignments
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/csharp4python/">
                                         C# for Python Programmers
                                     </a>
@@ -106,25 +106,31 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>Class 7 Prep</h1>
-                    <table>
+                                        <h1>Naming Conventions</h1>
+                    <p>C# has some very straightforward naming conventions. These are universally used by C# programmers, and differ in some cases from conventions commonly used in Python or other languages.</p>
+<p>Again, these are conventions. Not following them will not prevent your code from running, as long as you are following C#'s naming rules</p>
+<table>
 <thead>
 <tr>
-<th>Task</th>
-<th>Resource Type</th>
-<th>Link</th>
-<th>Instructions</th>
+<th>Identifier Type</th>
+<th>Convention</th>
+<th>Examples</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Watch</td>
-<td>Lesson</td>
-<td>[Learn C#]()</td>
-<td>Watch lesson X</td>
+<td>Method Parameters</td>
+<td>Start with a lowercase letter and use camelCase</td>
+<td><code>id</code> <br> <code>firstName</code></td>
+</tr>
+<tr>
+<td>All non-parameter identifiers</td>
+<td>Start with an uppercase letter and capitalize each word; do not use hyphens or understocres</td>
+<td><code>Program</code> <br> <code>HelloWorld</code> <br> <code>TempConv</code></td>
 </tr>
 </tbody>
 </table>
+<p>Microsoft provides some <a href="https://msdn.microsoft.com/en-us/library/ms229002.aspx">more detailed naming conventions</a>. (From the date on this article, you'll note that these have been relatively standard for a very long time!)</p>
                                     </section>
 
             </div>

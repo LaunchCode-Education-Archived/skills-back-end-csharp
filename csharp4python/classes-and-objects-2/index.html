@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Classes and Objects: Digging Deeper :: Unit 3: Back-End C# Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-classes-and-objects-digging-deeper'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-csharp/"></a>
+
+            <a class="navbar-brand site-title" href="http://education.launchcode.org/skills-back-end-csharp/">
+                <h1>Unit 3: Back-End C# Skill Track</h1>
+            </a>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">
+                      <span id="searchGlyph" class="glyphicon glyphicon-search"></span> <span class="hidden-sm hidden-md hidden-lg">Search</span>
+                    </a>
+                </li>
+            </ul>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End C# Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:-32orsjtyl4";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                
+                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                        <ul class="nav nav-pills nav-stacked">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/csharp4python/">
+                                        C# for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/issues/">
+                                        Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                    </ul>
+
+                    </nav>
+
+                
+                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+                                        <h1>Classes and Objects: Digging Deeper</h1>
+                    <h2 id="polymorphism">Polymorphism</h2>
+<p>TODO</p>
+<h3 id="interfaces">Interfaces</h3>
+<p>Let's turn our attention to making a list of fractions sortable by the standard C# sorting method <code>Collections.sort</code>. In Python all we would need to do is implement the <code>__cmp__</code> method. But in C# we cannot be that informal. In C# Things that are sortable must be <code>Comparable</code>. Your first thought might be that <code>Comparable</code> is Superclass of <code>Number</code>. That would be a good thought but it would not be correct. C# only supports single inheritance, that is, a class can have only one parent. Although it would be possible to add an additional Layer to the class hierarchy it would also complicate things dramatically. Because Not only are Numbers comparable, but Strings are also Comparable as would many other types. For example we might have a <code>Student</code> class and we want to be able to sort Students by their gpa. But <code>Student</code> already extends the class <code>Person</code> for which we have no natural comparison function.</p>
+<p>C#’s answer to this problem is the <code>Interface</code> mechanism. Interfaces are like a combination of Inheritance and contracts all rolled into one. An interface is a <em>specification</em> that says any object that claims it implements this interface must provide the following methods. It sounds a little bit like an abstract class, however it is outside the inheritance mechanism. You can never create an instance of <code>Comparable</code>. Many objects, however, do implement the <code>Comparable</code> interface. What does the Comparable interface specify?</p>
+<p>The <code>Comparable</code> interface says that any object that claims to be <code>Comparable</code> must implement the <code>compareTo</code> method. To see what this entails, hop over the official C# documentation to read the introduction and Method Detail sections of the <code>Comparable</code> interface.</p>
+<blockquote>
+<p><em>READ:</em> <a href="https://docs.oracle.com/csharpse/8/docs/api/csharp/lang/Comparable.html"><code>Comparable</code> Interfact documentation</a> (Introduction and <code>compareTo</code> Method Detail sections only)</p>
+</blockquote>
+<p>To make our <code>Fraction</code> class <code>Comparable</code> we must modify the class declaration line as follows:</p>
+<pre><code class="language-csharp">// C#
+public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
+    ...
+}</code></pre>
+<p>The specification <code>Comparable&lt;Fraction&gt;</code> makes it clear that Fraction is only comparable with another Fraction. The <code>compareTo</code> method could be implemented as follows:</p>
+<pre><code class="language-csharp">// C#
+public int compareTo(Fraction other) {
+    Integer num1 = this.numerator * other.getDenominator();
+    Integer num2 = this.denominator * other.getNumerator();
+    return num1 - num2;
+}</code></pre>
+<h2 id="statics">Statics</h2>
+<h3 id="static-properties">Static Properties</h3>
+<p>Thus far, we have been declaring properties within a class in such a way that when we create instances of a class, each object has it's own separate &quot;copy&quot; of those properties.</p>
+<p>However, using the <code>static</code> keyword in C#, we can declare properties within a class that <em>belong to the class</em> rather than to each instance of the class. In other words, each object created from the class will share static properties.</p>
+<p>Let's compare Python and C# to illustrate this concept. Suppose that you wanted to write a <code>Student</code> class with the functionality that the class could keep track of the number of students it had created. Although you could do this with a global counter variable, that is an ugly solution. The right way to do it is to use a static variable. In Python we could do this as follows:</p>
+<pre><code class="language-python"># Python
+class Student:
+    numStudents = 0
+
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+
+        Student.numStudents = Student.numStudents + 1
+
+def main():
+    for i in range(10):
+        s = Student(i,"Student-"+str(i))
+    print 'The number of students is: ', Student.numStudents
+
+if __name__ == '__main__':
+    main()</code></pre>
+<p>In C# we would write this same example using a static declaration.</p>
+<pre><code class="language-csharp">// C#
+public class Student {
+
+    public static Integer numStudents = 0;
+
+    private int id;
+    private String name;
+
+    public Student(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+
+        numStudents = numStudents + 1;
+    }
+
+    public static void main(String[] args) {
+        for(Integer i = 0; i &lt; 10; i++) {
+            Student s = new Student(i,"Student"+i.toString());
+        }
+        System.out.println("The number of students: "+Student.numStudents.toString());
+    }
+}</code></pre>
+<p>In this example notice that we create a static property by using the static modifier on the property declaration. Once a property has been declared <code>static</code> in C# it can be accessed from inside the class without prefixing the name of the class as we had to do in Python.</p>
+<p>Static properties are also sometimes called <strong>class properties</strong>, in opposition to member, or instance, properties.</p>
+<h3 id="static-methods">Static Methods</h3>
+<p>Static methods are methods declared to be <code>static</code>, which only access local variables and static properties. That is, they do not use instance properties.</p>
+<p>We have already discussed the most common static method of all, <code>main</code>. However, in our <code>Fraction</code> class we also implemented a method to calculate the greatest common divisor for two fractions (<code>gcd</code>). This method doesn't need to access any data that is specific to any one instance of the <code>Fraction</code> class. It simply takes two integers, computing and returning the corresponding result. Therefore, we declare the method to be a <code>static</code> method of the class. Furthermore, since we are only going to use this <code>gcd</code> method for our own purposes we can make it <code>private</code>.</p>
+<pre><code class="language-csharp">// C#
+private static Integer gcd(Integer m, Integer n) {
+    while (m % n != 0) {
+        Integer oldm = m;
+        Integer oldn = n;
+        m = oldn;
+        n = oldm%oldn;
+    }
+    return n;
+}</code></pre>
+<h2 id="full-implementation-of-the-fraction-class">Full Implementation of the Fraction Class</h2>
+<p>A final version of the Fraction class that exercises all of the features we have discussed is as follows:</p>
+<pre><code class="language-csharp">// C#
+import csharp.util.ArrayList;
+import csharp.util.Collections;
+
+public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
+
+    private Integer numerator;
+    private Integer denominator;
+
+    /** Creates a new instance of Fraction */
+    public Fraction(Integer num, Integer den) {
+        this.numerator = num;
+        this.denominator = den;
+    }
+
+    public Fraction(Integer num) {
+        this.numerator = num;
+        this.denominator = 1;
+    }
+
+    public Fraction add(Fraction other) {
+        Integer newNum = other.getDenominator()*this.numerator + this.denominator*other.getNumerator();
+        Integer newDen = this.denominator * other.getDenominator();
+        Integer common = gcd(newNum,newDen);
+        return new Fraction(newNum/common, newDen/common );
+    }
+
+    public Fraction add(Integer other) {
+        return add(new Fraction(other));
+    }
+
+    public Integer getNumerator() {
+        return numerator;
+    }
+
+    public void setNumerator(Integer numerator) {
+        this.numerator = numerator;
+    }
+
+    public Integer getDenominator() {
+        return denominator;
+    }
+
+    public void setDenominator(Integer denominator) {
+        this.denominator = denominator;
+    }
+
+    public String toString() {
+        return numerator.toString() + "/" + denominator.toString();
+    }
+
+    public boolean equals(Fraction other) {
+        Integer num1 = this.numerator * other.getDenominator();
+        Integer num2 = this.denominator * other.getNumerator();
+        if (num1 == num2)
+            return true;
+        else
+            return false;
+    }
+
+    public double doubleValue() {
+        return numerator.doubleValue() / denominator.doubleValue();
+    }
+
+    public float floatValue() {
+        return numerator.floatValue() / denominator.floatValue();
+    }
+
+    public int intValue() {
+        return numerator.intValue() / denominator.intValue();
+    }
+
+    public long longValue() {
+        return numerator.longValue() / denominator.longValue();
+    }
+
+    public int compareTo(Fraction other) {
+        Integer num1 = this.numerator * other.getDenominator();
+        Integer num2 = this.denominator * other.getNumerator();
+        return num1 - num2;
+    }
+
+    private static Integer gcd(Integer m, Integer n) {
+        while (m % n != 0) {
+            Integer oldm = m;
+            Integer oldn = n;
+            m = oldn;
+            n = oldm%oldn;
+        }
+        return n;
+    }
+
+    public static void main(String[] args) {
+        Fraction f1 = new Fraction(1,2);
+        Fraction f2 = new Fraction(2,3);
+        Fraction f3 = new Fraction(1,4);
+
+        System.out.println(f1.add(1));
+        System.out.println(f1.intValue());
+        System.out.println(f1.doubleValue());
+
+        ArrayList&lt;Fraction&gt; myFracs = new ArrayList&lt;Fraction&gt;();
+        myFracs.add(f1);
+        myFracs.add(f2);
+        myFracs.add(f3);
+        Collections.sort(myFracs);
+
+        for(Fraction f : myFracs) {
+            System.out.println(f);
+        }
+    }
+
+}</code></pre>
+<h2 id="references">References</h2>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="http://education.launchcode.org/skills-back-end-csharp/js/bootstrap.min.js"></script>
+        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-6", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>
