@@ -33,9 +33,9 @@ menu:
         assignments:
             text: Assignments
             relativeUrl: assignments/
-        assignments:
-            text: Videos
-            relativeUrl: videos/
+        csharp4python:
+            text: C# for Python Programmers
+            relativeUrl: csharp4python/
         issues:
             text: Issues
             relativeUrl: issues/
