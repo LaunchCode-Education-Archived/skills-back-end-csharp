@@ -73,7 +73,7 @@ Short name | .NET Class | Examples | Notes
 `double` | `Double` | 3.14159 <br> 2.0 | Doubles are twice as precise (i.e. can hold much longer decimal numbers) than floats
 `char` | `Char` | 'a' <br> '!' | A single Unicode character. Must be enclosed in single quotes `''` to be a character; double quotes `""` indicate a string
 `string` | `String` | "LaunchCode" <br> "a" | A sequent of characters. Must be encolosed in double quotes `"`; single quotes `'` indicate a character
-`bool` | `Boolean` | `true` <br> `false` | Note that booleans in Java are not capitalized as they are in Python.
+`bool` | `Boolean` | `true` <br> `false` | Note that booleans in C# are not capitalized as they are in Python.
 
 Not all built-in data types in C# are listed here, only the most commonly used types that beginners are likely to encounter. If you're curious, [read more about built-in types in C#](https://msdn.microsoft.com/en-us/library/ya5y69ds.aspx)
 
@@ -203,7 +203,65 @@ user_input = input()
 year = int(user_input)
 ```
 
+## Arrays
+
+While Python has the basic list type, C# has multiple ways of storing ordered data. The most basic is that of the array.
+
+An array is an ordered, fixed-size collection of elements. Since C# is statically-typed, arrays may only store one type of object. We can create an array of integers or an array of strings, but we may not create an array that holds both integers and strings.
+
+The syntax for creating an array capable of holding 10 integers is:
+
+```csharp
+// C#
+int[] someInts = new int[10];
+```
+
+To create an array of a different size, or to hold different type values, replace 10 and `int` (on both sides of the assignment). Unlike lists in Python, arrays in C# *may not* change size once created. This turns out to be not very practical, so thankfully C# provides more flexible ways to store data, which we'll explore in a later lesson.
+
+In addition to the technique above, we can initialize an array using a literal expression:
+
+```csharp
+// C#
+int[] someOtherInts = {1, 1, 2, 3, 5, 8};
+```
+
+Here, the size is implicit in the number of elements in the literal expression `{1, 1, 2, 3, 5, 8}`.
+
+To access array elements, we use square brackets, as with Python lists.
+
+```csharp
+// C#
+int anInt = someInts[0];
+```
+
+As with Python, arrays have zero-based indexing.
+
+Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they're a core part of C#, and are ubiquitous, so it's good to know how they work.
+
+## Class Types
+
+In addition to the types introduced so far -- arrays, along with primitives and their objectified counterparts -- any class in C# defines a type. Classes and objects are conceptually the same as in Python: A class is a template for creating objects. We'll have much more to say about classes and objects, but for now you need to be comfortable seeing the basic syntax of class types and class creation.
+
+If I have a class `Cat` with a constructor that takes no arguments, I can declare and create a new instance of `Cat` using its constructor. In Python, we did this as follows:
+
+```python
+# Python
+my_cat = Cat()
+```
+
+And the C# version is:
+
+```csharp
+// C#
+Cat myCat = new Cat();
+```
+
+Each of these statements creates a new variable that is initialized to hold a new `Cat` object. Note that in C#, we must declare the variable's type. Also note that we precede the constructor with the `new` keyword. And, of course, the C# example ends with a semi-colon.
+
+Variables and parameters that are of the type of a class are said to be of **reference type** (in contrast to **primitive type**). In plain English, we would say of the C# example: "`myCat` is a reference variable of type `Cat`."
+
 ## References
 
 - [String Methods (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/system.string_methods(v=vs.110).aspx)
 - [The `Console` class (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/system.console(v=vs.110).aspx)
+- [Array Tutorial (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/aa288453(v=vs.71).aspx)

@@ -24,6 +24,8 @@ This set of lessons is for programmers that are comfortable with Python but are 
         - [using](data-types/#using)
         - [Declaring Variables](data-types/#declaring-variables)
         - [Input / Output and the Console Class](data-types/#input--output-and-the-console-class)
+    - [Arrays](data-types/#arrays)
+    - [Class Types](data-types/#class-types)
     - [References](data-types/#references)
 1. [Control Flow](control-flow/)
     - [Conditionals](control-flow/#conditionals)

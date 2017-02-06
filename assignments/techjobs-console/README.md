@@ -78,7 +78,7 @@ Have a look a the data below line 1, and ask yourself the following quetions:
 
 #### The JobData Class
 
-The `JobData` class is responsible for importing the data from the CSV file and parsing it into a Java-friendly format, that is, into `HashMap` and `ArrayList` form. The first method in this class is `loadData`, which does just what it advertises. After parsing the file data, private property `allJobs`, which is an `List<Dictionary<string, string>>`.
+The `JobData` class is responsible for importing the data from the CSV file and parsing it into a C#-friendly format, that is, into `HashMap` and `ArrayList` form. The first method in this class is `loadData`, which does just what it advertises. After parsing the file data, private property `allJobs`, which is an `List<Dictionary<string, string>>`.
 
 Let's look at what this data type is. It purports to be a `List` that stores `Dictionary` objects which have `string` keys and `string` values. If we were to represent some of this data visually, using `[]` for a `List` and `{}` with key/value pairs (as in Python lists and dictionaries), it would look like this:
 

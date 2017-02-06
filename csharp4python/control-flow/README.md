@@ -234,7 +234,36 @@ for (int i = 100; i >= 0; i -= 5)
 }
 ```
 
-In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. C# also provides a variation of its for loop that provides the same functionality in its so called `foreach` loop. We'll introduce this loop when we discuss lists, arrays, and dictionaries in C# later on.
+In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. C# also provides a variation of its for loop that provides the same functionality in its so called *for-each* loop.
+
+In Python we can iterate over a list as follows:
+
+```python
+# Python
+l = [1, 1, 2, 3, 5, 8, 13, 21]
+for fib in l:
+   print fib
+```
+
+In C#, this would look like:
+
+```csharp
+// C#
+int l[] = {1, 1, 2, 3, 5, 8, 13, 21};
+foreach (int i in l) {
+    Console.WriteLine(i);
+}
+```
+
+This version translates nicely to iterating through a string, where the string acts essentially like an array of characters:
+
+```csharp
+// C#
+string msg = "Hello World";
+foreach (char c in msg) {
+    Console.WriteLine(c);
+}
+```
 
 ### While Loops
 
