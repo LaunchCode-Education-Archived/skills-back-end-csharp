@@ -14,7 +14,6 @@ C# is a **statically typed** language. In a statically typed language the associ
 For example, this is legal in Python:
 
 ```python
-# Python
 x = "dog"
 x = 42
 ```
@@ -24,7 +23,6 @@ If we were to inspect the type of `x` after the first line executes (e.g. using 
 However, the corresponding code in C# will result in a build error:
 
 ```csharp
-// C#
 string x = "dog";
 x = 42;
 ```
@@ -82,7 +80,6 @@ Not all built-in data types in C# are listed here, only the most commonly used t
 Lets go back in time and look at another of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.
 
 ```python
-# Python
 def main():
     fahrenheit = int(input("Enter the temperature in F: "))
     celsuis = (fahrenheit - 32) * (5.0 / 9.0)
@@ -95,7 +92,6 @@ if __name__ == '__main__':
 Next, lets look at the C# Equivalent.
 
 ```csharp
-// C#
 using System;
 
 namespace TempConv
@@ -150,7 +146,6 @@ Don't just trust us, try it yourself! Remove the `using` statement and change `C
 In the example above, these lines contain variable declarations:
 
 ```csharp
-// C#
 double fahrenheit;
 double celsius;
 string input;
@@ -174,14 +169,12 @@ Console input and output is facilitated by the class `System.Console`. We'll rel
 `Console.WriteLine` can take parameters of various types, including `string`, `char`, `double`, `bool`, and others. However, unlike the `print` function in Python, we can only provide it with a single argument. Thus, we'll need to manually concatenate strings and other values, converting types if necessary. As with Python, a newline character is output after the given message.
 
 ```python
-# Python
 year = 2017
 print("Hello", "World")
 print("The year is:", year)
 ```
 
 ```csharp
-// C#
 int year = 2017;
 Console.WriteLine("Hello" + "World")
 Console.WriteLine("The year is " + year.ToString());
@@ -190,7 +183,6 @@ Console.WriteLine("The year is " + year.ToString());
 Similarly, `Console.ReadLine` returns input as a string. To convert it to a desired type, you can generally use the syntax `*type*.Parse(value)`, as in this example:
 
 ```csharp
-// C#
 string input = Console.ReadLine();
 int year = int.Parse(input);
 ```
@@ -198,7 +190,6 @@ int year = int.Parse(input);
 This is very similar to what we did in Python:
 
 ```python
-# Python
 user_input = input()
 year = int(user_input)
 ```
@@ -212,7 +203,6 @@ An array is an ordered, fixed-size collection of elements. Since C# is staticall
 The syntax for creating an array capable of holding 10 integers is:
 
 ```csharp
-// C#
 int[] someInts = new int[10];
 ```
 
@@ -221,7 +211,6 @@ To create an array of a different size, or to hold different type values, replac
 In addition to the technique above, we can initialize an array using a literal expression:
 
 ```csharp
-// C#
 int[] someOtherInts = {1, 1, 2, 3, 5, 8};
 ```
 
@@ -230,7 +219,6 @@ Here, the size is implicit in the number of elements in the literal expression `
 To access array elements, we use square brackets, as with Python lists.
 
 ```csharp
-// C#
 int anInt = someInts[0];
 ```
 
@@ -245,14 +233,12 @@ In addition to the types introduced so far -- arrays, along with primitives and 
 If I have a class `Cat` with a constructor that takes no arguments, I can declare and create a new instance of `Cat` using its constructor. In Python, we did this as follows:
 
 ```python
-# Python
 my_cat = Cat()
 ```
 
 And the C# version is:
 
 ```csharp
-// C#
 Cat myCat = new Cat();
 ```
 

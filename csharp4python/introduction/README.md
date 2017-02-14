@@ -74,7 +74,6 @@ multiple lines
 Throught these initial lessons, we'll use a short comment at the top of each code sample to indicate which language is being used, to help you quickly tell while you're making the transition to C#. Here's an example:
 
 ```csharp
-// C#
 ...some C# code...
 ```
 ### Hello, World in Python
@@ -82,7 +81,6 @@ Throught these initial lessons, we'll use a short comment at the top of each cod
 Let's first look a version of Hello, World for Python:
 
 ```python
-# Python
 print("Hello, World")
 ```
 
@@ -91,7 +89,6 @@ If you put this code in a file named `helloworld.py`, you could run it within a 
 Let's take this example one step further, to draw a closer parallel to what we'll see in C#. Consider the following, more complicated program.
 
 ```python
-# Python
 def main():
     print("Hello, World")
 
@@ -106,7 +103,6 @@ Here, we've added a "wrapper" to our simple call to the `print` function, in the
 Here is the a C# program with the same functionality as the Python Hello, World program:
 
 ```csharp
-// C#
 namespace HelloWorld
 {
     class Program
@@ -149,7 +145,6 @@ When defining a class, we must surround the contents of the class (it's properti
 On the next line we start our method definition. The name of this method is:
 
 ```csharp
-// C#
 static void Main(string[] args)
 ```
 
@@ -194,18 +189,15 @@ Similar to `WriteLine`, the `ReadLine` method of the `Console` class will read i
 There is one more character on these two lines that are significant, and that is the `;` at the end. In C#, the `;` signifies the end of a statement. Unlike Python where statements are almost always only one line long, C# statements can spread across many lines. The compiler knows it has reached the end of a statement when it encounters a `;`. This is a very important difference to remember. In C# the following statements are all legal and equivalent. We do not encourage you to write your code in any way other than the first example, but you should know that it is legal.
 
 ```csharp
-// C#
 Console.WriteLine("Hello World!");
 ```
 
 ```csharp
-// C#
 Console.WriteLine("Hello World!")
 ;
 ```
 
 ```csharp
-// C#
 Console.WriteLine
     (
      "Hello World!"
@@ -213,7 +205,6 @@ Console.WriteLine
 ```
 
 ```csharp
-// C#
 Console
    .WriteLine("Hello World!")
     ;
@@ -226,7 +217,6 @@ Console
 If we wanted to translate the C# back to Python, we would have something like the following class definition:
 
 ```python
-# Python
 class Hello(object):
 
     @staticmethod

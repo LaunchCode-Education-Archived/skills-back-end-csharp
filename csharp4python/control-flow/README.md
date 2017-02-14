@@ -14,7 +14,6 @@ Conditional statements in Python and C# are very similar. In Python we have thre
 Let's consider an `if` statement with no `else` clause. Here's the Python version.
 
 ```python
-# Python
 if condition:
     statement1
     statement2
@@ -24,7 +23,6 @@ if condition:
 In C# this same pattern is simply written as:
 
 ```csharp
-// C#
 if (condition)
 {
     statement1
@@ -40,7 +38,6 @@ Once again, you can see that in C# the curly braces define a block rather than i
 Adding an `else` clause, we have:
 
 ```python
-# Python
 if condition:
     statement1
     statement2
@@ -54,7 +51,6 @@ else:
 In C# this is written as:
 
 ```csharp
-// C#
 if (condition)
 {
     statement1
@@ -74,7 +70,6 @@ else
 In C# we can utlize the same behavior that `elif` provides in Python, with a slightly different syntax. Here is a simple example in both Python and C#.
 
 ```python
-# Python
 grade = int(input('enter a grade'))
 if grade < 60:
     print 'F'
@@ -91,7 +86,6 @@ else:
 In C# we would write this as follows:
 
 ```csharp
-// C#
 public class ElseIf {
     public static void main(String args[]) {
         int grade = 85;
@@ -128,7 +122,6 @@ The `switch` statement is not used very often, and we generally recommend you av
 Here's a quick example:
 
 ```csharp
-// C#
 class Program
 {
    static void Main(string[] args)
@@ -180,7 +173,6 @@ At a conceptual level, loops in C# aren't that different from loops in Python, t
 In Python the easiest way to write a definite loop (aka a for loop) is using the for loop in conjunction with the range function. For example:
 
 ```python
-# Python
 for i in range(10):
    print i
 ```
@@ -188,7 +180,6 @@ for i in range(10):
 In C# we would write this as:
 
 ```csharp
-// C#
 for (int i = 0; i < 10; i++ )
 {
     Console.WriteLine(i);
@@ -198,7 +189,6 @@ for (int i = 0; i < 10; i++ )
 Recall that the `range` function provides you with a wide variety of options for controlling the value of the loop variable.
 
 ```python
-# Python
 range(stop)
 range(start,stop)
 range(start,stop,step)
@@ -207,7 +197,6 @@ range(start,stop,step)
 The C# for loop is really analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parenthesis. You can think of it this way:
 
 ```csharp
-// C#
 for (start clause; stop clause; step clause)
 {
     statement1
@@ -219,7 +208,6 @@ for (start clause; stop clause; step clause)
 If you want to start at 100, stop at 0 and count backward by 5 the Python loop would be written as:
 
 ```python
-# Python
 for i in range(100,-1,-5):
     print i
 ```
@@ -227,7 +215,6 @@ for i in range(100,-1,-5):
 In C# we would write this as:
 
 ```csharp
-// C#
 for (int i = 100; i >= 0; i -= 5)
 {
     Console.WriteLine(i);
@@ -239,7 +226,6 @@ In Python the for loop can also iterate over any sequence such as a list, a stri
 In Python we can iterate over a list as follows:
 
 ```python
-# Python
 l = [1, 1, 2, 3, 5, 8, 13, 21]
 for fib in l:
    print fib
@@ -248,7 +234,6 @@ for fib in l:
 In C#, this would look like:
 
 ```csharp
-// C#
 int l[] = {1, 1, 2, 3, 5, 8, 13, 21};
 foreach (int i in l) {
     Console.WriteLine(i);
@@ -258,7 +243,6 @@ foreach (int i in l) {
 This version translates nicely to iterating through a string, where the string acts essentially like an array of characters:
 
 ```csharp
-// C#
 string msg = "Hello World";
 foreach (char c in msg) {
     Console.WriteLine(c);
@@ -270,7 +254,6 @@ foreach (char c in msg) {
 Both Python and C# support the while loop, or indefinite loop. Recall that in Python the while loop is written as:
 
 ```python
-# Python
 while condition:
    statement1
    statement2
@@ -280,7 +263,6 @@ while condition:
 In C# we add parenthesis and curly braces to get:
 
 ```csharp
-// C#
 while (condition)
 {
     statement1
@@ -292,7 +274,6 @@ while (condition)
 C# adds an additional, if seldom used, variation of the while loop called the do-while loop. The do-while loop is very similar to while except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop will be executed at least one time. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:
 
 ```csharp
-// C#
 do
 {
     statement1

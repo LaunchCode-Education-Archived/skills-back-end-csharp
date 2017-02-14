@@ -10,7 +10,6 @@ C# provides powerful and flexible ways to store data. We'll introduce only a few
 Lets look at another early Python program. We are going to read numbers from a file and produce a histogram that shows the frequency of the various numbers. The data file we will use has one number between 0 and 9 on each line of the file. Here is a simple Python program that creates and prints a histogram.
 
 ```python
-# Python
 def main():
     count = [0]*10
     data = open('test.dat')
@@ -59,7 +58,6 @@ To write the C# version of this program we will have to introduce several new C#
 Here is the C# code needed to write the exact same program:
 
 ```csharp
-// C#
 namespace Histo
 {
     class Program
@@ -100,7 +98,6 @@ Before going any further, I suggest you try to compile the above program and run
 Let's look at what is happening in the C# source. Here are the first two lines.
 
 ```csharp
-// C#
 string rawData = Histo.Properties.Resources.test_data;
 string[] data = rawData.Split(' ');
 ```
@@ -110,7 +107,6 @@ They pull in data from a file that is configured as a **project resources**. We 
 Moving on to the next segment, we consider these lines:
 
 ```csharp
-// C#
 List<int> count = new List<int>();
 for (int i = 0; i < data.Length; i++) {
     count.Add(0);
@@ -124,7 +120,6 @@ TODO - finish explaining code above
 The following lines are required to pull in data from the file.
 
 ```csharp
-// C#
 string rawData = Histo.Properties.Resources.test_data;
 ```
 
@@ -133,7 +128,6 @@ TODO - explain this and other file i/o approach
 Let's consider the next segment of our program:
 
 ```csharp
-// C#
 List<int> count = new List<int>();
 
 for (int i = 0; i < data.Length; i++) {
@@ -148,19 +142,16 @@ The syntax of this for loop probably looks very strange to you, but in fact it i
 Try to rewrite the following Python for loops as C# for loops. We've provided you a place to do this in the `ForLoopPractice` project in the example code solution.
 
 ```python
-# Python
 for i in range(2,101,2)
     print(i)
 ```
 
 ```python
-# Python
 for i in range(1,100)
     print(i)
 ```
 
 ```python
-# Python
 for i in range(100,0,-1)
     print(i)
 ```
@@ -168,7 +159,6 @@ for i in range(100,0,-1)
 Consider the next segment:
 
 ```csharp
-// C#
 for (int j = 0; j < data.Length; j++) {
     int val = int.Parse(data[j]);
     count[val] = count[val] + 1;
@@ -182,7 +172,6 @@ The line `count[val] = count[val] + 1;` illustrates another important difference
 Let's consider the last loop in this program:
 
 ```csharp
-// C#
 int idx = 0;
 foreach (int k in count) {
     Console.WriteLine(idx + " occurred " + k + " times");
@@ -203,7 +192,6 @@ Why does C# have both arrays and `List`? The answer is likely historical, in par
 To illustrate array usage, here is a version of the `Histo` program/class that uses primitive arrays instead of a `List`:
 
 ```csharp
-// C#
 
 ```
 
@@ -216,7 +204,6 @@ Just as Python provides the dictionary structure to allow us to store data as ke
 Let's stick with a simple frequency counting example, only this time we will count the frequency of words in a document. A simple Python program for this job could look like this:
 
 ```python
-# Python
 def main():
     data = open('alice.txt')
     wordList = data.read().split()
@@ -240,7 +227,6 @@ Notice that the structure of the program is very similar to the numeric histogra
 Here's the C# version, using instances of the `Dictionary` class:
 
 ```csharp
-// C#
 
 ```
 

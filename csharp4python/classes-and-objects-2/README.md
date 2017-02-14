@@ -20,7 +20,6 @@ The `Comparable` interface says that any object that claims to be `Comparable` m
 To make our `Fraction` class `Comparable` we must modify the class declaration line as follows:
 
 ```csharp
-// C#
 public class Fraction extends Number implements Comparable<Fraction> {
     ...
 }
@@ -29,7 +28,6 @@ public class Fraction extends Number implements Comparable<Fraction> {
 The specification `Comparable<Fraction>` makes it clear that Fraction is only comparable with another Fraction. The `compareTo` method could be implemented as follows:
 
 ```csharp
-// C#
 public int compareTo(Fraction other) {
     Integer num1 = this.numerator * other.getDenominator();
     Integer num2 = this.denominator * other.getNumerator();
@@ -48,7 +46,6 @@ However, using the `static` keyword in C#, we can declare properties within a cl
 Let's compare Python and C# to illustrate this concept. Suppose that you wanted to write a `Student` class with the functionality that the class could keep track of the number of students it had created. Although you could do this with a global counter variable, that is an ugly solution. The right way to do it is to use a static variable. In Python we could do this as follows:
 
 ```python
-# Python
 class Student:
     numStudents = 0
 
@@ -70,7 +67,6 @@ if __name__ == '__main__':
 In C# we would write this same example using a static declaration.
 
 ```csharp
-// C#
 public class Student {
 
     public static Integer numStudents = 0;
@@ -105,7 +101,6 @@ Static methods are methods declared to be `static`, which only access local vari
 We have already discussed the most common static method of all, `main`. However, in our `Fraction` class we also implemented a method to calculate the greatest common divisor for two fractions (`gcd`). This method doesn't need to access any data that is specific to any one instance of the `Fraction` class. It simply takes two integers, computing and returning the corresponding result. Therefore, we declare the method to be a `static` method of the class. Furthermore, since we are only going to use this `gcd` method for our own purposes we can make it `private`.
 
 ```csharp
-// C#
 private static Integer gcd(Integer m, Integer n) {
     while (m % n != 0) {
         Integer oldm = m;
@@ -122,7 +117,6 @@ private static Integer gcd(Integer m, Integer n) {
 A final version of the Fraction class that exercises all of the features we have discussed is as follows:
 
 ```csharp
-// C#
 import csharp.util.ArrayList;
 import csharp.util.Collections;
 
