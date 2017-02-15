@@ -11,7 +11,7 @@ Since you're still new to C# and Visual Studio, we'll provide some extra directi
 
 Create a new project named `Area` by right-clicking on the top-level "Solution 'csharp-exercises'" item. Select *Add > New Project*. In the modal that opens, make sure "Console Application (.NET Core)" is selected, and enter "Area" in the *Name* field at the bottom of the window. Click *OK*.
 
-You'll write your code in the `Program.cs` file within the Area project. 
+You'll write your code in the `Program.cs` file within the Area project.
 
 ## Your task
 
@@ -31,6 +31,10 @@ Some questions to ask yourself:
 - What is the best way to get user input into a variable `radius` of that type?
 
 Create your program/class in the `csharp-exercises` project by right-clicking on the top-level solution within the *Team Explorer* and selecting *Add > New Project*.
+
+<aside class="aside-warning" markdown="1">
+Don't forget to place a `Console.ReadLine()` at the end of your program so the console window remains open after the main portion of your program runs.
+</aside>
 
 ## Bonus Missions
 

@@ -6,7 +6,7 @@ currentMenu: classes
 Class # | Prep Work | Studio | Topics
 -----|-----------|----------|--------
 1 | [Prep Work](../class-prep/1/) | [Area of a circle](../studios/area/) | Intro to C#, procedural C# syntax, setting up your environment
-2 | [Prep Work](../class-prep/2/) | | C# Collections
+2 | [Prep Work](../class-prep/2/) | [Counting Characters](../studios/counting-characters/) | C# Collections
 3 | [Prep Work](../class-prep/3/) | | MVC redux; Intro to ASP.NET MVC
 4 | [Prep Work](../class-prep/4/) | | Razor templates
 5 | [Prep Work](../class-prep/5/) | | Objects, classes, unit tests
