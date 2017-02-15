@@ -28,3 +28,15 @@ After forking, open Visual Studio. From within Visual Studio, choose the *Team E
 Once authenticated, select *Clone* from the GitHub section of the *Team Explorer* and select your `csharp-exercises` copy from the modal window. **Be sure to change the Path field** to the location you would like the project to live, ideally inside of a folder you've been using to store other projects.
 
 VM (Mac/Linux) users: Don't forget to use the `lc101` directory within your Dropbox folder for this purpose.
+
+## Configure and test
+
+If your solution isn't open, open it via *File > Open > Project/Solution* and browse to the `.sln` file within the `csharp-exercises` directory.
+
+Right-click on the top-level "Solution 'csharp-exercises'" item in the *Solution Explorer* and select *Properties*. In the modal that opens, select *Common Properties > Startup Project* and then choose *Current Selection* in the pane at the right.
+
+<aside class="aside-pro-tip" markdown="1">
+This setting makes the default behavior of Visual Studio to run the currently-selected program when you hit the <span style="color:green">▶︎</span> *Start* button in the toolbar.
+</aside>
+
+Run the `HelloWorld` program by selecting the HelloWorld project in the *Solution Explorer* and then hitting the <span style="color:green">▶︎</span> *HelloWorld* button in the toolbar.

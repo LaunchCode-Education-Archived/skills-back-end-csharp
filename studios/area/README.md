@@ -5,6 +5,16 @@ currentMenu: studios
 
 Get cosy with C# syntax by revisiting one of our early Python programs. We'll create a console program that calculates the area of a circle based on input from the user.
 
+## Creating your class
+
+Since you're still new to C# and Visual Studio, we'll provide some extra direction the first few times we go to write code.
+
+Create a new project named `Area` by right-clicking on the top-level "Solution 'csharp-exercises'" item. Select *Add > New Project*. In the modal that opens, make sure "Console Application (.NET Core)" is selected, and enter "Area" in the *Name* field at the bottom of the window. Click *OK*.
+
+You'll write your code in the `Program.cs` file within the Area project. 
+
+## Your task
+
 Write a program/class `Area` that prompts the user for a number, and then calculate the area of a circle with that radius and print the result.
 
 > *NOTE:* Recall that the area of a circle is `A = pi * r * r` where `pi` is 3.14 and `r` is the radius.
