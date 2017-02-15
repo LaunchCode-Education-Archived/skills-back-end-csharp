@@ -115,14 +115,12 @@
 <p>Conditional statements in Python and C# are very similar. In Python we have three patterns.</p>
 <h3 id="simple-if">Simple if</h3>
 <p>Let's consider an <code>if</code> statement with no <code>else</code> clause. Here's the Python version.</p>
-<pre><code class="language-python"># Python
-if condition:
+<pre><code class="language-python">if condition:
     statement1
     statement2
     ...</code></pre>
 <p>In C# this same pattern is simply written as:</p>
-<pre><code class="language-csharp">// C#
-if (condition)
+<pre><code class="language-csharp">if (condition)
 {
     statement1
     statement2
@@ -131,8 +129,7 @@ if (condition)
 <p>Once again, you can see that in C# the curly braces define a block rather than indentation. In C#, the parentheses around the condition are required.</p>
 <h3 id="if-else">if-else</h3>
 <p>Adding an <code>else</code> clause, we have:</p>
-<pre><code class="language-python"># Python
-if condition:
+<pre><code class="language-python">if condition:
     statement1
     statement2
     ...
@@ -141,8 +138,7 @@ else:
     statement2
     ...</code></pre>
 <p>In C# this is written as:</p>
-<pre><code class="language-csharp">// C#
-if (condition)
+<pre><code class="language-csharp">if (condition)
 {
     statement1
     statement2
@@ -156,8 +152,7 @@ else
 }</code></pre>
 <h3 id="elif--else-if">elif / else if</h3>
 <p>In C# we can utlize the same behavior that <code>elif</code> provides in Python, with a slightly different syntax. Here is a simple example in both Python and C#.</p>
-<pre><code class="language-python"># Python
-grade = int(input('enter a grade'))
+<pre><code class="language-python">grade = int(input('enter a grade'))
 if grade &lt; 60:
     print 'F'
 elif grade &lt; 70:
@@ -169,8 +164,7 @@ elif grade &lt; 90:
 else:
     print 'A'</code></pre>
 <p>In C# we would write this as follows:</p>
-<pre><code class="language-csharp">// C#
-public class ElseIf {
+<pre><code class="language-csharp">public class ElseIf {
     public static void main(String args[]) {
         int grade = 85;
         if (grade &lt; 60)
@@ -199,8 +193,7 @@ public class ElseIf {
 <p>C# also supports a <code>switch</code> statement that acts something like the <code>elif</code> statement of Python under certain conditions.</p>
 <p>The <code>switch</code> statement is not used very often, and we generally recommend you avoid using it. It is not as powerful as the <code>else if</code> model because the switch variable can only be compared for equality with a very small class of types.</p>
 <p>Here's a quick example:</p>
-<pre><code class="language-csharp">// C#
-class Program
+<pre><code class="language-csharp">class Program
 {
    static void Main(string[] args)
    {
@@ -244,74 +237,62 @@ class Program
 <p>At a conceptual level, loops in C# aren't that different from loops in Python, though the syntax varies significantly in some cases.</p>
 <h3 id="for-loops">For Loops</h3>
 <p>In Python the easiest way to write a definite loop (aka a for loop) is using the for loop in conjunction with the range function. For example:</p>
-<pre><code class="language-python"># Python
-for i in range(10):
+<pre><code class="language-python">for i in range(10):
    print i</code></pre>
 <p>In C# we would write this as:</p>
-<pre><code class="language-csharp">// C#
-for (int i = 0; i &lt; 10; i++ )
+<pre><code class="language-csharp">for (int i = 0; i &lt; 10; i++ )
 {
     Console.WriteLine(i);
 }</code></pre>
 <p>Recall that the <code>range</code> function provides you with a wide variety of options for controlling the value of the loop variable.</p>
-<pre><code class="language-python"># Python
-range(stop)
+<pre><code class="language-python">range(stop)
 range(start,stop)
 range(start,stop,step)</code></pre>
 <p>The C# for loop is really analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parenthesis. You can think of it this way:</p>
-<pre><code class="language-csharp">// C#
-for (start clause; stop clause; step clause)
+<pre><code class="language-csharp">for (start clause; stop clause; step clause)
 {
     statement1
     statement2
     ...
 }</code></pre>
 <p>If you want to start at 100, stop at 0 and count backward by 5 the Python loop would be written as:</p>
-<pre><code class="language-python"># Python
-for i in range(100,-1,-5):
+<pre><code class="language-python">for i in range(100,-1,-5):
     print i</code></pre>
 <p>In C# we would write this as:</p>
-<pre><code class="language-csharp">// C#
-for (int i = 100; i &gt;= 0; i -= 5)
+<pre><code class="language-csharp">for (int i = 100; i &gt;= 0; i -= 5)
 {
     Console.WriteLine(i);
 }</code></pre>
 <p>In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. C# also provides a variation of its for loop that provides the same functionality in its so called <em>for-each</em> loop.</p>
 <p>In Python we can iterate over a list as follows:</p>
-<pre><code class="language-python"># Python
-l = [1, 1, 2, 3, 5, 8, 13, 21]
+<pre><code class="language-python">l = [1, 1, 2, 3, 5, 8, 13, 21]
 for fib in l:
    print fib</code></pre>
 <p>In C#, this would look like:</p>
-<pre><code class="language-csharp">// C#
-int l[] = {1, 1, 2, 3, 5, 8, 13, 21};
+<pre><code class="language-csharp">int l[] = {1, 1, 2, 3, 5, 8, 13, 21};
 foreach (int i in l) {
     Console.WriteLine(i);
 }</code></pre>
 <p>This version translates nicely to iterating through a string, where the string acts essentially like an array of characters:</p>
-<pre><code class="language-csharp">// C#
-string msg = "Hello World";
+<pre><code class="language-csharp">string msg = "Hello World";
 foreach (char c in msg) {
     Console.WriteLine(c);
 }</code></pre>
 <h3 id="while-loops">While Loops</h3>
 <p>Both Python and C# support the while loop, or indefinite loop. Recall that in Python the while loop is written as:</p>
-<pre><code class="language-python"># Python
-while condition:
+<pre><code class="language-python">while condition:
    statement1
    statement2
    ...</code></pre>
 <p>In C# we add parenthesis and curly braces to get:</p>
-<pre><code class="language-csharp">// C#
-while (condition)
+<pre><code class="language-csharp">while (condition)
 {
     statement1
     statement2
     ...
 }</code></pre>
 <p>C# adds an additional, if seldom used, variation of the while loop called the do-while loop. The do-while loop is very similar to while except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop will be executed at least one time. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:</p>
-<pre><code class="language-csharp">// C#
-do
+<pre><code class="language-csharp">do
 {
     statement1
     statement2

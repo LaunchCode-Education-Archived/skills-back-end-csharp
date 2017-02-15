@@ -120,13 +120,11 @@
 <p><em>READ:</em> <a href="https://docs.oracle.com/csharpse/8/docs/api/csharp/lang/Comparable.html"><code>Comparable</code> Interfact documentation</a> (Introduction and <code>compareTo</code> Method Detail sections only)</p>
 </blockquote>
 <p>To make our <code>Fraction</code> class <code>Comparable</code> we must modify the class declaration line as follows:</p>
-<pre><code class="language-csharp">// C#
-public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
+<pre><code class="language-csharp">public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
     ...
 }</code></pre>
 <p>The specification <code>Comparable&lt;Fraction&gt;</code> makes it clear that Fraction is only comparable with another Fraction. The <code>compareTo</code> method could be implemented as follows:</p>
-<pre><code class="language-csharp">// C#
-public int compareTo(Fraction other) {
+<pre><code class="language-csharp">public int compareTo(Fraction other) {
     Integer num1 = this.numerator * other.getDenominator();
     Integer num2 = this.denominator * other.getNumerator();
     return num1 - num2;
@@ -136,8 +134,7 @@ public int compareTo(Fraction other) {
 <p>Thus far, we have been declaring properties within a class in such a way that when we create instances of a class, each object has it's own separate &quot;copy&quot; of those properties.</p>
 <p>However, using the <code>static</code> keyword in C#, we can declare properties within a class that <em>belong to the class</em> rather than to each instance of the class. In other words, each object created from the class will share static properties.</p>
 <p>Let's compare Python and C# to illustrate this concept. Suppose that you wanted to write a <code>Student</code> class with the functionality that the class could keep track of the number of students it had created. Although you could do this with a global counter variable, that is an ugly solution. The right way to do it is to use a static variable. In Python we could do this as follows:</p>
-<pre><code class="language-python"># Python
-class Student:
+<pre><code class="language-python">class Student:
     numStudents = 0
 
     def __init__(self, id, name):
@@ -154,8 +151,7 @@ def main():
 if __name__ == '__main__':
     main()</code></pre>
 <p>In C# we would write this same example using a static declaration.</p>
-<pre><code class="language-csharp">// C#
-public class Student {
+<pre><code class="language-csharp">public class Student {
 
     public static Integer numStudents = 0;
 
@@ -181,8 +177,7 @@ public class Student {
 <h3 id="static-methods">Static Methods</h3>
 <p>Static methods are methods declared to be <code>static</code>, which only access local variables and static properties. That is, they do not use instance properties.</p>
 <p>We have already discussed the most common static method of all, <code>main</code>. However, in our <code>Fraction</code> class we also implemented a method to calculate the greatest common divisor for two fractions (<code>gcd</code>). This method doesn't need to access any data that is specific to any one instance of the <code>Fraction</code> class. It simply takes two integers, computing and returning the corresponding result. Therefore, we declare the method to be a <code>static</code> method of the class. Furthermore, since we are only going to use this <code>gcd</code> method for our own purposes we can make it <code>private</code>.</p>
-<pre><code class="language-csharp">// C#
-private static Integer gcd(Integer m, Integer n) {
+<pre><code class="language-csharp">private static Integer gcd(Integer m, Integer n) {
     while (m % n != 0) {
         Integer oldm = m;
         Integer oldn = n;
@@ -193,8 +188,7 @@ private static Integer gcd(Integer m, Integer n) {
 }</code></pre>
 <h2 id="full-implementation-of-the-fraction-class">Full Implementation of the Fraction Class</h2>
 <p>A final version of the Fraction class that exercises all of the features we have discussed is as follows:</p>
-<pre><code class="language-csharp">// C#
-import csharp.util.ArrayList;
+<pre><code class="language-csharp">import csharp.util.ArrayList;
 import csharp.util.Collections;
 
 public class Fraction extends Number implements Comparable&lt;Fraction&gt; {

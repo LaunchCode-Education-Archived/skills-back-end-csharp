@@ -157,16 +157,13 @@ can span
 multiple lines
 */</code></pre>
 <p>Throught these initial lessons, we'll use a short comment at the top of each code sample to indicate which language is being used, to help you quickly tell while you're making the transition to C#. Here's an example:</p>
-<pre><code class="language-csharp">// C#
-...some C# code...</code></pre>
+<pre><code class="language-csharp">...some C# code...</code></pre>
 <h3 id="hello-world-in-python">Hello, World in Python</h3>
 <p>Let's first look a version of Hello, World for Python:</p>
-<pre><code class="language-python"># Python
-print("Hello, World")</code></pre>
+<pre><code class="language-python">print("Hello, World")</code></pre>
 <p>If you put this code in a file named <code>helloworld.py</code>, you could run it within a terminal by issuing the command <code>python3 helloworld.py</code>. Of course, it would then print <code>Hello, World</code> to the terminal.</p>
 <p>Let's take this example one step further, to draw a closer parallel to what we'll see in C#. Consider the following, more complicated program.</p>
-<pre><code class="language-python"># Python
-def main():
+<pre><code class="language-python">def main():
     print("Hello, World")
 
 if __name__ == '__main__':
@@ -174,8 +171,7 @@ if __name__ == '__main__':
 <p>Here, we've added a &quot;wrapper&quot; to our simple call to the <code>print</code> function, in the form of a <code>Main</code> function. Recall that the last two lines of the program check to ensure that the file is being run directly, rather than being imported as a module into another Python file. Running the program with <code>python3 helloworld.py</code> results in the same output as the first example.</p>
 <h3 id="hello-world-in-c35">Hello, World in C&#35;</h3>
 <p>Here is the a C# program with the same functionality as the Python Hello, World program:</p>
-<pre><code class="language-csharp">// C#
-namespace HelloWorld
+<pre><code class="language-csharp">namespace HelloWorld
 {
     class Program
     {
@@ -203,8 +199,7 @@ namespace HelloWorld
 <p>When defining a class, we must surround the contents of the class (it's properties and methods) with &quot;curly braces&quot;: <code>{</code> and <code>}</code>. These braces will also be used to surround conditionals, methods, and loops in coming lessons. In C#, any section of code encolsed in a pair of such braces is referred to as a <strong>block</strong>.</p>
 <h4 id="main-method">Main method</h4>
 <p>On the next line we start our method definition. The name of this method is:</p>
-<pre><code class="language-csharp">// C#
-static void Main(string[] args)</code></pre>
+<pre><code class="language-csharp">static void Main(string[] args)</code></pre>
 <p>Everything on this line is significant, and is part of the identification of this method. For example, the following lines look similar but are in fact treated by C# as completely different methods:</p>
 <ul>
 <li><code>static void Main(string[] args)</code></li>
@@ -228,18 +223,14 @@ static void Main(string[] args)</code></pre>
 <p>Similar to <code>WriteLine</code>, the <code>ReadLine</code> method of the <code>Console</code> class will read input from the user's console. In this case, we don't need to do anything with the user's input, we simply want the program to wait until the user hits Enter before exiting.</p>
 <h5 id="semi-colon">Semi-colon</h5>
 <p>There is one more character on these two lines that are significant, and that is the <code>;</code> at the end. In C#, the <code>;</code> signifies the end of a statement. Unlike Python where statements are almost always only one line long, C# statements can spread across many lines. The compiler knows it has reached the end of a statement when it encounters a <code>;</code>. This is a very important difference to remember. In C# the following statements are all legal and equivalent. We do not encourage you to write your code in any way other than the first example, but you should know that it is legal.</p>
-<pre><code class="language-csharp">// C#
-Console.WriteLine("Hello World!");</code></pre>
-<pre><code class="language-csharp">// C#
-Console.WriteLine("Hello World!")
+<pre><code class="language-csharp">Console.WriteLine("Hello World!");</code></pre>
+<pre><code class="language-csharp">Console.WriteLine("Hello World!")
 ;</code></pre>
-<pre><code class="language-csharp">// C#
-Console.WriteLine
+<pre><code class="language-csharp">Console.WriteLine
     (
      "Hello World!"
     )     ;</code></pre>
-<pre><code class="language-csharp">// C#
-Console
+<pre><code class="language-csharp">Console
    .WriteLine("Hello World!")
     ;</code></pre>
 <blockquote>
@@ -247,8 +238,7 @@ Console
 </blockquote>
 <h4></h4>
 <p>If we wanted to translate the C# back to Python, we would have something like the following class definition:</p>
-<pre><code class="language-python"># Python
-class Hello(object):
+<pre><code class="language-python">class Hello(object):
 
     @staticmethod
     def main(args):

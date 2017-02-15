@@ -115,13 +115,11 @@
 <p>Python is a <strong>dynamically typed</strong> language. In a dynamically typed language a variable or parameter can refer to any kind of value at any time. When the variable is used, the interpreter figures out what type it is and behaves accordingly.</p>
 <p>C# is a <strong>statically typed</strong> language. In a statically typed language the association between a variable or parameter and the type of value it can refer to is determined <em>when the variable or parameter is declared</em>. Once the declaration is made it is an illegal for a it to refer to a value of any other type.</p>
 <p>For example, this is legal in Python:</p>
-<pre><code class="language-python"># Python
-x = "dog"
+<pre><code class="language-python">x = "dog"
 x = 42</code></pre>
 <p>If we were to inspect the type of <code>x</code> after the first line executes (e.g. using Python's <code>type()</code> function) we would find that it was a string. After the next line executes, it is an integer. <code>x</code> is allowed to hold values of different types.</p>
 <p>However, the corresponding code in C# will result in a build error:</p>
-<pre><code class="language-csharp">// C#
-string x = "dog";
+<pre><code class="language-csharp">string x = "dog";
 x = 42;</code></pre>
 <p>The compiler error would occur when we try to assign <code>42</code> to a variable of type <code>string</code>. This is simply not allowed in C#.</p>
 <p>Formally, this means that <em>we must declare the type of every variable and parameter</em> in a statically typed language. This is done by preceding the variable or parameter name with the name of its type, as we did in the example above: <code>string x = "dog"</code>.</p>
@@ -241,8 +239,7 @@ x = 42;</code></pre>
 <p>Not all built-in data types in C# are listed here, only the most commonly used types that beginners are likely to encounter. If you're curious, <a href="https://msdn.microsoft.com/en-us/library/ya5y69ds.aspx">read more about built-in types in C#</a></p>
 <h2 id="example-the-tempconv-program">Example: The TempConv Program</h2>
 <p>Lets go back in time and look at another of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.</p>
-<pre><code class="language-python"># Python
-def main():
+<pre><code class="language-python">def main():
     fahrenheit = int(input("Enter the temperature in F: "))
     celsuis = (fahrenheit - 32) * (5.0 / 9.0)
     print("the temperature in C is: ", celsuis)
@@ -250,8 +247,7 @@ def main():
 if __name__ == '__main__':
     main()</code></pre>
 <p>Next, lets look at the C# Equivalent.</p>
-<pre><code class="language-csharp">// C#
-using System;
+<pre><code class="language-csharp">using System;
 
 namespace TempConv
 {
@@ -293,8 +289,7 @@ namespace TempConv
 <p>Don't just trust us, try it yourself! Remove the <code>using</code> statement and change <code>Console</code> to <code>System.Console</code> in the rest of the code. The program should still compile and run.</p>
 <h3 id="declaring-variables">Declaring Variables</h3>
 <p>In the example above, these lines contain variable declarations:</p>
-<pre><code class="language-csharp">// C#
-double fahrenheit;
+<pre><code class="language-csharp">double fahrenheit;
 double celsius;
 string input;</code></pre>
 <p>Specifically we are saying that <code>fahrenheit</code> and <code>celsius</code> are going to reference objects that are of type <code>double</code>. The variable <code>input</code> will contain a string. This means that if we were to try an assignment like <code>fahrenheit = "xyz"</code> the compiler would generate an error because <code>"xyz"</code> is a string and <code>fahrenheit</code> is supposed to be a double.</p>
@@ -308,46 +303,37 @@ string input;</code></pre>
 <h3 id="input--output-and-the-console-class">Input / Output and the Console Class</h3>
 <p>Console input and output is facilitated by the class <code>System.Console</code>. We'll rely heavily on just two methods of this class: <code>Console.WriteLine</code> and <code>Console.ReadLine</code>.</p>
 <p><code>Console.WriteLine</code> can take parameters of various types, including <code>string</code>, <code>char</code>, <code>double</code>, <code>bool</code>, and others. However, unlike the <code>print</code> function in Python, we can only provide it with a single argument. Thus, we'll need to manually concatenate strings and other values, converting types if necessary. As with Python, a newline character is output after the given message.</p>
-<pre><code class="language-python"># Python
-year = 2017
+<pre><code class="language-python">year = 2017
 print("Hello", "World")
 print("The year is:", year)</code></pre>
-<pre><code class="language-csharp">// C#
-int year = 2017;
+<pre><code class="language-csharp">int year = 2017;
 Console.WriteLine("Hello" + "World")
 Console.WriteLine("The year is " + year.ToString());</code></pre>
 <p>Similarly, <code>Console.ReadLine</code> returns input as a string. To convert it to a desired type, you can generally use the syntax <code>*type*.Parse(value)</code>, as in this example:</p>
-<pre><code class="language-csharp">// C#
-string input = Console.ReadLine();
+<pre><code class="language-csharp">string input = Console.ReadLine();
 int year = int.Parse(input);</code></pre>
 <p>This is very similar to what we did in Python:</p>
-<pre><code class="language-python"># Python
-user_input = input()
+<pre><code class="language-python">user_input = input()
 year = int(user_input)</code></pre>
 <h2 id="arrays">Arrays</h2>
 <p>While Python has the basic list type, C# has multiple ways of storing ordered data. The most basic is that of the array.</p>
 <p>An array is an ordered, fixed-size collection of elements. Since C# is statically-typed, arrays may only store one type of object. We can create an array of integers or an array of strings, but we may not create an array that holds both integers and strings.</p>
 <p>The syntax for creating an array capable of holding 10 integers is:</p>
-<pre><code class="language-csharp">// C#
-int[] someInts = new int[10];</code></pre>
+<pre><code class="language-csharp">int[] someInts = new int[10];</code></pre>
 <p>To create an array of a different size, or to hold different type values, replace 10 and <code>int</code> (on both sides of the assignment). Unlike lists in Python, arrays in C# <em>may not</em> change size once created. This turns out to be not very practical, so thankfully C# provides more flexible ways to store data, which we'll explore in a later lesson.</p>
 <p>In addition to the technique above, we can initialize an array using a literal expression:</p>
-<pre><code class="language-csharp">// C#
-int[] someOtherInts = {1, 1, 2, 3, 5, 8};</code></pre>
+<pre><code class="language-csharp">int[] someOtherInts = {1, 1, 2, 3, 5, 8};</code></pre>
 <p>Here, the size is implicit in the number of elements in the literal expression <code>{1, 1, 2, 3, 5, 8}</code>.</p>
 <p>To access array elements, we use square brackets, as with Python lists.</p>
-<pre><code class="language-csharp">// C#
-int anInt = someInts[0];</code></pre>
+<pre><code class="language-csharp">int anInt = someInts[0];</code></pre>
 <p>As with Python, arrays have zero-based indexing.</p>
 <p>Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they're a core part of C#, and are ubiquitous, so it's good to know how they work.</p>
 <h2 id="class-types">Class Types</h2>
 <p>In addition to the types introduced so far -- arrays, along with primitives and their objectified counterparts -- any class in C# defines a type. Classes and objects are conceptually the same as in Python: A class is a template for creating objects. We'll have much more to say about classes and objects, but for now you need to be comfortable seeing the basic syntax of class types and class creation.</p>
 <p>If I have a class <code>Cat</code> with a constructor that takes no arguments, I can declare and create a new instance of <code>Cat</code> using its constructor. In Python, we did this as follows:</p>
-<pre><code class="language-python"># Python
-my_cat = Cat()</code></pre>
+<pre><code class="language-python">my_cat = Cat()</code></pre>
 <p>And the C# version is:</p>
-<pre><code class="language-csharp">// C#
-Cat myCat = new Cat();</code></pre>
+<pre><code class="language-csharp">Cat myCat = new Cat();</code></pre>
 <p>Each of these statements creates a new variable that is initialized to hold a new <code>Cat</code> object. Note that in C#, we must declare the variable's type. Also note that we precede the constructor with the <code>new</code> keyword. And, of course, the C# example ends with a semi-colon.</p>
 <p>Variables and parameters that are of the type of a class are said to be of <strong>reference type</strong> (in contrast to <strong>primitive type</strong>). In plain English, we would say of the C# example: &quot;<code>myCat</code> is a reference variable of type <code>Cat</code>.&quot;</p>
 <h2 id="references">References</h2>
