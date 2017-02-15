@@ -23,7 +23,7 @@ If you installed the Windows 10 development image, then you already have everyth
 
 Visit the [`LaunchCodeEducation/csharp-exercises`](https://github.com/LaunchCodeEducation/csharp-exercises) repository page and fork the repository into your own GitHub account by selecting *Fork* from the top right of the page.
 
-After forking, open Visual Studio. From within Visual Studio, choose the *Team Explorer* tab near the bottom of the *Solution Explorer* pane. If you don't see this tab, you can open it via the application menu: *View > Team Explorer*. The first time you do this, you'll need to sing in to GitHub.
+After forking, open Visual Studio. From within Visual Studio, choose the *Team Explorer* tab near the bottom of the *Solution Explorer* pane. If you don't see this tab, you can open it via the application menu: *View > Team Explorer*. The first time you do this, you'll need to sign in to GitHub.
 
 Once authenticated, select *Clone* from the GitHub section of the *Team Explorer* and select your `csharp-exercises` copy from the modal window. **Be sure to change the Path field** to the location you would like the project to live, ideally inside of a folder you've been using to store other projects.
 
