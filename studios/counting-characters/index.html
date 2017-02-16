@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Initial Setup :: Unit 3: Back-End C# Skill Track</title>
+        <title>Studio: Counting Characters :: Unit 3: Back-End C# Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-initial-setup'>
+    <body id='page-studio-counting-characters'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -21,12 +21,12 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                         <ul class="dropdown-menu">
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/studios/">
                                         Studios
                                     </a>
@@ -109,27 +109,58 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Initial Setup</h1>
-                    <p>The steps here will walk you through setting up a repository that you'll use to study example code, work on studios, and complete your first assignment of this unit.</p>
-<h2 id="visual-studio">Visual Studio</h2>
-<p>Visual Studio is the Integrated Development Environment (IDE) used to develop C# and .NET applications.</p>
-<h3 id="windows-users">Windows Users</h3>
-<p>Visit the <a href="https://www.visualstudio.com/free-developer-offers/">Microsoft Free Developer Apps</a> page and download Visual Studio Community.</p>
-<p>When installing Visual Studio, select the option to Customize the install and be sure to check the GitHub Extension for Visual Studio check box. If you install Visual Studio without doing this -- or have a pre-existing intsall -- then you can add the GitHub extension after the fact by downloading and installing it from <a href="https://visualstudio.github.com/">visualstudio.github.com</a>.</p>
-<h3 id="mac-and-linux-users">Mac and Linux Users</h3>
-<p>If you installed the Windows 10 development image, then you already have everything you need.</p>
-<h2 id="github-project-setup">GitHub Project Setup</h2>
-<p>Visit the <a href="https://github.com/LaunchCodeEducation/csharp-exercises"><code>LaunchCodeEducation/csharp-exercises</code></a> repository page and fork the repository into your own GitHub account by selecting <em>Fork</em> from the top right of the page.</p>
-<p>After forking, open Visual Studio. From within Visual Studio, choose the <em>Team Explorer</em> tab near the bottom of the <em>Solution Explorer</em> pane. If you don't see this tab, you can open it via the application menu: <em>View &gt; Team Explorer</em>. The first time you do this, you'll need to sign in to GitHub.</p>
-<p>Once authenticated, select <em>Clone</em> from the GitHub section of the <em>Team Explorer</em> and select your <code>csharp-exercises</code> copy from the modal window. <strong>Be sure to change the Path field</strong> to the location you would like the project to live, ideally inside of a folder you've been using to store other projects.</p>
-<p>VM (Mac/Linux) users: Don't forget to use the <code>lc101</code> directory within your Dropbox folder for this purpose.</p>
-<h2 id="configure-and-test">Configure and test</h2>
-<p>If your solution isn't open, open it via <em>File &gt; Open &gt; Project/Solution</em> and browse to the <code>.sln</code> file within the <code>csharp-exercises</code> directory.</p>
-<p>Right-click on the top-level &quot;Solution 'csharp-exercises'&quot; item in the <em>Solution Explorer</em> and select <em>Properties</em>. In the modal that opens, select <em>Common Properties &gt; Startup Project</em> and then choose <em>Current Selection</em> in the pane at the right.</p>
-<aside class="aside-pro-tip">
-<p>This setting makes the default behavior of Visual Studio to run the currently-selected program when you hit the <span style="color:green">▶︎</span> <em>Start</em> button in the toolbar.</p>
-</aside>
-<p>Run the <code>HelloWorld</code> program by selecting the HelloWorld project in the <em>Solution Explorer</em> and then hitting the <span style="color:green">▶︎</span> <em>HelloWorld</em> button in the toolbar.</p>
+                                        <h1>Studio: Counting Characters</h1>
+                    <p>Let's revisit the <a href="https://runestone.launchcode.org/runestone/static/thinkcspy/Studios/counting-characters.html">Counting Characters studio</a> from unit 1.</p>
+<p>Write a program that calculates the number of times each character occurs in a string and prints these counts to the console. You could get the string as input from the user, but for the sake of simplicity, you may also hard-code the string into your program as the value of a variable. Here’s a test string, for your convenience:</p>
+<pre><code class="language-nohighlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan sem ut ligula scelerisque sollicitudin. Ut at sagittis augue. Praesent quis rhoncus justo. Aliquam erat volutpat. Donec sit amet suscipit metus, non lobortis massa. Vestibulum augue ex, dapibus ac suscipit vel, volutpat eget massa. Donec nec velit non ligula efficitur luctus.</code></pre>
+<p>Your approach to this problem should be the same as with Python: Loop through the string one character at a time, storing and/or updating the count for a given character using an appropriate data structure.</p>
+<p>Some questions to ponder as you start this studio:</p>
+<ul>
+<li>Which type of data structure (<code>Dictionary</code>, <code>List</code>, or <code>Array</code>) should you use to store character counts?</li>
+<li>You'll need to &quot;initialize&quot; the counts for the characters in some fashion. It's probably better to do this as you go through the string, as opposed to doing to before you loop through the string. (Why?)</li>
+</ul>
+<p>If you're having trouble recalling how to create a new class, revisit the instructions in <a href="../area/">Studio: Area of a Circle</a>. And don't forget to check out the <a href="#bonus-missions">Bonus Missions</a> below.</p>
+<p>For the example string above, your output should look something like:</p>
+<pre><code class="language-nohighlight">A: 1
+D: 2
+L: 1
+N: 1
+P: 1
+U: 1
+V: 1
+ : 50
+a: 22
+b: 3
+c: 17
+d: 4
+e: 26
+f: 2
+g: 7
+h: 1
+i: 27
+j: 1
+l: 17
+,: 4
+m: 11
+n: 14
+.: 8
+o: 15
+p: 7
+q: 3
+r: 9
+s: 29
+t: 29
+u: 28
+v: 4
+x: 1</code></pre>
+<h2 id="bonus-missions">Bonus Missions</h2>
+<p>Here are few ways you might modify your solution:</p>
+<ul>
+<li>Make the counts case-insensitive</li>
+<li>Exclude non-alphabetic characters</li>
+<li>Get the string as input from the user at the command line</li>
+<li>Read the string in from a file. <em>Note:</em> This is a hard one, and we won't talk about reading from files in C# in this course, so be ready for a tough challenge if you bite this one off.</li>
+</ul>
                                     </section>
 
             </div>

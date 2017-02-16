@@ -1,6 +1,9 @@
 http://education.launchcode.org/skills-back-end-csharp/about/index.html
 http://education.launchcode.org/skills-back-end-csharp/assignments/index.html
 http://education.launchcode.org/skills-back-end-csharp/assignments/techjobs-console/index.html
+http://education.launchcode.org/skills-back-end-csharp/assignments/techjobs-mvc/index.html
+http://education.launchcode.org/skills-back-end-csharp/assignments/techjobs-oo/index.html
+http://education.launchcode.org/skills-back-end-csharp/assignments/techjobs-persistent/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/1/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/1/running-windows-on-mac-linux.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/1/setup.html
@@ -30,6 +33,8 @@ http://education.launchcode.org/skills-back-end-csharp/csharp4python/toc.html
 http://education.launchcode.org/skills-back-end-csharp/index.html
 http://education.launchcode.org/skills-back-end-csharp/issues/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/area/index.html
+http://education.launchcode.org/skills-back-end-csharp/studios/bonjour-asp-net/index.html
+http://education.launchcode.org/skills-back-end-csharp/studios/counting-characters/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/index.html
 http://education.launchcode.org/skills-back-end-csharp/sitemap.html
