@@ -17,3 +17,21 @@ The process for submitting your work is always the same:
 🐘 *Large Assignment*
 
 [Work on TechJobs (Console Edition)](techjobs-console/)
+
+## TechJobs (MVC Edition)
+
+🐘 *Large Assignment*
+
+[Work on TechJobs (MVC Edition)](techjobs-mvc/)
+
+## TechJobs (Object-Oriented Edition)
+
+🐘 *Large Assignment*
+
+[Work on TechJobs (Object-Oriented Edition)](techjobs-oo/)
+
+## TechJobs (Persistent Edition)
+
+🐘 *Large Assignment*
+
+[Work on TechJobs (Persistent Edition)](techjobs-persistent/)
