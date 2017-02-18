@@ -112,8 +112,40 @@
                                         <h1>Data Structures and Collections</h1>
                     <p>C# provides powerful and flexible ways to store data. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with C#.</p>
 <h2 id="ordered-data-lists-and-arrays">Ordered Data: Lists and Arrays</h2>
+<p>Lets look at another early Python program. We are going to read numbers from a file and produce a histogram that shows the frequency of the various numbers. The data file we will use has one number between 0 and 9 on each line of the file. Here is a simple Python program that creates and prints a histogram.</p>
+<pre><code class="language-python">def main():
+    count = [0]*10
+    data = open('test.dat')
+
+    for line in data:
+        count[int(line)] = count[int(line)] + 1
+
+    idx = 0
+    for num in count:
+        print idx, " occured ", num, " times."
+        idx += 1
+
+if __name__ == '__main__':
+    main()</code></pre>
+<p>Let's use a data file that contains the following text:</p>
+<pre><code class="language-nohighlight">9 8 4 5 3 5 2 1 5</code></pre>
+<blockquote>
+<p><em>NOTE:</em> When running the example code, note that <code>test.dat</code> is located at the root of the project, since this is where the <code>File</code> class will look for it by default. To use a file in another directory, we would need to provide a specific path to the file.</p>
+</blockquote>
+<p>We will get output that looks like this:</p>
+<pre><code class="language-nohighlight">0 occurred 0 times
+1 occurred 1 times
+2 occurred 1 times
+3 occurred 1 times
+4 occurred 1 times
+5 occurred 3 times
+6 occurred 0 times
+7 occurred 0 times
+8 occurred 1 times
+9 occurred 1 times</code></pre>
+<p>Let's review what is happening in this little program. In the first line we create a list and initialize the first 10 positions in the list to be 0. Next we open the data file called <code>test.dat</code>. We then have a loop that reads each line of the file. As we read each line, we convert it to an integer and increment the counter at the position in the list indicated by the number on the line we just read. Finally, we iterate over each element in the list printing out both the position in the list and the total value stored in that position.</p>
 <h3 id="list">List</h3>
-<p>To write the C# version of this program we will have to introduce several new C# concepts. We will see the C# equivalent of a list, called a <code>List.</code> We will also introduce different kinds of loops used in C#.</p>
+<p>To write the C# version of this program we will have to introduce several new C# concepts. We will see the C# equivalent of a list, called an <code>ArrayList.</code> We will also introduce three different kinds of loops used in C#.</p>
 <p>Here is the C# code needed to write the exact same program:</p>
 <pre><code class="language-csharp">namespace Histo
 {
