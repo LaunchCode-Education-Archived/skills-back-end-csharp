@@ -224,7 +224,7 @@ class Hello(object):
         print "Hello World!"
 ```
 
-Notice that we used the decorator `@staticmethod` to tell the Python interpreter that `Main` is going to be a static method. The impact of this is that we don’t have to, indeed we should not, use `self` as the first parameter of the `Main` method! Using this definition we can call the `Main` method in a Python session like this:
+Notice that we used the decorator `@staticmethod` to tell the Python interpreter that `main` is going to be a static method. The impact of this is that we don’t have to, indeed we should not, use `self` as the first parameter of the `main` method! Using this definition we can call the `main` method in a Python session like this:
 
 ```nohighlight
 >>> Hello.main("")
