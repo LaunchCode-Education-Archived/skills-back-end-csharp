@@ -318,7 +318,7 @@ print("The year is:", year)</code></pre>
 <pre><code class="language-csharp">int year = 2017;
 Console.WriteLine("Hello" + "World")
 Console.WriteLine("The year is " + year.ToString());</code></pre>
-<p>Similarly, <code>Console.ReadLine</code> returns input as a string. To convert it to a desired type, you can generally use the syntax <code>type.Parse(value)</code>, as in this example:</p>
+<p>Similarly, <code>Console.ReadLine</code> returns input as a string. To convert it to a desired type, you can generally use the syntax <code>[TYPE].Parse(value)</code>, with <code>[TYPE]</code> replaced by the given type. Here's an example:</p>
 <pre><code class="language-csharp">string input = Console.ReadLine();
 int year = int.Parse(input);</code></pre>
 <p>This is very similar to what we did in Python:</p>
