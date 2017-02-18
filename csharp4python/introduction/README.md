@@ -36,9 +36,11 @@ C# is an enormous language. We could not begin to scratch the surface of the lan
 
 Before starting with each of these lessons, open up Visual Studio and make sure you have the `csharp-exercises` solution open. All C# examples in these lessons are provided in this folder, and you should run the programs there as you go, modifying and experimenting with the code to help you learn.
 
-> *NOTE:* When looking at source code for these examples in Visual Studio, you will notice that they vary slightly from code included here. In these lessons, we omit `using` statements, top-level comments, and other inconsequential elements.
+<aside class="aside-note" markdown="1">When looking at source code for these examples in Visual Studio, you will notice that they vary slightly from code included here. In these lessons, we often omit `using` statements, top-level comments, and other elements that aren't essential to the item under discussion.
+</aside>
 
-> *NOTE:* We'll use Python 3 in each of our Python examples.
+<aside class="aside-note" markdown="1">We'll use Python 3 in each of our Python examples.
+</aside>
 
 ## Hello, World
 
@@ -102,7 +104,7 @@ namespace HelloWorld
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             Console.ReadLine();
@@ -140,16 +142,21 @@ When defining a class, we must surround the contents of the class (it's properti
 On the next line we start our method definition. The name of this method is:
 
 ```csharp
-static void Main(string[] args)
+public static void Main(string[] args)
 ```
 
 Everything on this line is significant, and is part of the identification of this method. For example, the following lines look similar but are in fact treated by C# as completely different methods:
 
+- `public static void Main(string[] args)`
 - `static void Main(string[] args)`
-- `static void Main()`
-- `void Main(String args)`
+- `public static void Main()`
+- `public void Main(String args)`
 
 Disecting this one line could easily take us very deep into the world of C#, but we'll be cautious to not get pulled to far in too soon. Each of these concepts can and will be explored in much more depth later.
+
+##### public
+
+The `public` keyword declares that the `Main` method is publicly accessible. In other words, it may be called from any other class or program that includes the `Program` class. Another common access modifier is `private`, which does essentially the opposite. The `private` modifier would prevent anybody from calling `Main` outside of the given class; it would only be callable within `Program`. We'll explore access modifier in depth later on.
 
 ##### static
 
@@ -205,7 +212,8 @@ Console
     ;
 ```
 
-> *NOTE:* In contrast to Python, indentation (and whitespace, in general) *does not* hold any special meaning in C#.
+<aside class="aside-warning" markdown="1">In contrast to Python, indentation (and whitespace, in general) *does not* hold any special meaning in C#.
+</aside>
 
 ####
 
