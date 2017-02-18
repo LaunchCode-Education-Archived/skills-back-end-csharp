@@ -71,11 +71,6 @@ multiple lines
 */
 ```
 
-Throught these initial lessons, we'll use a short comment at the top of each code sample to indicate which language is being used, to help you quickly tell while you're making the transition to C#. Here's an example:
-
-```csharp
-...some C# code...
-```
 ### Hello, World in Python
 
 Let's first look a version of Hello, World for Python:
