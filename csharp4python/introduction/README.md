@@ -217,7 +217,7 @@ Console
 
 ####
 
-If we wanted to translate the C# back to Python, we would have something like the following class definition:
+If we wanted to translate the C# example back to Python in a more literal fashion, we would have something like the following class definition:
 
 ```python
 class Hello(object):
