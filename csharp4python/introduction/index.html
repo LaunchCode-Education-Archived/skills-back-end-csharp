@@ -133,10 +133,12 @@
 <p>C# is an enormous language. We could not begin to scratch the surface of the langauge even if we devoted all of our time to the task. However, C# is very powerful and we will write some very powerful programs in this course.</p>
 <h2 id="getting-ready">Getting Ready</h2>
 <p>Before starting with each of these lessons, open up Visual Studio and make sure you have the <code>csharp-exercises</code> solution open. All C# examples in these lessons are provided in this folder, and you should run the programs there as you go, modifying and experimenting with the code to help you learn.</p>
-<blockquote>
-<p><em>NOTE:</em> When looking at source code for these examples in Visual Studio, you will notice that they vary slightly from code included here. In these lessons, we omit <code>using</code> statements, top-level comments, and other inconsequential elements.</p>
-<p><em>NOTE:</em> We'll use Python 3 in each of our Python examples.</p>
-</blockquote>
+<aside class="aside-note">
+<p>When looking at source code for these examples in Visual Studio, you will notice that they vary slightly from code included here. In these lessons, we often omit <code>using</code> statements, top-level comments, and other elements that aren't essential to the item under discussion.</p>
+</aside>
+<aside class="aside-note">
+<p>We'll use Python 3 in each of our Python examples.</p>
+</aside>
 <h2 id="hello-world">Hello, World</h2>
 <p>As with learning Python, we'll start by writing a &quot;Hello, World&quot; program. There are no logic errors to make, so getting it to run relies only on understanding the most basic syntax rules of the language.</p>
 <h3 id="comments">Comments</h3>
@@ -173,7 +175,7 @@ if __name__ == '__main__':
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             Console.ReadLine();
@@ -197,14 +199,17 @@ if __name__ == '__main__':
 <p>When defining a class, we must surround the contents of the class (it's properties and methods) with &quot;curly braces&quot;: <code>{</code> and <code>}</code>. These braces will also be used to surround conditionals, methods, and loops in coming lessons. In C#, any section of code encolsed in a pair of such braces is referred to as a <strong>block</strong>.</p>
 <h4 id="main-method">Main method</h4>
 <p>On the next line we start our method definition. The name of this method is:</p>
-<pre><code class="language-csharp">static void Main(string[] args)</code></pre>
+<pre><code class="language-csharp">public static void Main(string[] args)</code></pre>
 <p>Everything on this line is significant, and is part of the identification of this method. For example, the following lines look similar but are in fact treated by C# as completely different methods:</p>
 <ul>
+<li><code>public static void Main(string[] args)</code></li>
 <li><code>static void Main(string[] args)</code></li>
-<li><code>static void Main()</code></li>
-<li><code>void Main(String args)</code></li>
+<li><code>public static void Main()</code></li>
+<li><code>public void Main(String args)</code></li>
 </ul>
 <p>Disecting this one line could easily take us very deep into the world of C#, but we'll be cautious to not get pulled to far in too soon. Each of these concepts can and will be explored in much more depth later.</p>
+<h5 id="public">public</h5>
+<p>The <code>public</code> keyword declares that the <code>Main</code> method is publicly accessible. In other words, it may be called from any other class or program that includes the <code>Program</code> class. Another common access modifier is <code>private</code>, which does essentially the opposite. The <code>private</code> modifier would prevent anybody from calling <code>Main</code> outside of the given class; it would only be callable within <code>Program</code>. We'll explore access modifier in depth later on.</p>
 <h5 id="static">static</h5>
 <p>The next word, <code>static</code>, tells C# that this is a method that is part of the class, but does not belong to any one instance of the class. Rather, it is shared by all instances. Recall that a class is a blueprint for a type of object, and when we create an object based on a class, we refer to that object as an <strong>instance</strong> of the class (or just <strong>instance</strong>).</p>
 <p>The kind of methods we typically wrote in Python required an instance in order for the method to be called. With a static method, the object to the left of the <code>.</code> is a class, not an instance of the class. The way that we would call the <code>Main</code> method directly is: <code>Hello.main(parameter1)</code>. For now you can think of static methods the same way you think of methods in Python modules that don’t require an instance. For example, the math module contains many methods: <code>sin</code>, <code>cos</code>, etc. You evaluated these methods using the names <code>math.cos(90)</code> or <code>math.sin(60)</code>.</p>
@@ -231,9 +236,9 @@ if __name__ == '__main__':
 <pre><code class="language-csharp">Console
    .WriteLine("Hello World!")
     ;</code></pre>
-<blockquote>
-<p><em>NOTE:</em> In contrast to Python, indentation (and whitespace, in general) <em>does not</em> hold any special meaning in C#.</p>
-</blockquote>
+<aside class="aside-warning">
+<p>In contrast to Python, indentation (and whitespace, in general) <em>does not</em> hold any special meaning in C#.</p>
+</aside>
 <h4></h4>
 <p>If we wanted to translate the C# back to Python, we would have something like the following class definition:</p>
 <pre><code class="language-python">class Hello(object):
