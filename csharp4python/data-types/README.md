@@ -194,7 +194,7 @@ Console.WriteLine("Hello" + "World")
 Console.WriteLine("The year is " + year.ToString());
 ```
 
-Similarly, `Console.ReadLine` returns input as a string. To convert it to a desired type, you can generally use the syntax `type.Parse(value)`, as in this example:
+Similarly, `Console.ReadLine` returns input as a string. To convert it to a desired type, you can generally use the syntax `[TYPE].Parse(value)`, with `[TYPE]` replaced by the given type. Here's an example:
 
 ```csharp
 string input = Console.ReadLine();
