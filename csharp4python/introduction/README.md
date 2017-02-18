@@ -238,6 +238,6 @@ Hello World!
 ## References
 
 - [C Sharp (programming language) (wikipedia.org)](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
-- [Namespaces (msdn.microsoft.com)]](https://msdn.microsoft.com/en-us/library/0d941h9d.aspx)
+- [Namespaces (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/0d941h9d.aspx)
 
 [naming-conventions]: ../naming-conventions/
