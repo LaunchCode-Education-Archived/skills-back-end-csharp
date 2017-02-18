@@ -243,7 +243,7 @@ if __name__ == '__main__':
     @staticmethod
     def main(args):
         print "Hello World!"</code></pre>
-<p>Notice that we used the decorator <code>@staticmethod</code> to tell the Python interpreter that <code>Main</code> is going to be a static method. The impact of this is that we don’t have to, indeed we should not, use <code>self</code> as the first parameter of the <code>Main</code> method! Using this definition we can call the <code>Main</code> method in a Python session like this:</p>
+<p>Notice that we used the decorator <code>@staticmethod</code> to tell the Python interpreter that <code>main</code> is going to be a static method. The impact of this is that we don’t have to, indeed we should not, use <code>self</code> as the first parameter of the <code>main</code> method! Using this definition we can call the <code>main</code> method in a Python session like this:</p>
 <pre><code class="language-nohighlight">&gt;&gt;&gt; Hello.main("")
 Hello World!
 &gt;&gt;&gt;</code></pre>
