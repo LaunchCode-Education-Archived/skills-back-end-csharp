@@ -12,3 +12,4 @@ Watch | C# For Absolute Beginners | [Creating Your First C# Program](https://mva
 Watch | C# For Absolute Beginners | [Understanding Your First C# Program](https://mva.microsoft.com/en-us/training-courses/c-fundamentals-for-absolute-beginners-16169?l=BQvowJQIC_306218949) | Learn what's happening within a basic C# program
 Watch | C# For Absolute Beginners | [Working With Code Files, Projects, and Solutions](https://mva.microsoft.com/en-us/training-courses/c-fundamentals-for-absolute-beginners-16169?l=vE6GqMQIC_506218949) | Learn how to work with files and projects within Visual Studio
 Read | C# For Python Programmers | [Data Types](../../csharp4python/data-types/) | Learn about data types and variables in C#
+Do | Exercises | [Class 1 Prep Exercises](exercises.html) | Get some practice with the concept you've just learned
