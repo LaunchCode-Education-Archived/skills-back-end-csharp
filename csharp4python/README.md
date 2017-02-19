@@ -40,9 +40,14 @@ This set of lessons is for programmers that are comfortable with Python but are 
     - [References](control-flow/#references)
 1. [Data Structures and Collections](data-structures-and-collections/)
     - [Ordered Data: Lists and Arrays](data-structures-and-collections/#ordered-data-lists-and-arrays)
-        - [List](data-structures-and-collections/#list)
-        - [Arrays Redux](data-structures-and-collections/#arrays-redux)
+        - [Gradebook (Python List Version)](data-structures-and-collections/#gradebook-python-list-version)
+        - [Gradebook (C# List Version)](data-structures-and-collections/#gradebook-c-list-version)
+        - [List Methods and Properties](data-structures-and-collections/#list-methods-and-properties)
+        - [Gradebook (C# Array Version)](data-structures-and-collections/#gradebook-c-array-version)
     - [Key/Value Data: Dictionaries](data-structures-and-collections/#keyvalue-data-dictionaries)
+        - [Gradebook (Python Dictionary Version)](data-structures-and-collections/#gradebook-python-dictionary-version)
+        - [Gradebook (C# Dictionary Version)](data-structures-and-collections/#gradebook-c-dictionary-version)
+        - [Dictionary Methods](data-structures-and-collections/#dictionary-methods)
     - [References](data-structures-and-collections/#references)
 
 

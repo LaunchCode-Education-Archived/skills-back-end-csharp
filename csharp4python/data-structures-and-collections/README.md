@@ -13,6 +13,8 @@ We'll explore collections in C# by looking at different versions of the same pro
 
 We'll look at lists first, and as before, we'll compare Python to C# explicitely through example. Python provided one basic *ordered* data structure: the list. Here's our gradebook program in Python using only lists.
 
+### Gradebook (Python List Version)
+
 ```python
 def main():
 
@@ -71,7 +73,7 @@ Average grade: 3.5
 
 Once you feel like you understand this program, proceed to the next section, where we study the C# version.
 
-### List
+### ### Gradebook (C# List Version)
 
 To write the C# version of this program we will have to introduce several new C# concepts. We will see the C# equivalent of a list, provided by the class `List`. We will also introduce different kinds of for loops used in C#.
 
@@ -206,7 +208,20 @@ Console.ReadLine();
 
 The only line worth remarking on is the first, which includes the method call `grades.Sum()`. For lists with numeric data, `.Sum()` will return the sum of all of items in the list.
 
-### Arrays Redux
+### List Methods and Properties
+
+Let's gather up a few of the `List` methods and properties that we've encountered so far, along a few new ones. While these will be the most common methods and properties that you use with this class, they by no means represent a complete list. Refer to the [official documentation on the `List` class][list-class] for such a list, and for more details.
+
+Name | Type | Description | Example |
+-----|------|-------------|---------|
+`Count` | Property | Represents the number of items in the list, as an `int` | `students.Count`
+`Add` | Method | Adds an item to the list | `students.Add("Sally")`
+`Contains` | Method | Checks to see if the list contains a given item, returning a boolean | `students.Contains("Haley")`
+`IndexOf` | Method | Looks for an item in a list, returning the index of the first occurance of the item if contained in the list, -1 otherwise | `students.IndexOf("Zach")`
+`Sort` | Method | Sorts a list, use the "default" sort comparison | `students.Sort()`
+`ToArray` | Method | Returns an array containing the elements of the list | `students.ToArray()`
+
+### Gradebook (C# Array Version)
 
 We were introduced to arrays in C# in a previous lesson, so let's spend a moment comparing them to lists. As we noted at that beginning of this section, we are going to use the C# `List` type to store simple sets of data. They are easy to use and more closely match the way that Python lists behave.
 
@@ -293,6 +308,8 @@ Just as Python provides the dictionary structure to allow us to store data as ke
 
 Considering the gradebook example, we can improve our program using a dictionary, and storing students' grades along with their names in the same data structure. The names will be the keys, and the grades will be the values.
 
+### Gradebook (Python Dictionary Version)
+
 Were we to write our gradebook program above using dictionaries, we'd come up with something like this:
 
 ```python
@@ -323,6 +340,8 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+### Gradebook (C# Dictionary Version)
 
 Let's now turn to the C# version, using instances of the `Dictionary` class. As with lists, in C# we must specify the types of the objects we'll be storing when we declare a variable or parameter to be a dictionary. This means specifying both key and value data types, which are allowed to be different types for a given dictionary.
 
@@ -402,6 +421,20 @@ foreach (string student in students.Keys)
 ```
 
 A similar structure applies if you only need the values, using `students.Values`. One thing to note is that when iterating through a dictionary in either way we've presented, it is not allowed to modify the dictionary elements in any way. In fact, this is why we moved the entry of grades in our program up to the do-while loop, so the grade can be set at the same time as the student's name. If you want to use a foreach loop with a dictionary and be able to update items within the dictionary, you'll need to [do a little extra work](http://stackoverflow.com/questions/1070766/editing-dictionary-values-in-a-foreach-loop).
+
+### Dictionary Methods
+
+Let's collect some dictionary properties and methods. As we said about lists, this is by no means a comprehensive list. For full details on all properties and methods avaialble, see the [official documentation on the `Dictionary` class][dict-class].
+
+Name | Type | Description | Example |
+-----|------|-------------|---------|
+`Count` | Property | The number of items in the dictionary, as an `int`. | `students.Count`
+`Keys` | Property | A collection containing all keys in the dictionary. This collection may be used in a `foreach` loop just as lists are, but the dictionary may not be modified within such a loop. | `students.Keys`
+`Values` | Property | A collection containing all values in the dictionary. This collection may be used in a `foreach` loop just as lists are, but the dictionary may not be modified within such a loop. | `students.Values`
+`Add` | Method | Add a key/value pair to a dictionary. | `students.Add("Mark", 3.5)`
+`ContainsKey` | Method | Returns a boolean indicating whether or not the dictionary contains a given key. | `students.Contains("Chris")`
+`ContainsValue` | Method | Returns a boolean indicating whether or not the dictionary contains a given key. | `students.Contains(4.0)`
+
 
 We have only brushed the surface of how lists and dictionaries work, and we leave it to you to refer to the official documentation linked below for more details. You'll certainly be using lists and dictionaries in ways not outlined in this lesson, but with the knowledge you have now, you should be able to use C# collections and pick up new uses as you go.
 
