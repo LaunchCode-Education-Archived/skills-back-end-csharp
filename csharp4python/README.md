@@ -49,6 +49,6 @@ This set of lessons is for programmers that are comfortable with Python but are 
         - [Gradebook (C# Dictionary Version)](data-structures-and-collections/#gradebook-c-dictionary-version)
         - [Dictionary Methods](data-structures-and-collections/#dictionary-methods)
     - [References](data-structures-and-collections/#references)
-
+1. [Naming Conventions](naming-conventions/)
 
 *C# for Python Programmers* contains content adapted from [Java for Python Programmers](https://github.com/RunestoneInteractive/Java4Python) by [Brad Miller](https://github.com/RunestoneInteractive/), used under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) / reformatted here with modifications to content and structure.
