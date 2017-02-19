@@ -41,7 +41,7 @@ This set of lessons is for programmers that are comfortable with Python but are 
 1. [Data Structures and Collections](data-structures-and-collections/)
     - [Ordered Data: Lists and Arrays](data-structures-and-collections/#ordered-data-lists-and-arrays)
         - [List](data-structures-and-collections/#list)
-        - [Arrays](data-structures-and-collections/#arrays)
+        - [Arrays Redux](data-structures-and-collections/#arrays-redux)
     - [Key/Value Data: Dictionaries](data-structures-and-collections/#keyvalue-data-dictionaries)
     - [References](data-structures-and-collections/#references)
 
