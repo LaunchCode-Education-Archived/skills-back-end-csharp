@@ -115,6 +115,7 @@
 <h2 id="ordered-data-lists-and-arrays">Ordered Data: Lists and Arrays</h2>
 <p>We'll explore collections in C# by looking at different versions of the same program. The program will function as a gradebook, allowing a user (a professor or teacher) to enter the class roster for a course, along with each student's grade. It then prints the class roster along with the average grade. In each variation of this program, the grading system could be anything numeric, such as a 0.0-4.0 point scale, or a 0-100 percentage scale.</p>
 <p>We'll look at lists first, and as before, we'll compare Python to C# explicitely through example. Python provided one basic <em>ordered</em> data structure: the list. Here's our gradebook program in Python using only lists.</p>
+<h3 id="gradebook-python-list-version">Gradebook (Python List Version)</h3>
 <pre><code class="language-python">def main():
 
     students = []
@@ -165,7 +166,7 @@ Sally (3.5)
 
 Average grade: 3.5</code></pre>
 <p>Once you feel like you understand this program, proceed to the next section, where we study the C# version.</p>
-<h3 id="list">List</h3>
+<h3 id="gradebook-c-list-version">Gradebook (C# List Version)</h3>
 <p>To write the C# version of this program we will have to introduce several new C# concepts. We will see the C# equivalent of a list, provided by the class <code>List</code>. We will also introduce different kinds of for loops used in C#.</p>
 <pre><code class="language-csharp">using System;
 using System.Collections.Generic;
@@ -265,7 +266,57 @@ Console.WriteLine("Average grade: " + avg);
 
 Console.ReadLine();</code></pre>
 <p>The only line worth remarking on is the first, which includes the method call <code>grades.Sum()</code>. For lists with numeric data, <code>.Sum()</code> will return the sum of all of items in the list.</p>
-<h3 id="arrays-redux">Arrays Redux</h3>
+<h3 id="list-methods-and-properties">List Methods and Properties</h3>
+<p>Let's gather up a few of the <code>List</code> methods and properties that we've encountered so far, along a few new ones. While these will be the most common methods and properties that you use with this class, they by no means represent a complete list. Refer to the <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx">official documentation on the <code>List</code> class</a> for such a list, and for more details.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Count</code></td>
+<td>Property</td>
+<td>Represents the number of items in the list, as an <code>int</code></td>
+<td><code>students.Count</code></td>
+</tr>
+<tr>
+<td><code>Add</code></td>
+<td>Method</td>
+<td>Adds an item to the list</td>
+<td><code>students.Add("Sally")</code></td>
+</tr>
+<tr>
+<td><code>Contains</code></td>
+<td>Method</td>
+<td>Checks to see if the list contains a given item, returning a boolean</td>
+<td><code>students.Contains("Haley")</code></td>
+</tr>
+<tr>
+<td><code>IndexOf</code></td>
+<td>Method</td>
+<td>Looks for an item in a list, returning the index of the first occurance of the item if contained in the list, -1 otherwise</td>
+<td><code>students.IndexOf("Zach")</code></td>
+</tr>
+<tr>
+<td><code>Sort</code></td>
+<td>Method</td>
+<td>Sorts a list, use the &quot;default&quot; sort comparison</td>
+<td><code>students.Sort()</code></td>
+</tr>
+<tr>
+<td><code>ToArray</code></td>
+<td>Method</td>
+<td>Returns an array containing the elements of the list</td>
+<td><code>students.ToArray()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gradebook-c-array-version">Gradebook (C# Array Version)</h3>
 <p>We were introduced to arrays in C# in a previous lesson, so let's spend a moment comparing them to lists. As we noted at that beginning of this section, we are going to use the C# <code>List</code> type to store simple sets of data. They are easy to use and more closely match the way that Python lists behave.</p>
 <p>Why does C# have both arrays and <code>List</code>? The answer is historical, in part at least. C# is a C-style language, and arrays are the most basic data structure in C. Additionally, using an array over a <code>List</code> might be preferred in some circumstances, primarily for performance reasons (arrays operations are generally faster than list operations). Also note that <em>arrays are of fixed size</em>. You can not expand or contract an array after it is created, so you must know exactly how many elements it will need to hold when you create it. This fact is reason enough to use lists in most scenarios.</p>
 <p>To illustrate array usage, here is a version of the gradebook program that uses arrays instead of a lists:</p>
@@ -336,6 +387,7 @@ namespace GradebookArray
 <h2 id="keyvalue-data-dictionaries">Key/Value Data: Dictionaries</h2>
 <p>Just as Python provides the dictionary structure to allow us to store data as key/value pairs, C# also provides us a similar mechanism. C# also calls these objects dictionaries, and they are provided by the <code>Dictionary</code> class.</p>
 <p>Considering the gradebook example, we can improve our program using a dictionary, and storing students' grades along with their names in the same data structure. The names will be the keys, and the grades will be the values.</p>
+<h3 id="gradebook-python-dictionary-version">Gradebook (Python Dictionary Version)</h3>
 <p>Were we to write our gradebook program above using dictionaries, we'd come up with something like this:</p>
 <pre><code class="language-python">def main():
 
@@ -363,6 +415,7 @@ namespace GradebookArray
 
 if __name__ == '__main__':
     main()</code></pre>
+<h3 id="gradebook-c-dictionary-version">Gradebook (C# Dictionary Version)</h3>
 <p>Let's now turn to the C# version, using instances of the <code>Dictionary</code> class. As with lists, in C# we must specify the types of the objects we'll be storing when we declare a variable or parameter to be a dictionary. This means specifying both key and value data types, which are allowed to be different types for a given dictionary.</p>
 <pre><code class="language-csharp">using System;
 using System.Collections.Generic;
@@ -425,6 +478,56 @@ double jesseGrade = students[name];</code></pre>
     Console.WriteLine(student);
 }</code></pre>
 <p>A similar structure applies if you only need the values, using <code>students.Values</code>. One thing to note is that when iterating through a dictionary in either way we've presented, it is not allowed to modify the dictionary elements in any way. In fact, this is why we moved the entry of grades in our program up to the do-while loop, so the grade can be set at the same time as the student's name. If you want to use a foreach loop with a dictionary and be able to update items within the dictionary, you'll need to <a href="http://stackoverflow.com/questions/1070766/editing-dictionary-values-in-a-foreach-loop">do a little extra work</a>.</p>
+<h3 id="dictionary-methods">Dictionary Methods</h3>
+<p>Let's collect some dictionary properties and methods. As we said about lists, this is by no means a comprehensive list. For full details on all properties and methods avaialble, see the <a href="https://msdn.microsoft.com/en-us/library/xfhwa508(v=vs.110).aspx">official documentation on the <code>Dictionary</code> class</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Count</code></td>
+<td>Property</td>
+<td>The number of items in the dictionary, as an <code>int</code>.</td>
+<td><code>students.Count</code></td>
+</tr>
+<tr>
+<td><code>Keys</code></td>
+<td>Property</td>
+<td>A collection containing all keys in the dictionary. This collection may be used in a <code>foreach</code> loop just as lists are, but the dictionary may not be modified within such a loop.</td>
+<td><code>students.Keys</code></td>
+</tr>
+<tr>
+<td><code>Values</code></td>
+<td>Property</td>
+<td>A collection containing all values in the dictionary. This collection may be used in a <code>foreach</code> loop just as lists are, but the dictionary may not be modified within such a loop.</td>
+<td><code>students.Values</code></td>
+</tr>
+<tr>
+<td><code>Add</code></td>
+<td>Method</td>
+<td>Add a key/value pair to a dictionary.</td>
+<td><code>students.Add("Mark", 3.5)</code></td>
+</tr>
+<tr>
+<td><code>ContainsKey</code></td>
+<td>Method</td>
+<td>Returns a boolean indicating whether or not the dictionary contains a given key.</td>
+<td><code>students.Contains("Chris")</code></td>
+</tr>
+<tr>
+<td><code>ContainsValue</code></td>
+<td>Method</td>
+<td>Returns a boolean indicating whether or not the dictionary contains a given key.</td>
+<td><code>students.Contains(4.0)</code></td>
+</tr>
+</tbody>
+</table>
 <p>We have only brushed the surface of how lists and dictionaries work, and we leave it to you to refer to the official documentation linked below for more details. You'll certainly be using lists and dictionaries in ways not outlined in this lesson, but with the knowledge you have now, you should be able to use C# collections and pick up new uses as you go.</p>
 <h2 id="references">References</h2>
 <ul>

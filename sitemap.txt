@@ -4,9 +4,11 @@ http://education.launchcode.org/skills-back-end-csharp/assignments/techjobs-cons
 http://education.launchcode.org/skills-back-end-csharp/assignments/techjobs-mvc/index.html
 http://education.launchcode.org/skills-back-end-csharp/assignments/techjobs-oo/index.html
 http://education.launchcode.org/skills-back-end-csharp/assignments/techjobs-persistent/index.html
+http://education.launchcode.org/skills-back-end-csharp/class-prep/1/exercises.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/1/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/1/running-windows-on-mac-linux.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/1/setup.html
+http://education.launchcode.org/skills-back-end-csharp/class-prep/2/exercises.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/2/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/3/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/4/index.html
