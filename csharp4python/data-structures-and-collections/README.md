@@ -3,89 +3,122 @@ title: Data Structures and Collections
 currentMenu: csharp4python
 ---
 
-C# provides powerful and flexible ways to store data. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with C#.
+A **data structure** is a programming construct that allows you to aggregate lots of values into one value. More simply, a data structure let's us hold on to lots of data in a single place. In Python, the data structures we used were lists, dictionaries, and tuples.
+
+C# provides powerful and flexible structures to store data, known as [collections][collections]. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with C#.
 
 ## Ordered Data: Lists and Arrays
 
-Lets look at another early Python program. We are going to read numbers from a file and produce a histogram that shows the frequency of the various numbers. The data file we will use has one number between 0 and 9 on each line of the file. Here is a simple Python program that creates and prints a histogram.
+We'll explore collections in C# by looking at different versions of the same program. The program will function as a gradebook, allowing a user (a professor or teacher) to enter the class roster for a course, along with each student's grade. It then prints the class roster along with the average grade. In each variation of this program, the grading system could be anything numeric, such as a 0.0-4.0 point scale, or a 0-100 percentage scale.
+
+We'll look at lists first, and as before, we'll compare Python to C# explicitely through example. Python provided one basic *ordered* data structure: the list. Here's our gradebook program in Python using only lists.
 
 ```python
 def main():
-    count = [0]*10
-    data = open('test.dat')
 
-    for line in data:
-        count[int(line)] = count[int(line)] + 1
+    students = []
 
-    idx = 0
-    for num in count:
-        print idx, " occured ", num, " times."
-        idx += 1
+    # Use a space to allow for the while check below
+    newStudent = " "
+
+    print("Enter your students (or ENTER to finish):")
+
+    # Get student names
+    while (newStudent != ""):
+
+        newStudent = input()
+
+        if newStudent != "":
+            students.append(newStudent)
+
+    # Get student grades
+    grades = [0]*len(students)
+    for idx,student in enumerate(students):
+        newGrade = float(input("Grade for " + student + ": "))
+        grades[idx] = newGrade
+
+    # Print class roster
+    print("\nClass roster:")
+    for idx,student in enumerate(students):
+        print(student + " (" + str(grades[idx]) + ")")
+
+    avg = sum(grades) / len(grades)
+    print("\nAverage grade: " + str(avg))
 
 if __name__ == '__main__':
     main()
 ```
 
-Let's use a data file that contains the following text:
+A test run of this program might yield the following:
 
 ```nohighlight
-9 8 4 5 3 5 2 1 5
+Enter your students (or ENTER to finish):
+Chris
+Jesse
+Sally
+
+Grade for Chris: 3.0
+Grade for Jesse: 4.0
+Grade for Sally: 3.5
+
+Class roster:
+Chris (3.0)
+Jesse (4.0)
+Sally (3.5)
+
+Average grade: 3.5
 ```
 
-> *NOTE:* When running the example code, note that `test.dat` is located at the root of the project, since this is where the `File` class will look for it by default. To use a file in another directory, we would need to provide a specific path to the file.
-
-We will get output that looks like this:
-
-```nohighlight
-0 occurred 0 times
-1 occurred 1 times
-2 occurred 1 times
-3 occurred 1 times
-4 occurred 1 times
-5 occurred 3 times
-6 occurred 0 times
-7 occurred 0 times
-8 occurred 1 times
-9 occurred 1 times
-```
-
-Let's review what is happening in this little program. In the first line we create a list and initialize the first 10 positions in the list to be 0. Next we open the data file called `test.dat`. We then have a loop that reads each line of the file. As we read each line, we convert it to an integer and increment the counter at the position in the list indicated by the number on the line we just read. Finally, we iterate over each element in the list printing out both the position in the list and the total value stored in that position.
+Once you feel like you understand this program, proceed to the next section, where we study the C# version.
 
 ### List
 
-To write the C# version of this program we will have to introduce several new C# concepts. We will see the C# equivalent of a list, called an `ArrayList.` We will also introduce three different kinds of loops used in C#.
-
-Here is the C# code needed to write the exact same program:
+To write the C# version of this program we will have to introduce several new C# concepts. We will see the C# equivalent of a list, provided by the class `List`. We will also introduce different kinds of for loops used in C#.
 
 ```csharp
-namespace Histo
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Gradebook
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            // Pull in data from a file as configured as a project resource
-            string rawData = Histo.Properties.Resources.test_data;
-            string[] data = rawData.Split(' ');
+            List<string> students = new List<string>();
+            List<double> grades = new List<double>();
+            string newStudent;
 
-            // Fill the list with zeros
-            List<int> count = new List<int>();
-            for (int i = 0; i < data.Length; i++) {
-                count.Add(0);
+            Console.WriteLine("Enter your students (or ENTER to finish):");
+            do
+            {
+                newStudent = Console.ReadLine();
+                if (newStudent != "")
+                {
+                    students.Add(newStudent);
+                }
+            }
+            while (newStudent != "");
+
+            // Get student grades
+            foreach (string student in students)
+            {
+                Console.Write("Grade for " + student + ": ");
+                double newGrade = double.Parse(Console.ReadLine());
+                grades.Add(newGrade);
             }
 
-            // Count occurences of each number in the file
-            for (int j = 0; j < data.Length; j++) {
-                int val = int.Parse(data[j]);
-                count[val] = count[val] + 1;
+            // Print class roster
+            Console.WriteLine("\nClass roster:");
+            for (int i = 0; i < students.Count; i++)
+            {
+                Console.WriteLine(students[i] + " (" + grades[i] + ")");
             }
 
-            // Display results
-            int idx = 0;
-            foreach (int k in count) {
-                Console.WriteLine(idx + " occurred " + k + " times");
-                idx++;
-            }
+            double sum = grades.Sum();
+            double avg = sum / grades.Count;
+            Console.WriteLine("Average grade: " + avg);
 
             Console.ReadLine();
         }
@@ -93,147 +126,294 @@ namespace Histo
 }
 ```
 
-Before going any further, I suggest you try to compile the above program and run it. Try altering the test data in `Histo/Resources/test_data.txt`.
+Before going any further, I suggest you try to compile the above program and run it.
 
-Let's look at what is happening in the C# source. Here are the first two lines.
+Once you've done that, let's look at what is happening in the C# source. The
 
 ```csharp
-string rawData = Histo.Properties.Resources.test_data;
-string[] data = rawData.Split(' ');
+List<string> students = new List<string>();
+List<double> grades = new List<double>();
+string newStudent;
 ```
 
-They pull in data from a file that is configured as a **project resources**. We won't go into how this file input mechanism works since we'll only use it in a couple of instances. The important thing for you to know is that the contents of the file are pulled into a string. In this case, our data has the form of a collection of integers separated by single spaces, so we can use `string.Split` to separate it into individual strings, one for each "number" (the data is still stored as an array of strings).
+Here we declare and initialize two objects, `students` and `grades`, which appears to be of type `List<string>` and `List<double>`, respectively. A `List` in C# is very similar to a list in Python, with one imporant difference. Unlike Python, where lists can contain any type of value, in C# we must let the compiler know what kind of objects our list is going to contain. In the case of `students`, the `List` will contain values of type `string` (representing the names of the students), so we use the `List<string>` syntax to inform the compiler that we intend to fill our list with strings. Similarly, `grades` will hold exclusively values of type `double` and is declared to be of type `List<double>`.
 
-Moving on to the next segment, we consider these lines:
+We also initialize each list by creating a new, empty list. Note that when we call the `List` constructor, as in `new List<string>()`, we must specify the same type as we do in the declaration.
+
+<aside class="aside-note" markdown="1">
+You will sometimes see the `List` class written as `List<T>`, where `T` represents a placeholder for the type that a programmer will declare a given list to hold. This is especially true in documentation. You cna think of `T` as reprsenting an arbitrary type.
+
+Classes like `List<T>` that take another type or class as a parameter are referred to as **generic classes** or **generic types**.
+</aside>
+
+We then use a do-while loop to collect the names of each of the students in the class.
 
 ```csharp
-List<int> count = new List<int>();
-for (int i = 0; i < data.Length; i++) {
-    count.Add(0);
+Console.WriteLine("Enter your students (or ENTER to finish):");
+do
+{
+    newStudent = Console.ReadLine();
+    if (newStudent != "")
+    {
+        students.Add(newStudent);
+    }
+}
+while (newStudent != "");
+```
+
+Recall that a do-while loop is very similar to a while loop, but it has it's check at the end of the loop block. This has the net effect that we'll always run the block at least once. In this example, we prompt the user for a name, which we read in via `Console.ReadLine()` when they hit the enter key. To finish entering names, they enter a blank line.
+
+For each student that entered (that is, each non-empty line), we add the new string to the end of our list with `students.Add(newStudent)`. The `.Add()` method is a method provided by the [List Class][list-class]. There are lots of other list methods
+
+Below the do-while loop are two different for loops that demonstrate the two ways you can loop through a list in C#. Here's the first, which collects the numeric grade for each student:
+
+```csharp
+// Get student grades
+foreach (string student in students)
+{
+    Console.Write("Grade for " + student + ": ");
+    double newGrade = double.Parse(Console.ReadLine());
+    grades.Add(newGrade);
 }
 ```
 
-Here we declare an initialize `count`, which appears to be of type `List<int>`. A `List` in C# is very similar to a list in Python, with one imporant difference. Unlike Python, where lists can contain just about anything, in C# we must let the compiler know what kind of objects our list is going to contain. In this case, the `List` will contain integers, so we use the `List<int>` syntax to inform the compiler that we intend to fill our list with integers.
+This for-loop syntax is very similar to that of Python, where the analogous loop would begin: `for student in students:`. As you might expect at this point, we must declare the iterator variable `student` in C#, which was not explicitely done in Python.
 
-TODO - finish explaining code above
-
-The following lines are required to pull in data from the file.
+The other for loop on display prints out each student's name and grade:
 
 ```csharp
-string rawData = Histo.Properties.Resources.test_data;
-```
-
-TODO - explain this and other file i/o approach
-
-Let's consider the next segment of our program:
-
-```csharp
-List<int> count = new List<int>();
-
-for (int i = 0; i < data.Length; i++) {
-    count.Add(0);
+// Print class roster
+Console.WriteLine("Student roster:");
+for (int i = 0; i < students.Count; i++)
+{
+    Console.WriteLine(students[i] + " (" + grades[i] + ")");
 }
 ```
 
-We create a `List` that will hold integers by calling the `List` constructor. The list will grow or shrink dynamically as needed, just like a list in Python. It's possible to give the `List` constructor a size, but omitting a size allows for more flexibility. We then start the first of three loops. The first is **for loop** that serves the same purpose as the Python statement `count = [0]*10`. That is, it initializes the first 10 positions in the `List` to hold the value `0`.
+In this loop, we use a *loop index* in a new style of for loop. We also introduce the syntax `students.Count` which gives us the integer representing the number of items in the list.
 
-The syntax of this for loop probably looks very strange to you, but in fact it is not too different from what happens in Python using `range`. They syntax `for(Integer i = 0; i < 10; i++)` is exactly equivalent to the Python `for i in range(10)`. The first statement inside the parenthesis declares and initializes a loop variable `i`. The second statement is a Boolean expression that is our exit condition. In other words, we will keep looping as long as this expression evaluates to true. The third statement is used to increment the value of the loop variable at the end of iteration through the loop. The syntax `i++` is C# shorthand for `i + 1`. C# also supports the shorthand `i--` to decrement the value of `i`. Like Python, you can also write `i += 2` as shorthand for `i = i + 2`.
+The syntax of this for loop probably looks very strange to you, but in fact it is not too different from what happens in Python using `range`. The syntax `for (int i = 0; i < students.Count; i++)` is exactly equivalent to the Python `for i in range(len(students))`. The first statement inside the parenthesis declares and initializes a loop variable `i`. The second statement is a Boolean expression that is our exit condition. In other words, we will keep looping as long as this expression evaluates to true. The third statement is used to increment the value of the loop variable at the end of iteration through the loop. The syntax `i++` is C# shorthand for `i + 1`. C# also supports the shorthand `i--` to decrement the value of `i`. Like Python, you can also write `i += 2` as shorthand for `i = i + 2`.
 
-Try to rewrite the following Python for loops as C# for loops. We've provided you a place to do this in the `ForLoopPractice` project in the example code solution.
-
-```python
-for i in range(2,101,2)
-    print(i)
-```
-
-```python
-for i in range(1,100)
-    print(i)
-```
-
-```python
-for i in range(100,0,-1)
-    print(i)
-```
-
-Consider the next segment:
+In the final lines of the program, we compute the average grade for all students:
 
 ```csharp
-for (int j = 0; j < data.Length; j++) {
-    int val = int.Parse(data[j]);
-    count[val] = count[val] + 1;
+double sum = grades.Sum();
+double avg = sum / grades.Count;
+Console.WriteLine("Average grade: " + avg);
+
+Console.ReadLine();
+```
+
+The only line worth remarking on is the first, which includes the method call `grades.Sum()`. For lists with numeric data, `.Sum()` will return the sum of all of items in the list.
+
+### Arrays Redux
+
+We were introduced to arrays in C# in a previous lesson, so let's spend a moment comparing them to lists. As we noted at that beginning of this section, we are going to use the C# `List` type to store simple sets of data. They are easy to use and more closely match the way that Python lists behave.
+
+Why does C# have both arrays and `List`? The answer is historical, in part at least. C# is a C-style language, and arrays are the most basic data structure in C. Additionally, using an array over a `List` might be preferred in some circumstances, primarily for performance reasons (arrays operations are generally faster than list operations). Also note that *arrays are of fixed size*. You can not expand or contract an array after it is created, so you must know exactly how many elements it will need to hold when you create it. This fact is reason enough to use lists in most scenarios.
+
+To illustrate array usage, here is a version of the gradebook program that uses arrays instead of a lists:
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace GradebookArray
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            // Allow for at most 30 students
+            int maxStudents = 30;
+
+            string[] students = new string[maxStudents];
+            double[] grades = new double[maxStudents];
+
+            string newStudent;
+            int numStudents = 0;
+
+            Console.WriteLine("Enter your students (or ENTER to finish):");
+            do
+            {
+                newStudent = Console.ReadLine();
+                if (newStudent != "")
+                {
+                    students[numStudents] = newStudent;
+                    numStudents++;
+                }
+            }
+            while (newStudent != "" && numStudents < maxStudents);
+
+            // Get student grades
+            for (int i = 0; i < numStudents; i++)
+            {
+                Console.Write("Grade for " + students[i] + ": ");
+                double studentGrade = double.Parse(Console.ReadLine());
+                grades[i] = studentGrade;
+            }
+
+            // Print class roster, summing grades as we go
+            Console.WriteLine("\nClass roster:");
+            double sum = 0;
+
+            for (int j = 0; j < numStudents; j++)
+            {
+                Console.WriteLine(students[j] + " (" + grades[j] + ")");
+                sum += grades[j];
+            }
+
+            double avg = sum / numStudents;
+            Console.WriteLine("Average grade: " + avg);
+
+            Console.ReadLine();
+        }
+    }
 }
 ```
 
-We are iterating through the `data` array in order to update the number of occurences of each value.
+Note that we have to decide up front how large our arrays `students` and `grades` are going to be. Thus, we make the arrays potentially larger than they need to be (or potentially smaller, if there were a large number of students). Like lists, we can index into arrays with integers (`students[i]` for example). Unlike lists, however, there is no analog of `.Add()`, which adds an item to "the end" of a list. We must always access and assign array elements using an explicit index. This makes for code that can seem littered with array counters (like our friends `i` and `j`) and is more difficult to read (not to mention more error-prone).
 
-The line `count[val] = count[val] + 1;` illustrates another important difference between Python and C#. Notice that while `count` is of type `List` we can still use the square bracket operator `[]` to retrieve a value from the list, just as we can with Python lists.
-
-Let's consider the last loop in this program:
+Like lists, however, we can loop through an array using a `foreach` loop as long as we don't need to use the index of the current item. If we only wanted to print each student's name, and not their grade, at the end of our program, we could do the following:
 
 ```csharp
-int idx = 0;
-foreach (int k in count) {
-    Console.WriteLine(idx + " occurred " + k + " times");
-    idx++;
+foreach (string student in students)
+{
+    Console.WriteLine(student);
 }
 ```
 
-This is similar to the Python for loop where the object of the loop is a sequence. In C# we can use this kind of for loop over all kinds of sequences, which are called Collection classes in C#. The loop `for(Integer i : count)` is equivalent to the Python loop `for i in count:`. This loop iterates through each of the elements in the `List` named `count`. Each time through the loop, the `Integer` variable `i` is assigned the value of the next element of the `List`. If you tried the experiment of removing the `<int>` part of the `List` declaration you probably noticed that you had an error on this line. Why?
-
-### Arrays
-
-As we noted at that beginning of this section, we are going to use the C# `List` type to store simple sets of data. They are easy to use and more closely match the way that Python lists behave.
-
-However, you should be aware that C# also has a more primitive data structure called an array. In fact, you have already seen one example of an array declared in the Hello World program (`string[] args`).
-
-Why does C# have both arrays and `List`? The answer is likely historical, in part at least. C# is a C-style language, and arrays are the most basic data structure in C. Additionally, using an array over a `List` might be preferred in some circumstances, primarily for performance reasons (arrays operations are generally faster). Also note that arrays are of fixed size. You can not expand or contract an array after it is created, so you must no exactly how many elements it will need to hold.
-
-To illustrate array usage, here is a version of the `Histo` program/class that uses primitive arrays instead of a `List`:
-
-```csharp
-
-```
-
-The main difference between this example and the previous example is that we declare count to be an array of integers: `int[] count = {0,0,0,0,0,0,0,0,0,0};`. This syntax initializes an array directly. Notice that we use the square bracket notation to index into an array: `count[idx]`.
+We'll use an array from time-to-time, but for the most part you should rely on lists to store collections of values, or ordered data.
 
 ## Key/Value Data: Dictionaries
 
-Just as Python provides the dictionary structure to allow us to store data as key/value pairs, C# also provides us a similar mechanism. Rather than the dictionary terminology, C# calls these objects Maps. There are multiple types of maps, but we'll focus only on the most general purpose map type: `HashMap`.
+Just as Python provides the dictionary structure to allow us to store data as key/value pairs, C# also provides us a similar mechanism. C# also calls these objects dictionaries, and they are provided by the `Dictionary` class.
 
-Let's stick with a simple frequency counting example, only this time we will count the frequency of words in a document. A simple Python program for this job could look like this:
+Considering the gradebook example, we can improve our program using a dictionary, and storing students' grades along with their names in the same data structure. The names will be the keys, and the grades will be the values.
+
+Were we to write our gradebook program above using dictionaries, we'd come up with something like this:
 
 ```python
 def main():
-    data = open('alice.txt')
-    wordList = data.read().split()
-    count = {}
-    for w in wordList:
-        w = w.lower()
-        count[w] = count.get(w,0) + 1
 
-    keyList = sorted(count.keys())
-    for k in keyList:
-        print("%-20s occurred %4d times" % (k, count[k]))
+    students = {}
+    newStudent = " "
+
+    print("Enter your students (or ENTER to finish):")
+
+    # Get student names
+    while (newStudent != ""):
+
+        newStudent = input("Name: ")
+
+        if newStudent != "":
+            newGrade = float(input("Grade: "))
+            students[newStudent] = newGrade
+
+    # Print class roster
+    print("\nClass roster:")
+    for student in students:
+        print(student + " (" + str(students[student]) + ")")
+
+    avg = sum(students.values()) / len(students)
+    print("\nAverage grade: " + str(avg))
 
 if __name__ == '__main__':
     main()
 ```
 
-The file `alice.txt` contains a short snippet from the beginning of *Alice In Wonderland*. You may [view the file's contents](TODO).
-
-Notice that the structure of the program is very similar to the numeric histogram program.
-
-Here's the C# version, using instances of the `Dictionary` class:
+Let's now turn to the C# version, using instances of the `Dictionary` class. As with lists, in C# we must specify the types of the objects we'll be storing when we declare a variable or parameter to be a dictionary. This means specifying both key and value data types, which are allowed to be different types for a given dictionary.
 
 ```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
+namespace GradebookDict
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Dictionary<string, double> students =
+                new Dictionary<string, double>();
+            string newStudent;
+
+            Console.WriteLine("Enter your students (or ENTER to finish):");
+            do
+            {
+                Console.Write("name: ");
+                newStudent = Console.ReadLine();
+                if (newStudent != "")
+                {
+                    // Get the student's grade
+                    Console.Write("grade: ");
+                    double newGrade = double.Parse(Console.ReadLine());
+
+                    students.Add(newStudent, newGrade);
+                }
+            }
+            while (newStudent != "");
+
+            // Print class roster
+            Console.WriteLine("\nClass roster:");
+            foreach (KeyValuePair<string, double> student in students)
+            {
+                Console.WriteLine(student.Key + " (" + student.Value + ")");
+            }
+
+            double sum = students.Values.Sum();
+            double avg = sum / students.Count;
+            Console.WriteLine("Average grade: " + avg);
+
+            Console.ReadLine();
+        }
+    }
+}
 ```
 
-As an exercise, see if you can improve the program above to ignore punctuation.
+As with lists, we can add a new item with a `.Add()` method, but this time we must specify both key and value: `students.Add(newStudent, newGrade)`.
+
+And while we don't do so in this example, we may also access dictionary elements using bracket notation. If we had a key/value pair of `"jesse"/4.0` in the `students` dictionary, we could access the grade with `double jesseGrade = students["jesse"]`. As with Python, variables may be used to access elements:
+```csharp
+string name = "jesse";
+double jesseGrade = students[name];
+```
+
+Looping through a dictionary is slightly more complex than it is for lists. Let's look at the foreach loop from this example:
+
+```csharp
+foreach (KeyValuePair<string, double> student in students)
+{
+    Console.WriteLine(student.Key + " (" + student.Value + ")");
+}
+```
+The iterator variable, `student`, is of type `KeyValuePair<string, double>`. The built-in class `KeyValuePair` is specifically constructed to be used in this fashion, to represent key/value pairs within dictionaries. Each `KeyValuePair` object has a `Key` property and a `Value` property, which represent (surprisingly enough!), the key and value of the dictionary item.
+
+If you only need to access the key of each item in a dictionary, you can construct a simpler loop:
+
+```csharp
+foreach (string student in students.Keys)
+{
+    Console.WriteLine(student);
+}
+```
+
+A similar structure applies if you only need the values, using `students.Values`. One thing to note is that when iterating through a dictionary in either way we've presented, it is not allowed to modify the dictionary elements in any way. In fact, this is why we moved the entry of grades in our program up to the do-while loop, so the grade can be set at the same time as the student's name. If you want to use a foreach loop with a dictionary and be able to update items within the dictionary, you'll need to [do a little extra work](http://stackoverflow.com/questions/1070766/editing-dictionary-values-in-a-foreach-loop).
+
+We have only brushed the surface of how lists and dictionaries work, and we leave it to you to refer to the official documentation linked below for more details. You'll certainly be using lists and dictionaries in ways not outlined in this lesson, but with the knowledge you have now, you should be able to use C# collections and pick up new uses as you go.
 
 ## References
 
-- [List (msdn.microsoft.com)]()
-- [Dictionary (msdn.microsoft.com)]()
-- [Array (msdn.microsoft.com)]()
+- [C# Collections (msdn.microsoft.com)][collections]
+- [List Class (msdn.microsoft.com)][list-class]
+- [Dictionary Class (msdn.microsoft.com)][dict-class]
+- [Arrays Tutorial (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/aa288453(v=vs.71).aspx)
+- [Extension Methods (msdn.microsoft.com)][extension-methods]
+
+[list-class]: https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx
+[dict-class]: https://msdn.microsoft.com/en-us/library/xfhwa508(v=vs.110).aspx
+[extension-methods]: https://msdn.microsoft.com/en-us/library/bb383977.aspx
+[collections]: https://msdn.microsoft.com/en-us/library/mt654013.aspx

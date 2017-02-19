@@ -29,13 +29,8 @@
     - [References](control-flow/#references)
 
 
-    
-1. [Data Structures and Collections](data-structures-and-collections/)
-    - [Ordered Data: Lists and Arrays](data-structures-and-collections/#ordered-data-lists-and-arrays)
-        - [List](data-structures-and-collections/#list)
-        - [Arrays](data-structures-and-collections/#arrays)
-    - [Key/Value Data: Dictionaries](data-structures-and-collections/#keyvalue-data-dictionaries)
-    - [References](data-structures-and-collections/#references)
+
+
 1. [Classes and Objects: Basics](classes-and-objects-1/)
     - [Encapsulation: Classes in C#](classes-and-objects-1/#encapsulation-classes-in-csharp)
         - [Getters and Setters](classes-and-objects-1/#getters-and-setters)

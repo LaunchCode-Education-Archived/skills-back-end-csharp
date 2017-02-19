@@ -38,7 +38,12 @@ This set of lessons is for programmers that are comfortable with Python but are 
         - [For Loops](control-flow/#for-loops)
         - [While Loops](control-flow/#while-loops)
     - [References](control-flow/#references)
-
+1. [Data Structures and Collections](data-structures-and-collections/)
+    - [Ordered Data: Lists and Arrays](data-structures-and-collections/#ordered-data-lists-and-arrays)
+        - [List](data-structures-and-collections/#list)
+        - [Arrays Redux](data-structures-and-collections/#arrays-redux)
+    - [Key/Value Data: Dictionaries](data-structures-and-collections/#keyvalue-data-dictionaries)
+    - [References](data-structures-and-collections/#references)
 
 
 *C# for Python Programmers* contains content adapted from [Java for Python Programmers](https://github.com/RunestoneInteractive/Java4Python) by [Brad Miller](https://github.com/RunestoneInteractive/), used under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) / reformatted here with modifications to content and structure.
