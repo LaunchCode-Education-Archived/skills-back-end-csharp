@@ -161,8 +161,8 @@
 <p>The <code>Program</code> class contains the <code>Main</code> method that will drive our program's functionality. It contains three methods:</p>
 <ol>
 <li><code>Main</code> - The main application runner.</li>
-<li><code>getUserSelection</code> - A utility method that displays a menu of choices and returns the user's selection.</li>
-<li><code>printJobs</code> - This is meant to print a list of jobs to the console in a nicely formatted manner, but hasn't been implemented yet. This will be part of your job.</li>
+<li><code>GetUserSelection</code> - A utility method that displays a menu of choices and returns the user's selection.</li>
+<li><code>PrintJobs</code> - This is meant to print a list of jobs to the console in a nicely formatted manner, but hasn't been implemented yet. This will be part of your job.</li>
 </ol>
 <p>Let's look at each of these.</p>
 <h5 id="the-main-method">The Main method</h5>
@@ -178,30 +178,30 @@
 <li>Repeat.</li>
 </ol>
 <p>The word &quot;query&quot; is in quotes here because we're not really carring out a database query, but the net effect is the same as if we were. We ask a method for data that originates from a non-C# source, it parses and filters that data, and gives it back to us.</p>
-<h5 id="the-getuserselection-method">The getUserSelection method</h5>
-<p>The <code>getUserSelection</code> method takes in a string to display above the menu, to give them context for what they are being asked. It also takes in a dictionary with string keys and string values. How is this used? What will this dictionary contain when the method runs?</p>
+<h5 id="the-getuserselection-method">The GetUserSelection method</h5>
+<p>The <code>GetUserSelection</code> method takes in a string to display above the menu, to give them context for what they are being asked. It also takes in a dictionary with string keys and string values. How is this used? What will this dictionary contain when the method runs?</p>
 <p>To figure this out, right-click on the method name and select <em>Find All References</em>. This will open a pane and display each location in the program where <code>displayMenuChoice</code> is called. The first such usage is the first line of the main <code>while loop</code>:</p>
-<pre><code class="language-csharp">string actionChoice = getUserSelection("View Jobs", actionChoices);</code></pre>
+<pre><code class="language-csharp">string actionChoice = GetUserSelection("View Jobs", actionChoices);</code></pre>
 <p>What is this dictionary named <code>actionChoices</code>? If we look a few lines above, we see:</p>
 <pre><code class="language-csharp">// Top-level menu options
 Dictionary&lt;string, string&gt; actionChoices = new Dictionary&lt;string, string&gt;();
 actionChoices.Add("search", "Search");
 actionChoices.Add("list", "List");</code></pre>
 <p>If you recall how the program worked when you ran it, the first menu that you chose had two options, Search and List, which seem to correspond to the entries in <code>actionChoices</code>. This is, in fact, the case. This the data that is used to generate the first menu we see when running the program.</p>
-<p>The second usage of <code>getUserSelection</code> is a few lines below:</p>
-<pre><code class="language-csharp">string columnChoice = getUserSelection("List", columnChoices);</code></pre>
+<p>The second usage of <code>GetUserSelection</code> is a few lines below:</p>
+<pre><code class="language-csharp">string columnChoice = GetUserSelection("List", columnChoices);</code></pre>
 <p>This references <code>columnChoices</code>, which is declared at the top of <code>main</code> has a similar structure to <code>actionChoices</code> (they're the same data type and are used in calls to the same method, so this shouldn't be surprising). Most of the entries in <code>columnChoices</code> correspond to columns in the jobs data set, but there's one additional entry with key/value pair <code>"all"</code>/<code>"All"</code>. These entries will help us present to the user the options for searching our data, which will correspond to searching within a given column, or searching all columns at once.</p>
 <p>The keys in <code>actionChoices</code> and <code>columnChoices</code> represent the &quot;internal&quot; string we'll use to refer to these options -- for example, when representing the user's menu choice, or querying data -- and the values in the dictionary represent the &quot;external&quot; way that these are represented to the user.</p>
-<p>Within <code>getUserSelection</code> itself, most of the code is within a do-while loop. A <a href="https://msdn.microsoft.com/en-us/library/370s1zax.aspx">do-while loop</a> is similar to a while loop, but the conditional check is at the <em>end</em> of the loop's code block. This has the net consequence that the loop's code block <em>always runs at least once</em>. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.</p>
+<p>Within <code>GetUserSelection</code> itself, most of the code is within a do-while loop. A <a href="https://msdn.microsoft.com/en-us/library/370s1zax.aspx">do-while loop</a> is similar to a while loop, but the conditional check is at the <em>end</em> of the loop's code block. This has the net consequence that the loop's code block <em>always runs at least once</em>. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.</p>
 <p>Within this loop, menu options are printed to the screen and user input is collected. If input is valid, it returns the choice as a string to the caller. This string corresponds to the chosen key (from <code>choices</code>, which will be either <code>actionChoices</code> or <code>columnChoices</code>) of the item the user selected. If invalid, it re-prompts the user.</p>
 <p>The local variable <code>choiceKeys</code> is used to easily enumerate the <code>choices</code> dictionary. In other words, it gives us a simple way to provide an ordering to <code>choices</code>, which doesn't have an ordering of its own.</p>
 <h4 id="the-jobdata-class">The JobData Class</h4>
-<p>The <code>JobData</code> class is responsible for importing the data from the CSV file and parsing it into a C#-friendly format, that is, into <code>Dictionary</code> and <code>List</code> form. Look toward the bottom of the class and you will see a method named <code>loadData</code>, which does just what it advertises. After parsing the file data, it stores the data in the private property <code>allJobs</code> which is of type <code>List&lt;Dictionary&lt;string, string&gt;&gt;</code>.</p>
+<p>The <code>JobData</code> class is responsible for importing the data from the CSV file and parsing it into a C#-friendly format, that is, into <code>Dictionary</code> and <code>List</code> form. Look toward the bottom of the class and you will see a method named <code>LoadData</code>, which does just what it advertises. After parsing the file data, it stores the data in the private property <code>AllJobs</code> which is of type <code>List&lt;Dictionary&lt;string, string&gt;&gt;</code>.</p>
 <aside class="aside-note">
-<p>We haven't covered static properties and methods in-depth yet. For this assignment, know simply that they allow us to use properties and methods of a class without creating an object from that class. For example, we can call <code>JobData.findAll()</code> from the <code>TechJob</code> class.</p>
+<p>We haven't covered static properties and methods in-depth yet. For this assignment, know simply that they allow us to use properties and methods of a class without creating an object from that class. For example, we can call <code>JobData.FindAll()</code> from the <code>TechJob</code> class.</p>
 <p>If you want to create a new method in <code>JobData</code>, or add a property, be sure to declare it <code>static</code>.</p>
 </aside>
-<p>Let's look more closely at the data type is of <code>allJobs</code>. It purports to be an <code>List</code> that stores <code>Dictionary</code> objects which have <code>string</code> keys and <code>string</code> values. If we were to represent some of this data visually, using <code>[]</code> for an <code>List</code> and <code>{}</code> with key/value pairs (as in Python lists and dictionaries), it would look like this:</p>
+<p>Let's look more closely at the data type is of <code>AllJobs</code>. It purports to be an <code>List</code> that stores <code>Dictionary</code> objects which have <code>string</code> keys and <code>string</code> values. If we were to represent some of this data visually, using <code>[]</code> for an <code>List</code> and <code>{}</code> with key/value pairs (as in Python lists and dictionaries), it would look like this:</p>
 <pre><code class="language-nohighlight">[
     {
         "name": "Junior Data Analyst",
@@ -219,18 +219,18 @@ actionChoices.Add("list", "List");</code></pre>
     },
     ...
 ]</code></pre>
-<p>If you look at <code>loadData</code> you'll see a lot of unfamiliar code. Kathy wrote this essential piece of code for you, and while you won't have to modify it, it will be useful to have an idea of how it works. Read through the code until you feel like you can describe its functionality at a basic level.</p>
-<p>There are three more methods in <code>JobData</code>, each of which is public (and <code>static</code>, per our earlier note): <code>findAll()</code>, <code>findAll(string)</code>, and <code>findByKeyAndValue</code>. Note that there are two methods named <code>findAll</code>, but this is allowed in C# via a feature called <strong>overloading</strong>. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters. In other words, their signatures are different even though their names are same.</p>
+<p>If you look at <code>LoadData</code> you'll see a lot of unfamiliar code. Kathy wrote this essential piece of code for you, and while you won't have to modify it, it will be useful to have an idea of how it works. Read through the code until you feel like you can describe its functionality at a basic level.</p>
+<p>There are three more methods in <code>JobData</code>, each of which is public (and <code>static</code>, per our earlier note): <code>FindAll()</code>, <code>FindAll(string)</code>, and <code>findByKeyAndValue</code>. Note that there are two methods named <code>FindAll</code>, but this is allowed in C# via a feature called <strong>overloading</strong>. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters. In other words, their signatures are different even though their names are same.</p>
 <p>Hear are a few questions to ask yourself while reading this code:</p>
 <ul>
 <li>What is the data type of a &quot;job&quot; record?</li>
-<li>Why does <code>findAll(string)</code> return something of type <code>List&lt;string&gt;</code> while <code>findByColumnAndValue</code> and <code>findAll</code> return something of type <code>List&lt;Dictionary&lt;string, string&gt;&gt;</code>?</li>
-<li>Why is <code>loadData</code> called at the top of each of these four methods? Does this mean that we load the data from the CSV file each time one of them is called?</li>
+<li>Why does <code>FindAll(string)</code> return something of type <code>List&lt;string&gt;</code> while <code>FindByColumnAndValue</code> and <code>FindAll</code> return something of type <code>List&lt;Dictionary&lt;string, string&gt;&gt;</code>?</li>
+<li>Why is <code>LoadData</code> called at the top of each of these four methods? Does this mean that we load the data from the CSV file each time one of them is called?</li>
 </ul>
 <h3 id="your-tasks">Your Tasks</h3>
 <p>Here are the tasks for you to carry out for your first apprenticeship assignment.</p>
-<h4 id="implement-printjobs">Implement printJobs</h4>
-<p>When trying out the program, and later when reading the code, you hopefully noticed that there's some work to do in the <code>printJobs</code> method. As it stands, it currently just prints a message: <code>"printJobs is not implemented yet"</code>.</p>
+<h4 id="implement-printjobs">Implement PrintJobs</h4>
+<p>When trying out the program, and later when reading the code, you hopefully noticed that there's some work to do in the <code>PrintJobs</code> method. As it stands, it currently just prints a message: <code>"PrintJobs is not implemented yet"</code>.</p>
 <p>Implement this method. It should print out something like this:</p>
 <pre><code class="language-nohighlight">*****
 position type: Data Scientist / Business Intelligence
@@ -241,16 +241,16 @@ core competency: Statistical Analysis
 *****</code></pre>
 <p>If there are no results, it should print an appropriate messages.</p>
 <aside class="aside-pro-tip">
-<p>To do this, you'll need to iterate over a <code>List</code> of jobs. Each job is itself a <code>Dictionary</code>. While you can get each of the items out of the dictionary using the known keys (&quot;employer&quot;, &quot;location&quot;, etc), think instead about creating a nested loop to loop over each dictionary. You'll want to use the <code>Dictionary.Keys</code> property to do this. If a new field is added to the job records, this approach will print out the new field without any updates to <code>printJobs</code>.</p>
+<p>To do this, you'll need to iterate over a <code>List</code> of jobs. Each job is itself a <code>Dictionary</code>. While you can get each of the items out of the dictionary using the known keys (&quot;employer&quot;, &quot;location&quot;, etc), think instead about creating a nested loop to loop over each dictionary. You'll want to use the <code>Dictionary.Keys</code> property to do this. If a new field is added to the job records, this approach will print out the new field without any updates to <code>PrintJobs</code>.</p>
 </aside>
 <h4 id="implement-findbyvalue">Implement findByValue</h4>
 <p>At this stage, the application will allow users to search a given column of the data for a given string. Your next task is to enable a search to go across <em>all</em> of the columns.</p>
 <p>In the <code>JobData</code> class, create a new (<code>public static</code>) method that will search for a string within each of the columns. Here are a few observations:</p>
 <ol>
 <li>The method that you write should not contain duplicate jobs. So, for example, if a listing has position type &quot;Web - Front End&quot; and name &quot;Front end web dev&quot; then searching for &quot;web&quot; should not include the listing twice.</li>
-<li>As with <code>printJobs</code>, you should write your code in a way that if a new column is added to the data, your code will automatically search the new column as well.</li>
-<li>You <em>should not</em> write code that calls <code>findByColumnAndValue</code> once for each column. Rather, utilize loops and collection methods as you did above.</li>
-<li>You <em>should</em>, on the other hand, read and understand <code>findByColumnAndValue</code>, since your code will look similar in some ways.</li>
+<li>As with <code>PrintJobs</code>, you should write your code in a way that if a new column is added to the data, your code will automatically search the new column as well.</li>
+<li>You <em>should not</em> write code that calls <code>FindByColumnAndValue</code> once for each column. Rather, utilize loops and collection methods as you did above.</li>
+<li>You <em>should</em>, on the other hand, read and understand <code>FindByColumnAndValue</code>, since your code will look similar in some ways.</li>
 </ol>
 <p>You'll need to call <code>findByValue</code> from somewhere in <code>Main</code>. We'll leave it up to you to find where. You might have noticed that when you try to search all columns using the app, a message is printed, so that is a good clue to help you find where to place this new method call.</p>
 <h4 id="make-search-methods-case-insensitive">Make Search Methods Case-Insensitive</h4>
@@ -261,7 +261,7 @@ core competency: Statistical Analysis
 <li>Which methods are called when searching?</li>
 <li>How is the user's search string compared against the values of fields of the job <code>Dictionary</code> objects?</li>
 <li>How can you make this comparison in a way that effectively ignores the case of the strings?</li>
-<li>How can  you do this <em>without</em> altering the capitaliztion of the items in <code>allJobs</code>, that is, so that you don't change the data, and consequently it is printed out the same way that it appears in <code>job_data.csv</code>?</li>
+<li>How can  you do this <em>without</em> altering the capitaliztion of the items in <code>AllJobs</code>, that is, so that you don't change the data, and consequently it is printed out the same way that it appears in <code>job_data.csv</code>?</li>
 </ul>
 <p>Once you have an idea for how to approach this, you'll likely need your favorite search engine to find out exactly how to it in C#.</p>
 <p>When this task is completed, you're done!</p>
@@ -278,7 +278,7 @@ core competency: Statistical Analysis
 <p>If you want to take your learning a few steps further, here are some additional problems you can try to solve. We're not providing you much guidance here, but we have confidence that you can figure these problems out!</p>
 <ul>
 <li><strong>Sorting list results</strong>: When a user asks for a list of employers, locations, position types, etc it would be nice if results were sorted alphabetically. Make this happen.</li>
-<li><strong>Returning a copy of allJobs</strong>: Look at <code>JobData.findAll()</code>. Notice that it's returning the <code>allJobs</code> property, which is a static property of the <code>JobData</code> class. In general, this is not a great thing to do, since the person calling our <code>findAll</code> method could then mess wiht the data that <code>allJobs</code> contains. Fix this by creating a copy of <code>allJobs</code>. (<em>Hint:</em> Look at the methods of the <code>List</code> class listed in the Microsoft documentation.)</li>
+<li><strong>Returning a copy of AllJobs</strong>: Look at <code>JobData.FindAll()</code>. Notice that it's returning the <code>AllJobs</code> property, which is a static property of the <code>JobData</code> class. In general, this is not a great thing to do, since the person calling our <code>FindAll</code> method could then mess wiht the data that <code>AllJobs</code> contains. Fix this by creating a copy of <code>AllJobs</code>. (<em>Hint:</em> Look at the methods of the <code>List</code> class listed in the Microsoft documentation.)</li>
 </ul>
                                     </section>
 
