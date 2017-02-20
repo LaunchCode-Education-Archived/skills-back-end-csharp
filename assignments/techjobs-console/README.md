@@ -78,8 +78,8 @@ Have a look a the data below line 1, and ask yourself the following quetions:
 The `Program` class contains the `Main` method that will drive our program's functionality. It contains three methods:
 
 1. `Main` - The main application runner.
-2. `getUserSelection` - A utility method that displays a menu of choices and returns the user's selection.
-3. `printJobs` - This is meant to print a list of jobs to the console in a nicely formatted manner, but hasn't been implemented yet. This will be part of your job.
+2. `GetUserSelection` - A utility method that displays a menu of choices and returns the user's selection.
+3. `PrintJobs` - This is meant to print a list of jobs to the console in a nicely formatted manner, but hasn't been implemented yet. This will be part of your job.
 
 Let's look at each of these.
 
@@ -101,14 +101,14 @@ The `Main` method can be summarized as follows:
 
 The word "query" is in quotes here because we're not really carring out a database query, but the net effect is the same as if we were. We ask a method for data that originates from a non-C# source, it parses and filters that data, and gives it back to us.
 
-##### The getUserSelection method
+##### The GetUserSelection method
 
-The `getUserSelection` method takes in a string to display above the menu, to give them context for what they are being asked. It also takes in a dictionary with string keys and string values. How is this used? What will this dictionary contain when the method runs?
+The `GetUserSelection` method takes in a string to display above the menu, to give them context for what they are being asked. It also takes in a dictionary with string keys and string values. How is this used? What will this dictionary contain when the method runs?
 
 To figure this out, right-click on the method name and select *Find All References*. This will open a pane and display each location in the program where `displayMenuChoice` is called. The first such usage is the first line of the main `while loop`:
 
 ```csharp
-string actionChoice = getUserSelection("View Jobs", actionChoices);
+string actionChoice = GetUserSelection("View Jobs", actionChoices);
 ```
 
 What is this dictionary named `actionChoices`? If we look a few lines above, we see:
@@ -122,17 +122,17 @@ actionChoices.Add("list", "List");
 
 If you recall how the program worked when you ran it, the first menu that you chose had two options, Search and List, which seem to correspond to the entries in `actionChoices`. This is, in fact, the case. This the data that is used to generate the first menu we see when running the program.
 
-The second usage of `getUserSelection` is a few lines below:
+The second usage of `GetUserSelection` is a few lines below:
 
 ```csharp
-string columnChoice = getUserSelection("List", columnChoices);
+string columnChoice = GetUserSelection("List", columnChoices);
 ```
 
 This references `columnChoices`, which is declared at the top of `main` has a similar structure to `actionChoices` (they're the same data type and are used in calls to the same method, so this shouldn't be surprising). Most of the entries in `columnChoices` correspond to columns in the jobs data set, but there's one additional entry with key/value pair `"all"`/`"All"`. These entries will help us present to the user the options for searching our data, which will correspond to searching within a given column, or searching all columns at once.
 
 The keys in `actionChoices` and `columnChoices` represent the "internal" string we'll use to refer to these options -- for example, when representing the user's menu choice, or querying data -- and the values in the dictionary represent the "external" way that these are represented to the user.
 
-Within `getUserSelection` itself, most of the code is within a do-while loop. A [do-while loop](https://msdn.microsoft.com/en-us/library/370s1zax.aspx) is similar to a while loop, but the conditional check is at the *end* of the loop's code block. This has the net consequence that the loop's code block *always runs at least once*. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.
+Within `GetUserSelection` itself, most of the code is within a do-while loop. A [do-while loop](https://msdn.microsoft.com/en-us/library/370s1zax.aspx) is similar to a while loop, but the conditional check is at the *end* of the loop's code block. This has the net consequence that the loop's code block *always runs at least once*. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.
 
 Within this loop, menu options are printed to the screen and user input is collected. If input is valid, it returns the choice as a string to the caller. This string corresponds to the chosen key (from `choices`, which will be either `actionChoices` or `columnChoices`) of the item the user selected. If invalid, it re-prompts the user.
 
@@ -140,14 +140,14 @@ The local variable `choiceKeys` is used to easily enumerate the `choices` dictio
 
 #### The JobData Class
 
-The `JobData` class is responsible for importing the data from the CSV file and parsing it into a C#-friendly format, that is, into `Dictionary` and `List` form. Look toward the bottom of the class and you will see a method named `loadData`, which does just what it advertises. After parsing the file data, it stores the data in the private property `allJobs` which is of type `List<Dictionary<string, string>>`.
+The `JobData` class is responsible for importing the data from the CSV file and parsing it into a C#-friendly format, that is, into `Dictionary` and `List` form. Look toward the bottom of the class and you will see a method named `LoadData`, which does just what it advertises. After parsing the file data, it stores the data in the private property `AllJobs` which is of type `List<Dictionary<string, string>>`.
 
-<aside class="aside-note" markdown="1">We haven't covered static properties and methods in-depth yet. For this assignment, know simply that they allow us to use properties and methods of a class without creating an object from that class. For example, we can call `JobData.findAll()` from the `TechJob` class.</p>
+<aside class="aside-note" markdown="1">We haven't covered static properties and methods in-depth yet. For this assignment, know simply that they allow us to use properties and methods of a class without creating an object from that class. For example, we can call `JobData.FindAll()` from the `TechJob` class.</p>
 
 If you want to create a new method in `JobData`, or add a property, be sure to declare it `static`.
 </aside>
 
-Let's look more closely at the data type is of `allJobs`. It purports to be an `List` that stores `Dictionary` objects which have `string` keys and `string` values. If we were to represent some of this data visually, using `[]` for an `List` and `{}` with key/value pairs (as in Python lists and dictionaries), it would look like this:
+Let's look more closely at the data type is of `AllJobs`. It purports to be an `List` that stores `Dictionary` objects which have `string` keys and `string` values. If we were to represent some of this data visually, using `[]` for an `List` and `{}` with key/value pairs (as in Python lists and dictionaries), it would look like this:
 
 ```nohighlight
 [
@@ -169,22 +169,22 @@ Let's look more closely at the data type is of `allJobs`. It purports to be an `
 ]
 ```
 
-If you look at `loadData` you'll see a lot of unfamiliar code. Kathy wrote this essential piece of code for you, and while you won't have to modify it, it will be useful to have an idea of how it works. Read through the code until you feel like you can describe its functionality at a basic level.
+If you look at `LoadData` you'll see a lot of unfamiliar code. Kathy wrote this essential piece of code for you, and while you won't have to modify it, it will be useful to have an idea of how it works. Read through the code until you feel like you can describe its functionality at a basic level.
 
-There are three more methods in `JobData`, each of which is public (and `static`, per our earlier note): `findAll()`, `findAll(string)`, and `findByKeyAndValue`. Note that there are two methods named `findAll`, but this is allowed in C# via a feature called **overloading**. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters. In other words, their signatures are different even though their names are same.
+There are three more methods in `JobData`, each of which is public (and `static`, per our earlier note): `FindAll()`, `FindAll(string)`, and `findByKeyAndValue`. Note that there are two methods named `FindAll`, but this is allowed in C# via a feature called **overloading**. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters. In other words, their signatures are different even though their names are same.
 
 Hear are a few questions to ask yourself while reading this code:
 - What is the data type of a "job" record?
-- Why does `findAll(string)` return something of type `List<string>` while `findByColumnAndValue` and `findAll` return something of type `List<Dictionary<string, string>>`?
-- Why is `loadData` called at the top of each of these four methods? Does this mean that we load the data from the CSV file each time one of them is called?
+- Why does `FindAll(string)` return something of type `List<string>` while `FindByColumnAndValue` and `FindAll` return something of type `List<Dictionary<string, string>>`?
+- Why is `LoadData` called at the top of each of these four methods? Does this mean that we load the data from the CSV file each time one of them is called?
 
 ### Your Tasks
 
 Here are the tasks for you to carry out for your first apprenticeship assignment.
 
-#### Implement printJobs
+#### Implement PrintJobs
 
-When trying out the program, and later when reading the code, you hopefully noticed that there's some work to do in the `printJobs` method. As it stands, it currently just prints a message: `"printJobs is not implemented yet"`.
+When trying out the program, and later when reading the code, you hopefully noticed that there's some work to do in the `PrintJobs` method. As it stands, it currently just prints a message: `"PrintJobs is not implemented yet"`.
 
 Implement this method. It should print out something like this:
 
@@ -201,7 +201,7 @@ core competency: Statistical Analysis
 If there are no results, it should print an appropriate messages.
 
 <aside class="aside-pro-tip" markdown="1">
-To do this, you'll need to iterate over a `List` of jobs. Each job is itself a `Dictionary`. While you can get each of the items out of the dictionary using the known keys ("employer", "location", etc), think instead about creating a nested loop to loop over each dictionary. You'll want to use the `Dictionary.Keys` property to do this. If a new field is added to the job records, this approach will print out the new field without any updates to `printJobs`.
+To do this, you'll need to iterate over a `List` of jobs. Each job is itself a `Dictionary`. While you can get each of the items out of the dictionary using the known keys ("employer", "location", etc), think instead about creating a nested loop to loop over each dictionary. You'll want to use the `Dictionary.Keys` property to do this. If a new field is added to the job records, this approach will print out the new field without any updates to `PrintJobs`.
 </aside>
 
 #### Implement findByValue
@@ -211,9 +211,9 @@ At this stage, the application will allow users to search a given column of the 
 In the `JobData` class, create a new (`public static`) method that will search for a string within each of the columns. Here are a few observations:
 
 1. The method that you write should not contain duplicate jobs. So, for example, if a listing has position type "Web - Front End" and name "Front end web dev" then searching for "web" should not include the listing twice.
-2. As with `printJobs`, you should write your code in a way that if a new column is added to the data, your code will automatically search the new column as well.
-3. You *should not* write code that calls `findByColumnAndValue` once for each column. Rather, utilize loops and collection methods as you did above.
-4. You *should*, on the other hand, read and understand `findByColumnAndValue`, since your code will look similar in some ways.
+2. As with `PrintJobs`, you should write your code in a way that if a new column is added to the data, your code will automatically search the new column as well.
+3. You *should not* write code that calls `FindByColumnAndValue` once for each column. Rather, utilize loops and collection methods as you did above.
+4. You *should*, on the other hand, read and understand `FindByColumnAndValue`, since your code will look similar in some ways.
 
 You'll need to call `findByValue` from somewhere in `Main`. We'll leave it up to you to find where. You might have noticed that when you try to search all columns using the app, a message is printed, so that is a good clue to help you find where to place this new method call.
 
@@ -227,7 +227,7 @@ Here are some questions to ask yourself as you get started:
 - Which methods are called when searching?
 - How is the user's search string compared against the values of fields of the job `Dictionary` objects?
 - How can you make this comparison in a way that effectively ignores the case of the strings?
-- How can  you do this *without* altering the capitaliztion of the items in `allJobs`, that is, so that you don't change the data, and consequently it is printed out the same way that it appears in `job_data.csv`?
+- How can  you do this *without* altering the capitaliztion of the items in `AllJobs`, that is, so that you don't change the data, and consequently it is printed out the same way that it appears in `job_data.csv`?
 
 Once you have an idea for how to approach this, you'll likely need your favorite search engine to find out exactly how to it in C#.
 
@@ -250,6 +250,6 @@ To turn in your assignment and get credit, follow the [submission instructions][
 If you want to take your learning a few steps further, here are some additional problems you can try to solve. We're not providing you much guidance here, but we have confidence that you can figure these problems out!
 
 - **Sorting list results**: When a user asks for a list of employers, locations, position types, etc it would be nice if results were sorted alphabetically. Make this happen.
-- **Returning a copy of allJobs**: Look at `JobData.findAll()`. Notice that it's returning the `allJobs` property, which is a static property of the `JobData` class. In general, this is not a great thing to do, since the person calling our `findAll` method could then mess wiht the data that `allJobs` contains. Fix this by creating a copy of `allJobs`. (*Hint:* Look at the methods of the `List` class listed in the Microsoft documentation.)
+- **Returning a copy of AllJobs**: Look at `JobData.FindAll()`. Notice that it's returning the `AllJobs` property, which is a static property of the `JobData` class. In general, this is not a great thing to do, since the person calling our `FindAll` method could then mess wiht the data that `AllJobs` contains. Fix this by creating a copy of `AllJobs`. (*Hint:* Look at the methods of the `List` class listed in the Microsoft documentation.)
 
 [submission-instructions]: ../
