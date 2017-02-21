@@ -14,3 +14,9 @@ Get cosy with C# syntax by revisiting one of our early Python programs. We'll cr
 Practice working with `ArrayList` and `HashMap` objects, as we revisit one of our studios from Unit 1.
 
 [Work on Counting Characters](counting-characters/)
+
+## Bonjour, ASP.NET!
+
+Make your Hello, ASP.NET! application multilingual.
+
+[Work on Bonjour, ASP.NET!](bonjour-asp-net/)
