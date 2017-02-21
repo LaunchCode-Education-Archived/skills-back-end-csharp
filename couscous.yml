@@ -37,7 +37,7 @@ menu:
             text: C# for Python Programmers
             relativeUrl: csharp4python/
         issues:
-            text: Issues
+            text: Reporting Issues
             relativeUrl: issues/
         about:
             text: About this Unit
