@@ -3,7 +3,7 @@ title: Data Types
 currentMenu: csharp4python
 ---
 
-How C# handles values and variables is one of the most significant differences it and Python.
+How C# handles values and variables is one of the most significant differences between it and Python.
 
 ## Static vs. Dynamic Typing
 
