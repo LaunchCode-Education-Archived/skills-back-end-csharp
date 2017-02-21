@@ -5,7 +5,8 @@ currentMenu: classes
 
 For this unit we'll need to run Visual Studio for Windows. If you use macOS or a Linux-based operating system, you can install an application called a **hypervisor** that allows you to run **virtual machines** that contain other operating systems. This is what we'll do to get Windows running on your machine.
 
-> *NOTE:* You may noticed on the Microsoft site that there is a preview version Microsoft Visual Studio for Mac. The .NET development environment on macOS isn't mature enough yet to warrant us to use it in this class.
+<aside class="aside-note" markdown="1"> You may noticed on the Microsoft site that there is a preview version Microsoft Visual Studio for Mac. The .NET development environment on macOS isn't mature enough yet to warrant us to use it in this class.
+</aside>
 
 ## Install VirtualBox
 
