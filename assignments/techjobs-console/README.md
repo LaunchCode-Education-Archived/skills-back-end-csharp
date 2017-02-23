@@ -18,7 +18,7 @@ Your mentor on this project is Kathy.
 In this project, you'll show that you can:
 
 - Read and understand code written by others
-- Use core Java syntax (methods, variables, loops, conditionals)
+- Use core C# syntax (methods, variables, loops, conditionals)
 - Utilize `List` and `Dictionary` collection types
 - Work with console I/O via the `Console` class
 - Work with data types and arrays
@@ -42,7 +42,8 @@ If you work through the tasks Kathy has laid out for you, tackle one or more of 
 Set up a local copy of the project:
 - Visit the [repository page](https://github.com/LaunchCodeEducation/TechJobsConsole) for this project and fork the repository to create a copy under your own GitHub account.
 - From within Visual Studio, choose the *Team Explorer* tab near the bottom of the *Solution Explorer* pane. If you don't see this tab, you can open it via the application menu: *View > Team Explorer*.
-- Select *Clone* from the GitHub section of the *Team Explorer* and select your `TechJobsConsole` copy from the modal window. **Be sure to change the Path field** to the location you would like the project to live, ideally inside of a folder you've been using to store other projects.
+- Click on the *Manage Connections* icon (see below), and select *Clone* from the GitHub section of the *Team Explorer* and select your `TechJobsConsole` copy from the modal window. **Be sure to change the Path field** to the location you would like the project to live, ideally inside of a folder you've been using to store other projects.
+	![Manage Connections](team-explorer-connections.png)
 - Open the solution via either the notification within *Team Explorer* or via *File > Open > Project/Solution*.
 - Pop back over to the *Solution Explorer* to preview the code.
 
