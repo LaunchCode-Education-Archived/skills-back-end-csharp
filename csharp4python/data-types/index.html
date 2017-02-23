@@ -324,6 +324,14 @@ int year = int.Parse(input);</code></pre>
 <p>This is very similar to what we did in Python:</p>
 <pre><code class="language-python">user_input = input()
 year = int(user_input)</code></pre>
+<h2 id="class-types">Class Types</h2>
+<p>In addition to the types introduced so far any class in C# defines a type. Classes and objects are conceptually the same as in Python: A class is a template for creating objects. We'll have much more to say about classes and objects, but for now you need to be comfortable seeing the basic syntax of class types and class creation.</p>
+<p>If I have a class <code>Cat</code> with a constructor that takes no arguments, I can declare and create a new instance of <code>Cat</code> using its constructor. In Python, we did this as follows:</p>
+<pre><code class="language-python">my_cat = Cat()</code></pre>
+<p>And the C# version is:</p>
+<pre><code class="language-csharp">Cat myCat = new Cat();</code></pre>
+<p>Each of these statements creates a new variable that is initialized to hold a new <code>Cat</code> object. Note that in C#, we must declare the variable's type. Also note that we precede the constructor with the <code>new</code> keyword. And, of course, the C# example ends with a semi-colon.</p>
+<p>Variables and parameters that are of the type of a class are said to be of <strong>reference type</strong> (in contrast to <strong>primitive type</strong>). In plain English, we would say of the C# example: &quot;<code>myCat</code> is a reference variable of type <code>Cat</code>.&quot;</p>
 <h2 id="arrays">Arrays</h2>
 <p>While Python has the basic list type, C# has multiple ways of storing ordered data. The most basic is that of the array.</p>
 <p>An array is an ordered, fixed-size collection of elements. Since C# is statically-typed, arrays may only store one type of object. We can create an array of integers or an array of strings, but we may not create an array that holds both integers and strings.</p>
@@ -337,14 +345,6 @@ year = int(user_input)</code></pre>
 <pre><code class="language-csharp">int anInt = someInts[0];</code></pre>
 <p>As with Python, arrays have zero-based indexing.</p>
 <p>Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they're a core part of C#, and are ubiquitous, so it's good to know how they work.</p>
-<h2 id="class-types">Class Types</h2>
-<p>In addition to the types introduced so far -- arrays, along with primitives and their objectified counterparts -- any class in C# defines a type. Classes and objects are conceptually the same as in Python: A class is a template for creating objects. We'll have much more to say about classes and objects, but for now you need to be comfortable seeing the basic syntax of class types and class creation.</p>
-<p>If I have a class <code>Cat</code> with a constructor that takes no arguments, I can declare and create a new instance of <code>Cat</code> using its constructor. In Python, we did this as follows:</p>
-<pre><code class="language-python">my_cat = Cat()</code></pre>
-<p>And the C# version is:</p>
-<pre><code class="language-csharp">Cat myCat = new Cat();</code></pre>
-<p>Each of these statements creates a new variable that is initialized to hold a new <code>Cat</code> object. Note that in C#, we must declare the variable's type. Also note that we precede the constructor with the <code>new</code> keyword. And, of course, the C# example ends with a semi-colon.</p>
-<p>Variables and parameters that are of the type of a class are said to be of <strong>reference type</strong> (in contrast to <strong>primitive type</strong>). In plain English, we would say of the C# example: &quot;<code>myCat</code> is a reference variable of type <code>Cat</code>.&quot;</p>
 <h2 id="static-methods">Static Methods</h2>
 <p>In pure object-oriented langauges like C# and Java, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as <strong>methods</strong>. We'll we adopt this terminology from now on, and will not utter the word &quot;function&quot; for the remainder of this unit.</p>
 <p>We'll dive into learning about classes and objects in C# soon enough, but until we do, we'll frequently need to write methods, so we should understand a little bit about them. In particular, we'll use <strong>static methods</strong>, which behave somewhat similarly to functions as you knew them in Python.</p>
