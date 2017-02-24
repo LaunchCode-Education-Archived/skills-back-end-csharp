@@ -38,5 +38,8 @@ http://education.launchcode.org/skills-back-end-csharp/studios/area/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/bonjour-asp-net/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/counting-characters/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/index.html
+http://education.launchcode.org/skills-back-end-csharp/videos/csharp-skill-track-overview/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/index.html
+http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-visual-studio/index.html
+http://education.launchcode.org/skills-back-end-csharp/videos/using-the-visual-studio-debugger/index.html
 http://education.launchcode.org/skills-back-end-csharp/sitemap.html
