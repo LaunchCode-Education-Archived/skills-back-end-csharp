@@ -15,13 +15,17 @@ Visit the [Microsoft Free Developer Apps](https://www.visualstudio.com/free-deve
 
 When installing Visual Studio, select the option to Customize the install and be sure to check the GitHub Extension for Visual Studio check box. If you install Visual Studio without doing this -- or have a pre-existing intsall -- then you can add the GitHub extension after the fact by downloading and installing it from [visualstudio.github.com](https://visualstudio.github.com/).
 
+<aside class="aside-warning" markdown="1">
+If you installed Visual Studio previously on your Windows computer, you will likely need to install the .NET Core Tools package. To do so, follow the [instructions provided by Microsoft](https://www.microsoft.com/net/core#windowsvs2015).
+</aside>
+
 ### Mac and Linux Users
 
 If you installed the Windows 10 development image, then you already have everything you need.
 
 ## GitHub Project Setup
 
-Visit the [`LaunchCodeEducation/csharp-exercises`](https://github.com/LaunchCodeEducation/csharp-exercises) repository page and fork the repository into your own GitHub account by selecting *Fork* from the top right of the page.
+Visit the [LaunchCodeEducation/csharp-exercises](https://github.com/LaunchCodeEducation/csharp-exercises) repository page and fork the repository into your own GitHub account by selecting *Fork* from the top right of the page.
 
 After forking, open Visual Studio. From within Visual Studio, choose the *Team Explorer* tab near the bottom of the *Solution Explorer* pane. If you don't see this tab, you can open it via the application menu: *View > Team Explorer*. The first time you do this, you'll need to sign in to GitHub.
 
