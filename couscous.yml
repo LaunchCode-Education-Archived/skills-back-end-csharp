@@ -39,6 +39,9 @@ menu:
         csharp4python:
             text: C# for Python Programmers
             relativeUrl: csharp4python/
+        glossary:
+            text: Glossary
+            relativeUrl: glossary/
         issues:
             text: Reporting Issues
             relativeUrl: issues/

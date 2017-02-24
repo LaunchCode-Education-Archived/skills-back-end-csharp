@@ -5,4 +5,5 @@ currentMenu: classes
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Read / Follow Along | Tutorial | [Adding a View](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-view) | Read and code along with this tutorial on working with views and Razor templates in ASP.NET MVC
+Read / Follow Along | Video | [Intro to ASP.NET Core MVC: Views](../../videos/intro-to-mvc-views/) | Learn about the structure of MVC projects.
+Watch | Video | [Intro to ASP.NET Core MVC: Project structure](../../videos/intro-to-mvc-project-structure/) | Learn about the structure of MVC projects.
