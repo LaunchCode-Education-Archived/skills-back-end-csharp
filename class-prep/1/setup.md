@@ -42,5 +42,3 @@ Right-click on the top-level "Solution 'csharp-exercises'" item in the *Solution
 <aside class="aside-pro-tip" markdown="1">
 This setting makes the default behavior of Visual Studio to run the currently-selected program when you hit the <span style="color:green">▶︎</span> *Start* button in the toolbar.
 </aside>
-
-Run the `HelloWorld` program by selecting the HelloWorld project in the *Solution Explorer* and then hitting the <span style="color:green">▶︎</span> *HelloWorld* button in the toolbar.
