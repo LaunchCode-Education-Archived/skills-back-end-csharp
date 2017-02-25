@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Using the Visual Studio Debugger :: Unit 3: Back-End C# Skill Track</title>
+        <title>Glossary :: Unit 3: Back-End C# Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-using-the-visual-studio-debugger'>
+    <body id='page-glossary'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -36,7 +36,7 @@
                                         Assignments
                                     </a>
                                 </li>
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/videos/">
                                         Videos
                                     </a>
@@ -46,7 +46,7 @@
                                         C# for Python Programmers
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/glossary/">
                                         Glossary
                                     </a>
@@ -119,8 +119,55 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Using the Visual Studio Debugger</h1>
-                    <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/sACkw915kmg" frameborder="0" allowfullscreen></iframe></div>
+                                        <h1>Glossary</h1>
+                    <p><strong>assembly</strong>: A unit of compiled code that can be executed by the .NET runtime environment.</p>
+<p><strong>class</strong>: A blueprint, or template, for an object. Classes defining properties (data) and  methods (behavior) that each object created from the class template will have. In C#, a publicly available class is declared as follows:</p>
+<pre><code>```csharp</code></pre>
+<p>public class MyClass {
+// property and method definitions
+}</p>
+<pre><code>
+**Common Language Runtime (CLR)**: The runtime environment for .NET applications. The CLR handles compilation and execution of .NET applications, along with providing built-in classes and other resources.
+
+Source: [MSDN](https://msdn.microsoft.com/en-us/library/8bs2ecf4(v=vs.110).aspx)
+
+**declaration**: To specify the name and data type of a variable or property. This may be done either in conjunction with or prior to initialization.
+
+```csharp
+// Declaration without initialization
+string name;</code></pre>
+<pre><code class="language-csharp">// Declaration with initialization
+string name = "Michael";</code></pre>
+<p><strong>encapsulation</strong>: The bundling of related data and behaviors that operate on that data, usually with restricted access to internal, non-public data and behaviors. In object-oriented programming, encapsulation is achieved through the use of objects.</p>
+<p>Source: <a href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)">Wikipedia</a></p>
+<p><strong>Integrated Development Environment (IDE)</strong>: An application that provides access to and integration between software development tools that would otherwise be used independently, such as compilation, execution, access to documentation, built tools, source code management, and version control. Visual Studio is the most widely used C# and .NET IDE.</p>
+<p><strong>inheritance</strong>: A mechanism within object-oriented programming that allows one class to be based on another class, this &quot;inheriting&quot; its properties and behaviors. Inheritence is also sometimes referred to as <strong>subtyping</strong>.</p>
+<p>Source: <a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)">Wikipedia</a></p>
+<p><strong>initialize</strong>: To assign a value to a declared variable or property for the first time. This may be done in conjunction with or after declaration.</p>
+<aside class="aside-example">
+<pre><code class="language-csharp">// Initialization with declaration
+string name = "Michael";</code></pre>
+<pre><code class="language-csharp">// Separate declaration and initialization
+string name;
+name = "Michael";</code></pre>
+</aside>
+<p><strong>instance</strong>: An explicit object within a program.</p>
+<aside class="aside-example">
+<p>The variable <code>apple</code> is an instance of <code>Fruit</code>.</p>
+<pre><code class="language-csharp">Fruit apple = new Fruit("apple");</code></pre>
+</aside>
+<p><strong>instance property (or instance variable)</strong>: A property of a class that is non-static, so that each instance of the class has its own version of the property.</p>
+<p><strong>object</strong>: A value (i.e. a concrete unit within a program) created from a class. An object has a data type, which is the same as the name of the class it was created from.</p>
+<pre><code class="language-csharp">MyClass anObject = new Myclass( /* constructor parameters */ );</code></pre>
+<p><strong>polymorphism</strong>: An object-oriented mechanism that allows for objects of different types to be used in the same way.</p>
+<aside class="aside-example">
+<p>Polymorhism may be realized via inheritence. Supposed classes <code>Dog</code> and <code>Cat</code> each extend the class <code>Pet</code>. Then variables and properties of type <code>Pet</code> may be assigned instances of <code>Dog</code> and <code>Cat</code>. Note, however, that in this case we can only use the properties and methods of <code>Pet</code>, and not those that belong to <code>Dog</code> and <code>Cat</code> but not <code>Pet</code>.</p>
+<pre><code class="language-java">Pet jack = new Dog("Jack");
+Pet suki = new Cat("Suki");</code></pre>
+</aside>
+<aside class="aside-example">
+<p>Polymorhism may be realized via interfaces. An alternative designn approach to the example above would be to have <code>Pet</code> be an interface, and then implement the <code>Pet</code> interface with the classes <code>Dog</code> and <code>Cat</code>. Then, similarly, variables and properties of type <code>Pet</code> may be assigned instances of <code>Dog</code> and <code>Cat</code>. As above, it is then only allowed to call methods that are part of the <code>Pet</code> interface.</p>
+</aside>
                                     </section>
 
             </div>

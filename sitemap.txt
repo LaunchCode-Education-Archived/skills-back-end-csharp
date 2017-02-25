@@ -32,6 +32,7 @@ http://education.launchcode.org/skills-back-end-csharp/csharp4python/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/introduction/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/naming-conventions/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/toc.html
+http://education.launchcode.org/skills-back-end-csharp/glossary/index.html
 http://education.launchcode.org/skills-back-end-csharp/index.html
 http://education.launchcode.org/skills-back-end-csharp/issues/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/area/index.html
@@ -40,6 +41,11 @@ http://education.launchcode.org/skills-back-end-csharp/studios/counting-characte
 http://education.launchcode.org/skills-back-end-csharp/studios/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/csharp-skill-track-overview/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/index.html
+http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-controllers/index.html
+http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-project-structure/index.html
+http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-routes/index.html
+http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-views/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-visual-studio/index.html
+http://education.launchcode.org/skills-back-end-csharp/videos/mvc-project-structure/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/using-the-visual-studio-debugger/index.html
 http://education.launchcode.org/skills-back-end-csharp/sitemap.html
