@@ -16,7 +16,7 @@ The hypervisor we'll use is VirtualBox. [Visit their download page](https://www.
 
 Download a free Windows 10 Development Virtual Machine (VM) at the [Windows Dev Center](https://developer.microsoft.com/en-us/windows/downloads/virtual-machines). Choose the VirtualBox edition of Windows 10 Enterprise.
 
-Unzip the downloaded file and install the VM by double-clicking on the resulting .ova file. Follow the prompts within the VM to complete the Windows setup process.
+Unzip the downloaded file and install the VM by double-clicking on the resulting .ova or .ovf file. Follow the prompts within the VM to complete the Windows setup process.
 
 ### Guest Additions and Other Tweaks
 
