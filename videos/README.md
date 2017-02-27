@@ -17,6 +17,6 @@ currentMenu: videos
 
 [Routes](intro-to-mvc-routes/)
 
-[Views](intro-to-mvc-views/)
+[Views (Part 1)](intro-to-mvc-views-1/)
 
-[Project Structure](intro-to-mvc-project-structure/)
+[Views (Part 2)](intro-to-mvc-views-2/)

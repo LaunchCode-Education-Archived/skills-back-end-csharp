@@ -8,7 +8,7 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\*
 1 | [Prep Work](../class-prep/1/) | [Area of a circle](../studios/area/) | Setup, Intro to C#, Data types | &nbsp;
 2 | [Prep Work](../class-prep/2/) | [Counting Characters](../studios/counting-characters/) | Flow control, C# Collections, More on strings | [TechJobs (Console Edition)](../assignments/techjobs-console/)
 3 | [Prep Work](../class-prep/3/) | [Bonjour, ASP.NET!](../studios/bonjour-asp-net/) | MVC redux; Intro to ASP.NET MVC | &nbsp;
-4 | [Prep Work](../class-prep/4/) | | Razor templates | &nbsp;
+4 | [Prep Work](../class-prep/4/) | | Views and Razor templates | &nbsp;
 5 | [Prep Work](../class-prep/5/) | | Objects, classes | &nbsp;
 6 | [Prep Work](../class-prep/6/) | | Inheritance | &nbsp;
 7 | [Prep Work](../class-prep/7/) | | Model classes in ASP.NET | &nbsp;
