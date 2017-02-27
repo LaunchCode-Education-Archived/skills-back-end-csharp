@@ -56,7 +56,7 @@ Short name | .NET Class | Examples | Notes
 `float` | `Single` | 1.212 <br> 3.14 | &nbsp;
 `double` | `Double` | 3.14159 <br> 2.0 | Doubles are twice as precise (i.e. can hold much longer decimal numbers) than floats
 `char` | `Char` | 'a' <br> '!' | A single Unicode character. Must be enclosed in single quotes `''` to be a character; double quotes `""` indicate a string
-`string` | `String` | "LaunchCode" <br> "a" | A sequent of characters. Must be encolosed in double quotes `"`; single quotes `'` indicate a character
+`string` | `String` | "LaunchCode" <br> "a" | A sequent of characters. Must be enclosed in double quotes `"`; single quotes `'` indicate a character
 `bool` | `Boolean` | `true` <br> `false` | Note that booleans in C# are not capitalized as they are in Python.
 
 Not all built-in data types in C# are listed here, only the most commonly used types that beginners are likely to encounter. If you're curious, [read more about built-in types in C#](https://msdn.microsoft.com/en-us/library/ya5y69ds.aspx).
