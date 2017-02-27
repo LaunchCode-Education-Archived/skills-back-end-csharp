@@ -11,6 +11,7 @@ http://education.launchcode.org/skills-back-end-csharp/class-prep/1/setup.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/2/exercises.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/2/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/3/index.html
+http://education.launchcode.org/skills-back-end-csharp/class-prep/4/exercises.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/4/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/5/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/6/index.html
@@ -44,7 +45,8 @@ http://education.launchcode.org/skills-back-end-csharp/videos/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-controllers/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-project-structure/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-routes/index.html
-http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-views/index.html
+http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-views-1/index.html
+http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-views-2/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-visual-studio/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/mvc-project-structure/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/using-the-visual-studio-debugger/index.html

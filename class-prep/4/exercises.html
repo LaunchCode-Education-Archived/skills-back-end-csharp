@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Intro to ASP.NET Core MVC: Routes :: Unit 3: Back-End C# Skill Track</title>
+        <title>Class 4 Prep Exercises :: Unit 3: Back-End C# Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-intro-to-aspnet-core-mvc-routes'>
+    <body id='page-class-4-prep-exercises'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -21,7 +21,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                         <ul class="dropdown-menu">
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
                                         Classes
                                     </a>
@@ -36,7 +36,7 @@
                                         Assignments
                                     </a>
                                 </li>
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/videos/">
                                         Videos
                                     </a>
@@ -119,12 +119,21 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Intro to ASP.NET Core MVC: Routes</h1>
-                    <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/ZAGpi88aPhw" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="references">References</h2>
+                                        <h1>Class 4 Prep Exercises</h1>
+                    <p>Get some hands-on practice</p>
+<p>Work on these exercises within the <code>CheeseMVC</code> app that was created during <a href="../../videos/intro-to-mvc-views-1/">part 1</a> and <a href="../../videos/intro-to-mvc-views-2/">part 2</a> of our Intro to Views lessons.</p>
+<ol>
+<li>Add a <code>description</code> field to the application. This will involve:
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing#attribute-routing">Attribute Routing (docs.microsoft.com)</a></li>
-</ul>
+<li>Modifying the static <code>cheeses</code> list to be a dictionary with key/value pairs that correspond to the name and description.</li>
+<li>Adding a new form field in <code>Cheese/Add.cshtml</code> to allow for submission of the description.</li>
+<li>Modify the <code>NewCheese</code> action to insert the description of the new cheese into the <code>cheeses</code> dictionary.</li>
+<li>Display the description field in the <code>Cheese/Index.cshtml</code> view template.</li>
+</ul></li>
+<li>Use <code>_Layout.cshtml</code>. In other words, remove <code>Layout = null</code> from the top of the templates, and modify <code>_Layout.cshtml</code> to reflect links for the CheeseMVC app (only Home and Add for now).</li>
+</ol>
+<h2 id="bonus-mission">Bonus Mission</h2>
+<p>Add a new action and view template to allow for deleting a cheese from the <code>cheeses</code> dictionary. This one is tougher than most of the tasks we've done so far, and involves looking up some methods that we haven't used. Good luck!</p>
                                     </section>
 
             </div>

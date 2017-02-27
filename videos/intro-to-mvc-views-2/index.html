@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Intro to ASP.NET Core MVC: Views :: Unit 3: Back-End C# Skill Track</title>
+        <title>Intro to ASP.NET Core MVC: Views (Part 2) :: Unit 3: Back-End C# Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-intro-to-aspnet-core-mvc-views'>
+    <body id='page-intro-to-aspnet-core-mvc-views-part-2'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -119,14 +119,19 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Intro to ASP.NET Core MVC: Views</h1>
+                                        <h1>Intro to ASP.NET Core MVC: Views (Part 2)</h1>
                     <div class="youtube-wrapper"></div>
+<h2 id="notes">Notes</h2>
+<p>In addition to using <code>ViewBag</code> to pass data from an action method to a view, you can use the <code>ViewData</code> dictionary. To set data in <code>ViewData</code> in the controller, use:</p>
+<pre><code class="language-csharp">ViewData["cheeses"] = cheeses;</code></pre>
+<p>And to retrieve it in the view, just add <code>@</code>:</p>
+<pre><code class="language-nohighlight">@ViewData["cheeses"]</code></pre>
+<p>The <code>ViewBag</code> and the <code>ViewData</code> objects use the same underlying data structure, so you can add data to the <code>ViewBag</code> and then retrieve it from <code>ViewData</code> (and vice versa). We'll most often use <code>ViewBag</code> in this course.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/razor">Razor Syntax (docs.microsoft.com)</a></li>
 <li><a href="https://gist.github.com/jonlabelle/8738373">Razor Syntax Cheatsheet</a></li>
 </ul>
-<h2 id="notes">Notes</h2>
                                     </section>
 
             </div>
