@@ -99,8 +99,8 @@ Let's go back in time and look at another of our very early Python programs. Her
 ```python
 def main():
     fahrenheit = int(input("Enter the temperature in F: "))
-    celsuis = (fahrenheit - 32) * (5.0 / 9.0)
-    print("the temperature in C is: ", celsuis)
+    celsius = (fahrenheit - 32) * (5.0 / 9.0)
+    print("the temperature in C is: ", celsius)
 
 if __name__ == '__main__':
     main()
@@ -118,15 +118,15 @@ namespace TempConv
         static void Main(string[] args)
         {
             double fahrenheit;
-            double celsuis;
+            double celsius;
             string input;
 
             Console.WriteLine("Tempperature in F:");
             input = Console.ReadLine();
             fahrenheit = double.Parse(input);
 
-            celsuis = (fahrenheit - 32) * 5 / 9;
-            Console.WriteLine("The Temperature in C is: " + celsuis);
+            celsius = (fahrenheit - 32) * 5 / 9;
+            Console.WriteLine("The Temperature in C is: " + celsius);
             Console.ReadLine();
         }
     }
@@ -171,7 +171,7 @@ For Python programmers the following error is likely to be even more common. Sup
 
 The compiler detects an error and Visual Studio displays this message. Where you to look at the error pane, you would see the message: "The name 'celsius' does not exist in the current context".
 
-<aside class="aside-note" markdown="1"> When using an IDE such as Visual Studio, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitely compiling your code before finding compiler errors. Nice, huh?
+<aside class="aside-note" markdown="1"> When using an IDE such as Visual Studio, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitly compile your code before finding compiler errors. Nice, huh?
 </aside>
 
 The general rule in C# is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. There is much more to say about the static typing of C# but for now this is enough.
