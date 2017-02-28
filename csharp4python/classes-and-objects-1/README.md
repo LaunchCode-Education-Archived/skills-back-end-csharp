@@ -275,7 +275,7 @@ The only caveat and difference between C# and Python here is that in the C# exam
 
 Rather than create a class extending `Fraction`, we will see how `Fraction` itself already extends another class. And you'll get plenty of practice extending classes later on.
 
-If you were to try to print a `Fraction` object (e.g. with `System.out.println(f)`) you would see that the output is not very satisfying. It would look something like this:
+If you were to try to print a `Fraction` object (e.g. with `Console.WriteLine(f)`) you would see that the output is not very satisfying. It would look something like this:
 
 ```nohighlight
 Fraction@7b11a3ac
@@ -325,8 +325,8 @@ Some built-in classes, such as `String`, provide their own implementation of `eq
 String string1 = new String("LaunchCode");
 String string2 = new String("LaunchCode");
 
-System.out.println(string1 == string2);
-System.out.println(string1.equals(string2));
+Console.WriteLine(string1 == string2);
+Console.WriteLine(string1.equals(string2));
 ```
 
 The first print statement prints `false` since `string1` and `string2` are different objects, and thus have different locations in memory. The second print statement prints `true` since the `equals` method implemented by `String` compares each string character by character.
@@ -483,7 +483,7 @@ public class Student {
         for(Integer i = 0; i < 10; i++) {
             Student s = new Student(i,"Student"+i.toString());
         }
-        System.out.println("The number of students: "+Student.numStudents.toString());
+        Console.WriteLine("The number of students: "+Student.numStudents.toString());
     }
 }
 ```
@@ -611,9 +611,9 @@ public class Fraction extends Number implements Comparable<Fraction> {
         Fraction f2 = new Fraction(2,3);
         Fraction f3 = new Fraction(1,4);
 
-        System.out.println(f1.add(1));
-        System.out.println(f1.intValue());
-        System.out.println(f1.doubleValue());
+        Console.WriteLine(f1.add(1));
+        Console.WriteLine(f1.intValue());
+        Console.WriteLine(f1.doubleValue());
 
         ArrayList<Fraction> myFracs = new ArrayList<Fraction>();
         myFracs.add(f1);
@@ -622,7 +622,7 @@ public class Fraction extends Number implements Comparable<Fraction> {
         Collections.sort(myFracs);
 
         for(Fraction f : myFracs) {
-            System.out.println(f);
+            Console.WriteLine(f);
         }
     }
 

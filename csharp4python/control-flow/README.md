@@ -87,27 +87,27 @@ In C# we would write this as follows:
 
 ```csharp
 public class ElseIf {
-    public static void main(String args[]) {
+    public static void main(string args[]) {
         int grade = 85;
         if (grade < 60)
         {
-            System.out.println('F');
+            Console.WriteLine('F');
         }
         else if (grade < 70)
         {
-            System.out.println('D');
+            Console.WriteLine('D');
         }
         else if (grade < 80)
         {
-            System.out.println('C');
+            Console.WriteLine('C');
         }
         else if (grade < 90)
         {
-            System.out.println('B');
+            Console.WriteLine('B');
         }
         else
         {
-            System.out.println('A');
+            Console.WriteLine('A');
         }
     }
 }

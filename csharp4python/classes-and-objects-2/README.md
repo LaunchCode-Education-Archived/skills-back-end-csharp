@@ -85,7 +85,7 @@ public class Student {
         for(Integer i = 0; i < 10; i++) {
             Student s = new Student(i,"Student"+i.toString());
         }
-        System.out.println("The number of students: "+Student.numStudents.toString());
+        Console.WriteLine("The number of students: "+Student.numStudents.toString());
     }
 }
 ```
@@ -213,9 +213,9 @@ public class Fraction extends Number implements Comparable<Fraction> {
         Fraction f2 = new Fraction(2,3);
         Fraction f3 = new Fraction(1,4);
 
-        System.out.println(f1.add(1));
-        System.out.println(f1.intValue());
-        System.out.println(f1.doubleValue());
+        Console.WriteLine(f1.add(1));
+        Console.WriteLine(f1.intValue());
+        Console.WriteLine(f1.doubleValue());
 
         ArrayList<Fraction> myFracs = new ArrayList<Fraction>();
         myFracs.add(f1);
@@ -224,7 +224,7 @@ public class Fraction extends Number implements Comparable<Fraction> {
         Collections.sort(myFracs);
 
         for(Fraction f : myFracs) {
-            System.out.println(f);
+            Console.WriteLine(f);
         }
     }
 
