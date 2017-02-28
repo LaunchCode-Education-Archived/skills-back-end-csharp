@@ -321,7 +321,7 @@ public class HouseCat extends Cat {
 </blockquote>
 <h3 id="inheritance-in-the-fraction-class">Inheritance in the Fraction Class</h3>
 <p>Rather than create a class extending <code>Fraction</code>, we will see how <code>Fraction</code> itself already extends another class. And you'll get plenty of practice extending classes later on.</p>
-<p>If you were to try to print a <code>Fraction</code> object (e.g. with <code>System.out.println(f)</code>) you would see that the output is not very satisfying. It would look something like this:</p>
+<p>If you were to try to print a <code>Fraction</code> object (e.g. with <code>Console.WriteLine(f)</code>) you would see that the output is not very satisfying. It would look something like this:</p>
 <pre><code class="language-nohighlight">Fraction@7b11a3ac</code></pre>
 <p>The reason is that we have not yet provided a friendly string representation for our <code>Fraction</code> objects. Just like in Python, whenever an object is printed by the <code>println</code> method it must be converted to string format. In Python you can control how that looks by writing an <code>__str__</code> method for your class. If you do not then you will get the default, which looked something like the above.</p>
 <h4 id="the-object-class">The Object Class</h4>
@@ -350,8 +350,8 @@ public class HouseCat extends Cat {
 <pre><code class="language-csharp">String string1 = new String("LaunchCode");
 String string2 = new String("LaunchCode");
 
-System.out.println(string1 == string2);
-System.out.println(string1.equals(string2));</code></pre>
+Console.WriteLine(string1 == string2);
+Console.WriteLine(string1.equals(string2));</code></pre>
 <p>The first print statement prints <code>false</code> since <code>string1</code> and <code>string2</code> are different objects, and thus have different locations in memory. The second print statement prints <code>true</code> since the <code>equals</code> method implemented by <code>String</code> compares each string character by character.</p>
 <p>Let's return to the <code>Fraction</code>. Here is an equals method for the <code>Fraction</code> class:</p>
 <pre><code class="language-csharp">public boolean equals(Fraction other) {
@@ -459,7 +459,7 @@ if __name__ == '__main__':
         for(Integer i = 0; i &lt; 10; i++) {
             Student s = new Student(i,"Student"+i.toString());
         }
-        System.out.println("The number of students: "+Student.numStudents.toString());
+        Console.WriteLine("The number of students: "+Student.numStudents.toString());
     }
 }</code></pre>
 <p>In this example notice that we create a static property by using the static modifier on the property declaration. Once a property has been declared <code>static</code> in C# it can be accessed from inside the class without prefixing the name of the class as we had to do in Python.</p>
@@ -574,9 +574,9 @@ public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
         Fraction f2 = new Fraction(2,3);
         Fraction f3 = new Fraction(1,4);
 
-        System.out.println(f1.add(1));
-        System.out.println(f1.intValue());
-        System.out.println(f1.doubleValue());
+        Console.WriteLine(f1.add(1));
+        Console.WriteLine(f1.intValue());
+        Console.WriteLine(f1.doubleValue());
 
         ArrayList&lt;Fraction&gt; myFracs = new ArrayList&lt;Fraction&gt;();
         myFracs.add(f1);
@@ -585,7 +585,7 @@ public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
         Collections.sort(myFracs);
 
         for(Fraction f : myFracs) {
-            System.out.println(f);
+            Console.WriteLine(f);
         }
     }
 

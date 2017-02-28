@@ -179,7 +179,7 @@ if __name__ == '__main__':
         for(Integer i = 0; i &lt; 10; i++) {
             Student s = new Student(i,"Student"+i.toString());
         }
-        System.out.println("The number of students: "+Student.numStudents.toString());
+        Console.WriteLine("The number of students: "+Student.numStudents.toString());
     }
 }</code></pre>
 <p>In this example notice that we create a static property by using the static modifier on the property declaration. Once a property has been declared <code>static</code> in C# it can be accessed from inside the class without prefixing the name of the class as we had to do in Python.</p>
@@ -294,9 +294,9 @@ public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
         Fraction f2 = new Fraction(2,3);
         Fraction f3 = new Fraction(1,4);
 
-        System.out.println(f1.add(1));
-        System.out.println(f1.intValue());
-        System.out.println(f1.doubleValue());
+        Console.WriteLine(f1.add(1));
+        Console.WriteLine(f1.intValue());
+        Console.WriteLine(f1.doubleValue());
 
         ArrayList&lt;Fraction&gt; myFracs = new ArrayList&lt;Fraction&gt;();
         myFracs.add(f1);
@@ -305,7 +305,7 @@ public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
         Collections.sort(myFracs);
 
         for(Fraction f : myFracs) {
-            System.out.println(f);
+            Console.WriteLine(f);
         }
     }
 
