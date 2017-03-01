@@ -234,7 +234,7 @@ for fib in l:
 In C#, this would look like:
 
 ```csharp
-int l[] = {1, 1, 2, 3, 5, 8, 13, 21};
+int[] l = {1, 1, 2, 3, 5, 8, 13, 21};
 foreach (int i in l) {
     Console.WriteLine(i);
 }
