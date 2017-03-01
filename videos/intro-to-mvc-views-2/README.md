@@ -7,6 +7,12 @@ currentMenu: videos
 
 ## Notes
 
+<aside class="aside-warning" markdown="1">
+When running the `CheeseMVC` application, your data will "disappear" each time you restart your app. This is because storing data in C# data structures only preserves that data while the application is running; this data only exists in-memory. We'll look at persisting data in a more permanent way in future lessons.
+</aside>
+
+### ViewBag and ViewData
+
 In addition to using `ViewBag` to pass data from an action method to a view, you can use the `ViewData` dictionary. To set data in `ViewData` in the controller, use:
 
 ```csharp

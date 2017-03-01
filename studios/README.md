@@ -20,3 +20,9 @@ Practice working with `ArrayList` and `HashMap` objects, as we revisit one of ou
 Make your Hello, ASP.NET! application multilingual.
 
 [Work on Bonjour, ASP.NET!](bonjour-asp-net/)
+
+## CheeseMVC
+
+Extend the application that you started in the lesson videos for Class 4.
+
+[CheeseMVC](cheese-mvc/)
