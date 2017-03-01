@@ -122,6 +122,10 @@
                                         <h1>Intro to ASP.NET Core MVC: Views (Part 2)</h1>
                     <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/4xvSOmGxyKQ" frameborder="0" allowfullscreen></iframe></div>
 <h2 id="notes">Notes</h2>
+<aside class="aside-warning">
+<p>When running the <code>CheeseMVC</code> application, your data will &quot;disappear&quot; each time you restart your app. This is because storing data in C# data structures only preserves that data while the application is running; this data only exists in-memory. We'll look at persisting data in a more permanent way in future lessons.</p>
+</aside>
+<h3 id="viewbag-and-viewdata">ViewBag and ViewData</h3>
 <p>In addition to using <code>ViewBag</code> to pass data from an action method to a view, you can use the <code>ViewData</code> dictionary. To set data in <code>ViewData</code> in the controller, use:</p>
 <pre><code class="language-csharp">ViewData["cheeses"] = cheeses;</code></pre>
 <p>And to retrieve it in the view, just add <code>@</code>:</p>
