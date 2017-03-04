@@ -216,11 +216,7 @@ Console.WriteLine(josh.Name);</code></pre>
     }
 }</code></pre>
 <p>There's a nice detailed discussion that provides additional perspective on why to use getters and setters on <a href="http://stackoverflow.com/questions/1568091/why-use-getters-and-setters">Stack Overflow</a> (the discussion here refers to Java, but the concepts apply to C# just the same).</p>
-<aside class="aside-warning">
-<p>When writing getters and setters, the convention for a field named <code>Field</code> is to name them <code>GetField</code> and <code>SetField</code>. This is more than just a convention, as some libraries you use will <em>expect</em> names to be of this format, and won't work as desired if you don't follow the convention.</p>
-<p>Additionally, it's a standard convention to use <code>Is</code> instead of <code>Get</code> for boolean fields. So a boolean field <code>OldEnoughToVote</code> would have the &quot;getter&quot; method <code>IsOldEnoughToVote</code>. The setter should still be named <code>SetOldEnoughToVote</code>.</p>
-</aside>
-<p>Most often, properties will correspond directly to a private field, but they don't have to. Let's look at an example of a property that doesn't directly correspond to a field. If we wanted to add a <code>Celsius</code> property to the <code>Temperature</code> class above, we might do it as follows:</p>
+<p>Most often, properties will correspond directly to a value stored in a private field, but they don't have to. Let's look at an example of a property that doesn't directly correspond to a field. If we wanted to add a <code>Celsius</code> property to the <code>Temperature</code> class above, we might do it as follows:</p>
 <pre><code class="language-csharp">public double Celsius
 {
     get { return (Fahrenheit - 32) * 5.0 / 9.0; }
