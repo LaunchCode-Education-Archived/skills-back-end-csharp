@@ -49,6 +49,17 @@ This set of lessons is for programmers that are comfortable with Python but are 
         - [Gradebook (C# Dictionary Version)](data-structures-and-collections/#gradebook-c-dictionary-version)
         - [Dictionary Methods](data-structures-and-collections/#dictionary-methods)
     - [References](data-structures-and-collections/#references)
+1. [Introduction to Classes and Objects](introduction-to-classes-and-objects/)
+    - [A Minimal Class and Object](introduction-to-classes-and-objects/#a-minimal-class-and-object)
+    - [The this Keyword](introduction-to-classes-and-objects/#the-this-keyword)
+    - [Access Modifiers](introduction-to-classes-and-objects/#access-modifiers)
+1. [Classes and Objects: Encapsulating Data](classes-and-objects-encapsulating-data/)
+    - [Encapsulation](classes-and-objects-encapsulating-data/#encapsulation)
+    - [Fields](classes-and-objects-encapsulating-data/#fields-and-properties)
+        - [Getters and Setters](classes-and-objects-encapsulating-data/#properties-and-accessor-methods)
+        - [Final Fields](classes-and-objects-encapsulating-data/#readonly-fields)
+        - [Static Fields](classes-and-objects-encapsulating-data/#static-fields-and-properties)
+        - [Constants](classes-and-objects-encapsulating-data/#constants)
 1. [Naming Conventions](naming-conventions/)
 
 *C# for Python Programmers* contains content adapted from [Java for Python Programmers](https://github.com/RunestoneInteractive/Java4Python) by [Brad Miller](https://github.com/RunestoneInteractive/), used under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) / reformatted here with modifications to content and structure.

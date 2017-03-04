@@ -26,3 +26,9 @@ Make your Hello, ASP.NET! application multilingual.
 Extend the application that you started in the lesson videos for Class 4.
 
 [CheeseMVC](cheese-mvc/)
+
+## CheeseMVC Redux
+
+Extend the application that you started in the lesson videos for Class 4.
+
+[CheeseMVC](cheese-mvc-redux/)

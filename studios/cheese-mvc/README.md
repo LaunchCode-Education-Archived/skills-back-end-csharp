@@ -13,7 +13,7 @@ If you didn't get to the [exercises for Class 4](../../class-prep/4/exercises.ht
 
 ## Remove Cheese
 
-Add functionality to remove cheese(s) from the list. We presented two ways to do this. Read about each, and choose which you would like to pursue. For an additional challenge, try to do each!
+Add functionality to remove cheese(s) from the list. We present two ways to do this. Read about each, and choose which you would like to pursue. For an additional challenge, try to do each!
 
 ### Remove Cheese Via New View
 
