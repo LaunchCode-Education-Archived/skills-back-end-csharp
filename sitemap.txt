@@ -26,10 +26,12 @@ http://education.launchcode.org/skills-back-end-csharp/class-prep/14/index.html
 http://education.launchcode.org/skills-back-end-csharp/classes/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-1/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-2/index.html
+http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-encapsulating-data/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/control-flow/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/data-structures-and-collections/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/data-types/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/index.html
+http://education.launchcode.org/skills-back-end-csharp/csharp4python/introduction-to-classes-and-objects/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/introduction/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/naming-conventions/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/toc.html
@@ -38,9 +40,11 @@ http://education.launchcode.org/skills-back-end-csharp/index.html
 http://education.launchcode.org/skills-back-end-csharp/issues/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/area/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/bonjour-asp-net/index.html
+http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc-redux/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/counting-characters/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/index.html
+http://education.launchcode.org/skills-back-end-csharp/studios/restaurant-menu/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/csharp-skill-track-overview/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-controllers/index.html
