@@ -144,13 +144,7 @@ public class Temperature {
 
 There's a nice detailed discussion that provides additional perspective on why to use getters and setters on [Stack Overflow](http://stackoverflow.com/questions/1568091/why-use-getters-and-setters) (the discussion here refers to Java, but the concepts apply to C# just the same).
 
-<aside class="aside-warning" markdown="1">
-When writing getters and setters, the convention for a field named `Field` is to name them `GetField` and `SetField`. This is more than just a convention, as some libraries you use will *expect* names to be of this format, and won't work as desired if you don't follow the convention.
-
-Additionally, it's a standard convention to use `Is` instead of `Get` for boolean fields. So a boolean field `OldEnoughToVote` would have the "getter" method `IsOldEnoughToVote`. The setter should still be named `SetOldEnoughToVote`.
-</aside>
-
-Most often, properties will correspond directly to a private field, but they don't have to. Let's look at an example of a property that doesn't directly correspond to a field. If we wanted to add a `Celsius` property to the `Temperature` class above, we might do it as follows:
+Most often, properties will correspond directly to a value stored in a private field, but they don't have to. Let's look at an example of a property that doesn't directly correspond to a field. If we wanted to add a `Celsius` property to the `Temperature` class above, we might do it as follows:
 
 ```csharp
 public double Celsius
