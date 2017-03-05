@@ -5,8 +5,6 @@ currentMenu: studios
 
 In this studio, we'll extend the application that you started building in the lesson videos for [Class 4](../../class-prep/4/).
 
-Add functionality to the application to allow the user to remove a cheese from the list. There are two possible approaches to this. You may try one, or both!
-
 ## Add Description Field
 
 If you didn't get to the [exercises for Class 4](../../class-prep/4/exercises.html), go back and complete the first one, to add a description field to the `CheeseMVC` app.
@@ -17,7 +15,7 @@ Add functionality to remove cheese(s) from the list. We present two ways to do t
 
 ### Remove Cheese Via New View
 
-Create a new controller and view to present a form to remove cheese. The form should make  `POST` request to a controller at the same URL as the form, and should redirect to the `Index` view associated with the `Cheese` controller.
+Create a new action method and view to present a form to remove cheese. The form should make  `POST` request to a controller at the same URL as the form, and should redirect to the `Index` view associated with the `Cheese` controller.
 
 When presenting the form, you have a couple of options:
 1. Present a checkbox next to each cheese. Recall that a checkbox is an `input` element of `type='checkbox'`. Look up details on [w3c](https://www.w3schools.com/html/html_form_input_types.asp). For this scenario, you'll want the same `name` attribute for each checkbox. Additionally, it will be possible for users to submit multiple cheeses for deletion at once, so in the controller handling form submission, the input parameter should be a string array. For example, if you have `name='cheese'` on each checkbox, you'll want an input parameter `string[] cheese`.
