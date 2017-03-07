@@ -205,18 +205,18 @@ If there are no results, it should print an appropriate messages.
 To do this, you'll need to iterate over a `List` of jobs. Each job is itself a `Dictionary`. While you can get each of the items out of the dictionary using the known keys ("employer", "location", etc), think instead about creating a nested loop to loop over each dictionary. You'll want to use the `Dictionary.Keys` property to do this. If a new field is added to the job records, this approach will print out the new field without any updates to `PrintJobs`.
 </aside>
 
-#### Implement findByValue
+#### Implement FindByValue
 
 At this stage, the application will allow users to search a given column of the data for a given string. Your next task is to enable a search to go across *all* of the columns.
 
-In the `JobData` class, create a new (`public static`) method that will search for a string within each of the columns. Here are a few observations:
+In the `JobData` class, create a new (`public static`) method called `FindByValue` that will search for a string within each of the columns. Here are a few observations:
 
 1. The method that you write should not contain duplicate jobs. So, for example, if a listing has position type "Web - Front End" and name "Front end web dev" then searching for "web" should not include the listing twice.
 2. As with `PrintJobs`, you should write your code in a way that if a new column is added to the data, your code will automatically search the new column as well.
 3. You *should not* write code that calls `FindByColumnAndValue` once for each column. Rather, utilize loops and collection methods as you did above.
 4. You *should*, on the other hand, read and understand `FindByColumnAndValue`, since your code will look similar in some ways.
 
-You'll need to call `findByValue` from somewhere in `Main`. We'll leave it up to you to find where. You might have noticed that when you try to search all columns using the app, a message is printed, so that is a good clue to help you find where to place this new method call.
+You'll need to call `FindByValue` from somewhere in `Main`. We'll leave it up to you to find where. You might have noticed that when you try to search all columns using the app, a message is printed, so that is a good clue to help you find where to place this new method call.
 
 #### Make Search Methods Case-Insensitive
 
