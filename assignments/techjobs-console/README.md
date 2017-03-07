@@ -106,7 +106,7 @@ The word "query" is in quotes here because we're not really carrying out a datab
 
 The `GetUserSelection` method takes in a string to display above the menu, to give them context for what they are being asked. It also takes in a dictionary with string keys and string values. How is this used? What will this dictionary contain when the method runs?
 
-To figure this out, right-click on the method name and select *Find All References*. This will open a pane and display each location in the program where `displayMenuChoice` is called. The first such usage is the first line of the main `while loop`:
+To figure this out, right-click on the method name and select *Find All References*. This will open a pane and display each location in the program where `GetUserSelection` is called. The first such usage is the first line of the main `while loop`:
 
 ```csharp
 string actionChoice = GetUserSelection("View Jobs", actionChoices);
