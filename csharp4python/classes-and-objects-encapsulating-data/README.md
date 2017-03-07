@@ -38,10 +38,10 @@ Let's put these inside of a class. While they may be declared anywhere within a 
 ```csharp
 public class Student {
 
-    string Name;
-    int StudentId;
-    int NumberOfCredits;
-    double Gpa;
+    string name;
+    int studentId;
+    int numberOfCredits;
+    double gpa;
 
 }
 ```
@@ -61,15 +61,17 @@ A **property** in C# is a mechanism to read, write, or compute the value of a pr
 
 As declared, our four fields are private, which means that they are inaccessible to code outside of the `Student` class. As a rule-of-thumb, direct access to fields by code outside classes you write should not be allowed. Understanding why this is the case is the goal of this section.
 
-In order to provide access to private fields, **getter and setter methods** are used. Collectively, these methods are called **accessors**. Getters and setters do what you might guess: get and set a given field. If we make the getter and/or setter public for a given property, then others will be able to access it in that way.
+In order to provide access to private fields, **getter and setter methods** are used. Collectively, these methods are called **accessors**. Getters and setters do what you might guess: get and set a given field. If we make the getter and/or setter public for a given field, then others will be able to access it in that way. Collectively, a private field along with accessor methods make up a property.
 
 Here is how we can expose `Name` via accessor methods (you can imagine how the others would be written).
 
 ```csharp
+private string name;
+
 public string Name
 {
-    get { return Name; }
-    set { Name = value; }
+    get { return name; }
+    set { name = value; }
 }
 ```
 
@@ -87,7 +89,7 @@ josh.Name = "Josh";
 Console.WriteLine(josh.Name);
 ```
 
-When you use properties in this way, it appears that you're accessing the field directly, but actually, the accessor methods are being run.
+When you use properties in this way, the get/set methods are called implicitly when assigning or reading the property.
 
 An astute question to ask at this point would be, "Why make the fields private if you're just going to allow people to get and set them anyway!?" Great question. There are lots of reasons to use getters and setters to control access. Here are just a few:
 
@@ -102,10 +104,12 @@ One of the four fields in our `Student` class is a prime candidate for the scena
 To set different access levels on a property, us an access modifier next to `get` or `set`. Here's how we would make `Name` readable by everyone, but modifiable only by code within the given assembly.
 
 ```csharp
+private string name;
+
 public string Name
 {
-    get { return Name; }
-    internal set { Name = value; }
+    get { return name; }
+    internal set { name = value; }
 }
 ```
 
@@ -115,6 +119,14 @@ If a field has both a public getter and setter, and no additional logic is neede
 string Name { get; set; }
 ```
 
+This is referred to as an *auto-implemented property**.
+
+<aside class="aside-warning" markdown="1">
+Note that in the example above the private field is `name` (lowercase) while the property is `Name`. The property is based on the value of the private field `name`, and since C# identifiers are case-sensitive, these are two distinct entities. `name` is referred to as a "backing field", and it stores the value of the property
+
+If you were to try to use the same identifier for both the backing field and the property, you'll see a `StackOverflowException` due to infinite recursion.
+</aside>
+
 When using this syntax, the compiler will generate the following equivalent code for us. That is, the compiler generates code identical to the first example of accessors above.
 
 As an example of validation within a setter, let's take a short detour to look at a `Temperature` class. A valid temperature can only be so low ("absolute zero"), so we wouldn't want to allow somebody to set an invalid value. In `set` we thrown an exception if an invalid value is provided (we'll cover exceptions in detail later, but for now note that they are ways of signaling errors).
@@ -122,11 +134,13 @@ As an example of validation within a setter, let's take a short detour to look a
 ```csharp
 public class Temperature {
 
+    private double fahrenheit;
+
     public double Fahrenheit
     {
         get
         {
-            return Fahrenheit;
+            return fahrenheit;
         }
         set
         {
@@ -136,7 +150,7 @@ public class Temperature {
                 throw new ArgumentException("Value is below absolute zero");
             }
 
-            Fahrenheit = value;
+            fahrenheit = value;
         }
     }
 }
@@ -144,7 +158,7 @@ public class Temperature {
 
 There's a nice detailed discussion that provides additional perspective on why to use getters and setters on [Stack Overflow](http://stackoverflow.com/questions/1568091/why-use-getters-and-setters) (the discussion here refers to Java, but the concepts apply to C# just the same).
 
-Most often, properties will correspond directly to a value stored in a private field, but they don't have to. Let's look at an example of a property that doesn't directly correspond to a field. If we wanted to add a `Celsius` property to the `Temperature` class above, we might do it as follows:
+Most often, properties will correspond directly to a private backing field, but they don't have to. Let's look at an example of a property that doesn't directly correspond to a field. If we wanted to add a `Celsius` property to the `Temperature` class above, we might do it as follows:
 
 ```csharp
 public double Celsius
@@ -154,15 +168,15 @@ public double Celsius
 }
 ```
 
-Since there's a link between Fahrenheit and celsius, we want to make sure that when one is updated, so is the other. In this case, we only store one field value (`Fahrenheit`) and make the appropriate calculation when getting or setting the celsius property. Using a property like this is the same as when there is a private field behind it; the code using it can't tell the difference.
+Since there's a link between Fahrenheit and celsius, we want to make sure that when one is updated, so is the other. In this case, we only store one field value (`fahrenheit`, the backing field for `Fahrenheit`) and make the appropriate calculation when getting or setting the celsius property. Using a property like this is the same as when there is a private field behind it; the code using it can't tell the difference.
 
 ### Readonly Fields
 
 A **readonly field** is one that can not be changed once it is initialized. This means slightly different things for primitive and class types. We create readonly fields by declaring them with the `readonly` keyword.
 
-**Readonly primitive fields** can not change their value once they are initialized.
+**Readonly value-type fields** can not change their value once they are initialized.
 
-**Readonly object fields** may not change the object that they hold once they are initialized. However, that object itself my change.
+**Readonly reference-type fields** may not change the object that they hold once they are initialized. However, that object itself my change.
 
 Furthermore, **readonly fields may only be initialized when declared, or in a constructor.** Calling a constructor is what we are doing when creating a new object, as in `Student josh = new Student()`. We'll explore creating our own constructors in the next lesson.
 
@@ -199,8 +213,6 @@ public class ReadonlyFields {
 }
 ```
 
-Readonly fields can be confusing at first. If you've encountered references, or pointers, elsewhere in your programming journey (we don't cover them in LC101), then readonly fields might make more sense if you know that object fields actually hold a pointer to an object, and not the object itself.
-
 Note that `readonly` doesn't make much sense for properties, and in fact may not be applied to properties.
 
 ### Static Fields and Properties
@@ -214,11 +226,13 @@ public class Temperature {
 
     private static double AbsoluteZeroFahrenheit = -459.67;
 
+    private double fahrenheit;
+
     public double Fahrenheit
     {
         get
         {
-            return Fahrenheit;
+            return fahrenheit;
         }
         set
         {
@@ -227,7 +241,7 @@ public class Temperature {
                 throw new ArgumentException("Value is below absolute zero");
             }
 
-            Fahrenheit = value;
+            fahrenheit = value;
         }
     }
 
@@ -283,6 +297,7 @@ Apply the proper modifiers to fields and properties -- access modifiers, `static
 
 - [Encapsulation (wikipedia.org)](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming))
 - [Properties in C# (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/x9fsa0sw.aspx)
+- [Auto-Implemented Properties (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/bb384054.aspx)
 - [Restricting Accessor Accessibility in C# (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/75e8y5dd.aspx)
 - [static (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/98f28cdx.aspx)
 - [const (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/e6w8fe1b.aspx)
