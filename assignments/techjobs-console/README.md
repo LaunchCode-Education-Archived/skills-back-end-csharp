@@ -106,7 +106,7 @@ The word "query" is in quotes here because we're not really carrying out a datab
 
 The `GetUserSelection` method takes in a string to display above the menu, to give them context for what they are being asked. It also takes in a dictionary with string keys and string values. How is this used? What will this dictionary contain when the method runs?
 
-To figure this out, right-click on the method name and select *Find All References*. This will open a pane and display each location in the program where `displayMenuChoice` is called. The first such usage is the first line of the main `while loop`:
+To figure this out, right-click on the method name and select *Find All References*. This will open a pane and display each location in the program where `GetUserSelection` is called. The first such usage is the first line of the main `while loop`:
 
 ```csharp
 string actionChoice = GetUserSelection("View Jobs", actionChoices);
@@ -148,7 +148,7 @@ The `JobData` class is responsible for importing the data from the CSV file and 
 If you want to create a new method in `JobData`, or add a property, be sure to declare it `static`.
 </aside>
 
-Let's look more closely at the data type is of `AllJobs`. It purports to be an `List` that stores `Dictionary` objects which have `string` keys and `string` values. If we were to represent some of this data visually, using `[]` for an `List` and `{}` with key/value pairs (as in Python lists and dictionaries), it would look like this:
+Let's look more closely at the data type of `AllJobs`. It purports to be an `List` that stores `Dictionary` objects which have `string` keys and `string` values. If we were to represent some of this data visually, using `[]` for an `List` and `{}` with key/value pairs (as in Python lists and dictionaries), it would look like this:
 
 ```nohighlight
 [
@@ -172,7 +172,7 @@ Let's look more closely at the data type is of `AllJobs`. It purports to be an `
 
 If you look at `LoadData` you'll see a lot of unfamiliar code. Kathy wrote this essential piece of code for you, and while you won't have to modify it, it will be useful to have an idea of how it works. Read through the code until you feel like you can describe its functionality at a basic level.
 
-There are three more methods in `JobData`, each of which is public (and `static`, per our earlier note): `FindAll()`, `FindAll(string)`, and `findByKeyAndValue`. Note that there are two methods named `FindAll`, but this is allowed in C# via a feature called **overloading**. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters. In other words, their signatures are different even though their names are same.
+There are three more methods in `JobData`, each of which is public (and `static`, per our earlier note): `FindAll()`, `FindAll(string)`, and `FindByColumnAndValue`. Note that there are two methods named `FindAll`, but this is allowed in C# via a feature called **overloading**. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters. In other words, their signatures are different even though their names are same.
 
 Hear are a few questions to ask yourself while reading this code:
 - What is the data type of a "job" record?
@@ -205,18 +205,18 @@ If there are no results, it should print an appropriate messages.
 To do this, you'll need to iterate over a `List` of jobs. Each job is itself a `Dictionary`. While you can get each of the items out of the dictionary using the known keys ("employer", "location", etc), think instead about creating a nested loop to loop over each dictionary. You'll want to use the `Dictionary.Keys` property to do this. If a new field is added to the job records, this approach will print out the new field without any updates to `PrintJobs`.
 </aside>
 
-#### Implement findByValue
+#### Implement FindByValue
 
 At this stage, the application will allow users to search a given column of the data for a given string. Your next task is to enable a search to go across *all* of the columns.
 
-In the `JobData` class, create a new (`public static`) method that will search for a string within each of the columns. Here are a few observations:
+In the `JobData` class, create a new (`public static`) method called `FindByValue` that will search for a string within each of the columns. Here are a few observations:
 
 1. The method that you write should not contain duplicate jobs. So, for example, if a listing has position type "Web - Front End" and name "Front end web dev" then searching for "web" should not include the listing twice.
 2. As with `PrintJobs`, you should write your code in a way that if a new column is added to the data, your code will automatically search the new column as well.
 3. You *should not* write code that calls `FindByColumnAndValue` once for each column. Rather, utilize loops and collection methods as you did above.
 4. You *should*, on the other hand, read and understand `FindByColumnAndValue`, since your code will look similar in some ways.
 
-You'll need to call `findByValue` from somewhere in `Main`. We'll leave it up to you to find where. You might have noticed that when you try to search all columns using the app, a message is printed, so that is a good clue to help you find where to place this new method call.
+You'll need to call `FindByValue` from somewhere in `Main`. We'll leave it up to you to find where. You might have noticed that when you try to search all columns using the app, a message is printed, so that is a good clue to help you find where to place this new method call.
 
 #### Make Search Methods Case-Insensitive
 
