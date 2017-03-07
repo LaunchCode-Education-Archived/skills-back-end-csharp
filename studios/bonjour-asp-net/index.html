@@ -135,14 +135,18 @@
 <li>Instead of returning the greeting as plain text, add a bit of HTML to the response string so that the displayed message looks a bit nicer.</li>
 <li>Restructure your code so that the controller class doesn't know anything about the specific languages available. In other words, it asks the model for available languages to present to the user.</li>
 <li>Add some additional output that displays the number of times the user has been greeted. <em>Hint:</em> Use a <code>static</code> property to keep track of the count.</li>
-<li>The bonus mission above doesn't discriminate between requests made by you or somebody else. In other words, it counts <em>total</em> greetings rather than greetings to a specific user. Fix this by using cookies. When a user is greeted for the first time, set a cookie that has the visit count 1. On subsequent visits, check for this cookie and update its value. Here are a few tips to get you going:
+<li>
+<p>The bonus mission above doesn't discriminate between requests made by you or somebody else. In other words, it counts <em>total</em> greetings rather than greetings to a specific user. Fix this by using cookies. When a user is greeted for the first time, set a cookie that has the visit count 1. On subsequent visits, check for this cookie and update its value.</p>
+<p>Since cookies are stored within the browser, this will tie the visit count to a specific user an a specific browser. If the same user were to go to another browser, their counter would start over at 1.</p>
+<p>Here are a few tips to get you going:</p>
 <ul>
 <li>Every controller inherits the properties <code>Request</code> and <code>Response</code>, so these can be used directly in your controller code. The contain data and methods related to the current HTTP request and response being handled.</li>
 <li><code>Request.Cookies</code> is a collection with key/value data that can be used like a dictionary. The keys are the cookie names, and the values are the cookie values. If a cookie doesn't exist, then trying to access its value will give <code>null</code>. Use this fact to check for the existence of a cookie, and to set it initially on the first request.</li>
 <li>The values in <code>Request.Cookies</code> are always strings, so you'll likely need to do some type conversion.</li>
 <li>To set a cookie in the response, use <code>Response.Cookies.Append(name, value)</code>, where <code>name</code> and <code>value</code> are strings.</li>
 <li>Don't forget to display the visit count on the screen! Or, at least check that it has been set and incremented using your browser's developer tools.</li>
-</ul></li>
+</ul>
+</li>
 </ul>
                                     </section>
 
