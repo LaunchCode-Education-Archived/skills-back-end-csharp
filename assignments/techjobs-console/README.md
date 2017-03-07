@@ -172,7 +172,7 @@ Let's look more closely at the data type of `AllJobs`. It purports to be an `Lis
 
 If you look at `LoadData` you'll see a lot of unfamiliar code. Kathy wrote this essential piece of code for you, and while you won't have to modify it, it will be useful to have an idea of how it works. Read through the code until you feel like you can describe its functionality at a basic level.
 
-There are three more methods in `JobData`, each of which is public (and `static`, per our earlier note): `FindAll()`, `FindAll(string)`, and `findByKeyAndValue`. Note that there are two methods named `FindAll`, but this is allowed in C# via a feature called **overloading**. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters. In other words, their signatures are different even though their names are same.
+There are three more methods in `JobData`, each of which is public (and `static`, per our earlier note): `FindAll()`, `FindAll(string)`, and `FindByColumnAndValue`. Note that there are two methods named `FindAll`, but this is allowed in C# via a feature called **overloading**. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters. In other words, their signatures are different even though their names are same.
 
 Hear are a few questions to ask yourself while reading this code:
 - What is the data type of a "job" record?
