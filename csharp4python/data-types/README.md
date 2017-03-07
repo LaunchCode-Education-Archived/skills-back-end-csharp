@@ -228,6 +228,30 @@ Each of these statements creates a new variable that is initialized to hold a ne
 
 Variables and parameters that are of the type of a class are said to be of **reference type** (in contrast to **primitive type**). In plain English, we would say of the C# example: "`myCat` is a reference variable of type `Cat`."
 
+### Reference and Value Types
+
+We can group types in C# into two categories: **value types** and **reference types**. Variables holding value types directly contain their data, and include numeric types (`int`, `double`, etc.), `bool`, and a handful of others that we won't encounter in this course.
+
+As mentioned above, classes define reference types. A variable of a reference type (such as `myCat` above) does not actually store the object in question. Instead, it stores a **reference** to the object. A reference is literally a memory address. We visualize references as an arrow pointing to the object in memory.
+
+Consider this code:
+
+```csharp
+int catAge = 11;
+Cat myCat = new Cat();
+Cat sameCat = myCat;
+```
+
+Visually we can represent these three variables as shown here.
+
+![Reference Types](references.png)
+
+Since `int` is a value type, the variable `catAge` functions as a box holding the integer value 11. On the other hand, `myCat` is a reference variable, since it holds an object. The variable actually stores the address of the object, which we visualize as an arrow from the variable box to the object.
+
+When we assign a value to a reference type, as in `Cat sameCat = myCat`, we are not creating a second copy of the object, but instead are creating a second "arrow" pointing to the same object.
+
+The distinction between references types and value types is important, if difficult to wrap your brain around at first. We will see that reference types are handled differently in essential and important ways in a lot of different situations.
+
 ## Arrays
 
 While Python has the basic list type, C# has multiple ways of storing ordered data. The most basic is that of the array.
