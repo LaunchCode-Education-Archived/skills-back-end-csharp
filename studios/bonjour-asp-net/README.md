@@ -22,7 +22,11 @@ When the user submits the form (a `POST` request), they should be greeted in the
 - Instead of returning the greeting as plain text, add a bit of HTML to the response string so that the displayed message looks a bit nicer.
 - Restructure your code so that the controller class doesn't know anything about the specific languages available. In other words, it asks the model for available languages to present to the user.
 - Add some additional output that displays the number of times the user has been greeted. *Hint:* Use a `static` property to keep track of the count.
-- The bonus mission above doesn't discriminate between requests made by you or somebody else. In other words, it counts *total* greetings rather than greetings to a specific user. Fix this by using cookies. When a user is greeted for the first time, set a cookie that has the visit count 1. On subsequent visits, check for this cookie and update its value. Here are a few tips to get you going:
+- The bonus mission above doesn't discriminate between requests made by you or somebody else. In other words, it counts *total* greetings rather than greetings to a specific user. Fix this by using cookies. When a user is greeted for the first time, set a cookie that has the visit count 1. On subsequent visits, check for this cookie and update its value.
+
+    Since cookies are stored within the browser, this will tie the visit count to a specific user an a specific browser. If the same user were to go to another browser, their counter would start over at 1.
+
+    Here are a few tips to get you going:
     - Every controller inherits the properties `Request` and `Response`, so these can be used directly in your controller code. The contain data and methods related to the current HTTP request and response being handled.
     - `Request.Cookies` is a collection with key/value data that can be used like a dictionary. The keys are the cookie names, and the values are the cookie values. If a cookie doesn't exist, then trying to access its value will give `null`. Use this fact to check for the existence of a cookie, and to set it initially on the first request.
     - The values in `Request.Cookies` are always strings, so you'll likely need to do some type conversion.
