@@ -317,7 +317,7 @@ public class HouseCat extends Cat {
 }</code></pre>
 <p>The only caveat and difference between C# and Python here is that in the C# example, <code>HouseCat</code> will not be able to use any <code>private</code> properties or methods of <code>Cat</code>.</p>
 <blockquote>
-<p><em>NOTE:</em> So far we've seen <code>public</code> and <code>private</code> access modifiers. There are two other levels of access provided in C# aside from <code>public</code> and <code>private</code>. We won't cover them here, but they are <code>protected</code> and &quot;package&quot; or &quot;default&quot; (no keyword is provided for this level, as it's the default level). You may find them useful at times, and you may <a href="https://docs.oracle.com/csharpse/tutorial/csharp/csharpOO/accesscontrol.html">read about them</a> on your own.</p>
+<p><em>NOTE:</em> So far we've seen <code>public</code> and <code>private</code> access modifiers. There are two other levels of access provided in C# aside from <code>public</code> and <code>private</code>. We won't cover them here, but they are <code>protected</code> and &quot;package&quot; or &quot;default&quot; (no keyword is provided for this level, as it's the default level). You may find them useful at times, and you may <a href="https://docs.oracle.com/csharpse/tutorial/csharp/csharpOO/accesscontrol.html" target="_blank">read about them</a> on your own.</p>
 </blockquote>
 <h3 id="inheritance-in-the-fraction-class">Inheritance in the Fraction Class</h3>
 <p>Rather than create a class extending <code>Fraction</code>, we will see how <code>Fraction</code> itself already extends another class. And you'll get plenty of practice extending classes later on.</p>
@@ -407,7 +407,7 @@ public long longValue() {
 <p>C#’s answer to this problem is the <code>Interface</code> mechanism. Interfaces are like a combination of Inheritance and contracts all rolled into one. An interface is a <em>specification</em> that says any object that claims it implements this interface must provide the following methods. It sounds a little bit like an abstract class, however it is outside the inheritance mechanism. You can never create an instance of <code>Comparable</code>. Many objects, however, do implement the <code>Comparable</code> interface. What does the Comparable interface specify?</p>
 <p>The <code>Comparable</code> interface says that any object that claims to be <code>Comparable</code> must implement the <code>compareTo</code> method. To see what this entails, hop over the official C# documentation to read the introduction and Method Detail sections of the <code>Comparable</code> interface.</p>
 <blockquote>
-<p><em>READ:</em> <a href="https://docs.oracle.com/csharpse/8/docs/api/csharp/lang/Comparable.html"><code>Comparable</code> Interfact documentation</a> (Introduction and <code>compareTo</code> Method Detail sections only)</p>
+<p><em>READ:</em> <a href="https://docs.oracle.com/csharpse/8/docs/api/csharp/lang/Comparable.html" target="_blank"><code>Comparable</code> Interfact documentation</a> (Introduction and <code>compareTo</code> Method Detail sections only)</p>
 </blockquote>
 <p>To make our <code>Fraction</code> class <code>Comparable</code> we must modify the class declaration line as follows:</p>
 <pre><code class="language-csharp">public class Fraction extends Number implements Comparable&lt;Fraction&gt; {

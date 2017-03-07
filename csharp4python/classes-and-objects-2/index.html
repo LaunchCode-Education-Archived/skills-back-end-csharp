@@ -127,7 +127,7 @@
 <p>C#’s answer to this problem is the <code>Interface</code> mechanism. Interfaces are like a combination of Inheritance and contracts all rolled into one. An interface is a <em>specification</em> that says any object that claims it implements this interface must provide the following methods. It sounds a little bit like an abstract class, however it is outside the inheritance mechanism. You can never create an instance of <code>Comparable</code>. Many objects, however, do implement the <code>Comparable</code> interface. What does the Comparable interface specify?</p>
 <p>The <code>Comparable</code> interface says that any object that claims to be <code>Comparable</code> must implement the <code>compareTo</code> method. To see what this entails, hop over the official C# documentation to read the introduction and Method Detail sections of the <code>Comparable</code> interface.</p>
 <blockquote>
-<p><em>READ:</em> <a href="https://docs.oracle.com/csharpse/8/docs/api/csharp/lang/Comparable.html"><code>Comparable</code> Interfact documentation</a> (Introduction and <code>compareTo</code> Method Detail sections only)</p>
+<p><em>READ:</em> <a href="https://docs.oracle.com/csharpse/8/docs/api/csharp/lang/Comparable.html" target="_blank"><code>Comparable</code> Interfact documentation</a> (Introduction and <code>compareTo</code> Method Detail sections only)</p>
 </blockquote>
 <p>To make our <code>Fraction</code> class <code>Comparable</code> we must modify the class declaration line as follows:</p>
 <pre><code class="language-csharp">public class Fraction extends Number implements Comparable&lt;Fraction&gt; {

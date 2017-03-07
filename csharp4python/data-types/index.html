@@ -138,7 +138,7 @@ x = 42;</code></pre>
 <p>It is allowed in some situations in C# to declare a variable without specifying a type by using the keyword <code>var</code>, as in <code>var x = "dog";</code>. In this case, C# still assigns a type to <code>x</code> through inference. It looks and sees that we are assigning <code>x</code> the value <code>"dog"</code>, which is <code>string</code>. Thus, <code>x</code> has type <code>string</code> and attempting to assign <code>x = 42</code> will still result in a build error.</p>
 <p>We recommend avoiding use of <code>var</code> while you are learning C#, and even after you become more experienced with the langauge you will still only want to use it sparingly and in specific circumstances. Explicitly declaring the type of your variables makes for more readable code, in general.</p>
 </aside>
-<p>Dynamic and static typing are examples of different <a href="https://en.wikipedia.org/wiki/Type_system">type systems</a>. The type system of a programming language is one of the most important high-level characteristics that programmers use when discussing the differences between languages. Here are a few examples of popular languages falling into these two categories:</p>
+<p>Dynamic and static typing are examples of different <a href="https://en.wikipedia.org/wiki/Type_system" target="_blank">type systems</a>. The type system of a programming language is one of the most important high-level characteristics that programmers use when discussing the differences between languages. Here are a few examples of popular languages falling into these two categories:</p>
 <ul>
 <li><strong>Dynamic</strong>: Python, Ruby, C#script, PHP</li>
 <li><strong>Static</strong>: C#, C, C++, Java, Ada</li>
@@ -195,7 +195,7 @@ x = 42;</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Not all built-in data types in C# are listed here, only the most commonly used types that beginners are likely to encounter. If you're curious, <a href="https://msdn.microsoft.com/en-us/library/ya5y69ds.aspx">read more about built-in types in C#</a>.</p>
+<p>Not all built-in data types in C# are listed here, only the most commonly used types that beginners are likely to encounter. If you're curious, <a href="https://msdn.microsoft.com/en-us/library/ya5y69ds.aspx" target="_blank">read more about built-in types in C#</a>.</p>
 <p>As in Python, operators -- such as <code>+</code> and <code>*</code> -- are type-dependent. That is, we can only use them on allowed types, and their effects are different depending on which types we use them on. The <code>+</code> operator is the most clear example of this. We can use <code>+</code> to add numeric types together, such as <code>2 + 2</code>. But we can also use it to concatenate strings: <code>"2" + "2"</code>. What the operators does depends on the type, and we may not mix types in arbitrary ways (<code>"2" + 2</code> results in a compiler error).</p>
 <aside class="aside-note">
 <p>Numeric types such as <code>int</code> and <code>double</code> may be freely mixed when using numeric operators. Generally, the result of such mixing is that the output has the type of the more precise input. For example, the following snippet would print out <code>System.double</code>.</p>
@@ -423,11 +423,11 @@ Cat sameCat = myCat;</code></pre>
 <p>We are able to call this method from another class because it is declared to be <code>public</code>. If we wanted to restrict the method from being called by another class, we could instead use the <code>private</code> modifier. We'll explore access modifiers in more depth in coming lessons.</p>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://msdn.microsoft.com/en-us/library/ya5y69ds.aspx">Built-In Types (msdn.microsoft.com)</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/6a71f45d.aspx">C# Operators (msdn.microsoft.com)</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/system.string_methods(v=vs.110).aspx">String Methods (msdn.microsoft.com)</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/system.console(v=vs.110).aspx">The <code>Console</code> class (msdn.microsoft.com)</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/aa288453(v=vs.71).aspx">Array Tutorial (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/ya5y69ds.aspx" target="_blank">Built-In Types (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/6a71f45d.aspx" target="_blank">C# Operators (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/system.string_methods(v=vs.110).aspx" target="_blank">String Methods (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/system.console(v=vs.110).aspx" target="_blank">The <code>Console</code> class (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/aa288453(v=vs.71).aspx" target="_blank">Array Tutorial (msdn.microsoft.com)</a></li>
 </ul>
                                     </section>
 

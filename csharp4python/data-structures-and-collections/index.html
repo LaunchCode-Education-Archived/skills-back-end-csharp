@@ -121,7 +121,7 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Data Structures and Collections</h1>
                     <p>A <strong>data structure</strong> is a programming construct that allows you to aggregate lots of values into one value. More simply, a data structure let's us hold on to lots of data in a single place. In Python, the data structures we used were lists, dictionaries, and tuples.</p>
-<p>C# provides powerful and flexible structures to store data, known as <a href="https://msdn.microsoft.com/en-us/library/mt654013.aspx">collections</a>. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with C#.</p>
+<p>C# provides powerful and flexible structures to store data, known as <a href="https://msdn.microsoft.com/en-us/library/mt654013.aspx" target="_blank">collections</a>. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with C#.</p>
 <h2 id="ordered-data-lists-and-arrays">Ordered Data: Lists and Arrays</h2>
 <p>We'll explore collections in C# by looking at different versions of the same program. The program will function as a gradebook, allowing a user (a professor or teacher) to enter the class roster for a course, along with each student's grade. It then prints the class roster along with the average grade. In each variation of this program, the grading system could be anything numeric, such as a 0.0-4.0 point scale, or a 0-100 percentage scale.</p>
 <p>We'll look at lists first, and as before, we'll compare Python to C# explicitely through example. Python provided one basic <em>ordered</em> data structure: the list. Here's our gradebook program in Python using only lists.</p>
@@ -250,7 +250,7 @@ do
 }
 while (newStudent != "");</code></pre>
 <p>Recall that a do-while loop is very similar to a while loop, but it has it's check at the end of the loop block. This has the net effect that we'll always run the block at least once. In this example, we prompt the user for a name, which we read in via <code>Console.ReadLine()</code> when they hit the enter key. To finish entering names, they enter a blank line.</p>
-<p>For each student that entered (that is, each non-empty line), we add the new string to the end of our list with <code>students.Add(newStudent)</code>. The <code>.Add()</code> method is a method provided by the <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx">List Class</a>. There are lots of other list methods</p>
+<p>For each student that entered (that is, each non-empty line), we add the new string to the end of our list with <code>students.Add(newStudent)</code>. The <code>.Add()</code> method is a method provided by the <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx" target="_blank">List Class</a>. There are lots of other list methods</p>
 <p>Below the do-while loop are two different for loops that demonstrate the two ways you can loop through a list in C#. Here's the first, which collects the numeric grade for each student:</p>
 <pre><code class="language-csharp">// Get student grades
 foreach (string student in students)
@@ -277,7 +277,7 @@ Console.WriteLine("Average grade: " + avg);
 Console.ReadLine();</code></pre>
 <p>The only line worth remarking on is the first, which includes the method call <code>grades.Sum()</code>. For lists with numeric data, <code>.Sum()</code> will return the sum of all of items in the list.</p>
 <h3 id="list-methods-and-properties">List Methods and Properties</h3>
-<p>Let's gather up a few of the <code>List</code> methods and properties that we've encountered so far, along a few new ones. While these will be the most common methods and properties that you use with this class, they by no means represent a complete list. Refer to the <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx">official documentation on the <code>List</code> class</a> for such a list, and for more details.</p>
+<p>Let's gather up a few of the <code>List</code> methods and properties that we've encountered so far, along a few new ones. While these will be the most common methods and properties that you use with this class, they by no means represent a complete list. Refer to the <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx" target="_blank">official documentation on the <code>List</code> class</a> for such a list, and for more details.</p>
 <table>
 <thead>
 <tr>
@@ -487,9 +487,9 @@ double jesseGrade = students[name];</code></pre>
 {
     Console.WriteLine(student);
 }</code></pre>
-<p>A similar structure applies if you only need the values, using <code>students.Values</code>. One thing to note is that when iterating through a dictionary in either way we've presented, it is not allowed to modify the dictionary elements in any way. In fact, this is why we moved the entry of grades in our program up to the do-while loop, so the grade can be set at the same time as the student's name. If you want to use a foreach loop with a dictionary and be able to update items within the dictionary, you'll need to <a href="http://stackoverflow.com/questions/1070766/editing-dictionary-values-in-a-foreach-loop">do a little extra work</a>.</p>
+<p>A similar structure applies if you only need the values, using <code>students.Values</code>. One thing to note is that when iterating through a dictionary in either way we've presented, it is not allowed to modify the dictionary elements in any way. In fact, this is why we moved the entry of grades in our program up to the do-while loop, so the grade can be set at the same time as the student's name. If you want to use a foreach loop with a dictionary and be able to update items within the dictionary, you'll need to <a href="http://stackoverflow.com/questions/1070766/editing-dictionary-values-in-a-foreach-loop" target="_blank">do a little extra work</a>.</p>
 <h3 id="dictionary-methods">Dictionary Methods</h3>
-<p>Let's collect some dictionary properties and methods. As we said about lists, this is by no means a comprehensive list. For full details on all properties and methods avaialble, see the <a href="https://msdn.microsoft.com/en-us/library/xfhwa508(v=vs.110).aspx">official documentation on the <code>Dictionary</code> class</a>.</p>
+<p>Let's collect some dictionary properties and methods. As we said about lists, this is by no means a comprehensive list. For full details on all properties and methods avaialble, see the <a href="https://msdn.microsoft.com/en-us/library/xfhwa508(v=vs.110).aspx" target="_blank">official documentation on the <code>Dictionary</code> class</a>.</p>
 <table>
 <thead>
 <tr>
@@ -541,11 +541,11 @@ double jesseGrade = students[name];</code></pre>
 <p>We have only brushed the surface of how lists and dictionaries work, and we leave it to you to refer to the official documentation linked below for more details. You'll certainly be using lists and dictionaries in ways not outlined in this lesson, but with the knowledge you have now, you should be able to use C# collections and pick up new uses as you go.</p>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://msdn.microsoft.com/en-us/library/mt654013.aspx">C# Collections (msdn.microsoft.com)</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx">List Class (msdn.microsoft.com)</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/xfhwa508(v=vs.110).aspx">Dictionary Class (msdn.microsoft.com)</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/aa288453(v=vs.71).aspx">Arrays Tutorial (msdn.microsoft.com)</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/bb383977.aspx">Extension Methods (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/mt654013.aspx" target="_blank">C# Collections (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx" target="_blank">List Class (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/xfhwa508(v=vs.110).aspx" target="_blank">Dictionary Class (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/aa288453(v=vs.71).aspx" target="_blank">Arrays Tutorial (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/bb383977.aspx" target="_blank">Extension Methods (msdn.microsoft.com)</a></li>
 </ul>
                                     </section>
 
