@@ -148,7 +148,7 @@ The `JobData` class is responsible for importing the data from the CSV file and 
 If you want to create a new method in `JobData`, or add a property, be sure to declare it `static`.
 </aside>
 
-Let's look more closely at the data type is of `AllJobs`. It purports to be an `List` that stores `Dictionary` objects which have `string` keys and `string` values. If we were to represent some of this data visually, using `[]` for an `List` and `{}` with key/value pairs (as in Python lists and dictionaries), it would look like this:
+Let's look more closely at the data type of `AllJobs`. It purports to be an `List` that stores `Dictionary` objects which have `string` keys and `string` values. If we were to represent some of this data visually, using `[]` for an `List` and `{}` with key/value pairs (as in Python lists and dictionaries), it would look like this:
 
 ```nohighlight
 [
