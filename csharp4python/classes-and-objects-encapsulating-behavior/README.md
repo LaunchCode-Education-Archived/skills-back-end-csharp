@@ -353,7 +353,7 @@ You'll often want to implement `Equals()` yourself. However, if you do so, be su
 One catch of working with `Equals()` is that its input parameter must be of type `Object`, even if we're working in a class like `Student`. The reason why will become more clear in the next lesson, where we introduce the `Object` class. For now, the practical implication is that we must convert, or **cast**, the input `o` to be of type `Student` with the syntax `Student studentObj = o as Student`. Then we compare the converted student's ID to that of the current student.
 
 <aside class="aside-pro-tip" markdown="1">
-Seasoned C# developers will tell you that every time you implement your own version of `Equals()` you should also implement your own version of `GetHashCode()`. `GetHashCode()` is another special method that every class has. Understanding `GetHashCode()` would take us a bit far afield at this point, but we would be remiss to not mention it. If you want to read more, [go for it][implementing-hashcode]!
+Seasoned C# developers will tell you that every time you implement your own version of `Equals()` you should also implement your own version of `GetHashCode()`. `GetHashCode()` is another special method that every class has. Understanding `GetHashCode()` would take us a bit far afield at this point, but we would be remiss to not mention it. If you want to read more, [go for it](https://msdn.microsoft.com/en-us/library/system.object.gethashcode%28v=vs.110%29.aspx)!
 </aside>
 
 While you may not need to write your own `Equals()` method for each class you create, the more immediate implication for you as a new C# programmer is that you should *always use* `Equals()` yourself when comparing objects. This is especially true when working with objects of types provided by C#, such as `string`. A class that is part of C# or a third-party library will have implemented `Equals()` in a way appropriate for the particular class, whereas `==` will only check to see if two objects are the same literal object.
@@ -383,4 +383,3 @@ As you go forth and create classes, the main thing to keep in mind is that your 
 
 [implementing-equals]: https://msdn.microsoft.com/en-us/library/336aedhh(v=vs.100).aspx
 [srp]: https://en.wikipedia.org/wiki/Single_responsibility_principle
-[implementing-hashcode]: https://msdn.microsoft.com/en-us/library/system.object.gethashcode%28v=vs.110%29.aspx
