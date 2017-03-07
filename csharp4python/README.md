@@ -68,8 +68,8 @@ This set of lessons is for programmers that are comfortable with Python but are 
     - [Instance Methods](classes-and-objects-encapsulating-behavior/#instance-methods)
     - [Static Methods](classes-and-objects-encapsulating-behavior/#static-methods)
     - [Special Methods](classes-and-objects-encapsulating-behavior/#special-methods)
-        - [toString](classes-and-objects-encapsulating-behavior/#tostring)
-        - [equals](classes-and-objects-encapsulating-behavior/#equals)
+        - [ToString](classes-and-objects-encapsulating-behavior/#tostring)
+        - [Equals](classes-and-objects-encapsulating-behavior/#equals)
     - [Single Responsibility Principle](classes-and-objects-encapsulating-behavior/#single-responsibility-principle)
 1. [Naming Conventions](naming-conventions/)
 
