@@ -191,7 +191,7 @@
 <p>The word &quot;query&quot; is in quotes here because we're not really carrying out a database query, but the net effect is the same as if we were. We ask a method for data that originates from a non-C# source, it parses and filters that data, and gives it back to us.</p>
 <h5 id="the-getuserselection-method">The GetUserSelection method</h5>
 <p>The <code>GetUserSelection</code> method takes in a string to display above the menu, to give them context for what they are being asked. It also takes in a dictionary with string keys and string values. How is this used? What will this dictionary contain when the method runs?</p>
-<p>To figure this out, right-click on the method name and select <em>Find All References</em>. This will open a pane and display each location in the program where <code>displayMenuChoice</code> is called. The first such usage is the first line of the main <code>while loop</code>:</p>
+<p>To figure this out, right-click on the method name and select <em>Find All References</em>. This will open a pane and display each location in the program where <code>GetUserSelection</code> is called. The first such usage is the first line of the main <code>while loop</code>:</p>
 <pre><code class="language-csharp">string actionChoice = GetUserSelection("View Jobs", actionChoices);</code></pre>
 <p>What is this dictionary named <code>actionChoices</code>? If we look a few lines above, we see:</p>
 <pre><code class="language-csharp">// Top-level menu options
@@ -212,7 +212,7 @@ actionChoices.Add("list", "List");</code></pre>
 <p>We haven't covered static properties and methods in-depth yet. For this assignment, know simply that they allow us to use properties and methods of a class without creating an object from that class. For example, we can call <code>JobData.FindAll()</code> from the <code>TechJob</code> class.</p>
 <p>If you want to create a new method in <code>JobData</code>, or add a property, be sure to declare it <code>static</code>.</p>
 </aside>
-<p>Let's look more closely at the data type is of <code>AllJobs</code>. It purports to be an <code>List</code> that stores <code>Dictionary</code> objects which have <code>string</code> keys and <code>string</code> values. If we were to represent some of this data visually, using <code>[]</code> for an <code>List</code> and <code>{}</code> with key/value pairs (as in Python lists and dictionaries), it would look like this:</p>
+<p>Let's look more closely at the data type of <code>AllJobs</code>. It purports to be an <code>List</code> that stores <code>Dictionary</code> objects which have <code>string</code> keys and <code>string</code> values. If we were to represent some of this data visually, using <code>[]</code> for an <code>List</code> and <code>{}</code> with key/value pairs (as in Python lists and dictionaries), it would look like this:</p>
 <pre><code class="language-nohighlight">[
     {
         "name": "Junior Data Analyst",
@@ -231,7 +231,7 @@ actionChoices.Add("list", "List");</code></pre>
     ...
 ]</code></pre>
 <p>If you look at <code>LoadData</code> you'll see a lot of unfamiliar code. Kathy wrote this essential piece of code for you, and while you won't have to modify it, it will be useful to have an idea of how it works. Read through the code until you feel like you can describe its functionality at a basic level.</p>
-<p>There are three more methods in <code>JobData</code>, each of which is public (and <code>static</code>, per our earlier note): <code>FindAll()</code>, <code>FindAll(string)</code>, and <code>findByKeyAndValue</code>. Note that there are two methods named <code>FindAll</code>, but this is allowed in C# via a feature called <strong>overloading</strong>. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters. In other words, their signatures are different even though their names are same.</p>
+<p>There are three more methods in <code>JobData</code>, each of which is public (and <code>static</code>, per our earlier note): <code>FindAll()</code>, <code>FindAll(string)</code>, and <code>FindByColumnAndValue</code>. Note that there are two methods named <code>FindAll</code>, but this is allowed in C# via a feature called <strong>overloading</strong>. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters. In other words, their signatures are different even though their names are same.</p>
 <p>Hear are a few questions to ask yourself while reading this code:</p>
 <ul>
 <li>What is the data type of a &quot;job&quot; record?</li>
@@ -254,16 +254,16 @@ core competency: Statistical Analysis
 <aside class="aside-pro-tip">
 <p>To do this, you'll need to iterate over a <code>List</code> of jobs. Each job is itself a <code>Dictionary</code>. While you can get each of the items out of the dictionary using the known keys (&quot;employer&quot;, &quot;location&quot;, etc), think instead about creating a nested loop to loop over each dictionary. You'll want to use the <code>Dictionary.Keys</code> property to do this. If a new field is added to the job records, this approach will print out the new field without any updates to <code>PrintJobs</code>.</p>
 </aside>
-<h4 id="implement-findbyvalue">Implement findByValue</h4>
+<h4 id="implement-findbyvalue">Implement FindByValue</h4>
 <p>At this stage, the application will allow users to search a given column of the data for a given string. Your next task is to enable a search to go across <em>all</em> of the columns.</p>
-<p>In the <code>JobData</code> class, create a new (<code>public static</code>) method that will search for a string within each of the columns. Here are a few observations:</p>
+<p>In the <code>JobData</code> class, create a new (<code>public static</code>) method called <code>FindByValue</code> that will search for a string within each of the columns. Here are a few observations:</p>
 <ol>
 <li>The method that you write should not contain duplicate jobs. So, for example, if a listing has position type &quot;Web - Front End&quot; and name &quot;Front end web dev&quot; then searching for &quot;web&quot; should not include the listing twice.</li>
 <li>As with <code>PrintJobs</code>, you should write your code in a way that if a new column is added to the data, your code will automatically search the new column as well.</li>
 <li>You <em>should not</em> write code that calls <code>FindByColumnAndValue</code> once for each column. Rather, utilize loops and collection methods as you did above.</li>
 <li>You <em>should</em>, on the other hand, read and understand <code>FindByColumnAndValue</code>, since your code will look similar in some ways.</li>
 </ol>
-<p>You'll need to call <code>findByValue</code> from somewhere in <code>Main</code>. We'll leave it up to you to find where. You might have noticed that when you try to search all columns using the app, a message is printed, so that is a good clue to help you find where to place this new method call.</p>
+<p>You'll need to call <code>FindByValue</code> from somewhere in <code>Main</code>. We'll leave it up to you to find where. You might have noticed that when you try to search all columns using the app, a message is printed, so that is a good clue to help you find where to place this new method call.</p>
 <h4 id="make-search-methods-case-insensitive">Make Search Methods Case-Insensitive</h4>
 <p>You've completed your first two tasks! Then you demoed the updated application or the Company Team and they noticed a feature that could be improved. When searching for jobs with the skill &quot;JavaScript&quot; some results were missing (e.g. the Watchtower Security job on line 31 of the CSV file). The search methods turn out to be case-sensitive, so they treat &quot;JavaScript&quot; and &quot;Javascript&quot; as different strings.</p>
 <p>The Company Team has <em>demanded</em> (ahem, <em>strongly requested</em>, they politely clarify) that this be fixed. And you've told them that you're up to the task.</p>
