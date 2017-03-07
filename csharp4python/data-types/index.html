@@ -342,6 +342,18 @@ year = int(user_input)</code></pre>
 <pre><code class="language-csharp">Cat myCat = new Cat();</code></pre>
 <p>Each of these statements creates a new variable that is initialized to hold a new <code>Cat</code> object. Note that in C#, we must declare the variable's type. Also note that we precede the constructor with the <code>new</code> keyword. And, of course, the C# example ends with a semi-colon.</p>
 <p>Variables and parameters that are of the type of a class are said to be of <strong>reference type</strong> (in contrast to <strong>primitive type</strong>). In plain English, we would say of the C# example: &quot;<code>myCat</code> is a reference variable of type <code>Cat</code>.&quot;</p>
+<h3 id="reference-and-value-types">Reference and Value Types</h3>
+<p>We can group types in C# into two categories: <strong>value types</strong> and <strong>reference types</strong>. Variables holding value types directly contain their data, and include numeric types (<code>int</code>, <code>double</code>, etc.), <code>bool</code>, and a handful of others that we won't encounter in this course.</p>
+<p>As mentioned above, classes define reference types. A variable of a reference type (such as <code>myCat</code> above) does not actually store the object in question. Instead, it stores a <strong>reference</strong> to the object. A reference is literally a memory address. We visualize references as an arrow pointing to the object in memory.</p>
+<p>Consider this code:</p>
+<pre><code class="language-csharp">int catAge = 11;
+Cat myCat = new Cat();
+Cat sameCat = myCat;</code></pre>
+<p>Visually we can represent these three variables as shown here.</p>
+<p><img src="references.png" alt="Reference Types" /></p>
+<p>Since <code>int</code> is a value type, the variable <code>catAge</code> functions as a box holding the integer value 11. On the other hand, <code>myCat</code> is a reference variable, since it holds an object. The variable actually stores the address of the object, which we visualize as an arrow from the variable box to the object.</p>
+<p>When we assign a value to a reference type, as in <code>Cat sameCat = myCat</code>, we are not creating a second copy of the object, but instead are creating a second &quot;arrow&quot; pointing to the same object.</p>
+<p>The distinction between references types and value types is important, if difficult to wrap your brain around at first. We will see that reference types are handled differently in essential and important ways in a lot of different situations.</p>
 <h2 id="arrays">Arrays</h2>
 <p>While Python has the basic list type, C# has multiple ways of storing ordered data. The most basic is that of the array.</p>
 <p>An array is an ordered, fixed-size collection of elements. Since C# is statically-typed, arrays may only store one type of object. We can create an array of integers or an array of strings, but we may not create an array that holds both integers and strings.</p>
