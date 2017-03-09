@@ -133,6 +133,9 @@
 <li>Present a dropdown to allow the user to select which cheese they would like to delete. This approach allows for only one item to be deleted at a time. You'll need to use a <code>select</code> element for this, which you can <a href="https://www.w3schools.com/htmL/html_form_elements.asp" target="_blank">read about on w3c</a>.</li>
 </ol>
 <h3 id="remove-cheese-via-links">Remove Cheese Via Links</h3>
+<aside class="aside-warning">
+<p>It's rare to use <code>GET</code> requests to delete data, and should be avoided in the vast majority of situations, especially if the actions aren't protected by a login. Bots and scripts could easily crawl your site and delete your data by following links.</p>
+</aside>
 <p>This approach adds the remove functionality without creating an additional view. In the <code>Index</code> view, next to each cheese present a &quot;remove&quot; link. Clicking on the link should submit a <code>GET</code> request that removes the cheese, and then presents the updated <code>Index</code> view.</p>
 <p>There are two ways to submit a <code>GET</code> request that passes data to the server:</p>
 <ol>
