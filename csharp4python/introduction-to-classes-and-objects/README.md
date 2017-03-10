@@ -131,7 +131,7 @@ Ah, that feels better. Since `Message` only needs to be used by `SayHello`, we d
 <aside class="aside-pro-tip" markdown="1">
 In C#, you should always use the most restrictive access modifier possible. Minimizing access to class members allows code to be refactored more easily in the future, and hides details of how you implement your classes from others.
 
-This makes your code more modular and modifiable. Each public member that you expose is another field or property that can be referenced directly elsewhere in any program using your class. Thus, changing any such field in your code could potentially break any code referencing such members. The fewer public members, the more you can change your code without breaking stuff elsewhere.
+This makes your code more modular and modifiable. Each public member that you expose is another field or method that can be referenced directly elsewhere in any program using your class. Thus, changing any such field or method in your code could potentially break any code referencing such members. The fewer public members, the more you can change your code without breaking stuff elsewhere.
 </aside>
 
 - [Access Modifiers in C# (msdn.microsoft.com)][access-modifiers]
