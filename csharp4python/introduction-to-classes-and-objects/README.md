@@ -85,7 +85,7 @@ public void SayHello() {
 <aside class="aside-pro-tip" markdown="1">
 When a local variable has the same name as a field, we say that the local variable **shadows** the field. Errors caused by shadowing can be tricky to spot, so it's best to avoid doing this in your code.
 
-If you're following C# naming conventions, fields will be capitalized and local variables will start with a lowercase letter, so you should easily avoid shadowing.
+If you're following C# naming conventions, properties will be capitalized and local variables will start with a lowercase letter, so you should easily avoid shadowing.
 </aside>
 
 ## Access Modifiers

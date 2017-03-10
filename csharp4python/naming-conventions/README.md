@@ -9,7 +9,7 @@ Again, these are conventions. Not following them will not prevent your code from
 
 Identifier Type | Convention | Examples
 |---------------|------------|----------|
-Method Parameters and local variables | Start with a lowercase letter and use camelCase | `id` <br> `firstName`
-All non-parameter identifiers | Start with an uppercase letter and capitalize each word; do not use hyphens or underscores (aka PascalCase) | `Program` <br> `HelloWorld` <br> `TempConv`
+Method parameters, local variables, and fields | Start with a lowercase letter and use camelCase | `id` <br> `firstName`
+Methods, properties, and class names | Start with an uppercase letter and capitalize each word; do not use hyphens or underscores (aka PascalCase) | `Program` <br> `HelloWorld` <br> `TempConv`
 
 Microsoft provides some [more detailed naming conventions](https://msdn.microsoft.com/en-us/library/ms229002.aspx). (From the date on this article, you'll note that these have been relatively standard for a very long time!)
