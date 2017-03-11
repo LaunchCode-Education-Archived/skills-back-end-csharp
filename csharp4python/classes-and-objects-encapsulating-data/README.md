@@ -46,11 +46,11 @@ public class Student {
 }
 ```
 
-Like variables within a method, fields may be initialized when they are declared. For example, we could provide default values for `numberOfCredits` and `Gpa` (default values for `name` and `studentId` don't make sense since they should be different for each student).
+Like variables within a method, fields may be initialized when they are declared. For example, we could provide default values for `numberOfCredits` and `gpa` (default values for `name` and `studentId` don't make sense since they should be different for each student).
 
 ```csharp
 int numberOfCredits = 0;
-double Gpa = 0;
+double gpa = 0;
 ```
 
 Fields are also referred to as **instance variables**, since they belong to an instance of a class. In other words, each object will have its own copy of each instance variable.
