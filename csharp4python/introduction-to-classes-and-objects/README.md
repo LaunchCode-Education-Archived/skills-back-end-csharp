@@ -51,7 +51,7 @@ In order to call the `SayHello` method of `HelloWorld`, we must first have an in
 You might be asking, "Didn't we create and call methods before without creating objects?" Indeed we did, but we always used the `static` keyword when doing so. We're taking those chains off now, and will learn how objects and classes work properly, from the ground on up.
 </aside>
 
-The class `HelloWorld` isn't very interesting, and by standards we will soon come to judge C# classes by, it's not particularly good. It only does one thing, print a message, and the message is always the same. Even if we were to create two different objects of type `HelloWorld`, the would be basically be the same.
+The class `HelloWorld` isn't very interesting, and by standards we will soon come to judge C# classes by, it's not particularly good. It only does one thing, print a message, and the message is always the same. Even if we were to create two different objects of type `HelloWorld`, they would be basically be the same.
 
 We introduce this simple class as a means of illustrating the simplest representation of some basic concepts in C#. The goal of the next few lessons is to build up the machinery to create a wide variety of interesting classes that can be used to create complex programs.
 
@@ -131,7 +131,7 @@ Ah, that feels better. Since `message` only needs to be used by `SayHello`, we d
 <aside class="aside-pro-tip" markdown="1">
 In C#, you should always use the most restrictive access modifier possible. Minimizing access to class members allows code to be refactored more easily in the future, and hides details of how you implement your classes from others.
 
-This makes your code more modular and modifiable. Each public member that you expose is another field or property that can be referenced directly elsewhere in any program using your class. Thus, changing any such field in your code could potentially break any code referencing such members. The fewer public members, the more you can change your code without breaking stuff elsewhere.
+This makes your code more modular and modifiable. Each public member that you expose is another field or method that can be referenced directly elsewhere in any program using your class. Thus, changing any such field or method in your code could potentially break any code referencing such members. The fewer public members, the more you can change your code without breaking stuff elsewhere.
 </aside>
 
 - [Access Modifiers in C# (msdn.microsoft.com)][access-modifiers]
