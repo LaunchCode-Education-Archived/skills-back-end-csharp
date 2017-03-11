@@ -16,17 +16,17 @@ Here's the object-oriented version of a "Hello World" class, containing exactly 
 ```csharp
 public class HelloWorld {
 
-    string Message = "Hello World";
+    string message = "Hello World";
 
     void SayHello()
     {
-        Console.WriteLine(Message);
+        Console.WriteLine(message);
     }
 
 }
 ```
 
-The only field in this class is the C# `Message`, while the only method is `SayHello`, which prints `this.Message` and doesn't return anything. Note that there is not `Main` method, so there is no way to run the code in this class directly. We'll need to do that from another class.
+The only field in this class is the C# `message`, while the only method is `SayHello`, which prints `this.message` and doesn't return anything. Note that there is not `Main` method, so there is no way to run the code in this class directly. We'll need to do that from another class.
 
 To do this, we'll need to create an **instance** of the class `HelloWorld`. Recall from learning about classes and objects in Python that a class is a blueprint for creating objects. We refer to an object created from a particular class as an instance of that class.
 
@@ -61,7 +61,7 @@ In `HelloWorld` above, we could have written `SayHello` this way, with the same 
 
 ```csharp
 public void SayHello() {
-    Console.WriteLine(this.Message);
+    Console.WriteLine(this.message);
 }
 ```
 
@@ -72,13 +72,13 @@ You are allowed to create local variables -- that is, variables declared within 
 ```csharp
 public void SayHello() {
 
-    string Message = "Goodbye World";
+    string message = "Goodbye World";
 
     // prints "Goodbye World"
-    Console.WriteLine(Message);
+    Console.WriteLine(message);
 
     // prints "Hello World"
-    Console.WriteLine(this.Message);
+    Console.WriteLine(this.message);
 }
 ```
 
@@ -92,7 +92,7 @@ If you're following C# naming conventions, properties will be capitalized and lo
 
 Every class member has an access level that determines who can access that class. For fields, the access level determines who can get or set the value of the field. For methods, the access level determines who can call the method. The access level of a class member is determined by an **access modifier**.
 
-In declaring the `Message` field of `HelloWorld`, by omitting an access modifier we implicitly gave it **default access**. This is generally not a good thing to do, so after introducing each of the access modifiers we'll go back and fix this.
+In declaring the `message` field of `HelloWorld`, by omitting an access modifier we implicitly gave it **default access**. This is generally not a good thing to do, so after introducing each of the access modifiers we'll go back and fix this.
 
 We've encountered two access modifiers to far: `public` and `private`. We noted that `public` allows a field or method to be used by anyone, and that `private` allows a field or method to be used only within the class in which it is defined. Two additional access modifiers are available, though they are used much less often than `public` and `private`.
 
@@ -112,21 +112,21 @@ You aren't expected to know the term "subclass" or how it applies to classes yet
 
 You can read more about access modifiers at [msdn.microsoft.com][access-modifiers].
 
-Let's fix our class by adding appropriate modifier to `Message`.
+Let's fix our class by adding appropriate modifier to `message`.
 
 ```csharp
 public class HelloWorld {
 
-    private String Message = "Hello World";
+    private String message = "Hello World";
 
     public void SayHello() {
-        Console.WriteLine(Message);
+        Console.WriteLine(message);
     }
 
 }
 ```
 
-Ah, that feels better. Since `Message` only needs to be used by `SayHello`, we declare it to be `private`.
+Ah, that feels better. Since `message` only needs to be used by `SayHello`, we declare it to be `private`.
 
 <aside class="aside-pro-tip" markdown="1">
 In C#, you should always use the most restrictive access modifier possible. Minimizing access to class members allows code to be refactored more easily in the future, and hides details of how you implement your classes from others.
