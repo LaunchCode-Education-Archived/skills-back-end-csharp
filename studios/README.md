@@ -32,3 +32,9 @@ Extend the application that you started in the lesson videos for Class 4.
 Extend the application that you started in the lesson videos for Class 4.
 
 [CheeseMVC](cheese-mvc-redux/)
+
+## Quiz Time!
+
+Design and create a console program to deliver and score quizzes.
+
+[Quiz Time!](quiz-time/)
