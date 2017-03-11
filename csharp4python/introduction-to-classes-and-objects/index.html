@@ -127,15 +127,15 @@
 <p>Here's the object-oriented version of a &quot;Hello World&quot; class, containing exactly one field and one method.</p>
 <pre><code class="language-csharp">public class HelloWorld {
 
-    string Message = "Hello World";
+    string message = "Hello World";
 
     void SayHello()
     {
-        Console.WriteLine(Message);
+        Console.WriteLine(message);
     }
 
 }</code></pre>
-<p>The only field in this class is the C# <code>Message</code>, while the only method is <code>SayHello</code>, which prints <code>this.Message</code> and doesn't return anything. Note that there is not <code>Main</code> method, so there is no way to run the code in this class directly. We'll need to do that from another class.</p>
+<p>The only field in this class is the C# <code>message</code>, while the only method is <code>SayHello</code>, which prints <code>this.message</code> and doesn't return anything. Note that there is not <code>Main</code> method, so there is no way to run the code in this class directly. We'll need to do that from another class.</p>
 <p>To do this, we'll need to create an <strong>instance</strong> of the class <code>HelloWorld</code>. Recall from learning about classes and objects in Python that a class is a blueprint for creating objects. We refer to an object created from a particular class as an instance of that class.</p>
 <p>Here's how this might look:</p>
 <pre><code class="language-csharp">public class Program {
@@ -157,19 +157,19 @@
 <h2 id="the-this-keyword">The this Keyword</h2>
 <p>In <code>HelloWorld</code> above, we could have written <code>SayHello</code> this way, with the same net effect:</p>
 <pre><code class="language-csharp">public void SayHello() {
-    Console.WriteLine(this.Message);
+    Console.WriteLine(this.message);
 }</code></pre>
 <p>In this context, inside of the class, we can refer to fields (and methods) that belong to the class using the special object <code>this</code>. Whenever you use <code>this</code>, it <em>always</em> refers to the object that the given code is currently within. Since it is not legal to create code outside of a class, <code>this</code> nearly always makes sense to use (there's one exception, that we'll encounter soon).</p>
 <p>You are allowed to create local variables -- that is, variables declared within a method -- with the same name as a field of the given class. In this case, in order to refer to the field, we <em>must</em> use <code>this</code>.</p>
 <pre><code class="language-csharp">public void SayHello() {
 
-    string Message = "Goodbye World";
+    string message = "Goodbye World";
 
     // prints "Goodbye World"
-    Console.WriteLine(Message);
+    Console.WriteLine(message);
 
     // prints "Hello World"
-    Console.WriteLine(this.Message);
+    Console.WriteLine(this.message);
 }</code></pre>
 <aside class="aside-pro-tip">
 <p>When a local variable has the same name as a field, we say that the local variable <strong>shadows</strong> the field. Errors caused by shadowing can be tricky to spot, so it's best to avoid doing this in your code.</p>
@@ -177,7 +177,7 @@
 </aside>
 <h2 id="access-modifiers">Access Modifiers</h2>
 <p>Every class member has an access level that determines who can access that class. For fields, the access level determines who can get or set the value of the field. For methods, the access level determines who can call the method. The access level of a class member is determined by an <strong>access modifier</strong>.</p>
-<p>In declaring the <code>Message</code> field of <code>HelloWorld</code>, by omitting an access modifier we implicitly gave it <strong>default access</strong>. This is generally not a good thing to do, so after introducing each of the access modifiers we'll go back and fix this.</p>
+<p>In declaring the <code>message</code> field of <code>HelloWorld</code>, by omitting an access modifier we implicitly gave it <strong>default access</strong>. This is generally not a good thing to do, so after introducing each of the access modifiers we'll go back and fix this.</p>
 <p>We've encountered two access modifiers to far: <code>public</code> and <code>private</code>. We noted that <code>public</code> allows a field or method to be used by anyone, and that <code>private</code> allows a field or method to be used only within the class in which it is defined. Two additional access modifiers are available, though they are used much less often than <code>public</code> and <code>private</code>.</p>
 <p>The grid below details these levels, though we haven't really encountered the situations in which they might apply. At this point we introduce them for the sake of completeness. We'll point out specifically where they might be useful when we encounter such scenarios.</p>
 <table>
@@ -232,17 +232,17 @@
 <p>You aren't expected to know the term &quot;subclass&quot; or how it applies to classes yet. We'll learn about it in a future lesson.</p>
 </aside>
 <p>You can read more about access modifiers at <a href="https://msdn.microsoft.com/en-us/library/ms173121.aspx" target="_blank">msdn.microsoft.com</a>.</p>
-<p>Let's fix our class by adding appropriate modifier to <code>Message</code>.</p>
+<p>Let's fix our class by adding appropriate modifier to <code>message</code>.</p>
 <pre><code class="language-csharp">public class HelloWorld {
 
-    private String Message = "Hello World";
+    private String message = "Hello World";
 
     public void SayHello() {
-        Console.WriteLine(Message);
+        Console.WriteLine(message);
     }
 
 }</code></pre>
-<p>Ah, that feels better. Since <code>Message</code> only needs to be used by <code>SayHello</code>, we declare it to be <code>private</code>.</p>
+<p>Ah, that feels better. Since <code>message</code> only needs to be used by <code>SayHello</code>, we declare it to be <code>private</code>.</p>
 <aside class="aside-pro-tip">
 <p>In C#, you should always use the most restrictive access modifier possible. Minimizing access to class members allows code to be refactored more easily in the future, and hides details of how you implement your classes from others.</p>
 <p>This makes your code more modular and modifiable. Each public member that you expose is another field or property that can be referenced directly elsewhere in any program using your class. Thus, changing any such field in your code could potentially break any code referencing such members. The fewer public members, the more you can change your code without breaking stuff elsewhere.</p>
