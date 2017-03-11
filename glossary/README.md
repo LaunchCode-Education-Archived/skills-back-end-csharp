@@ -35,7 +35,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Encapsulation_(computer_progra
 
 **Integrated Development Environment (IDE)**: An application that provides access to and integration between software development tools that would otherwise be used independently, such as compilation, execution, access to documentation, built tools, source code management, and version control. Visual Studio is the most widely used C# and .NET IDE.
 
-**inheritance**: A mechanism within object-oriented programming that allows one class to be based on another class, this "inheriting" its properties and behaviors. Inheritence is also sometimes referred to as **subtyping**.
+**inheritance**: A mechanism within object-oriented programming that allows one class to be based on another class, thus "inheriting" its properties and behaviors. Inheritance is also sometimes referred to as **subtyping**.
 
 Source: [Wikipedia](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming))
 
