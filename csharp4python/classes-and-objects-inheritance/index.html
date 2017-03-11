@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Classes and Objects: Inheritance :: Unit 3: Back-End C# Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-classes-and-objects-inheritance'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/videos/">
+                                        Videos
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/csharp4python/">
+                                        C# for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/glossary/">
+                                        Glossary
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/issues/">
+                                        Reporting Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-csharp/">
+                    <h1>Unit 3: Back-End C# Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-csharp/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End C# Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:-32orsjtyl4";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Classes and Objects: Inheritance</h1>
+                    <p>Inheritance is the second of the <strong>Three Pillars of Object-Oriented Programming</strong> that we will encounter.</p>
+<p>From our <a href="../../glossary/">Glossary</a>, here's a definition:</p>
+<aside class="aside-definition">
+<p><strong>inheritance</strong>: A mechanism within object-oriented programming that allows one class to be based on another class, thus &quot;inheriting&quot; its properties and behaviors. Inheritance is also sometimes referred to as <strong>subtyping</strong>.</p>
+</aside>
+<h2 id="inheritance-in-c35">Inheritance in C&#35;</h2>
+<p>Inheritance in C# is very similar to the same concept in Python. We <strong>extend</strong> another class to inherit its data and behaviors (that is, fields, properties, and methods). Recall that in Python the syntax for inheritance was the following:</p>
+<pre><code class="language-python">class Cat:
+    # ...code for the Cat class...
+
+class HouseCat(Cat):
+    # ...code for the HouseCat class...</code></pre>
+<p>Any fields and non-constructor methods in <code>Cat</code> would be available to each instance of <code>HouseCat</code>. We express the inheritance relationship in plain English by saying the a <code>HouseCat</code> <em>extends</em> <code>Cat</code>, or that <code>HouseCat</code> <em>is a</em> <code>Cat</code>.</p>
+<p>In C#, the syntax for extending a class requires a colon (<code>:</code>) separating the two class names.</p>
+<pre><code class="language-csharp">public class Cat
+{
+    // ...code for the Cat class...
+}
+
+public class HouseCat : Cat
+{
+    // ...code for the HouseCat class...
+}</code></pre>
+<p>We say that <code>HouseCat</code> is a <strong>subclass</strong>, <strong>derived class</strong>, or <strong>child class</strong> of <code>Cat</code>, and we say that <code>Cat</code> is the <strong>superclass</strong>, <strong>base class</strong>, or <strong>parent class</strong> of <code>HouseCat</code>. In C#, a class may extend only one class, but classes may extend each other in turn, creating hierarchies of classes. We often visualize these by drawing each class as a box, with lines descending from the base class to the subclass.</p>
+<p><img src="inheritance.png" alt="Inheritance Diagram" /></p>
+<p>Inheritance is a useful mechanism for sharing data and behavior between related classes, and it effectively creates hierarchies of classes that have more and more specialized behavior as you go from base class to subclass.</p>
+<p>As with Python, fields and non-constructor methods are directly available within the subclass, and may be called as if the belonged to the base class, subject to any access modifiers. In general, this means that <code>private</code> and <code>internal</code> members of a base class are not accessible to a subclass. (However, if the subclass and class are in the same assembly, <code>internal</code> would allow access to a member.)</p>
+<aside class="aside-note">
+<p>This is a good time to review <a href="../introduction-to-classes-and-objects/#access-modifiers">access modifiers in C#</a> if anything in the last paragraph was fuzzy.</p>
+</aside>
+<p>For an example, let's revisit our <code>Cat</code> and <code>HouseCat</code> implementations from <a href="https://runestone.launchcode.org/runestone/static/thinkcspy/ClassesDiggingDeeper/Inheritance.html" target="_blank">Chapter 14 of Unit 1</a>, modified to illustrate some C#-specific concepts.</p>
+<pre><code class="language-csharp">public class Cat {
+
+    public bool IsTired { get; set; } = false;
+    public bool IsHungry { get; set; } = false;
+    public double Weight { get; set; }
+
+    // The biological Family for all cat species
+    private string family = "Felidae";
+    public string Family
+    {
+        get { return family; }
+        private set { family = value; }
+    }
+
+    public Cat (double weight) {
+        Weight = weight;
+    }
+
+    // A cat is rested and hungry after it sleeps
+    public void Sleep()
+    {
+        IsTired = false;
+        IsHungry = true;
+    }
+
+    // Eating makes a cat not hungry
+    public void Eat()
+    {
+
+        // eating when not hungry makes a cat sleepy
+        if (!IsHungry)
+        {
+            IsTired = true;
+        }
+
+        IsHungry = false;
+    }
+
+    public virtual void Noise ()
+    {
+        Console.WriteLine("Meeeeeeooooowww!");
+    }
+}</code></pre>
+<pre><code class="language-csharp">public class HouseCat : Cat
+{
+    public string Name { get; set; }
+
+    private string species = "Felis catus";
+    public string Species
+    {
+        get { return species; }
+        private set { species = value; }
+    }
+
+    public HouseCat(string name, double weight) : base(weight)
+    {
+        Name = name;
+    }
+
+    private bool IsSatisfied()
+    {
+        return !IsHungry &amp;&amp; !IsTired;
+    }
+
+    public override void Noise()
+    {
+        if (IsSatisfied())
+        {
+            Console.WriteLine("Hello, my name is " + Name + "!");
+        }
+        else
+        {
+            base.Noise();
+        }
+    }
+
+    public void Purr()
+    {
+        Console.WriteLine("I'm a HouseCat");
+    }
+}</code></pre>
+<p>The class <code>HouseCat</code> extends <code>Cat</code>, using several different inheritance features that we will explore in turn.</p>
+<p>Notice that <code>Cat</code> has a private string property <code>family</code>, representing the biological family of all cats. This property is not directly accessible to <code>HouseCat</code> since it is private, however it may be read via the property <code>Family</code>. The setter for <code>Family</code> is private, however, so it may only be set within <code>Cat</code>.</p>
+<p>Methods of the base class may be called on instances of the subclass as if they were defined as part of the subclass.</p>
+<pre><code class="language-csharp">HouseCat garfield = new HouseCat("Garfield", 12);
+garfield.Eat();</code></pre>
+<p>The <code>Eat</code> method was defined in <code>Cat</code>, but may be called on all <code>HouseCat</code> instances as well. We say: &quot;<code>HouseCat</code> inherits the method <code>Eat</code> from <code>Cat</code>.&quot;</p>
+<h3 id="working-with-constructors-in-subclasses">Working With Constructors in Subclasses</h3>
+<p>We mentioned above that a subclass inherits all non-constructor methods. Indeed, when extending a class, we will not be able to create new instances of our subclass <code>HouseCat</code> using the constructor provided by <code>Cat</code>. For example, this code will not compile:</p>
+<pre><code class="language-csharp">HouseCat thumper = new HouseCat(8.4);</code></pre>
+<p>The base class <code>Cat</code> has a constructor that takes a single parameter of type <code>double</code>, but <code>Cat</code> constructors are not inherited by <code>HouseCat</code>. If we wanted to use such a constructor in the subclass, we would have to explicitly provide it. We'll see how to do this relativel easily in a bit.</p>
+<p>Let's look at the constructor included in <code>HouseCat</code>:</p>
+<pre><code class="language-csharp">public HouseCat(string name, double weight) : base(weight)
+{
+    Name = name;
+}</code></pre>
+<p>Here we use the <code>:</code> operator in conjunction with they keyword <code>base</code> to specify that our constructor should call the base class constructor with the argument <code>weight</code>. This call to the base class constructor will run before the body of the subclass constructor executes. This is a useful way to ensure that we're fully initializing our objects.</p>
+<p>You may leave out such a call to a base class constructor only when the base class has a default, or no-arg, constructor (that is, a constructor that takes no arguments). In such a case, the default constructor is implicitly called for you. Here's what this would look like in <code>HouseCat</code>, if <code>Cat</code> had a default constructor.</p>
+<pre><code class="language-csharp">public HouseCat(string name)
+{
+    Name = name;
+}</code></pre>
+<p>As a consequence of this constructor syntax, we can easily &quot;expose&quot; any constructor from the base class by providing a subclass constructor with the same signature and no body, and calling the base class constructor.</p>
+<pre><code class="language-csharp">public HouseCat(double weight) : base(weight) {}</code></pre>
+<aside class="aside-warning">
+<p>This constructor is a bad one, and is included merely to introduce syntax and usage. We would not want to have a constructor for <code>HouseCat</code> that didn't initialize an essential property such as <code>Name</code>.</p>
+</aside>
+<h3 id="overriding-base-class-behavior">Overriding Base Class Behavior</h3>
+<p>Sometimes when extending a class, we'll want to modify behavior provided by the base class. We can do this via <strong>method overriding</strong>, if the base class allows.</p>
+<p>For a method in a base class to be overridden in a subclass, it must be marked as <code>virtual</code>. In our example, the <code>Noise</code> method of <code>Cat</code> is marked <code>virtual</code>, which means we may override it in <code>HouseCat</code>. When we override it, we must use the <code>override</code> keyword.</p>
+<aside class="aside-warning">
+<p>Unlike in some other object-oriented languages (notably Java), in C# a method must explicitly allow itself to be overridden by using the <code>virtual</code> keyword.</p>
+</aside>
+<p>Here are the methods in question, pulled out for convenience.</p>
+<p>In <code>Cat</code>:</p>
+<pre><code class="language-csharp">public virtual void Noise()
+{
+    Console.WriteLine("Meeeeeeooooowww!");
+}</code></pre>
+<p>In <code>HouseCat</code>:</p>
+<pre><code class="language-csharp">public override void Noise()
+{
+    Console.WriteLine("Hello, my name is " + Name + "!");
+}</code></pre>
+<p>Here we override <code>Noise</code> in <code>HouseCat</code>. If we have a <code>HouseCat</code> object and call it's noise method, we will be using the method defined in <code>HouseCat</code>.</p>
+<pre><code class="language-csharp">Cat plainCat = new Cat(8.6);
+HouseCat garfield = new HouseCat("Garfield", 12);
+
+plainCat.Noise(); // prints "Meeeeeeooooowww!"
+garfield.Noise(); // prints "Hello, my name is Garfield!"</code></pre>
+<p>When overriding a method, we may call the method that we're overriding by using <code>base</code>:</p>
+<pre><code class="language-csharp">public override void Noise()
+{
+    if (IsSatisfied())
+    {
+        Console.WriteLine("Hello, my name is " + Name + "!");
+    }
+    else
+    {
+        base.Noise();
+    }
+}</code></pre>
+<p>Notice the method call: <code>base.Noise()</code>. This calls the overridden method in the base class, carrying out the original behavior if the given conditional branch is reached.</p>
+<h3 id="the-object-class">The Object Class</h3>
+<p>In a previous lesson, we introduced the &quot;special&quot; methods <code>Equals</code> and <code>ToString</code>, noting that all classes were provided default implementations of these methods that could be overridden.</p>
+<p>In fact, these default methods are part of a class called <code>Object</code>. If a class does not explicitly extend another class, then it implicitly extends <code>Object</code>. So the default implementations of <code>Equals</code> and <code>ToString</code> (along with a few <a href="https://msdn.microsoft.com/en-us/library/system.object(v=vs.110).aspx#Methods" target="_blank">other methods</a>) are made available to us via inheritance. Those that are marked <code>virtual</code> -- such as <code>Equals</code> and <code>ToString</code> both are -- may be overridden.</p>
+<h3 id="abstract-classes-and-class-members">Abstract Classes and Class Members</h3>
+<p>In this section we briefly introduce an intermediate object-oriented concept. We will not use it much in this course, but you're likely to encounter it in the &quot;real world&quot; and it is a useful one to know.</p>
+<p>We noted in the introduction to this section that inheritance is a way to share behaviors among classes. You'll sometimes find yourself creating a base class as a way to share behaviors among related classes. However, in such situations is not always desirable for instances of the base class to be created.</p>
+<p>For example, suppose we began coding two classes, <code>HouseCat</code> and <code>Tiger</code>. Upon writing the code, we realized that there were some common data and behaviors, and so to reduce code repetition, we combined those in <code>Cat</code> (as above).</p>
+<pre><code class="language-csharp">public class Cat
+{
+    // Cat class definition
+}
+
+public class HouseCat : Cat
+{
+    // HouseCat class definition
+}
+
+public class Tiger : Cat
+{
+    // Tiger class definition
+}</code></pre>
+<p>In reality, though, we might not want objects of type <code>Cat</code> to be created, since such a cat couldn't actually exist (a real cat would have a specific genus and species). We could prevent objects of type <code>Cat</code> from being created, while still enabling sharing of behavior among its subclasses, by making <code>Cat</code> and <strong>abstract class</strong>.</p>
+<pre><code class="language-csharp">public abstract class `Cat`
+{
+    // Cat class definition
+}</code></pre>
+<p>To reiterate, abstract classes are classes that may not be instantiated. In order to use the behavior of an abstract class, <em>we must extend it</em>.</p>
+<p>We have a further tool that we may use here, which is an <strong>abstract method</strong>. An abstract method is a method in an abstract class that does not have a body. In other words, it does not have any associated code, only a signature. It must also be marked <code>abstract</code>.</p>
+<p>In our abstract <code>Cat</code> class, it would make sense to make <code>Noise</code> abstract to force any class extending it to provide its own implementation of that behavior.</p>
+<pre><code class="language-csharp">public abstract class `Cat`
+{
+    public abstract void Noise();
+
+    // Additional Cat class definition
+}</code></pre>
+<p>Any class extending <code>Cat</code> is then forced to provide its own version of <code>Noise</code>, with the exact same method signature.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://msdn.microsoft.com/en-us/library/ms173149.aspx" target="_blank">Inheritance in C# (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/ebca9ah3.aspx" target="_blank">The override keyword (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/9fkccyh4.aspx" target="_blank">The virtual keyword (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/system.object(v=vs.110).aspx" target="_blank">The Object Class (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/ms173150.aspx" target="_blank">Abstract Classes and Class Members</a></li>
+</ul>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="http://education.launchcode.org/skills-back-end-csharp/js/bootstrap.min.js"></script>
+        <script src="http://education.launchcode.org/skills-back-end-csharp/js/highlight.pack.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-6", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

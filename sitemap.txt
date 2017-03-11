@@ -17,6 +17,7 @@ http://education.launchcode.org/skills-back-end-csharp/class-prep/5/exercises.ht
 http://education.launchcode.org/skills-back-end-csharp/class-prep/5/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/6/exercises.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/6/index.html
+http://education.launchcode.org/skills-back-end-csharp/class-prep/7/exercises.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/7/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/8/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/9/index.html
@@ -30,6 +31,8 @@ http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-2/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-encapsulating-behavior/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-encapsulating-data/index.html
+http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-inheritance/index.html
+http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-polymorphism/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/control-flow/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/data-structures-and-collections/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/data-types/index.html
@@ -46,6 +49,7 @@ http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc-redux/
 http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/counting-characters/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/index.html
+http://education.launchcode.org/skills-back-end-csharp/studios/quiz-time/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/restaurant-menu/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/csharp-skill-track-overview/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/index.html

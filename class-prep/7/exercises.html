@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Classes :: Unit 3: Back-End C# Skill Track</title>
+        <title>Class 7 Prep Exercises :: Unit 3: Back-End C# Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-classes'>
+    <body id='page-class-7-prep-exercises'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -119,121 +119,22 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Classes</h1>
-                    <table>
-<thead>
-<tr>
-<th>Class #</th>
-<th>Prep Work</th>
-<th>Studio</th>
-<th>Topics</th>
-<th>Begin Assignment*</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><a href="../class-prep/1/">Prep Work</a></td>
-<td><a href="../studios/area/">Area of a circle</a></td>
-<td>Setup, Intro to C#, Data types</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="../class-prep/2/">Prep Work</a></td>
-<td><a href="../studios/counting-characters/">Counting Characters</a></td>
-<td>Flow control, C# Collections, More on strings</td>
-<td><a href="../assignments/techjobs-console/">TechJobs (Console Edition)</a></td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="../class-prep/3/">Prep Work</a></td>
-<td><a href="../studios/bonjour-asp-net/">Bonjour, ASP.NET!</a></td>
-<td>MVC redux; Intro to ASP.NET MVC</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>4</td>
-<td><a href="../class-prep/4/">Prep Work</a></td>
-<td><a href="../studios/cheese-mvc/">CheeseMVC</a></td>
-<td>Views and Razor templates</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>5</td>
-<td><a href="../class-prep/5/">Prep Work</a></td>
-<td><a href="../studios/restaurant-menu/">Restaurant Menu</a></td>
-<td>Objects and data</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>6</td>
-<td><a href="../class-prep/6/">Prep Work</a></td>
-<td><a href="../studios/cheese-mvc-redux/">CheeseMVC Redux</a></td>
-<td>Objects and behavior</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>7</td>
-<td><a href="../class-prep/6/">Prep Work</a></td>
-<td><a href="../studios/quiz-time/">Quiz Time!</a></td>
-<td>Inheritance</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>8</td>
-<td><a href="../class-prep/7/">Prep Work</a></td>
-<td></td>
-<td>Model classes in ASP.NET</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>9</td>
-<td><a href="../class-prep/8/">Prep Work</a></td>
-<td></td>
-<td>Exceptions</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="../class-prep/9/">Prep Work</a></td>
-<td></td>
-<td>Interfaces and polymorphism</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="../class-prep/10/">Prep Work</a></td>
-<td></td>
-<td>Dependency Injection</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="../class-prep/11/">Prep Work</a></td>
-<td></td>
-<td>Persistence Part I</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>13</td>
-<td><a href="../class-prep/12/">Prep Work</a></td>
-<td></td>
-<td>Persistence Part II</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>14</td>
-<td><a href="../class-prep/14/">Prep Work</a></td>
-<td></td>
-<td>ASP.NET MVC Apps Beyond LC101</td>
-<td>&nbsp;</td>
-</tr>
-</tbody>
-</table>
-<aside class="aside-note">
-<p>Check <a href="https://learn.launchcode.org" target="_blank">learn.launchcode.org</a> for assignment due dates since these can vary by class section.</p>
-</aside>
+                                        <h1>Class 7 Prep Exercises</h1>
+                    <ul>
+<li><strong>Controller inheritance:</strong> When creating controllers in our MVC applications, we were required to extend the <code>Controller</code> class. <a href="https://docs.microsoft.com/en-us/aspnet/core/api/microsoft.aspnetcore.mvc.controller" target="_blank">Explore the Controller class documentation</a>, and look for methods that you've used within your own controllers.
+<ul>
+<li>If you wanted to override a method of <code>Controller</code> so that every time you rendered a view, <code>ViewBag.SiteTitle = "My MVC App"</code> was executed, which method would you override?</li>
+<li>For this method, would you be allowed to override it? That is, is it declared <code>virtual</code>?</li>
+</ul></li>
+<li><strong>Class design:</strong> Pick one or more of the following groups of classes, and diagram your design for each (including methods and properties). Be sure to use lines/arrows to indicate inheritance relationships, and to include data and behavior that somebody using your classes would likely want.
+<ul>
+<li>Shape, Square, Rectangle, Circle</li>
+<li>Computer, Desktop, Laptop, SmartPhone</li>
+<li>Student, GraduateStudent, UndergraduateStudent</li>
+</ul></li>
+<li><strong>Class implementation:</strong> For one of the groups of classes above, implement your design and test it in a <code>Program.cs</code> class.</li>
+<li><strong>Abstract class design:</strong> Consider the group of classes that you designed. Suppose you had a web program that used these classes, and you needed to assign an unique ID to every object created from one of these classes within the application. In other words, each such class should have an <code>Id</code> property, and no two objects created from any of the classes may have the same ID value. Create an abstract class, <code>AbstractEntity</code>, that contains the behavior for assigning and accessing such a unique ID for each class that extends it. Add this class to your program above, and add <code>AbstractEntity</code> to the class hierarchy in the correct place.</li>
+</ul>
                                     </section>
 
             </div>
