@@ -46,11 +46,11 @@ public class Student {
 }
 ```
 
-Like variables within a method, fields may be initialized when they are declared. For example, we could provide default values for `numberOfCredits` and `Gpa` (default values for `name` and `studentId` don't make sense since they should be different for each student).
+Like variables within a method, fields may be initialized when they are declared. For example, we could provide default values for `numberOfCredits` and `gpa` (default values for `name` and `studentId` don't make sense since they should be different for each student).
 
 ```csharp
 int numberOfCredits = 0;
-double Gpa = 0;
+double gpa = 0;
 ```
 
 Fields are also referred to as **instance variables**, since they belong to an instance of a class. In other words, each object will have its own copy of each instance variable.
@@ -75,7 +75,7 @@ public string Name
 }
 ```
 
-Here, within `get` and `set`, `Name` refers to the private field that stores the value of the property. In `set`, the special variable `value` will contain the value that the user is trying to set within the property.
+Here, within `get` and `set`, `name` refers to the private field that stores the value of the property. In `set`, the special variable `value` will contain the value that the user is trying to set within the property.
 
 We can then get or set the value of name anywhere else (since it's public) using dot-notation:
 
@@ -89,19 +89,19 @@ josh.Name = "Josh";
 Console.WriteLine(josh.Name);
 ```
 
-When you use properties in this way, the get/set methods are called implicitly when assigning or reading the property.
+When you use properties in this way, the get/set methods are called implicitly when assigning or reading the property, therefore parentheses are not needed.
 
 An astute question to ask at this point would be, "Why make the fields private if you're just going to allow people to get and set them anyway!?" Great question. There are lots of reasons to use getters and setters to control access. Here are just a few:
 
 1. Sometimes you'll want to implement behavior that happens every time a field is accessed (get) or changed (set). Even if you can't think of such a reason when writing your class, you might later have the need to add such behavior. If you don't use accessors, you'll have to do a lot more refactoring at that point.
 2. You can perform validation within a setter. For example, we might want to ensure that a student's name contains only certain characters, or that their student ID is a positive integer.
-3. You can use different access modifiers on getters and setters for the same field, based on desired usage. For example, you might want to allow anyone to be able to read the value of a field, but only classes within the same assembly to modify it. You could do this with a `public` getter and a `internal` setter, but not as a field without getters and setters, which could only be public to everyone or package-private to everyone.
+3. You can use different access modifiers on getters and setters for the same field, based on desired usage. For example, you might want to allow anyone to be able to read the value of a field, but only classes within the same assembly to modify it. You could do this with a `public` getter and an `internal` setter, but not as a field without getters and setters, which could only be public to everyone or internal to everyone.
 
 <aside class="aside-question" markdown="1">
 One of the four fields in our `Student` class is a prime candidate for the scenario described in item 3. Which one do you think it is?
 </aside>
 
-To set different access levels on a property, us an access modifier next to `get` or `set`. Here's how we would make `Name` readable by everyone, but modifiable only by code within the given assembly.
+To set different access levels on a property, use an access modifier next to `get` or `set`. Here's how we would make `Name` readable by everyone, but modifiable only by code within the class's assembly.
 
 ```csharp
 private string name;
@@ -119,17 +119,17 @@ If a field has both a public getter and setter, and no additional logic is neede
 string Name { get; set; }
 ```
 
-This is referred to as an *auto-implemented property**.
+This is referred to as an **auto-implemented property**.
 
 <aside class="aside-warning" markdown="1">
-Note that in the example above the private field is `name` (lowercase) while the property is `Name`. The property is based on the value of the private field `name`, and since C# identifiers are case-sensitive, these are two distinct entities. `name` is referred to as a "backing field", and it stores the value of the property
+Note that in the example above the private field is `name` (lowercase) while the property is `Name`. The property is based on the value of the private field `name`, and since C# identifiers are case-sensitive, these are two distinct members. `name` is referred to as a "backing field", and it stores the value of the property.
 
-If you were to try to use the same identifier for both the backing field and the property, you'll see a `StackOverflowException` due to infinite recursion.
+If you were to try to use the same identifier for both the backing field and the property, you'll see a `StackOverflowException` due to infinite recursion -- i.e., the property would infinitely call itself!
 </aside>
 
 When using this syntax, the compiler will generate the following equivalent code for us. That is, the compiler generates code identical to the first example of accessors above.
 
-As an example of validation within a setter, let's take a short detour to look at a `Temperature` class. A valid temperature can only be so low ("absolute zero"), so we wouldn't want to allow somebody to set an invalid value. In `set` we thrown an exception if an invalid value is provided (we'll cover exceptions in detail later, but for now note that they are ways of signaling errors).
+As an example of validation within a setter, let's take a short detour to look at a `Temperature` class. A valid temperature can only be so low ("absolute zero"), so we wouldn't want to allow somebody to set an invalid value. In `set` we throw an exception if an invalid value is provided (we'll cover exceptions in detail later, but for now note that they are ways of signaling errors).
 
 ```csharp
 public class Temperature {
@@ -164,15 +164,15 @@ Most often, properties will correspond directly to a private backing field, but 
 public double Celsius
 {
     get { return (Fahrenheit - 32) * 5.0 / 9.0; }
-    set { Fahrenheit = value * 9.0 / 5.0 + 32;}
+    set { Fahrenheit = value * 9.0 / 5.0 + 32; }
 }
 ```
 
-Since there's a link between Fahrenheit and celsius, we want to make sure that when one is updated, so is the other. In this case, we only store one field value (`fahrenheit`, the backing field for `Fahrenheit`) and make the appropriate calculation when getting or setting the celsius property. Using a property like this is the same as when there is a private field behind it; the code using it can't tell the difference.
+Since there's a link between Fahrenheit and Celsius, we want to make sure that when one is updated, so is the other. In this case, we only store one field value (`fahrenheit`, the backing field for `Fahrenheit`) and make the appropriate calculation when getting or setting the `Celsius` property. Using a property like this is the same as when there is a private field behind it; the code using it can't tell the difference.
 
 ### Readonly Fields
 
-A **readonly field** is one that can not be changed once it is initialized. This means slightly different things for primitive and class types. We create readonly fields by declaring them with the `readonly` keyword.
+A **readonly field** is one that can not be changed once it is initialized (assigned a value). This means slightly different things for primitive and class types. We create readonly fields by declaring them with the `readonly` keyword.
 
 **Readonly value-type fields** can not change their value once they are initialized.
 
@@ -185,13 +185,13 @@ Here are some examples to illustrate. Each class would be in its own file, but w
 ```csharp
 public class FortyTwo
 {
-    public int IntValue { get; set; } = 42;
+    public int intValue = 42;
 }
 
 public class ReadonlyFields {
 
-    public readonly int IntValue = 42;
-    public readonly FortyTwo ObjectValue = new FortyTwo();
+    public readonly int intValue = 42;
+    public readonly FortyTwo objectValue = new FortyTwo();
 
     public static void Main(string[] args)
     {
@@ -199,7 +199,7 @@ public class ReadonlyFields {
         ReadonlyFields demo = new ReadonlyFields();
 
         // This would result in a compiler error
-        demo.IntValue = 6;
+        demo.intValue = 6;
 
         // This would result in a compiler error, since we're trying to
         // give objectValue a different object value
@@ -208,7 +208,7 @@ public class ReadonlyFields {
         // However, this is allowed since we're changing a field
         // inside the readonly object, and not changing which object
         // objectValue refers to
-        demo.ObjectValue.IntValue = 6;
+        demo.objectValue.intValue = 6;
     }
 }
 ```
@@ -219,12 +219,12 @@ Note that `readonly` doesn't make much sense for properties, and in fact may not
 
 A **static** field or property is one that is declared with the `static` keyword. We have encountered the `static` keyword used with both fields and methods, but since this discussion is focused on data, let's only discuss static fields and properties for now.
 
-A static member is shared by all instances of the class. For example, in our `Temperature` class there is not a good reason that each `Temperature` object needs its own double `absoluteZeroFahrenheit`, since that value will not vary from class to class. Let's make it a static field. After doing so, there will be a single field `AbsoluteZeroFahrenheit` that is shared among *all* instances of the `Temperature` class.
+A static member is shared by all instances of the class. For example, in our `Temperature` class there is no good reason that each `Temperature` object needs its own double `absoluteZeroFahrenheit`, since that value will not vary from class to class. Let's make it a static field. After doing so, there will be a single field `absoluteZeroFahrenheit` that is shared among *all* instances of the `Temperature` class.
 
 ```csharp
 public class Temperature {
 
-    private static double AbsoluteZeroFahrenheit = -459.67;
+    private static double absoluteZeroFahrenheit = -459.67;
 
     private double fahrenheit;
 
@@ -237,7 +237,7 @@ public class Temperature {
         set
         {
 
-            if (value < AbsoluteZeroFahrenheit) {
+            if (value < absoluteZeroFahrenheit) {
                 throw new ArgumentException("Value is below absolute zero");
             }
 
@@ -279,7 +279,7 @@ There are a couple of notable things in this example:
 You may also use the `const` modifier with local variables.
 </aside>
 
-A good use of a constant can be seen in our `Temperature` class. Since absolute zero will never change, we can ensure that nobody ever changes it (perhaps by mistake, even) by adding `final` to make it a constant.
+A good use of a constant can be seen in our `Temperature` class. Since absolute zero will never change, we can ensure that nobody ever changes it (perhaps by mistake, even) by adding `const` to make it a constant.
 
 ```csharp
 public class Temperature {
@@ -291,7 +291,7 @@ public class Temperature {
 }
 ```
 
-Apply the proper modifiers to fields and properties -- access modifiers, `static`, `readonly`, and `const` -- is part of proper encapsulation. C# has much more machinery to allow you as the programmer to control how the code you write is used, which can minimize bugs and increase stability and modularity of your code, if you use them properly.
+Applying the proper modifiers to fields and properties -- access modifiers, `static`, `readonly`, and `const` -- is part of proper encapsulation. C# has much more machinery to allow you as the programmer to control how the code you write is used, which can minimize bugs and increase stability and modularity of your code, if you use them properly.
 
 ## References
 
