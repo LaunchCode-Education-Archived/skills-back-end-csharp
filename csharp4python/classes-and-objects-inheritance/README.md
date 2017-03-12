@@ -45,7 +45,7 @@ We say that `HouseCat` is a **subclass**, **derived class**, or **child class** 
 
 Inheritance is a useful mechanism for sharing data and behavior between related classes, and it effectively creates hierarchies of classes that have more and more specialized behavior as you go from base class to subclass.
 
-As with Python, fields and non-constructor methods are directly available within the subclass, and may be called as if the belonged to the base class, subject to any access modifiers. In general, this means that `private` and `internal` members of a base class are not accessible to a subclass. (However, if the subclass and class are in the same assembly, `internal` would allow access to a member.)
+As with Python, fields and non-constructor methods are directly available to instances of the subclass, subject to any access modifiers. In general, this means that `private` and `internal` members of a base class are not accessible to a subclass. (However, if the subclass and base class are in the same assembly, `internal` would allow access to a member.)
 
 <aside class="aside-note" markdown="1">
 This is a good time to review [access modifiers in C#](../introduction-to-classes-and-objects/#access-modifiers) if anything in the last paragraph was fuzzy.
@@ -142,9 +142,9 @@ public class HouseCat : Cat
 
 The class `HouseCat` extends `Cat`, using several different inheritance features that we will explore in turn.
 
-Notice that `Cat` has a private string property `family`, representing the biological family of all cats. This property is not directly accessible to `HouseCat` since it is private, however it may be read via the property `Family`. The setter for `Family` is private, however, so it may only be set within `Cat`.
+Notice that `Cat` has a private string field `family`, representing the biological family of all cats. This field is not directly accessible to `HouseCat` since it is private, however it may be read via the public property `Family`. The setter for `Family` is private, however, so it may only be set within `Cat`. It makes sense that the another class should not be able to change the biological family of a cat, since this field should rarely, if ever, change.
 
-Methods of the base class may be called on instances of the subclass as if they were defined as part of the subclass.
+Methods of the base class `Cat` may be called on instances of the subclass `HouseCat` as if they were defined as part of the `HouseCat`.
 
 ```csharp
 HouseCat garfield = new HouseCat("Garfield", 12);
@@ -155,13 +155,13 @@ The `Eat` method was defined in `Cat`, but may be called on all `HouseCat` insta
 
 ### Working With Constructors in Subclasses
 
-We mentioned above that a subclass inherits all non-constructor methods. Indeed, when extending a class, we will not be able to create new instances of our subclass `HouseCat` using the constructor provided by `Cat`. For example, this code will not compile:
+We mentioned above that a subclass inherits all non-constructor methods from its base class. Indeed, when extending a class, we will not be able to create new instances of our subclass `HouseCat` using any constructors provided by `Cat`. For example, this code will not compile:
 
 ```csharp
 HouseCat thumper = new HouseCat(8.4);
 ```
 
-The base class `Cat` has a constructor that takes a single parameter of type `double`, but `Cat` constructors are not inherited by `HouseCat`. If we wanted to use such a constructor in the subclass, we would have to explicitly provide it. We'll see how to do this relativel easily in a bit.
+The base class `Cat` has a constructor that takes a single parameter of type `double`, but `HouseCat` does not have such a constructor, and `Cat` constructors are not inherited by `HouseCat`. If we wanted to use such a constructor in the subclass, we would have to explicitly provide it. We'll see how to do this relatively easily in a moment.
 
 Let's look at the constructor included in `HouseCat`:
 
@@ -174,7 +174,7 @@ public HouseCat(string name, double weight) : base(weight)
 
 Here we use the `:` operator in conjunction with they keyword `base` to specify that our constructor should call the base class constructor with the argument `weight`. This call to the base class constructor will run before the body of the subclass constructor executes. This is a useful way to ensure that we're fully initializing our objects.
 
-You may leave out such a call to a base class constructor only when the base class has a default, or no-arg, constructor (that is, a constructor that takes no arguments). In such a case, the default constructor is implicitly called for you. Here's what this would look like in `HouseCat`, if `Cat` had a default constructor.
+You may leave out such a call to a base class constructor only when the base class has a default, or *no-arg*, constructor (that is, a constructor that takes no arguments). In such a case, the default constructor is implicitly called for you. Here's what this would look like in `HouseCat`, if `Cat` had a default constructor.
 
 ```csharp
 public HouseCat(string name)
@@ -183,7 +183,9 @@ public HouseCat(string name)
 }
 ```
 
-As a consequence of this constructor syntax, we can easily "expose" any constructor from the base class by providing a subclass constructor with the same signature and no body, and calling the base class constructor.
+Even though we don't explicitly specify that we want to call a constructor from `Cat`, the default constructor will be called.
+
+As a consequence of this constructor syntax, we can easily expose any constructor from the base class by providing a subclass constructor with the same signature and no body, and calling the base class constructor.
 
 ```csharp
 public HouseCat(double weight) : base(weight) {}
@@ -195,7 +197,7 @@ This constructor is a bad one, and is included merely to introduce syntax and us
 
 ### Overriding Base Class Behavior
 
-Sometimes when extending a class, we'll want to modify behavior provided by the base class. We can do this via **method overriding**, if the base class allows.
+Sometimes when extending a class, we'll want to modify behavior provided by the base class. This can be done by replacing the implementation of an inherited method by a completely new method implementation. For a given method, we can do this via **method overriding**, if the base class allows.
 
 For a method in a base class to be overridden in a subclass, it must be marked as `virtual`. In our example, the `Noise` method of `Cat` is marked `virtual`, which means we may override it in `HouseCat`. When we override it, we must use the `override` keyword.
 

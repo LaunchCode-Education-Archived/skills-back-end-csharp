@@ -93,7 +93,7 @@ When you use properties in this way, the get/set methods are called implicitly w
 
 An astute question to ask at this point would be, "Why make the fields private if you're just going to allow people to get and set them anyway!?" Great question. There are lots of reasons to use getters and setters to control access. Here are just a few:
 
-1. Sometimes you'll want to implement behavior that happens every time a field is accessed (get) or changed (set). Even if you can't think of such a reason when writing your class, you might later have the need to add such behavior. If you don't use accessors, you'll have to do a lot more refactoring at that point.
+1. Sometimes you'll want to implement behavior that happens every time a field is accessed (get) or changed (set). Even if you can't think of such a reason when writing your class, you might later have the need to add such behavior. If you don't use accessors then you will have to do a lot more code to modify at that point. Accessors shield other classes that use your code from working with the internal workings of your class
 2. You can perform validation within a setter. For example, we might want to ensure that a student's name contains only certain characters, or that their student ID is a positive integer.
 3. You can use different access modifiers on getters and setters for the same field, based on desired usage. For example, you might want to allow anyone to be able to read the value of a field, but only classes within the same assembly to modify it. You could do this with a `public` getter and an `internal` setter, but not as a field without getters and setters, which could only be public to everyone or internal to everyone.
 
