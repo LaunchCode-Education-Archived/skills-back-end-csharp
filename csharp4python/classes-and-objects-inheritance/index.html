@@ -146,7 +146,7 @@ public class HouseCat : Cat
 <p>We say that <code>HouseCat</code> is a <strong>subclass</strong>, <strong>derived class</strong>, or <strong>child class</strong> of <code>Cat</code>, and we say that <code>Cat</code> is the <strong>superclass</strong>, <strong>base class</strong>, or <strong>parent class</strong> of <code>HouseCat</code>. In C#, a class may extend only one class, but classes may extend each other in turn, creating hierarchies of classes. We often visualize these by drawing each class as a box, with lines descending from the base class to the subclass.</p>
 <p><img src="inheritance.png" alt="Inheritance Diagram" /></p>
 <p>Inheritance is a useful mechanism for sharing data and behavior between related classes, and it effectively creates hierarchies of classes that have more and more specialized behavior as you go from base class to subclass.</p>
-<p>As with Python, fields and non-constructor methods are directly available within the subclass, and may be called as if the belonged to the base class, subject to any access modifiers. In general, this means that <code>private</code> and <code>internal</code> members of a base class are not accessible to a subclass. (However, if the subclass and class are in the same assembly, <code>internal</code> would allow access to a member.)</p>
+<p>As with Python, fields and non-constructor methods are directly available to instances of the subclass, subject to any access modifiers. In general, this means that <code>private</code> and <code>internal</code> members of a base class are not accessible to a subclass. (However, if the subclass and base class are in the same assembly, <code>internal</code> would allow access to a member.)</p>
 <aside class="aside-note">
 <p>This is a good time to review <a href="../introduction-to-classes-and-objects/#access-modifiers">access modifiers in C#</a> if anything in the last paragraph was fuzzy.</p>
 </aside>
@@ -233,33 +233,34 @@ public class HouseCat : Cat
     }
 }</code></pre>
 <p>The class <code>HouseCat</code> extends <code>Cat</code>, using several different inheritance features that we will explore in turn.</p>
-<p>Notice that <code>Cat</code> has a private string property <code>family</code>, representing the biological family of all cats. This property is not directly accessible to <code>HouseCat</code> since it is private, however it may be read via the property <code>Family</code>. The setter for <code>Family</code> is private, however, so it may only be set within <code>Cat</code>.</p>
-<p>Methods of the base class may be called on instances of the subclass as if they were defined as part of the subclass.</p>
+<p>Notice that <code>Cat</code> has a private string field <code>family</code>, representing the biological family of all cats. This field is not directly accessible to <code>HouseCat</code> since it is private, however it may be read via the public property <code>Family</code>. The setter for <code>Family</code> is private, however, so it may only be set within <code>Cat</code>. It makes sense that the another class should not be able to change the biological family of a cat, since this field should rarely, if ever, change.</p>
+<p>Methods of the base class <code>Cat</code> may be called on instances of the subclass <code>HouseCat</code> as if they were defined as part of the <code>HouseCat</code>.</p>
 <pre><code class="language-csharp">HouseCat garfield = new HouseCat("Garfield", 12);
 garfield.Eat();</code></pre>
 <p>The <code>Eat</code> method was defined in <code>Cat</code>, but may be called on all <code>HouseCat</code> instances as well. We say: &quot;<code>HouseCat</code> inherits the method <code>Eat</code> from <code>Cat</code>.&quot;</p>
 <h3 id="working-with-constructors-in-subclasses">Working With Constructors in Subclasses</h3>
-<p>We mentioned above that a subclass inherits all non-constructor methods. Indeed, when extending a class, we will not be able to create new instances of our subclass <code>HouseCat</code> using the constructor provided by <code>Cat</code>. For example, this code will not compile:</p>
+<p>We mentioned above that a subclass inherits all non-constructor methods from its base class. Indeed, when extending a class, we will not be able to create new instances of our subclass <code>HouseCat</code> using any constructors provided by <code>Cat</code>. For example, this code will not compile:</p>
 <pre><code class="language-csharp">HouseCat thumper = new HouseCat(8.4);</code></pre>
-<p>The base class <code>Cat</code> has a constructor that takes a single parameter of type <code>double</code>, but <code>Cat</code> constructors are not inherited by <code>HouseCat</code>. If we wanted to use such a constructor in the subclass, we would have to explicitly provide it. We'll see how to do this relativel easily in a bit.</p>
+<p>The base class <code>Cat</code> has a constructor that takes a single parameter of type <code>double</code>, but <code>HouseCat</code> does not have such a constructor, and <code>Cat</code> constructors are not inherited by <code>HouseCat</code>. If we wanted to use such a constructor in the subclass, we would have to explicitly provide it. We'll see how to do this relatively easily in a moment.</p>
 <p>Let's look at the constructor included in <code>HouseCat</code>:</p>
 <pre><code class="language-csharp">public HouseCat(string name, double weight) : base(weight)
 {
     Name = name;
 }</code></pre>
 <p>Here we use the <code>:</code> operator in conjunction with they keyword <code>base</code> to specify that our constructor should call the base class constructor with the argument <code>weight</code>. This call to the base class constructor will run before the body of the subclass constructor executes. This is a useful way to ensure that we're fully initializing our objects.</p>
-<p>You may leave out such a call to a base class constructor only when the base class has a default, or no-arg, constructor (that is, a constructor that takes no arguments). In such a case, the default constructor is implicitly called for you. Here's what this would look like in <code>HouseCat</code>, if <code>Cat</code> had a default constructor.</p>
+<p>You may leave out such a call to a base class constructor only when the base class has a default, or <em>no-arg</em>, constructor (that is, a constructor that takes no arguments). In such a case, the default constructor is implicitly called for you. Here's what this would look like in <code>HouseCat</code>, if <code>Cat</code> had a default constructor.</p>
 <pre><code class="language-csharp">public HouseCat(string name)
 {
     Name = name;
 }</code></pre>
-<p>As a consequence of this constructor syntax, we can easily &quot;expose&quot; any constructor from the base class by providing a subclass constructor with the same signature and no body, and calling the base class constructor.</p>
+<p>Even though we don't explicitly specify that we want to call a constructor from <code>Cat</code>, the default constructor will be called.</p>
+<p>As a consequence of this constructor syntax, we can easily expose any constructor from the base class by providing a subclass constructor with the same signature and no body, and calling the base class constructor.</p>
 <pre><code class="language-csharp">public HouseCat(double weight) : base(weight) {}</code></pre>
 <aside class="aside-warning">
 <p>This constructor is a bad one, and is included merely to introduce syntax and usage. We would not want to have a constructor for <code>HouseCat</code> that didn't initialize an essential property such as <code>Name</code>.</p>
 </aside>
 <h3 id="overriding-base-class-behavior">Overriding Base Class Behavior</h3>
-<p>Sometimes when extending a class, we'll want to modify behavior provided by the base class. We can do this via <strong>method overriding</strong>, if the base class allows.</p>
+<p>Sometimes when extending a class, we'll want to modify behavior provided by the base class. This can be done by replacing the implementation of an inherited method by a completely new method implementation. For a given method, we can do this via <strong>method overriding</strong>, if the base class allows.</p>
 <p>For a method in a base class to be overridden in a subclass, it must be marked as <code>virtual</code>. In our example, the <code>Noise</code> method of <code>Cat</code> is marked <code>virtual</code>, which means we may override it in <code>HouseCat</code>. When we override it, we must use the <code>override</code> keyword.</p>
 <aside class="aside-warning">
 <p>Unlike in some other object-oriented languages (notably Java), in C# a method must explicitly allow itself to be overridden by using the <code>virtual</code> keyword.</p>
