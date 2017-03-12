@@ -23,7 +23,7 @@ class HouseCat(Cat):
     # ...code for the HouseCat class...
 ```
 
-Any fields and non-constructor methods in `Cat` would be available to each instance of `HouseCat`. We express the inheritance relationship in plain English by saying the a `HouseCat` *extends* `Cat`, or that `HouseCat` *is a* `Cat`.
+Any fields and non-constructor methods in `Cat` would be available to each instance of `HouseCat`. We express the inheritance relationship in plain English by saying that a `HouseCat` *extends* `Cat`, or that a `HouseCat` *is a* `Cat`.
 
 In C#, the syntax for extending a class requires a colon (`:`) separating the two class names.
 

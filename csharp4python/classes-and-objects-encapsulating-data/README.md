@@ -201,7 +201,7 @@ public class ReadonlyFields {
         // This would result in a compiler error
         demo.intValue = 6;
 
-        // This would result in a compiler error, since we're 
+        // This would result in a compiler error, since we're
         // trying to give objectValue a different object value
         demo.objectValue = new FortyTwo();
 
@@ -219,7 +219,7 @@ Note that `readonly` doesn't make much sense for properties, and in fact may not
 
 A **static** field or property is one that is declared with the `static` keyword. We have encountered the `static` keyword used with both fields and methods, but since this discussion is focused on data, let's only discuss static fields and properties for now.
 
-A static member is shared by all instances of the class. For example, in our `Temperature` class there is no good reason that each `Temperature` object needs its own double `absoluteZeroFahrenheit`, since that value will not vary from class to class. Let's make it a static field. After doing so, there will be a single field `absoluteZeroFahrenheit` that is shared among *all* instances of the `Temperature` class.
+A static member is shared by all instances of the class. For example, in our `Temperature` class there is no good reason that each `Temperature` object needs its own instance property `double absoluteZeroFahrenheit`, since that value will not vary from class to class. Let's make it a static field. After doing so, there will be a single field `absoluteZeroFahrenheit` that is shared among *all* instances of the `Temperature` class.
 
 ```csharp
 public class Temperature {
@@ -248,13 +248,13 @@ public class Temperature {
 }
 ```
 
-Within the class, we can refer to the static field or property the same way as a non-static field or property.
+Within the class, we can refer to the static field or property the same way as a non-static field or property. For example, within `Temperature` we could write:
 
 ```csharp
 Console.WriteLine("Absolute zero in F is: " + absoluteZeroFahrenheit);
 ```
 
-Outside the class, we must use the class name (since it doesn't belong to any one instance/object).
+Outside the class, we must use the class name to refer to the field (since it doesn't belong to any one instance/object).
 
 ```csharp
 Console.WriteLine("Absolute zero in F is: " + Temperature.absoluteZeroFahrenheit);
