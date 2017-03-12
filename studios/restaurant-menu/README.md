@@ -28,6 +28,6 @@ While a classmate is presenting their design to you, ask questions about why the
 
 ## Implementation
 
-Within the `csharp-exercises` solution, create a new project named `Restaurant`. Add classes `Menu` and `MenuItem` and add the fields and properties that you designed. Be sure to add custom getters and setters code as appropriate.
+Within the `csharp-exercises` solution, create a new console project named `Restaurant`. Add classes `Menu` and `MenuItem` and add the fields and properties that you designed. Be sure to add custom getters and setters code as appropriate.
 
 Within `Program.cs`, test your code by creating a `Menu` and several `MenuItem` objects to add to the menu. Write code to print out the menu to the console, displaying data for each menu item.
