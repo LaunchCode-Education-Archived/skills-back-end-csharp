@@ -258,7 +258,7 @@ public class ReadonlyFields {
         // This would result in a compiler error
         demo.intValue = 6;
 
-        // This would result in a compiler error, since we're 
+        // This would result in a compiler error, since we're
         // trying to give objectValue a different object value
         demo.objectValue = new FortyTwo();
 
@@ -271,7 +271,7 @@ public class ReadonlyFields {
 <p>Note that <code>readonly</code> doesn't make much sense for properties, and in fact may not be applied to properties.</p>
 <h3 id="static-fields-and-properties">Static Fields and Properties</h3>
 <p>A <strong>static</strong> field or property is one that is declared with the <code>static</code> keyword. We have encountered the <code>static</code> keyword used with both fields and methods, but since this discussion is focused on data, let's only discuss static fields and properties for now.</p>
-<p>A static member is shared by all instances of the class. For example, in our <code>Temperature</code> class there is no good reason that each <code>Temperature</code> object needs its own double <code>absoluteZeroFahrenheit</code>, since that value will not vary from class to class. Let's make it a static field. After doing so, there will be a single field <code>absoluteZeroFahrenheit</code> that is shared among <em>all</em> instances of the <code>Temperature</code> class.</p>
+<p>A static member is shared by all instances of the class. For example, in our <code>Temperature</code> class there is no good reason that each <code>Temperature</code> object needs its own instance property <code>double absoluteZeroFahrenheit</code>, since that value will not vary from class to class. Let's make it a static field. After doing so, there will be a single field <code>absoluteZeroFahrenheit</code> that is shared among <em>all</em> instances of the <code>Temperature</code> class.</p>
 <pre><code class="language-csharp">public class Temperature {
 
     private static double absoluteZeroFahrenheit = -459.67;
@@ -296,9 +296,9 @@ public class ReadonlyFields {
     }
 
 }</code></pre>
-<p>Within the class, we can refer to the static field or property the same way as a non-static field or property.</p>
+<p>Within the class, we can refer to the static field or property the same way as a non-static field or property. For example, within <code>Temperature</code> we could write:</p>
 <pre><code class="language-csharp">Console.WriteLine("Absolute zero in F is: " + absoluteZeroFahrenheit);</code></pre>
-<p>Outside the class, we must use the class name (since it doesn't belong to any one instance/object).</p>
+<p>Outside the class, we must use the class name to refer to the field (since it doesn't belong to any one instance/object).</p>
 <pre><code class="language-csharp">Console.WriteLine("Absolute zero in F is: " + Temperature.absoluteZeroFahrenheit);</code></pre>
 <h3 id="constants">Constants</h3>
 <p>C# allows us to create constants -- named values that may not be changed -- using the keyword <code>const</code>.</p>
