@@ -173,7 +173,7 @@
 }</code></pre>
 <aside class="aside-pro-tip">
 <p>When a local variable has the same name as a field, we say that the local variable <strong>shadows</strong> the field. Errors caused by shadowing can be tricky to spot, so it's best to avoid doing this in your code.</p>
-<p>If you're following C# naming conventions, properties will be capitalized and local variables will start with a lowercase letter, so you should easily avoid shadowing.</p>
+<p>If you're following C# naming conventions, fields and local variables both start with a lowercase letter. C# classes also have <em>properties</em> which expose field data, and can often be accessed within a class in place of the fields they expose. Properties begin with a capital letter, and therefore do not shadow local method variable names.</p>
 </aside>
 <h2 id="access-modifiers">Access Modifiers</h2>
 <p>Every class member has an access level that determines who can access that class. For fields, the access level determines who can get or set the value of the field. For methods, the access level determines who can call the method. The access level of a class member is determined by an <strong>access modifier</strong>.</p>

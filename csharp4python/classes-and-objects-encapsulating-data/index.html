@@ -152,9 +152,9 @@
     double gpa;
 
 }</code></pre>
-<p>Like variables within a method, fields may be initialized when they are declared. For example, we could provide default values for <code>numberOfCredits</code> and <code>Gpa</code> (default values for <code>name</code> and <code>studentId</code> don't make sense since they should be different for each student).</p>
+<p>Like variables within a method, fields may be initialized when they are declared. For example, we could provide default values for <code>numberOfCredits</code> and <code>gpa</code> (default values for <code>name</code> and <code>studentId</code> don't make sense since they should be different for each student).</p>
 <pre><code class="language-csharp">int numberOfCredits = 0;
-double Gpa = 0;</code></pre>
+double gpa = 0;</code></pre>
 <p>Fields are also referred to as <strong>instance variables</strong>, since they belong to an instance of a class. In other words, each object will have its own copy of each instance variable.</p>
 <h3 id="properties-and-accessor-methods">Properties and Accessor Methods</h3>
 <p>A <strong>property</strong> in C# is a mechanism to read, write, or compute the value of a private field.</p>
@@ -168,7 +168,7 @@ public string Name
     get { return name; }
     set { name = value; }
 }</code></pre>
-<p>Here, within <code>get</code> and <code>set</code>, <code>Name</code> refers to the private field that stores the value of the property. In <code>set</code>, the special variable <code>value</code> will contain the value that the user is trying to set within the property.</p>
+<p>Here, within <code>get</code> and <code>set</code>, <code>name</code> refers to the private field that stores the value of the property. In <code>set</code>, the special variable <code>value</code> will contain the value that the user is trying to set within the property.</p>
 <p>We can then get or set the value of name anywhere else (since it's public) using dot-notation:</p>
 <pre><code class="language-csharp">Student josh = new Student();
 
@@ -177,17 +177,17 @@ josh.Name = "Josh";
 
 // get the Name
 Console.WriteLine(josh.Name);</code></pre>
-<p>When you use properties in this way, the get/set methods are called implicitly when assigning or reading the property.</p>
+<p>When you use properties in this way, the get/set methods are called implicitly when assigning or reading the property, therefore parentheses are not needed.</p>
 <p>An astute question to ask at this point would be, &quot;Why make the fields private if you're just going to allow people to get and set them anyway!?&quot; Great question. There are lots of reasons to use getters and setters to control access. Here are just a few:</p>
 <ol>
 <li>Sometimes you'll want to implement behavior that happens every time a field is accessed (get) or changed (set). Even if you can't think of such a reason when writing your class, you might later have the need to add such behavior. If you don't use accessors, you'll have to do a lot more refactoring at that point.</li>
 <li>You can perform validation within a setter. For example, we might want to ensure that a student's name contains only certain characters, or that their student ID is a positive integer.</li>
-<li>You can use different access modifiers on getters and setters for the same field, based on desired usage. For example, you might want to allow anyone to be able to read the value of a field, but only classes within the same assembly to modify it. You could do this with a <code>public</code> getter and a <code>internal</code> setter, but not as a field without getters and setters, which could only be public to everyone or package-private to everyone.</li>
+<li>You can use different access modifiers on getters and setters for the same field, based on desired usage. For example, you might want to allow anyone to be able to read the value of a field, but only classes within the same assembly to modify it. You could do this with a <code>public</code> getter and an <code>internal</code> setter, but not as a field without getters and setters, which could only be public to everyone or internal to everyone.</li>
 </ol>
 <aside class="aside-question">
 <p>One of the four fields in our <code>Student</code> class is a prime candidate for the scenario described in item 3. Which one do you think it is?</p>
 </aside>
-<p>To set different access levels on a property, us an access modifier next to <code>get</code> or <code>set</code>. Here's how we would make <code>Name</code> readable by everyone, but modifiable only by code within the given assembly.</p>
+<p>To set different access levels on a property, use an access modifier next to <code>get</code> or <code>set</code>. Here's how we would make <code>Name</code> readable by everyone, but modifiable only by code within the class's assembly.</p>
 <pre><code class="language-csharp">private string name;
 
 public string Name
@@ -197,13 +197,13 @@ public string Name
 }</code></pre>
 <p>If a field has both a public getter and setter, and no additional logic is needed, we can use the shorthand:</p>
 <pre><code class="language-csharp">string Name { get; set; }</code></pre>
-<p>This is referred to as an *auto-implemented property**.</p>
+<p>This is referred to as an <strong>auto-implemented property</strong>.</p>
 <aside class="aside-warning">
-<p>Note that in the example above the private field is <code>name</code> (lowercase) while the property is <code>Name</code>. The property is based on the value of the private field <code>name</code>, and since C# identifiers are case-sensitive, these are two distinct entities. <code>name</code> is referred to as a &quot;backing field&quot;, and it stores the value of the property</p>
-<p>If you were to try to use the same identifier for both the backing field and the property, you'll see a <code>StackOverflowException</code> due to infinite recursion.</p>
+<p>Note that in the example above the private field is <code>name</code> (lowercase) while the property is <code>Name</code>. The property is based on the value of the private field <code>name</code>, and since C# identifiers are case-sensitive, these are two distinct members. <code>name</code> is referred to as a &quot;backing field&quot;, and it stores the value of the property.</p>
+<p>If you were to try to use the same identifier for both the backing field and the property, you'll see a <code>StackOverflowException</code> due to infinite recursion -- i.e., the property would infinitely call itself!</p>
 </aside>
 <p>When using this syntax, the compiler will generate the following equivalent code for us. That is, the compiler generates code identical to the first example of accessors above.</p>
-<p>As an example of validation within a setter, let's take a short detour to look at a <code>Temperature</code> class. A valid temperature can only be so low (&quot;absolute zero&quot;), so we wouldn't want to allow somebody to set an invalid value. In <code>set</code> we thrown an exception if an invalid value is provided (we'll cover exceptions in detail later, but for now note that they are ways of signaling errors).</p>
+<p>As an example of validation within a setter, let's take a short detour to look at a <code>Temperature</code> class. A valid temperature can only be so low (&quot;absolute zero&quot;), so we wouldn't want to allow somebody to set an invalid value. In <code>set</code> we throw an exception if an invalid value is provided (we'll cover exceptions in detail later, but for now note that they are ways of signaling errors).</p>
 <pre><code class="language-csharp">public class Temperature {
 
     private double fahrenheit;
@@ -231,24 +231,24 @@ public string Name
 <pre><code class="language-csharp">public double Celsius
 {
     get { return (Fahrenheit - 32) * 5.0 / 9.0; }
-    set { Fahrenheit = value * 9.0 / 5.0 + 32;}
+    set { Fahrenheit = value * 9.0 / 5.0 + 32; }
 }</code></pre>
-<p>Since there's a link between Fahrenheit and celsius, we want to make sure that when one is updated, so is the other. In this case, we only store one field value (<code>fahrenheit</code>, the backing field for <code>Fahrenheit</code>) and make the appropriate calculation when getting or setting the celsius property. Using a property like this is the same as when there is a private field behind it; the code using it can't tell the difference.</p>
+<p>Since there's a link between Fahrenheit and Celsius, we want to make sure that when one is updated, so is the other. In this case, we only store one field value (<code>fahrenheit</code>, the backing field for <code>Fahrenheit</code>) and make the appropriate calculation when getting or setting the <code>Celsius</code> property. Using a property like this is the same as when there is a private field behind it; the code using it can't tell the difference.</p>
 <h3 id="readonly-fields">Readonly Fields</h3>
-<p>A <strong>readonly field</strong> is one that can not be changed once it is initialized. This means slightly different things for primitive and class types. We create readonly fields by declaring them with the <code>readonly</code> keyword.</p>
+<p>A <strong>readonly field</strong> is one that can not be changed once it is initialized (assigned a value). This means slightly different things for primitive and class types. We create readonly fields by declaring them with the <code>readonly</code> keyword.</p>
 <p><strong>Readonly value-type fields</strong> can not change their value once they are initialized.</p>
 <p><strong>Readonly reference-type fields</strong> may not change the object that they hold once they are initialized. However, that object itself my change.</p>
 <p>Furthermore, <strong>readonly fields may only be initialized when declared, or in a constructor.</strong> Calling a constructor is what we are doing when creating a new object, as in <code>Student josh = new Student()</code>. We'll explore creating our own constructors in the next lesson.</p>
 <p>Here are some examples to illustrate. Each class would be in its own file, but we present them side-by-side for convenience. Note that the first line of the <code>FortyTwo</code> class initializes the property at the point at which it is declared.</p>
 <pre><code class="language-csharp">public class FortyTwo
 {
-    public int IntValue { get; set; } = 42;
+    public int intValue = 42;
 }
 
 public class ReadonlyFields {
 
-    public readonly int IntValue = 42;
-    public readonly FortyTwo ObjectValue = new FortyTwo();
+    public readonly int intValue = 42;
+    public readonly FortyTwo objectValue = new FortyTwo();
 
     public static void Main(string[] args)
     {
@@ -256,7 +256,7 @@ public class ReadonlyFields {
         ReadonlyFields demo = new ReadonlyFields();
 
         // This would result in a compiler error
-        demo.IntValue = 6;
+        demo.intValue = 6;
 
         // This would result in a compiler error, since we're trying to
         // give objectValue a different object value
@@ -265,16 +265,16 @@ public class ReadonlyFields {
         // However, this is allowed since we're changing a field
         // inside the readonly object, and not changing which object
         // objectValue refers to
-        demo.ObjectValue.IntValue = 6;
+        demo.objectValue.intValue = 6;
     }
 }</code></pre>
 <p>Note that <code>readonly</code> doesn't make much sense for properties, and in fact may not be applied to properties.</p>
 <h3 id="static-fields-and-properties">Static Fields and Properties</h3>
 <p>A <strong>static</strong> field or property is one that is declared with the <code>static</code> keyword. We have encountered the <code>static</code> keyword used with both fields and methods, but since this discussion is focused on data, let's only discuss static fields and properties for now.</p>
-<p>A static member is shared by all instances of the class. For example, in our <code>Temperature</code> class there is not a good reason that each <code>Temperature</code> object needs its own double <code>absoluteZeroFahrenheit</code>, since that value will not vary from class to class. Let's make it a static field. After doing so, there will be a single field <code>AbsoluteZeroFahrenheit</code> that is shared among <em>all</em> instances of the <code>Temperature</code> class.</p>
+<p>A static member is shared by all instances of the class. For example, in our <code>Temperature</code> class there is no good reason that each <code>Temperature</code> object needs its own double <code>absoluteZeroFahrenheit</code>, since that value will not vary from class to class. Let's make it a static field. After doing so, there will be a single field <code>absoluteZeroFahrenheit</code> that is shared among <em>all</em> instances of the <code>Temperature</code> class.</p>
 <pre><code class="language-csharp">public class Temperature {
 
-    private static double AbsoluteZeroFahrenheit = -459.67;
+    private static double absoluteZeroFahrenheit = -459.67;
 
     private double fahrenheit;
 
@@ -287,7 +287,7 @@ public class ReadonlyFields {
         set
         {
 
-            if (value &lt; AbsoluteZeroFahrenheit) {
+            if (value &lt; absoluteZeroFahrenheit) {
                 throw new ArgumentException("Value is below absolute zero");
             }
 
@@ -314,7 +314,7 @@ public class ReadonlyFields {
 <aside class="aside-pro-tip">
 <p>You may also use the <code>const</code> modifier with local variables.</p>
 </aside>
-<p>A good use of a constant can be seen in our <code>Temperature</code> class. Since absolute zero will never change, we can ensure that nobody ever changes it (perhaps by mistake, even) by adding <code>final</code> to make it a constant.</p>
+<p>A good use of a constant can be seen in our <code>Temperature</code> class. Since absolute zero will never change, we can ensure that nobody ever changes it (perhaps by mistake, even) by adding <code>const</code> to make it a constant.</p>
 <pre><code class="language-csharp">public class Temperature {
 
     public const double ABSOLUTE_ZERO_FAHRENHEIT = -459.67;
@@ -322,7 +322,7 @@ public class ReadonlyFields {
     /* Rest of class, as above... */
 
 }</code></pre>
-<p>Apply the proper modifiers to fields and properties -- access modifiers, <code>static</code>, <code>readonly</code>, and <code>const</code> -- is part of proper encapsulation. C# has much more machinery to allow you as the programmer to control how the code you write is used, which can minimize bugs and increase stability and modularity of your code, if you use them properly.</p>
+<p>Applying the proper modifiers to fields and properties -- access modifiers, <code>static</code>, <code>readonly</code>, and <code>const</code> -- is part of proper encapsulation. C# has much more machinery to allow you as the programmer to control how the code you write is used, which can minimize bugs and increase stability and modularity of your code, if you use them properly.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)" target="_blank">Encapsulation (wikipedia.org)</a></li>
