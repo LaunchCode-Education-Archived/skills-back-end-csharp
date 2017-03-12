@@ -205,7 +205,7 @@ For a method in a base class to be overridden in a subclass, it must be marked a
 Unlike in some other object-oriented languages (notably Java), in C# a method must explicitly allow itself to be overridden by using the `virtual` keyword.
 </aside>
 
-Here are the methods in question, pulled out for convenience.
+Here are the methods in question.
 
 In `Cat`:
 
