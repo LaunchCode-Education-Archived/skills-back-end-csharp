@@ -285,7 +285,7 @@ public class Tiger : Cat
 In reality, though, we might not want objects of type `Cat` to be created, since such a cat couldn't actually exist (a real cat would have a specific genus and species). We could prevent objects of type `Cat` from being created, while still enabling sharing of behavior among its subclasses, by making `Cat` and **abstract class**.
 
 ```csharp
-public abstract class `Cat`
+public abstract class Cat
 {
     // Cat class definition
 }
@@ -298,7 +298,7 @@ We have a further tool that we may use here, which is an **abstract method**. An
 In our abstract `Cat` class, it would make sense to make `Noise` abstract to force any class extending it to provide its own implementation of that behavior.
 
 ```csharp
-public abstract class `Cat`
+public abstract class Cat
 {
     public abstract void Noise();
 
