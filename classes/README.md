@@ -11,13 +11,13 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\*
 4 | [Prep Work](../class-prep/4/) | [CheeseMVC](../studios/cheese-mvc/) | Views and Razor templates | &nbsp;
 5 | [Prep Work](../class-prep/5/) | [Restaurant Menu](../studios/restaurant-menu/) | Objects and data | &nbsp;
 6 | [Prep Work](../class-prep/6/) | [CheeseMVC Redux](../studios/cheese-mvc-redux/) | Objects and behavior | &nbsp;
-7 | [Prep Work](../class-prep/6/) | [Quiz Time!](../studios/quiz-time/) | Inheritance | &nbsp;
-8 | [Prep Work](../class-prep/7/) | | Model classes in ASP.NET | &nbsp;
-9 | [Prep Work](../class-prep/8/) | | Exceptions | &nbsp;
-10 | [Prep Work](../class-prep/9/) | | Interfaces and polymorphism | &nbsp;
-11 | [Prep Work](../class-prep/10/) | | Dependency Injection | &nbsp;
-12 | [Prep Work](../class-prep/11/) | | Persistence Part I | &nbsp;
-13 | [Prep Work](../class-prep/12/) | | Persistence Part II | &nbsp;
+7 | [Prep Work](../class-prep/7/) | [Quiz Time!](../studios/quiz-time/) | Inheritance | &nbsp;
+8 | [Prep Work](../class-prep/8/) | | Model classes in ASP.NET | &nbsp;
+9 | [Prep Work](../class-prep/9/) | | Exceptions | &nbsp;
+10 | [Prep Work](../class-prep/10/) | | Interfaces and polymorphism | &nbsp;
+11 | [Prep Work](../class-prep/11/) | | Dependency Injection | &nbsp;
+12 | [Prep Work](../class-prep/12/) | | Persistence Part I | &nbsp;
+13 | [Prep Work](../class-prep/13/) | | Persistence Part II | &nbsp;
 14 | [Prep Work](../class-prep/14/) | | ASP.NET MVC Apps Beyond LC101 | &nbsp;
 
 <aside class="aside-note" markdown="1">
