@@ -197,8 +197,9 @@
 <h4 id="add-results-action">Add Results Action</h4>
 <p>Add a <code>Results</code> action method to <code>SearchController</code>. The method should take in two parameters, specifying the type of search and the search term. In order for the parameters to be properly passed in by the MVC framework, you'll need to name them appropriately, based on the corresponding form field names.</p>
 <p>After looking up the search results via the <code>JobData</code> class, you'll need to pass them into the <code>Views/Search/Index.cshtml</code> view. Note that this <em>is not the default view for this action</em>.</p>
+<p>You'll also need to pass <code>ListController.columnChoices</code> to the view, as is done in the <code>Index</code> method.</p>
 <h4 id="display-search-results">Display Search Results</h4>
-<p>After you have your <code>Results</code> action above passing data to the controller, you need to display the data. Open up <code>Views/Search/Index.cshtml</code> and create a loop to display each job passed in from the controller. You should put each job in its own table, with job field per row.</p>
+<p>After you have your <code>Results</code> action above passing data to the view, you need to display the data. Open up <code>Views/Search/Index.cshtml</code> and create a loop to display each job passed in from the controller. You should put each job in its own table, with job field per row.</p>
 <p>Add the class <code>"job-listing"</code> to each of the tables to get some nice styling, courtesy of Eliot's work!</p>
 <h4 id="display-list-of-all-jobs">Display List of All Jobs</h4>
 <p>Recall that the page at the path <code>/List/Values?column=all</code> doesn't display any results. This page needs to display full job listings, just like the search results page. Add code to the appropriate view template so that this page displays jobs with the same structure as the search results.</p>
