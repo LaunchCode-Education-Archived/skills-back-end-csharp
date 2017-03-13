@@ -47,6 +47,7 @@ http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc-redux/
 http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/counting-characters/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/index.html
+http://education.launchcode.org/skills-back-end-csharp/studios/mvc-design/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/quiz-time/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/restaurant-menu-continued/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/restaurant-menu-redux/index.html
