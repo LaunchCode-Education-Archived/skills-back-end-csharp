@@ -27,11 +27,17 @@ Extend the application that you started in the lesson videos for Class 4.
 
 [CheeseMVC](cheese-mvc/)
 
-## CheeseMVC Redux
+## Restaurant Menu
 
-Extend the application that you started in the lesson videos for Class 4.
+Practice class design by designing the classes for a restaurant's menu app.
 
-[CheeseMVC](cheese-mvc-redux/)
+[Work on Restaurant Menu](restaurant-menu/)
+
+## Restaurant Menu Continued
+
+Continue working on your `Menu` and `MenuItem` classes by adding methods to them.
+
+[Work on Restaurant Menu](restaurant-menu-continued/)
 
 ## Quiz Time!
 

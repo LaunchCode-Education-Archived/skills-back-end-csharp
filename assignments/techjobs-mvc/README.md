@@ -137,9 +137,11 @@ Add a `Results` action method to `SearchController`. The method should take in t
 
 After looking up the search results via the `JobData` class, you'll need to pass them into the `Views/Search/Index.cshtml` view. Note that this *is not the default view for this action*.
 
+You'll also need to pass `ListController.columnChoices` to the view, as is done in the `Index` method.
+
 #### Display Search Results
 
-After you have your `Results` action above passing data to the controller, you need to display the data. Open up `Views/Search/Index.cshtml` and create a loop to display each job passed in from the controller. You should put each job in its own table, with job field per row.
+After you have your `Results` action above passing data to the view, you need to display the data. Open up `Views/Search/Index.cshtml` and create a loop to display each job passed in from the controller. You should put each job in its own table, with job field per row.
 
 Add the class `"job-listing"` to each of the tables to get some nice styling, courtesy of Eliot's work!
 
