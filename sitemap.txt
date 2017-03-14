@@ -43,7 +43,6 @@ http://education.launchcode.org/skills-back-end-csharp/index.html
 http://education.launchcode.org/skills-back-end-csharp/issues/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/area/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/bonjour-asp-net/index.html
-http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc-redux/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/counting-characters/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/index.html

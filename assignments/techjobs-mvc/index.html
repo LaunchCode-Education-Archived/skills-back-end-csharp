@@ -194,6 +194,14 @@
 <h3 id="your-tasks">Your Tasks</h3>
 <p>Once you understand the controllers and views that are already in place, you're ready to begin your work. In Visual Studio, select <em>View &gt; Task List</em> to pop open a small pane at the bottom of the window. This list is populated by any code comments that start with <code>TODO</code>. In particular, you'll see your 3 tasks listed.</p>
 <p><img src="../images/task-list-mvc.png" alt="Task List" /></p>
+<aside class="aside-note">
+<p>The tasks may not immediately be populated in the Task List. If you don't see all three, open up the files manually to see your TODOs:</p>
+<ul>
+<li><code>Controllers/SearchController.cs</code></li>
+<li><code>Views/Search/Index.cshtml</code></li>
+<li><code>Views/List/Jobs.cshtml</code></li>
+</ul>
+</aside>
 <h4 id="add-results-action">Add Results Action</h4>
 <p>Add a <code>Results</code> action method to <code>SearchController</code>. The method should take in two parameters, specifying the type of search and the search term. In order for the parameters to be properly passed in by the MVC framework, you'll need to name them appropriately, based on the corresponding form field names.</p>
 <p>After looking up the search results via the <code>JobData</code> class, you'll need to pass them into the <code>Views/Search/Index.cshtml</code> view. Note that this <em>is not the default view for this action</em>.</p>
