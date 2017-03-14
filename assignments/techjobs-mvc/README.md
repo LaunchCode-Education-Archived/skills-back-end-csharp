@@ -131,6 +131,13 @@ Once you understand the controllers and views that are already in place, you're 
 
 ![Task List](../images/task-list-mvc.png)
 
+<aside class="aside-note" markdown="1">
+The tasks may not immediately be populated in the Task List. If you don't see all three, open up the files manually to see your TODOs:
+- `Controllers/SearchController.cs`
+- `Views/Search/Index.cshtml`
+- `Views/List/Jobs.cshtml`
+</aside>
+
 #### Add Results Action
 
 Add a `Results` action method to `SearchController`. The method should take in two parameters, specifying the type of search and the search term. In order for the parameters to be properly passed in by the MVC framework, you'll need to name them appropriately, based on the corresponding form field names.
