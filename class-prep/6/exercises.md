@@ -3,7 +3,7 @@ title: Class 6 Prep Exercises
 currentMenu: classes
 ---
 
-1. In your `Student` class from the [exercises for class 5 prep](../5/exercises.html), update the code to reflect the constructor additions that were added in [Classes and Objects: Encapsulating Behavior](../../chsharp4python/classes-and-objects-encapsulating-behavior/). Complete the implementations of `AddGrade` and `GetGradeLevel`. For the method `AddGrade`, you'll need to update the student's GPA. To do this, not that GPA is computed via the formula:
+1. In your `Student` class from the [exercises for class 5 prep](../5/exercises.html), update the code to reflect the constructor additions that were added in [Classes and Objects: Encapsulating Behavior](../../csharp4python/classes-and-objects-encapsulating-behavior/). Complete the implementations of `AddGrade` and `GetGradeLevel`. For the method `AddGrade`, you'll need to update the student's GPA. To do this, not that GPA is computed via the formula:
     ```nohighlight
     gpa = (total quality score) / (total number of credits)
     ```
