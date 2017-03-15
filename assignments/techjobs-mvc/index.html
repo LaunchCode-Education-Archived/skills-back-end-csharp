@@ -230,6 +230,7 @@
 <li>When searching, if we select a given field to search within and submit, our choice is forgotten. Modify the view template to keep the previous search field selected when displaying results.</li>
 <li>The field names in the tables displaying full job data are not capitalized. Fix this.</li>
 <li>In the search results listing and the listing of all jobs, make each value (except name) hyperlinked to the listing of all jobs with that value, as is done on the <code>/List/Values</code> page.</li>
+<li>Using the same loop in two different places -- as we did in <code>Views/Search/Index.cshtml</code> and <code>Views/List/Jobs.cshtml</code>-- isn't very DRY (<strong>D</strong>on't <strong>R</strong>epeat <strong>Y</strong>ourself). To fix this would require <strong>partial views</strong>. <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/partial" target="_blank">Read up on partial views</a> and use them to eliminate this repeated code.</li>
 <li>
 <aside class="aside-warning">
 <p>This task requires material that is covered in class 7, so only take this on if you're willing to work ahead a bit, or have some previous object-oriented programming experience.</p>
@@ -242,6 +243,9 @@
 <li>Write a method <code>View</code> in <code>TechJobsController</code> with the signature
 <pre><code class="language-csharp">public override ViewResult View();</code></pre></li>
 <li>Add code to this method to add <code>actionChoices</code> to the <code>ViewBag</code> and then return the result of calling the overridden view method via <code>base.View()</code>.</li>
+<li>Take the same two above steps with the method:
+<pre><code class="language-csharp">public override ViewResult View(string viewName);</code></pre>
+<p>This method is used when returning a view other than the default.</p></li>
 <li>Modify every one of your other controllers to extend <code>TechJobsController</code> instead of <code>Controller</code>.</li>
 <li>Modify <code>_Layout.cshtml</code> to use the passed-in action choices to generate the navigation links.</li>
 </ol>
