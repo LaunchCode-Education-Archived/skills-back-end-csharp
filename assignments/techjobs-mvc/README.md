@@ -180,6 +180,7 @@ Here are some additional challenges, for those willing to take them on:
 - When searching, if we select a given field to search within and submit, our choice is forgotten. Modify the view template to keep the previous search field selected when displaying results.
 - The field names in the tables displaying full job data are not capitalized. Fix this.
 - In the search results listing and the listing of all jobs, make each value (except name) hyperlinked to the listing of all jobs with that value, as is done on the `/List/Values` page.
+- Using the same loop in two different places -- as we did in `Views/Search/Index.cshtml` and `Views/List/Jobs.cshtml`-- isn't very DRY (**D**on't **R**epeat **Y**ourself). To fix this would require **partial views**. [Read up on partial views](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/partial) and use them to eliminate this repeated code.
 - <aside class="aside-warning" markdown="1">
     This task requires material that is covered in class 7, so only take this on if you're willing to work ahead a bit, or have some previous object-oriented programming experience.
     </aside>
@@ -195,6 +196,11 @@ Here are some additional challenges, for those willing to take them on:
         public override ViewResult View();
         ```
     1. Add code to this method to add `actionChoices` to the `ViewBag` and then return the result of calling the overridden view method via `base.View()`.
+	2. Take the same two above steps with the method:
+		```csharp
+		public override ViewResult View(string viewName);
+		```
+		This method is used when returning a view other than the default.
     1. Modify every one of your other controllers to extend `TechJobsController` instead of `Controller`.
     1. Modify `_Layout.cshtml` to use the passed-in action choices to generate the navigation links.
 
