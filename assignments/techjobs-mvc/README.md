@@ -138,6 +138,8 @@ The tasks may not immediately be populated in the Task List. If you don't see al
 - `Views/List/Jobs.cshtml`
 </aside>
 
+As you work on your tasks, refer to the [demo app][demo-app].
+
 #### Add Results Action
 
 Add a `Results` action method to `SearchController`. The method should take in two parameters, specifying the type of search and the search term. In order for the parameters to be properly passed in by the MVC framework, you'll need to name them appropriately, based on the corresponding form field names.
@@ -169,6 +171,8 @@ Before submitting, make sure that your application:
 - Displays jobs with alternately white and gray backgrounds (this is provided by the `"job-listing"` class).
 - Displays a listing of all 98 jobs in the system, when the user goes to the List page and selects "All".
 
+Refer to the [demo app][demo-app] if you're not sure how thing are supposed to work.
+
 ### How to Submit
 
 To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
@@ -179,9 +183,10 @@ Here are some additional challenges, for those willing to take them on:
 
 - When searching, if we select a given field to search within and submit, our choice is forgotten. Modify the view template to keep the previous search field selected when displaying results.
 - The field names in the tables displaying full job data are not capitalized. Fix this.
-- In the search results listing and the listing of all jobs, make each value (except name) hyperlinked to the listing of all jobs with that value, as is done on the `/List/Values` page.
+- In the search results listing and the listing of all jobs, make each value (except for the name field) hyperlinked to the listing of all jobs with that value, as is done on the `/List/Values` page.
 - Using the same loop in two different places -- as we did in `Views/Search/Index.cshtml` and `Views/List/Jobs.cshtml`-- isn't very DRY (**D**on't **R**epeat **Y**ourself). To fix this would require **partial views**. [Read up on partial views](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/partial) and use them to eliminate this repeated code.
-- <aside class="aside-warning" markdown="1">
+- This is a big one. First, a warning:
+	<aside class="aside-warning" markdown="1">
     This task requires material that is covered in class 7, so only take this on if you're willing to work ahead a bit, or have some previous object-oriented programming experience.
     </aside>
 
@@ -190,7 +195,7 @@ Here are some additional challenges, for those willing to take them on:
     ViewBag.actions = actionChoices;
     ```
     Let's fix this.
-    1. Make a new controller, `TechJobsController`, that extends `Controller`. This new controller should have a static list, `actionChoices`. The list should be populated via a static constructor, just like `columnChoices` is populated in `ListController`.
+    1. Make a new controller, `TechJobsController`, that extends `Controller`. This new controller should have a static dictionary, `actionChoices`. The dictionary should be populated via a static constructor, just like `columnChoices` is populated in `ListController`.
     1. Write a method `View` in `TechJobsController` with the signature
         ```csharp
         public override ViewResult View();
@@ -203,5 +208,7 @@ Here are some additional challenges, for those willing to take them on:
 		This method is used when returning a view other than the default.
     1. Modify every one of your other controllers to extend `TechJobsController` instead of `Controller`.
     1. Modify `_Layout.cshtml` to use the passed-in action choices to generate the navigation links.
+1. If you did the previous Bonus Mission, update your code so that `columnnChoices` also lives in `TechJobsController`.
 
 [submission-instructions]: ../
+[demo-app]: http://techjobs20170314011743.azurewebsites.net/
