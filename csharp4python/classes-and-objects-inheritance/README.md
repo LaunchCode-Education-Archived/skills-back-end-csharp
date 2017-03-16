@@ -92,9 +92,9 @@ public class Cat {
         IsHungry = false;
     }
 
-    public virtual void Noise ()
+    public virtual string Noise ()
     {
-        Console.WriteLine("Meeeeeeooooowww!");
+        return "Meeeeeeooooowww!";
     }
 }
 ```
@@ -121,21 +121,14 @@ public class HouseCat : Cat
         return !IsHungry && !IsTired;
     }
 
-    public override void Noise()
+    public override string Noise()
     {
-        if (IsSatisfied())
-        {
-            Console.WriteLine("Hello, my name is " + Name + "!");
-        }
-        else
-        {
-            base.Noise();
-        }
+        return "Hello, my name is " + Name + "!";
     }
 
-    public void Purr()
+    public string Purr()
     {
-        Console.WriteLine("I'm a HouseCat");
+        return "I'm a HouseCat";
     }
 }
 ```
@@ -155,7 +148,7 @@ The `Eat` method was defined in `Cat`, but may be called on all `HouseCat` insta
 
 ### Working With Constructors in Subclasses
 
-We mentioned above that a subclass inherits all non-constructor methods from its base class. Indeed, when extending a class, we will not be able to create new instances of our subclass `HouseCat` using any constructors provided by `Cat`. For example, this code will not compile:
+We mentioned above that a subclass inherits all *non-constructor* methods from its base class. Indeed, when extending a class, we will not be able to create new instances of our subclass `HouseCat` using any constructors provided by `Cat`. For example, this code will not compile:
 
 ```csharp
 HouseCat thumper = new HouseCat(8.4);
@@ -183,7 +176,7 @@ public HouseCat(string name)
 }
 ```
 
-Even though we don't explicitly specify that we want to call a constructor from `Cat`, the default constructor will be called.
+Even though we don't explicitly specify that we want to call a constructor from `Cat`, the default constructor would be called (if it existed, which in this case it doesn't).
 
 As a consequence of this constructor syntax, we can easily expose any constructor from the base class by providing a subclass constructor with the same signature and no body, and calling the base class constructor.
 
@@ -202,6 +195,10 @@ Sometimes when extending a class, we'll want to modify behavior provided by the 
 For a method in a base class to be overridden in a subclass, it must be marked as `virtual`. In our example, the `Noise` method of `Cat` is marked `virtual`, which means we may override it in `HouseCat`. When we override it, we must use the `override` keyword.
 
 <aside class="aside-warning" markdown="1">
+When overriding a method from a base class, the method signatures *must be exactly the same*. Recall that the signature of a method is the method name, along with it's return type, and the type and number of input parameters.
+</aside>
+
+<aside class="aside-warning" markdown="1">
 Unlike in some other object-oriented languages (notably Java), in C# a method must explicitly allow itself to be overridden by using the `virtual` keyword.
 </aside>
 
@@ -210,18 +207,18 @@ Here are the methods in question.
 In `Cat`:
 
 ```csharp
-public virtual void Noise()
+public virtual string Noise()
 {
-    Console.WriteLine("Meeeeeeooooowww!");
+    return "Meeeeeeooooowww!";
 }
 ```
 
 In `HouseCat`:
 
 ```csharp
-public override void Noise()
+public override string Noise()
 {
-    Console.WriteLine("Hello, my name is " + Name + "!");
+    return "Hello, my name is " + Name + "!";
 }
 ```
 
@@ -231,27 +228,36 @@ Here we override `Noise` in `HouseCat`. If we have a `HouseCat` object and call 
 Cat plainCat = new Cat(8.6);
 HouseCat garfield = new HouseCat("Garfield", 12);
 
-plainCat.Noise(); // prints "Meeeeeeooooowww!"
-garfield.Noise(); // prints "Hello, my name is Garfield!"
+Console.WriteLine(plainCat.Noise()); // prints "Meeeeeeooooowww!"
+Console.WriteLine(garfield.Noise()); // prints "Hello, my name is Garfield!"
 ```
 
-When overriding a method, we may call the method that we're overriding by using `base`:
+<aside class="aside-warning" markdown="1">
+When overriding a method from a base class, the method signatures *must be exactly the same*. Recall that the signature of a method is the method name and access level, along with it's return type, and the type and number of input parameters.
+
+In this example, the signature of our method is:
+```csharp
+public string Noise();
+```
+</aside>
+
+When overriding a method, we may call the method from the base class that we're overriding by using `base`:
 
 ```csharp
 public override void Noise()
 {
     if (IsSatisfied())
     {
-        Console.WriteLine("Hello, my name is " + Name + "!");
+        return "Hello, my name is " + Name + "!";
     }
     else
     {
-        base.Noise();
+        return base.Noise();
     }
 }
 ```
 
-Notice the method call: `base.Noise()`. This calls the overridden method in the base class, carrying out the original behavior if the given conditional branch is reached.
+This calls the overridden method in the base class via `base.Noise()`, carrying out the original behavior if the given conditional branch is reached.
 
 ### The Object Class
 
@@ -265,7 +271,7 @@ In this section we briefly introduce an intermediate object-oriented concept. We
 
 We noted in the introduction to this section that inheritance is a way to share behaviors among classes. You'll sometimes find yourself creating a base class as a way to share behaviors among related classes. However, in such situations is not always desirable for instances of the base class to be created.
 
-For example, suppose we began coding two classes, `HouseCat` and `Tiger`. Upon writing the code, we realized that there were some common data and behaviors, and so to reduce code repetition, we combined those in `Cat` (as above).
+For example, suppose we began coding two classes, `HouseCat` and `Tiger`. Upon writing the code, we realized that there was some common data and behaviors. For example, they both make a noise, come from the same biological family, and get hungry. In order to reduce code repetition, we combined those in `Cat` (as above).
 
 ```csharp
 public class Cat
@@ -284,7 +290,7 @@ public class Tiger : Cat
 }
 ```
 
-In reality, though, we might not want objects of type `Cat` to be created, since such a cat couldn't actually exist (a real cat would have a specific genus and species). We could prevent objects of type `Cat` from being created, while still enabling sharing of behavior among its subclasses, by making `Cat` and **abstract class**.
+In reality, though, we might not want objects of type `Cat` to be created, since such a cat couldn't actually exist (a real cat would have a specific genus and species, for example). We could prevent objects of type `Cat` from being created, while still enabling sharing of behavior among its subclasses, by making `Cat` an **abstract class**.
 
 ```csharp
 public abstract class Cat
@@ -302,9 +308,9 @@ In our abstract `Cat` class, it would make sense to make `Noise` abstract to for
 ```csharp
 public abstract class Cat
 {
-    public abstract void Noise();
+    public abstract string Noise();
 
-    // Additional Cat class definition
+    // More Cat class code...
 }
 ```
 

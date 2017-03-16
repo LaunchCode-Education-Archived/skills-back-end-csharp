@@ -73,7 +73,7 @@ This set of lessons is for programmers that are comfortable with Python but are 
     - [Single Responsibility Principle](classes-and-objects-encapsulating-behavior/#single-responsibility-principle)
 1. [Classes and Objects: Inheritance](classes-and-objects-inheritance/)
     - [Inheritance in C#](classes-and-objects-inheritance/#inheritance-in-c35)
-        - [Working With Constructors in Subclases](classes-and-objects-inheritance/#working-with-constructors-in-subclasses)
+        - [Working With Constructors in Subclasses](classes-and-objects-inheritance/#working-with-constructors-in-subclasses)
         - [Overriding Base Class Behavior](classes-and-objects-inheritance/#overriding-base-class-behavior)
         - [The Object Class](classes-and-objects-inheritance/#the-object-class)
         - [Abstract Classes and Class Members](classes-and-objects-inheritance/#abstract-classes-and-class-members)
