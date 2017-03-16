@@ -125,10 +125,10 @@
 <p>A <strong>method</strong> is a procedure that belongs to a class. In C#, all procedures must be part of a class, a significant difference from Python, where functions may stand on their own. Let's revisit our minimal class example.</p>
 <pre><code class="language-csharp">public class HelloWorld {
 
-    private string Message = "Hello World";
+    private string message = "Hello World";
 
-    void SayHello() {
-        Console.WriteLine(Message);
+    public void SayHello() {
+        Console.WriteLine(message);
     }
 
 }</code></pre>
@@ -136,10 +136,10 @@
 <p>Here's how you call methods on an object.</p>
 <pre><code class="language-csharp">HelloWorld hello = new HelloWorld();
 hello.SayHello();</code></pre>
-<p>It is not possible to call <code>SayHello</code> without having a <code>HelloWorld</code> object. This begins to make more sense when you note that the <code>Message</code> field is used within <code>SayHello</code>, and unless we are calling <code>SayHello</code> off of an object, there will be no <code>Message</code> field available to print.</p>
+<p>It is not possible to call <code>SayHello</code> without having a <code>HelloWorld</code> object. This begins to make more sense when you note that the <code>message</code> field is used within <code>SayHello</code>, and unless we are calling <code>SayHello</code> off of an object, there will be no <code>message</code> field available to print.</p>
 <aside class="aside-pro-tip">
 <p>As mentioned before, methods should have the most restrictive level of access possible. If you create a utility method that should only be used within your class, then it should be <code>private</code>.</p>
-<p>Only make methods <code>public</code> when you expect others to use them, and when you are committed to maintaining those methods for other programmers that might use them.</p>
+<p>Only make methods <code>public</code> when you expect other classes to use them, and when you are committed to maintaining those methods for other programmers that might use them.</p>
 </aside>
 <h2 id="constructors">Constructors</h2>
 <p><strong>Constructor methods</strong> allow for initialization behavior to occur when creating a new object from our class template. We have been using constructor syntax in our lessons, but we haven't yet seen how to create constructors for our own classes. For example, we created new <code>ArrayList</code> objects using the <code>new</code> keyword along with the <code>ArrayList</code> constructor:</p>
@@ -148,18 +148,18 @@ hello.SayHello();</code></pre>
 <p>Here is an example of a constructor definition within the <code>HelloWorld</code> class:</p>
 <pre><code class="language-csharp">public class HelloWorld {
 
-    private String Message = "Hello World";
+    private String message = "Hello World";
 
     public HelloWorld(String message) {
-        Message = message;
+        this.message = message;
     }
 
-    void SayHello() {
-        Console.WriteLine(Message);
+    public void SayHello() {
+        Console.WriteLine(message);
     }
 
 }</code></pre>
-<p>This constructor allows us to create <code>HelloWorld</code> objects with custom messages. The assignment <code>Message = message</code> assigns the value passed into the constructor to the field <code>Message</code>. Here's how we might use it:</p>
+<p>This constructor allows us to create <code>HelloWorld</code> objects with custom messages. The assignment <code>this.message = message</code> assigns the value passed into the constructor to the field <code>message</code>. Here's how we might use it:</p>
 <pre><code class="language-csharp">HelloWorld goodbye = new HelloWorld("Goodbye World");
 goodbye.SayHello(); // prints "Goodbye World"</code></pre>
 <aside class="aside-warning">
@@ -193,7 +193,7 @@ goodbye.SayHello(); // prints "Goodbye World"</code></pre>
     }
 
 }</code></pre>
-<p>The first constructor allows for creation of <code>Student</code> objects where the code creating the object provides all of the fields. The second allows for creation of <code>Student</code> objects with only <code>name</code> and <code>studentId</code>. The first constructor would be most useful for creating a transfer student, where credits and a GPA might already be non-zero. However, for all new students, it would be safe to initialize <code>NumberOfCredits</code> and <code>Gpa</code> to be 0.</p>
+<p>The first constructor allows for creation of <code>Student</code> objects where the code creating the object provides data for all of the properties. The second allows for creation of <code>Student</code> objects with only <code>name</code> and <code>studentId</code>. The first constructor would be most useful for creating a transfer student, where credits and a GPA might already be non-zero. However, for all new students, it would be safe to initialize <code>NumberOfCredits</code> and <code>Gpa</code> to be 0.</p>
 <p>A better way to write the above constructors would be this:</p>
 <pre><code class="language-csharp">public class Student {
 
@@ -214,8 +214,8 @@ goodbye.SayHello(); // prints "Goodbye World"</code></pre>
         : this(name, studentId, 0, 0) {}
 
 }</code></pre>
-<p>Here, we use <code>: this()</code> to invoke another constructor within the same class. In this case, the second constructor calls the first with the &quot;default&quot; values for <code>studentId</code> and <code>gpa</code>. This call to the other constructor is effectively the first line of the method. Using this approach is a good practice not only because it makes your code shorter, but because allows any initialization behavior that may be carried beyond just initializing variables to be contained in a smaller number of constructors.</p>
-<p>Note that a constructor often won't take values for all of the fields that need to be initialized, beyond even the case of default values. For example, we might also provide provide a third constructor that only requires the student's name, since theoretically the <code>studentId</code> would (or could) be generated by the class itself.</p>
+<p>Here, we use <code>: this()</code> to invoke another constructor within the same class. In this case, the second constructor calls the first with the &quot;default&quot; values for <code>studentId</code> and <code>gpa</code>. This call to the other constructor is effectively the first line of the method. Using this approach is a good practice not only because it makes your code shorter, but because it allows any initialization behavior that may be carried beyond just initializing variables to be contained in a smaller number of constructors.</p>
+<p>Note that a constructor often won't take values for all of the fields that need to be initialized, beyond even the case of default values. For example, we might also provide a third constructor that only requires the student's name, since theoretically the <code>studentId</code> would (or could) be generated by the class itself.</p>
 <pre><code class="language-csharp">public class Student {
 
     private static int nextStudentId = 1;
@@ -280,11 +280,11 @@ goodbye.SayHello(); // prints "Goodbye World"</code></pre>
     }
 
     public void AddGrade(int courseCredits, double grade) {
-        // Update the appropriate fields: numberOfCredits, gpa
+        // Update the appropriate properties: NumberOfCredits, Gpa
     }
 
     public string GetGradeLevel() {
-        // Determine the grade level of the student based on numberOfCredits
+        // Determine the grade level of the student based on NumberOfCredits
     }
 
 }</code></pre>
@@ -336,7 +336,7 @@ goodbye.SayHello(); // prints "Goodbye World"</code></pre>
 Console.WriteLine(john);</code></pre>
 <h3 id="equals">equals</h3>
 <p>Suppose we had two objects of type <code>Student</code>, say <code>student1</code> and <code>student2</code>, and we wanted to determine if they were equal. We might try to compare them using <code>==</code>, but since these are <a href="../data-types#reference-and-value-types">references</a> -- that is, the variables hold a reference, or the address of the actual <code>Student</code> objects -- they will be determined to be equal only when they have the same address. In other words, they will be equal only when they refer to, or point at, the exact same object. This is often not what we want. For example, we might want to consider two student objects equal if they had the same name, email, or student ID.</p>
-<p>The <code>Equals()</code> method can be used to determine of one object is equal to another in this sense. We introduced this method when discussing strings, but it also applies to all other classes. Here's now you might use it:</p>
+<p>The <code>Equals()</code> method can be used to determine if one object is equal to another in this sense. We introduced this method when discussing strings, but it also applies to all other classes. Here's now you might use it:</p>
 <pre><code class="language-csharp">Student bono1 = new Student("Paul David Hewson", 4);
 Student bono2 = new Student("Bono", 4);
 
@@ -345,7 +345,7 @@ if (bono1.equals(bono2)) {
         " is the same as " + bono2.getName());
 }</code></pre>
 <p>If we don't provide our own <code>Equals()</code> method, then the one provided for us will only consider two objects equal if they are the <em>exact same object</em>. In other words, they will only be considered equal if the variables referring to the given objects both point at the same object. This is the same behavior that we would see when using the <code>==</code> operator: <code>bono1 == bono2</code>. This expression will evaluate to true only if the variables actually refer to the same object.</p>
-<p>This is often not what we want. The difference between the comparison carried out by the default <code>Equals()</code> method and the <code>==</code>operator, and how we would like our classes to behave, is the difference between <em>equality</em> and <em>identity</em>. Two things can be considered equal if they are not the exact same item, that is, if they are not identical.</p>
+<p>This is often not what we want. The difference between the comparison carried out by the default <code>Equals()</code> method and the <code>==</code> operator, and how we would like our classes to behave, is the difference between <em>equality</em> and <em>identity</em>. Two things can be considered equal if they are not the exact same item, that is, if they are not identical.</p>
 <p>In the case of the <code>Student</code> class, we might specify that two <code>Student</code> objects are equal if they have the same ID:</p>
 <pre><code class="language-csharp">public override bool Equals(Object o) {
     Student studentObj = o as Student;
