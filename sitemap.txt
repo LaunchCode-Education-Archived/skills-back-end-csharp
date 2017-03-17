@@ -27,6 +27,7 @@ http://education.launchcode.org/skills-back-end-csharp/class-prep/12/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/13/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/14/index.html
 http://education.launchcode.org/skills-back-end-csharp/classes/index.html
+http://education.launchcode.org/skills-back-end-csharp/csharp4python/class-diagrams/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-encapsulating-behavior/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-encapsulating-data/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-inheritance/index.html
