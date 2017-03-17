@@ -120,12 +120,12 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: Quiz Time!</h1>
-                    <p>For this studio, you will design and build a program that allows the user to take a quiz. This means you will have to create some questions, and get some input from the user.</p>
+                    <p>For this studio, you will design and build a console program that allows the user to take a quiz. This means you will have to create some questions, and get some input from the user.</p>
 <p>First, the questions. We want to be able to handle multiple types of questions:</p>
 <ul>
-<li>Multiple choice: a question with a fixed set of possible answers, of which only one may be chosen</li>
-<li>Short answer: a question with a freeform text answer</li>
-<li>Checkbox: a question with a fixed set of possible answers, of which any number may be chosen</li>
+<li><strong>Multiple choice</strong>: a question with a fixed set of possible answers, of which only one may be chosen and only one answer is correct</li>
+<li><strong>Checkbox</strong>: a question with a fixed set of possible answers, of which any number may be chosen; there is one correct combination of choices</li>
+<li><strong>True/False</strong>: a question that has a true/false answer</li>
 </ul>
 <h2 id="design">Design</h2>
 <p>In order to design your program, consider:</p>
@@ -133,21 +133,28 @@
 <li>What do these types of questions have in common?</li>
 <li>What makes these question types different?</li>
 </ul>
-<p>Design a base class (called <code>Question</code>) that contains the common features, and design subclasses as necessary. For each, specify:</p>
+<p>Use class diagrams to design a base class (called <code>Question</code>) that contains the common features, and design subclasses for each of the question types. For each question type be sure to include:</p>
 <ul>
 <li>Class name</li>
-<li>Parent class (if applicable)</li>
-<li>Fields, properties, and methods along with access modifiers</li>
+<li>Fields and properties with access modifiers</li>
+<li>Methods with access modifiers</li>
+<li>Any inheritance relationship</li>
 </ul>
-<p>Should any of these questions be abstract? If so, should any of the methods of the abstract class be abstract?</p>
-<p>Make sure that there is functionality included to display the questions, the choices (if necessary) and check to see if the answer is correct.</p>
+<p>Should any of the question classes be abstract? If so, should any of its methods be abstract?</p>
+<p>Make sure that there is functionality included to display the questions, to display the possible answers, and to check to see if the answer(s) is correct.</p>
+<p>Then design the <code>Quiz</code> class. A quiz has a list of questions, and we should be able to:</p>
+<ul>
+<li>Add questions</li>
+<li>Run, or carry out, the quiz</li>
+<li>Grade the quiz</li>
+</ul>
 <h2 id="implementation">Implementation</h2>
 <p>Code the classes that you designed above. If you like, get some feedback on your design by talking through it with a classmate.</p>
 <h2 id="putting-it-all-together">Putting it all together</h2>
 <p>You're now ready to present these questions as a Quiz. Use your classes in a <code>Main</code> method  within the <code>Program.cs</code> file of the project. The program should create several questions, present them to the user, accept the user's responses, and then tell them whether their answers were correct or incorrect.</p>
-<h2 id="bonus-mission">Bonus Mission</h2>
+<h2 id="bonus-missions">Bonus Missions</h2>
 <ol>
-<li>Add validation behavior to your <code>ShortAnswer</code> class to only allow the user to enter text with less than 80 characters.</li>
+<li>Add a short answer question type that includes validation behavior to only allow the user to enter text with less than 80 characters.</li>
 <li>Add a couple of more question types to your program:
 <ul>
 <li>Linear scale: a question that allows the user to provide a numeric response within an integer scale, which may vary from question to question. For instance, it could be 1-3 for on linear scale question, and 1-5 for another.</li>
