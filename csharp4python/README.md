@@ -77,6 +77,10 @@ This set of lessons is for programmers that are comfortable with Python but are 
         - [Overriding Base Class Behavior](classes-and-objects-inheritance/#overriding-base-class-behavior)
         - [The Object Class](classes-and-objects-inheritance/#the-object-class)
         - [Abstract Classes and Class Members](classes-and-objects-inheritance/#abstract-classes-and-class-members)
+1. [Class Diagrams](class-diagrams/)
+    - [Diagramming a Single Class](class-diagrams/#diagramming-a-single-class)
+    - [Diagramming Class Relationships](class-diagrams/#diagramming-class-relationships)
+    - [References](class-diagrams/#references)
 1. [Naming Conventions](naming-conventions/)
 
 *C# for Python Programmers* contains content adapted from [Java for Python Programmers](https://github.com/RunestoneInteractive/Java4Python) by [Brad Miller](https://github.com/RunestoneInteractive/), used under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) / reformatted here with modifications to content and structure.

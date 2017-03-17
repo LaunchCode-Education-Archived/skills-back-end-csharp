@@ -41,9 +41,13 @@ public class HouseCat : Cat
 
 We say that `HouseCat` is a **subclass**, **derived class**, or **child class** of `Cat`, and we say that `Cat` is the **superclass**, **base class**, or **parent class** of `HouseCat`. In C#, a class may extend only one class, but classes may extend each other in turn, creating hierarchies of classes. We often visualize these by drawing each class as a box, with lines descending from the base class to the subclass.
 
-![Inheritance Diagram](inheritance.png)
+<div style="text-align:center;"><img src="inheritance-basic.png" style="width:400px;" /></div>
 
 Inheritance is a useful mechanism for sharing data and behavior between related classes, and it effectively creates hierarchies of classes that have more and more specialized behavior as you go from base class to subclass.
+
+When this happens, we can visualize the inheritance structure with a slightly more complex diagram.
+
+![Inheritance Tree](inheritance-tree.png)
 
 As with Python, fields and non-constructor methods are directly available to instances of the subclass, subject to any access modifiers. In general, this means that `private` and `internal` members of a base class are not accessible to a subclass. (However, if the subclass and base class are in the same assembly, `internal` would allow access to a member.)
 
