@@ -6,12 +6,12 @@ currentMenu: classes
 Add edit functionality to the `CheeseMVC` application by following these steps. It assumes that you've added all of the code from the [models lesson](../../videos/intro-to-mvc-models/).
 
 1. Add two action methods to `CheeseController`:
-    - `public IActionResult Edit(int id)` - this will be used to display the form
-    - `public IActionResult Edit(int id, string name, string description)` - this will be used to process the form
+    - `public IActionResult Edit(int cheeseId)` - this will be used to display the form
+    - `public IActionResult Edit(int cheeseId, string name, string description)` - this will be used to process the form
 1. Add the `[HttpPost]` attribute to the second result.
 1. Create an `Edit.cshtml` view template in `Views/Cheese/`.
 1. Copy the form from `Add.cshtml` into `Edit.cshtml`. You'll want everything between and including the `<form>` tags.
-1. Back in the `Edit(int id)` action, ask `CheeseData` for the object with the given `id` and put it in the `ViewBag`.
+1. Back in the `Edit(int id)` action, ask `CheeseData` for the object with the given `cheeseId` and put it in the `ViewBag`.
 1. Within the form fields in `Edit.cshtml`, get the name and description from the cheese that was passed in via the `ViewBag` and set them as the values of the form fields.
 1. Add another input to hold the id of the cheese being edited. This should be hidden from the user:
     ```html
@@ -23,5 +23,5 @@ Add edit functionality to the `CheeseMVC` application by following these steps. 
     ```html
     <a asp-controller="Cheese" asp-action="Edit" asp-route-id="@cheese.CheeseId">edit</a>
     ```
-    You can put this link in a third table column, or in one of the existing table cells. 
+    You can put this link in a third table column, or in one of the existing table cells.
 1. Test your code! With so many changes, it's likely that you made an error somewhere. Be patient, use the Visual Studio debugger, and read your error messages.
