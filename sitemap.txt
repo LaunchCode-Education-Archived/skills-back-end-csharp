@@ -19,6 +19,7 @@ http://education.launchcode.org/skills-back-end-csharp/class-prep/6/exercises.ht
 http://education.launchcode.org/skills-back-end-csharp/class-prep/6/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/7/exercises.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/7/index.html
+http://education.launchcode.org/skills-back-end-csharp/class-prep/8/exercises.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/8/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/9/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/10/index.html
@@ -55,6 +56,7 @@ http://education.launchcode.org/skills-back-end-csharp/studios/restaurant-menu/i
 http://education.launchcode.org/skills-back-end-csharp/videos/csharp-skill-track-overview/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-controllers/index.html
+http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-models/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-project-structure/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-routes/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-views-1/index.html
