@@ -20,3 +20,5 @@ currentMenu: videos
 [Views (Part 1)](intro-to-mvc-views-1/)
 
 [Views (Part 2)](intro-to-mvc-views-2/)
+
+[Models](intro-to-mvc-models/)
