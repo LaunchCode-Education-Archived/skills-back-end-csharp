@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Class 8 Prep :: Unit 3: Back-End C# Skill Track</title>
+        <title>Studio: User Signup :: Unit 3: Back-End C# Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-class-8-prep'>
+    <body id='page-studio-user-signup'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -21,12 +21,12 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                         <ul class="dropdown-menu">
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/studios/">
                                         Studios
                                     </a>
@@ -119,43 +119,31 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Class 8 Prep</h1>
-                    <table>
-<thead>
-<tr>
-<th>Task</th>
-<th>Resource Type</th>
-<th>Link</th>
-<th>Instructions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Watch</td>
-<td><em>C# For Beginners</em></td>
-<td><a href="https://mva.microsoft.com/en-us/training-courses/c-fundamentals-for-absolute-beginners-16169?l=LhI1HGRIC_8806218949" target="_blank">Working with LINQ</a></td>
-<td>Use LINQ to query C# collections</td>
-</tr>
-<tr>
-<td>Watch / Code Along</td>
-<td>Video</td>
-<td><a href="../../videos/intro-to-mvc-models/">Intro to ASP.NET Core MVC: Models</a></td>
-<td>Integrate models into an MVC application; separate data from the controller; use model binding</td>
-</tr>
-<tr>
-<td>Read</td>
-<td>Article</td>
-<td><a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/models/model-binding" target="_blank">Model Binding</a></td>
-<td>Read at least the first two sections -- &quot;Introduction to Model Binding&quot; and &quot;How Model Binding Works&quot;</td>
-</tr>
-<tr>
-<td>Do</td>
-<td>Exercises</td>
-<td><a href="exercises.html">Class 8 Prep Exercises</a></td>
-<td>Exercise the concepts that you've just learned</td>
-</tr>
-</tbody>
-</table>
+                                        <h1>Studio: User Signup</h1>
+                    <p>For this studio you will create an MVC application with functionality that allows users to &quot;sign up&quot; for your app.</p>
+<h2 id="getting-ready">Getting Ready</h2>
+<p>Create a new ASP.NET Core Web Application within Visual Studio named <code>UserSignup</code>.</p>
+<ul>
+<li>Create a <code>UserController</code> in <code>Controllers/</code></li>
+<li>Create a new folder, <code>Users/</code> within <code>Views/</code></li>
+<li>Create <code>Index.cshtml</code> and <code>New.cshtml</code> templates within<code>Views/Users</code></li>
+<li>Create a <code>Models</code> folder and within that folder a <code>User</code> class</li>
+</ul>
+<h2 id="creating-the-model">Creating the Model</h2>
+<p>Your <code>User</code> class should have a few public properties: <code>Username</code>, <code>Email</code>, <code>Password</code>. These should each be strings.</p>
+<p>If you create a non-default constructor, be sure to also create a default constructor (which can be empty).</p>
+<h2 id="rendering-the-new-user-form">Rendering the New User Form</h2>
+<p>Within the controller, create an action <code>New()</code> to render the form. Within the <code>New.cshtml</code> template, create a form that accepts inputs for each of the <code>User</code> properties, along with a Verify Password input. The form should be set up to <code>POST</code> to the same URL that it is displayed at.</p>
+<h2 id="handling-form-submission">Handling Form Submission</h2>
+<p>Within the controller, create an action <code>New(User user, string verify)</code>. This will use model binding to create a new user object, <code>user</code>, and pass it into your action method. Check that <code>verify</code> matches the password within the <code>user</code> object. If it does, render the <code>Index.cshtml</code> view template with a message that welcomes the user by name. If the passwords don't match, render the form again with the username and email fields already populated, along with a message indicating what went wrong.</p>
+<p>You don't need to store the <code>User</code> object anywhere. We're focusing on form handling and validation in this exercise. If you want to keep track of users using the method we employed in the models lesson video, check out the Bonus Missions below.</p>
+<h2 id="bonus-missions">Bonus Missions</h2>
+<ol>
+<li>Add a <code>UserId</code> property to <code>User</code>, and create a <code>UserData</code> class within <code>Models/</code> that provides access to a list of users via <code>Add</code>, <code>GetAll</code>, and <code>GetById</code>.</li>
+<li>Add additional validation within <code>UserController.New(User user)</code> to make sure that the username and email are not empty, that the username is between 5 and 15 characters long, and the username contains only letters. If any of these checks fails, render the form again with an appropriate message. When doing so, make sure that any inputs that <em>did</em> validate are populated with the value the user provided the first time.</li>
+<li>This builds on 1. In the <code>User/Index</code> view, display a list of all users by username. Each username should have a link that takes you to a detail page that lists the user's username and email.</li>
+<li>Add a <code>DateTime</code> property in <code>User</code>, and initialize it to the time the user joined (i.e. when the <code>User</code> object was created). Display the value of this property in the user detail view.</li>
+</ol>
                                     </section>
 
             </div>
