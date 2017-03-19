@@ -126,22 +126,22 @@
 <ul>
 <li>Create a <code>UserController</code> in <code>Controllers/</code></li>
 <li>Create a new folder, <code>Users/</code> within <code>Views/</code></li>
-<li>Create <code>Index.cshtml</code> and <code>New.cshtml</code> templates within<code>Views/Users</code></li>
+<li>Create <code>Index.cshtml</code> and <code>Add.cshtml</code> templates within<code>Views/Users</code></li>
 <li>Create a <code>Models</code> folder and within that folder a <code>User</code> class</li>
 </ul>
 <h2 id="creating-the-model">Creating the Model</h2>
 <p>Your <code>User</code> class should have a few public properties: <code>Username</code>, <code>Email</code>, <code>Password</code>. These should each be strings.</p>
 <p>If you create a non-default constructor, be sure to also create a default constructor (which can be empty).</p>
-<h2 id="rendering-the-new-user-form">Rendering the New User Form</h2>
-<p>Within the controller, create an action <code>New()</code> to render the form. Within the <code>New.cshtml</code> template, create a form that accepts inputs for each of the <code>User</code> properties, along with a Verify Password input. The form should be set up to <code>POST</code> to the same URL that it is displayed at.</p>
+<h2 id="rendering-the-add-user-form">Rendering the Add User Form</h2>
+<p>Within the controller, create an action <code>Add()</code> to render the form. Within the <code>Add.cshtml</code> template, create a form that accepts inputs for each of the <code>User</code> properties, along with a Verify Password input. The form should be set up to <code>POST</code> to the same URL that it is displayed at.</p>
 <h2 id="handling-form-submission">Handling Form Submission</h2>
-<p>Within the controller, create an action <code>New(User user, string verify)</code>. This will use model binding to create a new user object, <code>user</code>, and pass it into your action method. Check that <code>verify</code> matches the password within the <code>user</code> object. If it does, render the <code>Index.cshtml</code> view template with a message that welcomes the user by name. If the passwords don't match, render the form again with the username and email fields already populated, along with a message indicating what went wrong.</p>
+<p>Within the controller, create an action <code>Add(User user, string verify)</code>. This will use model binding to create a new user object, <code>user</code>, and pass it into your action method. Check that <code>verify</code> matches the password within the <code>user</code> object. If it does, render the <code>Index.cshtml</code> view template with a message that welcomes the user by name. If the passwords don't match, render the form again with the username and email fields already populated, along with a message indicating what went wrong.</p>
 <p>You don't need to store the <code>User</code> object anywhere. We're focusing on form handling and validation in this exercise. If you want to keep track of users using the method we employed in the models lesson video, check out the Bonus Missions below.</p>
 <h2 id="bonus-missions">Bonus Missions</h2>
 <ol>
 <li>Add a <code>UserId</code> property to <code>User</code>, and create a <code>UserData</code> class within <code>Models/</code> that provides access to a list of users via <code>Add</code>, <code>GetAll</code>, and <code>GetById</code>.</li>
-<li>Add additional validation within <code>UserController.New(User user)</code> to make sure that the username and email are not empty, that the username is between 5 and 15 characters long, and the username contains only letters. If any of these checks fails, render the form again with an appropriate message. When doing so, make sure that any inputs that <em>did</em> validate are populated with the value the user provided the first time.</li>
-<li>This builds on 1. In the <code>User/Index</code> view, display a list of all users by username. Each username should have a link that takes you to a detail page that lists the user's username and email.</li>
+<li>Add additional validation within <code>UserController.Add(User user, string verify)</code> to make sure that the username and email are not empty, that the username is between 5 and 15 characters long, and the username contains only letters. If any of these checks fails, render the form again with an appropriate message. When doing so, make sure that any inputs that <em>did</em> validate are populated with the value the user provided the first time.</li>
+<li>This builds on 1. In the <code>User/Index.cshtml</code> view, display a list of all users by username. Each username should have a link that takes you to a detail page that lists the user's username and email.</li>
 <li>Add a <code>DateTime</code> property in <code>User</code>, and initialize it to the time the user joined (i.e. when the <code>User</code> object was created). Display the value of this property in the user detail view.</li>
 </ol>
                                     </section>
