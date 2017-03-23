@@ -124,13 +124,13 @@
 <ol>
 <li>Add two action methods to <code>CheeseController</code>:
 <ul>
-<li><code>public IActionResult Edit(int id)</code> - this will be used to display the form</li>
-<li><code>public IActionResult Edit(int id, string name, string description)</code> - this will be used to process the form</li>
+<li><code>public IActionResult Edit(int cheeseId)</code> - this will be used to display the form</li>
+<li><code>public IActionResult Edit(int cheeseId, string name, string description)</code> - this will be used to process the form</li>
 </ul></li>
 <li>Add the <code>[HttpPost]</code> attribute to the second result.</li>
 <li>Create an <code>Edit.cshtml</code> view template in <code>Views/Cheese/</code>.</li>
 <li>Copy the form from <code>Add.cshtml</code> into <code>Edit.cshtml</code>. You'll want everything between and including the <code>&lt;form&gt;</code> tags.</li>
-<li>Back in the <code>Edit(int id)</code> action, ask <code>CheeseData</code> for the object with the given <code>id</code> and put it in the <code>ViewBag</code>.</li>
+<li>Back in the <code>Edit(int id)</code> action, ask <code>CheeseData</code> for the object with the given <code>cheeseId</code> and put it in the <code>ViewBag</code>.</li>
 <li>Within the form fields in <code>Edit.cshtml</code>, get the name and description from the cheese that was passed in via the <code>ViewBag</code> and set them as the values of the form fields.</li>
 <li>Add another input to hold the id of the cheese being edited. This should be hidden from the user:
 <pre><code class="language-html">&lt;input type="hidden" value="@ViewBag.cheese.CheeseId" name="id" /&gt;</code></pre></li>
@@ -138,7 +138,7 @@
 <li>Back in the <code>Edit(int id, string name, string description)</code> action, query <code>CheeseData</code> for the cheese with the given id, and then update its name and description. Redirect the user to the home page.</li>
 <li>In <code>Views/Cheese/Index.cshtml</code>, add a link to edit the cheese:
 <pre><code class="language-html">&lt;a asp-controller="Cheese" asp-action="Edit" asp-route-id="@cheese.CheeseId"&gt;edit&lt;/a&gt;</code></pre>
-<p>You can put this link in a third table column, or in one of the existing table cells. </p></li>
+<p>You can put this link in a third table column, or in one of the existing table cells.</p></li>
 <li>Test your code! With so many changes, it's likely that you made an error somewhere. Be patient, use the Visual Studio debugger, and read your error messages.</li>
 </ol>
                                     </section>
