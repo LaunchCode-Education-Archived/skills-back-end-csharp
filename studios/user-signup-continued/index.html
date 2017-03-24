@@ -122,15 +122,27 @@
                                         <h1>Studio: User Signup Continued</h1>
                     <p>We'll build on the <a href="../user-signup/">User Signup</a> studio from last class, adding in a ViewModel and validation.</p>
 <h2 id="getting-started">Getting Started</h2>
-<p>Open up your <code>UserSignup</code> application from last time, and create a <code>ViewModels/</code> folder at the same level as <code>Models</code>. Within this folder, create a <code>AddUserViewModel</code>.</p>
-<p>Add some properties to this new ViewModel. The ViewModel will be used in the view and actions that display and process the form, so think about what these properties should be. You'll need the properties necessary to create a new user, but you'll need more than that for the form.</p>
+<p>Open up your <code>UserSignup</code> application from last time, and create a <code>ViewModels/</code> folder at the same level as <code>Models/</code>. Within this folder, create a <code>AddUserViewModel</code>.</p>
+<p>Add some properties to this new ViewModel. Which ones, you ask? Well, the ViewModel will be used in the view and actions that display and process the form to add a user, so think about what these properties should be. You'll need the properties necessary to create a new user, but you'll need more than that for the form.</p>
 <h2 id="add-validation-attributes">Add Validation Attributes</h2>
-<p>Add <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation#validation-attributes" target="_blank">validation attributes</a> to the properties in the ViewModel. You will have a property named <code>Verify</code> (or something similar). For its validation, it should match the <code>Password</code> property, so use the validation attribute <code>[Compare("Password")]</code>.</p>
+<p>Add <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation#validation-attributes" target="_blank">validation attributes</a> to the properties in the ViewModel.</p>
+<p>The validation attributes should ensure these conditions are satisfied:</p>
+<ul>
+<li>Username, password, and verify are required</li>
+<li>Email is optional</li>
+<li>If provided, the email has the format of a valid email address</li>
+<li>The password and verify fields match</li>
+<li>If password and verify fields do not match, the message: &quot;Passwords do not match&quot;
+<strong>How to do this:</strong> You will have a property named <code>Verify</code> (or something similar). For its validation, it should match the <code>Password</code> property, so use the validation attribute <code>[Compare("Password")]</code>.</li>
+<li>The password and verify fields are rendered with <code>type="password"</code> in the form markup.
+<strong>How to do this:</strong> Add the attribute <code>[DataType(DataType.Password)]</code> to each property.</li>
+</ul>
+<p>Before leaving the ViewModel, add a <code>[Display(Name = "...")]</code> attribute to the verify property to ensure that the label that's displayed is &quot;Verify Password&quot;.</p>
 <h2 id="using-the-viewmodel-in-the-controller">Using the ViewModel in the Controller</h2>
-<p>Within both <code>Add</code> actions in the <code>UserController</code>, use the new ViewModel class to both pass data into, and receive data from the form. Upon form submission, you'll want to check that the model is valid using <code>ModelState.IsValid</code>, but you'll also need to check that the password and verify password fields match, which won't be handled by the configured validation attributes.</p>
+<p>Within each of the <code>Add</code> actions in the <code>UserController</code>, use the new ViewModel class to both pass data into, and receive data from the form. Upon form submission, you'll want to check that the model is valid using <code>ModelState.IsValid</code>.</p>
 <p>If you're unsure about how to do this, revisit the <a href="../../videos/intro-to-mvc-viewmodels-1/">lesson on ViewModels</a>, along with the source code linked on that video lesson page.</p>
 <aside class="aside-warning">
-<p>If you did any of the Bonus Missions in the previous studio, you'll be tearing out some of that code, since we'll now have the framework handle validation.</p>
+<p>If you did any of the Bonus Missions in the previous studio, you'll be tearing out some of that code, since we'll now have the framework handle validation. Don't worry, it'll be worth it!</p>
 </aside>
 <h2 id="using-the-viewmodel-in-the-view">Using the ViewModel in the View</h2>
 <p>Refactor <code>Add.cshtml</code> to use <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/working-with-forms" target="_blank">tag helpers</a> to render the form inputs. Also use the tag helpers for error message display, either for the entire form in a <code>div</code> with:</p>
