@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Class 8 Prep Exercises :: Unit 3: Back-End C# Skill Track</title>
+        <title>Intro to ASP.NET Core MVC: ViewModels and Validation :: Unit 3: Back-End C# Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-class-8-prep-exercises'>
+    <body id='page-intro-to-aspnet-core-mvc-viewmodels-and-validation'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -21,7 +21,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                         <ul class="dropdown-menu">
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
                                         Classes
                                     </a>
@@ -36,7 +36,7 @@
                                         Assignments
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/videos/">
                                         Videos
                                     </a>
@@ -119,30 +119,16 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Class 8 Prep Exercises</h1>
-                    <p>Add edit functionality to the <code>CheeseMVC</code> application by following these steps. It assumes that you've added all of the code from the <a href="../../videos/intro-to-mvc-models/">models lesson</a>.</p>
-<ol>
-<li>Add two action methods to <code>CheeseController</code>. Just stub them out for now; we'll implement the code to make them work in a minute.
+                                        <h1>Intro to ASP.NET Core MVC: ViewModels and Validation</h1>
+                    <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/kLLBDsPUoyY" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="code">Code</h2>
+<p>We start this lesson with the code in the <code>video-viewmodels-start</code> branch of the CheeseMVC repo: <a href="https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-viewmodels-start" target="_blank">starting code</a></p>
+<p>We end this lesson with the code in the <code>video-viewmodels-end</code> branch of the CheeseMVC repo: <a href="https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-viewmodels-end" target="_blank">ending code</a></p>
+<h2 id="references">References</h2>
 <ul>
-<li>An action method to display the form:
-<pre><code class="language-csharp">public IActionResult Edit(int cheeseId)</code></pre></li>
-<li>An action method to process the form:
-<pre><code class="language-csharp">public IActionResult Edit(int cheeseId, string name, string description)</code></pre></li>
-</ul></li>
-<li>Add the <code>[HttpPost]</code> attribute to the second result.</li>
-<li>Create an <code>Edit.cshtml</code> view template in <code>Views/Cheese/</code>.</li>
-<li>Copy the form from <code>Add.cshtml</code> into <code>Edit.cshtml</code>. You'll want everything between and including the <code>&lt;form&gt;</code> tags.</li>
-<li>Back in the <code>Edit(int id)</code> action, ask <code>CheeseData</code> for the object with the given <code>cheeseId</code> and put it in the <code>ViewBag</code>.</li>
-<li>Within the form fields in <code>Edit.cshtml</code>, get the name and description from the cheese that was passed in via the <code>ViewBag</code> and set them as the values of the form fields.</li>
-<li>Add another input to hold the id of the cheese being edited. This should be hidden from the user:
-<pre><code class="language-html">&lt;input type="hidden" value="@ViewBag.cheese.CheeseId" name="id" /&gt;</code></pre></li>
-<li>Add a heading at the top of <code>Edit.cshtml</code> that says &quot;Edit Cheese NAME (id=ID)&quot; where NAME and ID are replaced by the values of the given cheese.</li>
-<li>Back in the <code>Edit(int id, string name, string description)</code> action, query <code>CheeseData</code> for the cheese with the given id, and then update its name and description. Redirect the user to the home page.</li>
-<li>In <code>Views/Cheese/Index.cshtml</code>, add a link to edit the cheese:
-<pre><code class="language-html">&lt;a asp-controller="Cheese" asp-action="Edit" asp-route-id="@cheese.CheeseId"&gt;edit&lt;/a&gt;</code></pre>
-<p>You can put this link in a third table column, or in one of the existing table cells.</p></li>
-<li>Test your code! With so many changes, it's likely that you made an error somewhere. Be patient, use the Visual Studio debugger, and read your error messages.</li>
-</ol>
+<li><a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/working-with-forms" target="_blank">Tag Helpers</a></li>
+<li><a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation" target="_blank">Model Validation</a></li>
+</ul>
                                     </section>
 
             </div>
