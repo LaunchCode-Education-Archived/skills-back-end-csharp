@@ -9,8 +9,8 @@ For this studio you will create an MVC application with functionality that allow
 
 Create a new ASP.NET Core Web Application within Visual Studio named `UserSignup`.
 - Create a `UserController` in `Controllers/`
-- Create a new folder, `Users/` within `Views/`
-- Create `Index.cshtml` and `Add.cshtml` templates within`Views/Users`
+- Create a new folder, `User/`, within `Views/`
+- Create `Index.cshtml` and `Add.cshtml` templates within`Views/User`
 - Create a `Models` folder and within that folder a `User` class
 
 ## Creating the Model
@@ -21,11 +21,19 @@ If you create a non-default constructor, be sure to also create a default constr
 
 ## Rendering the Add User Form
 
-Within the controller, create an action `Add()` to render the form. Within the `Add.cshtml` template, create a form that accepts inputs for each of the `User` properties, along with a Verify Password input. The form should be set up to `POST` to the same URL that it is displayed at.
+Within `UserController`, create an `Add` action to render the form. Within the `Add.cshtml` template, create a form that accepts inputs for each of the `User` properties, along with a Verify Password input. The password and verify inputs should have `type="password"`.
+
+The form should be set up to `POST` to the same URL that it is displayed at.
 
 ## Handling Form Submission
 
-Within the controller, create an action `Add(User user, string verify)`. This will use model binding to create a new user object, `user`, and pass it into your action method. Check that `verify` matches the password within the `user` object. If it does, render the `Index.cshtml` view template with a message that welcomes the user by name. If the passwords don't match, render the form again with the username and email fields already populated, along with a message indicating what went wrong.
+Within the controller, create an action `Add(User user, string verify)`. This will use model binding to create a new user object, `user`, and pass it into your action method. Check that `verify` matches the password within the `user` object. If it does, render the `Index.cshtml` view template with a message that welcomes the user by name.
+
+If the passwords don't match, render the form again with the username and email fields already populated, along with a message indicating what went wrong.
+
+<aside class="aside-warning" markdown="1">
+If one of the password fields is left blank, that property or parameter will be `null`. You'll need to handle this appropriately.
+</aside>
 
 You don't need to store the `User` object anywhere. We're focusing on form handling and validation in this exercise. If you want to keep track of users using the method we employed in the models lesson video, check out the Bonus Missions below.
 
