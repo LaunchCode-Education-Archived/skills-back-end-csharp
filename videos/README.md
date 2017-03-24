@@ -22,3 +22,7 @@ currentMenu: videos
 [Views (Part 2)](intro-to-mvc-views-2/)
 
 [Models](intro-to-mvc-models/)
+
+[ViewModels and Validation](intro-to-mvc-viewmodels-1/)
+
+[Enums, Selects, and ViewModels](intro-to-mvc-viewmodels-2/)
