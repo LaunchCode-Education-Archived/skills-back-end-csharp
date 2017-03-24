@@ -56,3 +56,9 @@ Design and create a console program to deliver and score quizzes.
 Create an app that allows users to "sign up" via a form, and creates a new `User` object when a user signs up.
 
 [User Signup](user-signup/)
+
+## User Signup Continued
+
+Use ViewModels and validation in your User Signup code from the last studio.
+
+[User Signup Continued](user-signup-continued/)

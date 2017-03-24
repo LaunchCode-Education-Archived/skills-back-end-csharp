@@ -5,9 +5,15 @@ currentMenu: classes
 
 Add edit functionality to the `CheeseMVC` application by following these steps. It assumes that you've added all of the code from the [models lesson](../../videos/intro-to-mvc-models/).
 
-1. Add two action methods to `CheeseController`:
-    - `public IActionResult Edit(int cheeseId)` - this will be used to display the form
-    - `public IActionResult Edit(int cheeseId, string name, string description)` - this will be used to process the form
+1. Add two action methods to `CheeseController`. Just stub them out for now; we'll implement the code to make them work in a minute.
+    - An action method to display the form:
+        ```csharp
+        public IActionResult Edit(int cheeseId)
+        ```
+    - An action method to process the form:
+        ```csharp
+        public IActionResult Edit(int cheeseId, string name, string description)
+        ```
 1. Add the `[HttpPost]` attribute to the second result.
 1. Create an `Edit.cshtml` view template in `Views/Cheese/`.
 1. Copy the form from `Add.cshtml` into `Edit.cshtml`. You'll want everything between and including the `<form>` tags.
