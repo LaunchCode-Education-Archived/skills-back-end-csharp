@@ -132,10 +132,15 @@
 <li>Email is optional</li>
 <li>If provided, the email has the format of a valid email address</li>
 <li>The password and verify fields match</li>
-<li>If password and verify fields do not match, the message: &quot;Passwords do not match&quot;
-<strong>How to do this:</strong> You will have a property named <code>Verify</code> (or something similar). For its validation, it should match the <code>Password</code> property, so use the validation attribute <code>[Compare("Password")]</code>.</li>
-<li>The password and verify fields are rendered with <code>type="password"</code> in the form markup.
-<strong>How to do this:</strong> Add the attribute <code>[DataType(DataType.Password)]</code> to each property.</li>
+<li>The password is at least 6 characters long</li>
+<li>
+<p>If password and verify fields do not match, the message: &quot;Passwords do not match&quot;</p>
+<p><strong>How to do this:</strong> You will have a property named <code>Verify</code> (or something similar). For its validation, it should match the <code>Password</code> property, so use the validation attribute <code>[Compare("Password")]</code>.</p>
+</li>
+<li>
+<p>The password and verify fields are rendered with <code>type="password"</code> in the form markup.</p>
+<p><strong>How to do this:</strong> Add the attribute <code>[DataType(DataType.Password)]</code> to each property.</p>
+</li>
 </ul>
 <p>Before leaving the ViewModel, add a <code>[Display(Name = "...")]</code> attribute to the verify property to ensure that the label that's displayed is &quot;Verify Password&quot;.</p>
 <h2 id="using-the-viewmodel-in-the-controller">Using the ViewModel in the Controller</h2>
