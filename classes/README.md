@@ -13,7 +13,7 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\*
 6 | [Prep Work](../class-prep/6/) | [Restaurant Menu Continued](../studios/restaurant-menu-continued/) | Objects and Behavior | &nbsp;
 7 | [Prep Work](../class-prep/7/) | [Quiz Time!](../studios/quiz-time/) | Inheritance | &nbsp;
 8 | [Prep Work](../class-prep/8/) | [User Signup](../studios/user-signup/) | Model classes in ASP.NET, Model Binding | &nbsp;
-9 | [Prep Work](../class-prep/9/) | [User Signup Continued](../studios/user-signup-continued/) | ViewModels and Model Validation | &nbsp;
+9 | [Prep Work](../class-prep/9/) | [User Signup Continued](../studios/user-signup-continued/) | ViewModels, Model Validation, Enum Types | &nbsp;
 10 | [Prep Work](../class-prep/10/) | | Exceptions | &nbsp;
 11 | [Prep Work](../class-prep/11/) | | Interfaces and polymorphism | &nbsp;
 12 | [Prep Work](../class-prep/12/) | | Persistence Part I | &nbsp;

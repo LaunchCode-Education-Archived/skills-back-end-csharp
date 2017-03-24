@@ -14,6 +14,6 @@ We end this lesson with the code in the `video-selects-end` branch of the Cheese
 ## References
 
 * [Tag Helpers](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/working-with-forms)
-* [enum](https://msdn.microsoft.com/en-us/library/sbbt4032.aspx)
+* [Enumeration Types](https://msdn.microsoft.com/en-us/library/cc138362.aspx)
 * [SelectListItem Class](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem(v=vs.118).aspx)
 * [Model Validation](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation)
