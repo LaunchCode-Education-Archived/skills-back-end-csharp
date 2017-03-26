@@ -21,7 +21,7 @@ The validation attributes should ensure these conditions are satisfied:
 - If provided, the email has the format of a valid email address
 - The password and verify fields match
 - The password is at least 6 characters long
-- If password and verify fields do not match, the message: "Passwords do not match"
+- If password and verify fields do not match, display the message: "Passwords do not match"
 
     **How to do this:** You will have a property named `Verify` (or something similar). For its validation, it should match the `Password` property, so use the validation attribute `[Compare("Password")]`.
 - The password and verify fields are rendered with `type="password"` in the form markup.
