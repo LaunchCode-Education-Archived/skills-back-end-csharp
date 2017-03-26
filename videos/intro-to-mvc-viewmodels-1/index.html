@@ -121,6 +121,12 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Intro to ASP.NET Core MVC: ViewModels and Validation</h1>
                     <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/kLLBDsPUoyY" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="errata">Errata</h2>
+<p>In the video it is stated that <code>using</code> statements are not allowed in Razor templates. This is not correct. You may add such statements using the following syntax.</p>
+<pre><code class="language-nohighlight">@using CheeseMVC.Models
+@model List&lt;Cheese&gt;</code></pre>
+<p>It is also acceptable to omit a <code>using</code> statement and use the fully-qualified class name.</p>
+<pre><code class="language-nohighlight">@model List&lt;CheeseMVC.Models.Cheese&gt;</code></pre>
 <h2 id="code">Code</h2>
 <p>We start this lesson with the code in the <code>video-viewmodels-start</code> branch of the CheeseMVC repo: <a href="https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-viewmodels-start" target="_blank">starting code</a></p>
 <p>We end this lesson with the code in the <code>video-viewmodels-end</code> branch of the CheeseMVC repo: <a href="https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-viewmodels-end" target="_blank">ending code</a></p>
