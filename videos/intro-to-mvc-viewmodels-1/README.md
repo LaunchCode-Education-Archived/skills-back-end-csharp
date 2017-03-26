@@ -14,7 +14,7 @@ In the video it is stated that `using` statements are not allowed in Razor templ
 @model List<Cheese>
 ```
 
-It is also acceptable to omit a `using` statement and use the fully-qualified class name.
+This has the same effect as the following `@model` declaration, which was used in the video.
 
 ```nohighlight
 @model List<CheeseMVC.Models.Cheese>
