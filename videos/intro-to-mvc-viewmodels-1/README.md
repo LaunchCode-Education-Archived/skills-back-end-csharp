@@ -5,6 +5,21 @@ currentMenu: videos
 
 <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/kLLBDsPUoyY" frameborder="0" allowfullscreen></iframe></div>
 
+## Errata
+
+In the video it is stated that `using` statements are not allowed in Razor templates. This is not correct. You may add such statements using the following syntax.
+
+```nohighlight
+@using CheeseMVC.Models
+@model List<Cheese>
+```
+
+It is also acceptable to omit a `using` statement and use the fully-qualified class name.
+
+```nohighlight
+@model List<CheeseMVC.Models.Cheese>
+```
+
 ## Code
 
 We start this lesson with the code in the `video-viewmodels-start` branch of the CheeseMVC repo: [starting code](https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-viewmodels-start)
