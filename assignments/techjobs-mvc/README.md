@@ -41,7 +41,7 @@ He's handed it off to you to finish the rest. You'll add code to controllers and
 Set up a local copy of the project:
 - Visit the [repository page](https://github.com/LaunchCodeEducation/TechJobsMVC) for this project and fork the repository to create a copy under your own GitHub account.
 - From within Visual Studio, choose the *Team Explorer* tab near the bottom of the *Solution Explorer* pane. If you don't see this tab, you can open it via the application menu: *View > Team Explorer*.
-- Click on the *Manage Connections* icon (see below), and select *Clone* from the GitHub section of the *Team Explorer* and select your `TechJobsMVC` copy from the modal window. **Be sure to change the Path field** to the location you would like the project to live, ideally inside of a folder you've been using to store other projects.
+- Click on the *Manage Connections* icon (see below), and select *Clone* from the GitHub section of the *Team Explorer* and select your `TechJobsMVC` copy from the modal window. **Be sure to change the Path field** to the location at which you would like the project to live, ideally inside of a folder you've been using to store other projects.
 	![Manage Connections](../images/team-explorer-connections.png)
 - Open the solution via either the notification within *Team Explorer* or via *File > Open > Project/Solution*.
 - Pop back over to the *Solution Explorer* to preview the code.
