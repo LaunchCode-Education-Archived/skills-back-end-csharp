@@ -15,7 +15,7 @@ Your mentor on this project is Cheryl, one of the developers at LaunchCode. She 
 
 (If you're interested, you can listen Cheryl [talk about mentorship](https://www.greaterthancode.com/podcast/episode-018-cheryl-schaefer/) on the Greater Than Code podcast.)
 
-She's done some initial work on the project and left you some TODOs. Eliot reported that you've been doing great work, and learning quickly, so the tasks in this project are a notch up from the last in difficulty.
+She's done some initial work on the project and left you some TODOs. After seeing your strong work on your last project, Eliot reported that you've been doing great work, and learning quickly, so the tasks in this project are a notch up from the last in difficulty.
 
 ## Learning Objectives
 
