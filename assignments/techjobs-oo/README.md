@@ -50,7 +50,7 @@ We've said it before, but it still rings true: A big part of your assignment is 
 
 ### The Model
 
-The largest amount of new code is in the Model. Open up the `Models/` folder and you'll see several classes, some of which you'll work with directly, and some which you won't.
+The largest amount of new code is in the Model. Open up the `Models/` folder and you'll see several classes, some of which you'll work with directly, and some of which you won't.
 
 #### The Job Class
 
@@ -106,7 +106,7 @@ While the four `Job` properties represented by objects will primarily be used fo
 
 For example, it would be useful for an `Employer` object to have an address, a primary contact, and a list of jobs available at that employer.
 
-For a `Location` object, it would be useful to have a list of zip codes associate with that location, in order to determine which location an employer or job is located in.
+For a `Location` object, it would be useful to have a list of zip codes associated with that location, in order to determine which location an employer or job is located in.
 
 If we were to store these properties as strings, extending and modifying this behavior would be much more complicated and difficult in the future.
 
@@ -130,7 +130,7 @@ By using enum values instead of strings, we eliminate the possibility of runtime
 
 Many of the methods in `JobData` now work by taking in a `JobFieldType` parameter rather than a string.
 
-We also use the `JobFieldType` values to render search and list options in the view, and to collect this options in the ViewModel and controller layers.
+We also use the `JobFieldType` values to render search and list options in the view, and to collect these options in the ViewModel and controller layers.
 
 ### The Data Layer
 
@@ -159,7 +159,7 @@ List<Job> jobsAtLaunchcode =
     jobData.FindByColumnAndValue(JobFieldType.Employer, "LaunchCode");
 
 // Find all jobs involving Ruby
-List<Job> jobsInvolvingRuby = FindByValue("ruby");
+List<Job> jobsInvolvingRuby = jobData.FindByValue("ruby");
 ```
 
 The full list of jobs is available as a property of `JobData`. Thus, you can do fun stuff like:
@@ -185,7 +185,7 @@ List<Employer> allEmployers = jobData.Employers.ToList();
 ```
 
 <aside class="aside-warning" markdown="1">
-You should not try to create a new `Job` object with `Employer`, `Location`, etc. properties that don't already exist in the data store. Our non-database system isn't as robust as it will be shortly, and doing something like this might break it.
+You should not try to create a new `Job` object with `Employer`, `Location`, etc. properties that don't already exist. Our non-database system isn't as robust as it will be shortly, and doing something like this might break it.
 
 When you create a new `Job` object for this assignment, you'll always be doing so using existing employers, locations, etc.
 </aside>
