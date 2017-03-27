@@ -152,7 +152,7 @@
 </ul>
 <p>We've said it before, but it still rings true: A big part of your assignment is reading and understanding code that others have written. You'll spend a significant amount of time reading the code that you are starting with, and that's to be expected.</p>
 <h3 id="the-model">The Model</h3>
-<p>The largest amount of new code is in the Model. Open up the <code>Models/</code> folder and you'll see several classes, some of which you'll work with directly, and some which you won't.</p>
+<p>The largest amount of new code is in the Model. Open up the <code>Models/</code> folder and you'll see several classes, some of which you'll work with directly, and some of which you won't.</p>
 <h4 id="the-job-class">The Job Class</h4>
 <p>Working with data stored as strings in dictionaries and lists isn't a good long-term solution, for various reasons that we will discuss momentarily. The <code>Job</code> class introduces an object-oriented design to the application.</p>
 <p>It contains all of the properties that you've grown used to while working on TechJobs: <code>Name</code>, <code>Employer</code>, <code>Location</code>, <code>CoreCompetency</code>, and <code>PositionType</code>. There's also an <code>ID</code> property which will be used to uniquely identify <code>Job</code> objects.</p>
@@ -180,7 +180,7 @@ Console.WriteLine(job.Employer);</code></pre>
 <h5 id="enable-extension">Enable extension</h5>
 <p>While the four <code>Job</code> properties represented by objects will primarily be used for their string values, it's not hard to imagine that we would want to add additional properties to them.</p>
 <p>For example, it would be useful for an <code>Employer</code> object to have an address, a primary contact, and a list of jobs available at that employer.</p>
-<p>For a <code>Location</code> object, it would be useful to have a list of zip codes associate with that location, in order to determine which location an employer or job is located in.</p>
+<p>For a <code>Location</code> object, it would be useful to have a list of zip codes associated with that location, in order to determine which location an employer or job is located in.</p>
 <p>If we were to store these properties as strings, extending and modifying this behavior would be much more complicated and difficult in the future.</p>
 <p>There's one more class on <code>Models/</code> that we need to introduce.</p>
 <h4 id="jobfieldtypecs">JobFieldType.cs</h4>
@@ -191,7 +191,7 @@ Console.WriteLine(job.Employer);</code></pre>
 <pre><code class="language-csharp">List&lt;JobField&gt; employers = jobData.FindByColumnAndValue(JobFieldType.Employer, "LaunchCode");</code></pre>
 <p>By using enum values instead of strings, we eliminate the possibility of runtime errors. In other words, the compiler will force us to use a valid <code>JobFieldType</code>, whereas if we had misspelled &quot;employer&quot; in the first example, we wouldn't have found out until running our code.</p>
 <p>Many of the methods in <code>JobData</code> now work by taking in a <code>JobFieldType</code> parameter rather than a string.</p>
-<p>We also use the <code>JobFieldType</code> values to render search and list options in the view, and to collect this options in the ViewModel and controller layers.</p>
+<p>We also use the <code>JobFieldType</code> values to render search and list options in the view, and to collect these options in the ViewModel and controller layers.</p>
 <h3 id="the-data-layer">The Data Layer</h3>
 <h4 id="jobdatacs-and-jobdataimportercs">JobData.cs and JobDataImporter.cs</h4>
 <p>In this updated version, the data access functionality has been moved into its own directory, <code>Data/</code>. This is partly to better organize our code as the application grows, and also to anticipate the move to a database in the near future. Additionally, we've moved the logic to import data from the CSV file into <code>JobDataImporter.cs</code>.</p>
@@ -232,7 +232,7 @@ List&lt;Job&gt; jobsAtLaunchcode =
     jobData.FindByColumnAndValue(JobFieldType.Employer, "LaunchCode");
 
 // Find all jobs involving Ruby
-List&lt;Job&gt; jobsInvolvingRuby = FindByValue("ruby");</code></pre>
+List&lt;Job&gt; jobsInvolvingRuby = jobData.FindByValue("ruby");</code></pre>
 <p>The full list of jobs is available as a property of <code>JobData</code>. Thus, you can do fun stuff like:</p>
 <pre><code class="language-csharp">// Get the full list of jobs
 List&lt;Job&gt; allOfTheJobs = jobData.Jobs;
@@ -247,7 +247,7 @@ Employer anEmployer = jobData.Employers.Find(7);
 // Get all employers
 List&lt;Employer&gt; allEmployers = jobData.Employers.ToList();</code></pre>
 <aside class="aside-warning">
-<p>You should not try to create a new <code>Job</code> object with <code>Employer</code>, <code>Location</code>, etc. properties that don't already exist in the data store. Our non-database system isn't as robust as it will be shortly, and doing something like this might break it.</p>
+<p>You should not try to create a new <code>Job</code> object with <code>Employer</code>, <code>Location</code>, etc. properties that don't already exist. Our non-database system isn't as robust as it will be shortly, and doing something like this might break it.</p>
 <p>When you create a new <code>Job</code> object for this assignment, you'll always be doing so using existing employers, locations, etc.</p>
 </aside>
 <h3 id="the-viewmodel">The ViewModel</h3>
