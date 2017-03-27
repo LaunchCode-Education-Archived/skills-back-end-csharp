@@ -28,9 +28,9 @@ In this project, you'll show that you can:
 
 ## TechJobs (Object-Oriented Edition)
 
-Cheryl has gotten the ball rolling in the Model and ViewModel, having added a `Job` class and classes to represent the individual properties of a job: `Employer`, `Location`, `PositionType`, and `CoreCompetency`. She has also refactored the View and Controller layers to use these new classes. Finally, she has modified the `JobData` class to properly create `Job` and related objects when importing data from `job_data.csv`.
+Cheryl has gotten the ball rolling in the Model and ViewModel, having added a `Job` class, along with classes to represent the individual properties of a job: `Employer`, `Location`, `PositionType`, and `CoreCompetency`. She has also refactored the View and Controller layers to use these new classes. Finally, she has modified the `JobData` class to properly create `Job` and related objects when importing data from `job_data.csv`.
 
-As the team gets closer to hooking the app up to a database -- and abandoning the test data you've been using -- they'll want an easy way to add new data via the user interface.
+As the team gets closer to hooking the app up to a database -- and abandoning the test data they've been using -- they'll want an easy way to add new jobs via the user interface.
 
 ## Your Assignment
 
