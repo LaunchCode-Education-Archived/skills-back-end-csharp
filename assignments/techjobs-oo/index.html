@@ -265,8 +265,8 @@ List&lt;Employer&gt; allEmployers = jobData.Employers.ToList();</code></pre>
 <p>The tasks may not immediately be populated in the Task List. If you don't see all of them, open up the files manually to see your TODOs.</p>
 </aside>
 <h4 id="display-a-single-job">Display A Single Job</h4>
-<p>Your first two tasks involve display the data associate with a single job. When you're done, visiting the URL <code>/Job?id=X</code> will display the details of the job with ID equal to X.</p>
-<p>Within the <code>Index</code> action method of <code>JobController</code>, you should retrieve retrieve the job with the given ID, and then pass it into the view <em>without</em> using <code>ViewBag</code>. In other words, use the <code>Job</code> as a ViewModel.</p>
+<p>Your first two tasks involve displaying data associated with a single job. When you're done, visiting the URL <code>/Job?id=X</code> will display the details of the job with ID equal to X.</p>
+<p>Within the <code>Index</code> action method of <code>JobController</code>, you should retrieve the job with the given ID, and then pass it into the view <em>without</em> using <code>ViewBag</code>. In other words, use the <code>Job</code> as a ViewModel.</p>
 <p>Within <code>Views/Job/Index.cshtml</code> you need to declare the ViewModel type and then display the properties of the job in a table.</p>
 <h4 id="create-new-jobs">Create New Jobs</h4>
 <p>Our <code>JobController</code> class and the <code>Views/Job/New.cshtml</code> view template is set up to allow a user to create new jobs through the interface, but it isn't complete. Getting this to work comprises your next set of tasks.</p>
