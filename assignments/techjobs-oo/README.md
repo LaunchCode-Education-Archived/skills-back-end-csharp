@@ -208,7 +208,7 @@ There are two new view templates in `Views/Job/`: `Index.cshtml` and `New.cshtml
 
 ### Your Tasks
 
-In Visual Studio, select *View > Task List* to pop open a small pane at the bottom of the window. This list is populated by any code comments that start with `TODO`. In particular, you'll see your 3 tasks listed.
+In Visual Studio, select *View > Task List* to pop open a small pane at the bottom of the window. This list is populated by any code comments that start with `TODO`. In particular, you'll see your tasks listed.
 
 ![Task List](../images/task-list-oo.png)
 
