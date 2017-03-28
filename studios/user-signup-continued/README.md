@@ -62,6 +62,13 @@ Don't forget to declare the ViewModel at the top of the view using the syntax:
 @model UserSignup.ViewModels.AddUserViewModel
 ```
 
+Or, equivalently:
+
+```nohighlight
+@using UserSignup.ViewModels
+@model AddUserViewModel
+```
+
 ## Test, Test, Test!
 
 You made a lot of changes! Be sure to throughly test them to make sure everything works as expected.
