@@ -126,7 +126,7 @@
 <aside class="aside-definition">
 <p><strong>polymorphism</strong>: An object-oriented mechanism that allows for objects of different types to be used in the same way.</p>
 </aside>
-<p>We've already encountered polymorphism made possible by inheritance. Recall the example from the <a href="http://localhost:8000/csharp4python/classes-and-objects-inheritance/#inheritance-in-c35" target="_blank">lesson on inheritance</a> where we defined a <code>Cat</code> class, with subclasses <code>HouseCat</code> and <code>Tiger</code>.</p>
+<p>We've already encountered polymorphism made possible by inheritance. Recall the example from the <a href="../classes-and-objects-inheritance/#inheritance-in-c35">lesson on inheritance</a> where we defined a <code>Cat</code> class, with subclasses <code>HouseCat</code> and <code>Tiger</code>.</p>
 <p>Suppose we had a <code>CatOwner</code> like below.</p>
 <pre><code class="language-csharp">public class CatOwner
 {
@@ -148,7 +148,7 @@ CatOwner Annie = new CatOwner {
 Annie.FeedTheCat();</code></pre>
 <p>Similarly, <code>FeedTheCat</code> can accept <code>Tiger</code> instances as well. This is because the only thing that the method requires is that the input parameter has the methods defined within <code>Cat</code>, and via inheritance, both of the subclasses satisfy this requirement. This is an example of polymorphism.</p>
 <p>There's one more object-oriented mechanism that empowers us to code in a polymorphic way: the interface.</p>
-<h3 id="interfaces">Interfaces</h3>
+<h2 id="interfaces">Interfaces</h2>
 <p>An <strong>interface</strong> is a formal construction within C# that allows us to create a contract consisting of properties and method signatures (and a few other member types that we haven't covered). An interface <em>contains not method implementations</em>. In other words, we may not create a fully-functioning method within an interface.</p>
 <p>Here's a simple example:</p>
 <pre><code class="language-csharp">public interface IFeedable
