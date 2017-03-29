@@ -24,6 +24,7 @@ http://education.launchcode.org/skills-back-end-csharp/class-prep/8/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/9/exercises.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/9/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/10/index.html
+http://education.launchcode.org/skills-back-end-csharp/class-prep/11/exercises.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/11/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/12/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/13/index.html
@@ -33,7 +34,7 @@ http://education.launchcode.org/skills-back-end-csharp/csharp4python/class-diagr
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-encapsulating-behavior/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-encapsulating-data/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-inheritance/index.html
-http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-polymorphism/index.html
+http://education.launchcode.org/skills-back-end-csharp/csharp4python/classes-and-objects-interfaces/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/control-flow/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/data-structures-and-collections/index.html
 http://education.launchcode.org/skills-back-end-csharp/csharp4python/data-types/index.html
@@ -47,6 +48,7 @@ http://education.launchcode.org/skills-back-end-csharp/issues/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/area/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/bonjour-asp-net/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc/index.html
+http://education.launchcode.org/skills-back-end-csharp/studios/cities/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/counting-characters/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/mvc-design/index.html
