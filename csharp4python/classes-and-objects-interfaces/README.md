@@ -13,7 +13,7 @@ From our [glossary](../../glossary/):
 **polymorphism**: An object-oriented mechanism that allows for objects of different types to be used in the same way.
 </aside>
 
-We've already encountered polymorphism made possible by inheritance. Recall the example from the [lesson on inheritance](http://localhost:8000/csharp4python/classes-and-objects-inheritance/#inheritance-in-c35) where we defined a `Cat` class, with subclasses `HouseCat` and `Tiger`.
+We've already encountered polymorphism made possible by inheritance. Recall the example from the [lesson on inheritance](../classes-and-objects-inheritance/#inheritance-in-c35) where we defined a `Cat` class, with subclasses `HouseCat` and `Tiger`.
 
 Suppose we had a `CatOwner` like below.
 
@@ -47,7 +47,7 @@ Similarly, `FeedTheCat` can accept `Tiger` instances as well. This is because th
 There's one more object-oriented mechanism that empowers us to code in a polymorphic way: the interface.
 
 
-### Interfaces
+## Interfaces
 
 An **interface** is a formal construction within C# that allows us to create a contract consisting of properties and method signatures (and a few other member types that we haven't covered). An interface *contains not method implementations*. In other words, we may not create a fully-functioning method within an interface.
 
