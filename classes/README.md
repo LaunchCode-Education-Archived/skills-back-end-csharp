@@ -15,7 +15,7 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\*
 8 | [Prep Work](../class-prep/8/) | [User Signup](../studios/user-signup/) | Model classes in ASP.NET, Model Binding | &nbsp;
 9 | [Prep Work](../class-prep/9/) | [User Signup Continued](../studios/user-signup-continued/) | ViewModels, Model Validation, Enum Types | [TechJobs (Object-Oriented Edition)](../assignments/techjobs-oo/)
 10 | [Prep Work](../class-prep/10/) | No Studio | Exceptions | &nbsp;
-11 | [Prep Work](../class-prep/11/) | | Interfaces and polymorphism | &nbsp;
+11 | [Prep Work](../class-prep/11/) | [Cities](../studios/cities/) | Interfaces and polymorphism | &nbsp;
 12 | [Prep Work](../class-prep/12/) | | Persistence Part I | &nbsp;
 13 | [Prep Work](../class-prep/13/) | | Persistence Part II | &nbsp;
 14 | [Prep Work](../class-prep/14/) | | ASP.NET MVC Apps Beyond LC101 | &nbsp;

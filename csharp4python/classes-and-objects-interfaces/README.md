@@ -171,31 +171,37 @@ The most immediate situations that you'll encounter in which you'll want to use 
 
 [IComparer<T> Documentation](https://msdn.microsoft.com/en-us/library/system.collections.icomparer.compare(v=vs.110).aspx)
 
-This interface can be used to determine, given two objects of the given type, which one is "greater" than the other. It is also used by collections such as [List](https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx) to sort its contents with the [Sort](https://msdn.microsoft.com/en-us/library/234b841s(v=vs.110).aspx) method.
+This interface can be used to determine, given two objects of the given type, which one is "greater" than the other. It is also used by collections such as [List<T>](https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx) to sort its contents with the [Sort](https://msdn.microsoft.com/en-us/library/234b841s(v=vs.110).aspx) method.
 
-### IEnumerable
+### IEnumerable<T>
 
 **Purpose**: Enable iteration over a collection of objects using `foreach`.
 
 **Important Methods and Properties**: `MoveNext()`, `Current`
 
-[IEnumerable Documentation](https://msdn.microsoft.com/en-us/library/78dfe2yb(v=vs.110).aspx)
+[IEnumerable<T> Documentation](https://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx)
 
-### IList
+This interface is implemented by the `List<T>` class, which we've been using throughout this course.
+
+### IList<T>
 
 **Purpose**: Enable access to objects in a collection by index.
 
-**Important Methods and Properties**: `Add(Object)`, `Contains(Object)`, `Remove(Object)`, `Count`
+**Important Methods and Properties**: `Add(T)`, `Contains(T)`, `Remove(T)`, `Count`
 
-[IList Documentation](https://msdn.microsoft.com/en-us/library/system.collections.ilist(v=vs.110).aspx)
+[IList<T> Documentation](https://msdn.microsoft.com/en-us/library/5y536ey6(v=vs.110).aspx)
+
+This interface is also implemented by the `List<T>` class, which we've been using throughout this course. In face, `IList<T>` extends `IEnumerable<T>`. An interface may extend another interface, in the same way that classes may extend each other.
 
 ### IDictionary
 
 **Purpose**: Represent a collection of key/value pairs.
 
-**Important Methods and Properties**: `Add(Object, Object)`, `Contains(Object)`, `Remove(Object)`, `Count`, `Keys`, `Values`
+**Important Methods and Properties**: `Add(TKey, TValue)`, `Contains(T)`, `Remove(T)`, `Count`, `Keys`, `Values`
 
-[IDictionary Documentation](https://msdn.microsoft.com/en-us/library/system.collections.idictionary(v=vs.110).aspx)
+[IDictionary<TKey, TValue> Documentation](https://msdn.microsoft.com/en-us/library/s4ys34ea(v=vs.110).aspx)
+
+This interface is implemented by the `Dictionary<TDey, TValue>` class, which we've been using throughout this course.
 
 ## Comparison to Abstract Classes
 
@@ -206,7 +212,7 @@ The main differences between interfaces and abstract classes are:
 - An abstract class may contain non-abstract methods. In other words, it may contain methods that have code. Interfaces may not.
 - Abstract classes should be used to collect and specify behavior by related classes, while an interface should be used to specify related behaviors that may be common across unrelated classes.
 
-For example, we could implement `IComparer` in many ways, to sort a wide variety of classes whose objects may be compared to one another: `Date` (compare by temporal order), `Student` (compare by GPA), `Person` (compare by age), `City` (compare by population). However, it's unlikely that these classes would have any implementable behavior that would warrant that they have the same base class. 
+For example, we could implement `IComparer` in many ways, to sort a wide variety of classes whose objects may be compared to one another: `Date` (compare by temporal order), `Student` (compare by GPA), `Person` (compare by age), `City` (compare by population). However, it's unlikely that these classes would have any implementable behavior that would warrant that they have the same base class.
 
 ## Benefits of Using Interfaces
 
@@ -225,7 +231,7 @@ Remember that you don't need to start creating interfaces to use their power! Wh
 
 - [Interface Naming Guidelines (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/8bc1fexb(v=vs.71).aspx)
 - [Interfaces (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/ms173156.aspx)
-- [IComparer<T> Interface](https://msdn.microsoft.com/en-us/library/system.collections.icomparer.compare(v=vs.110).aspx)
-- [IEnumerable Interface](https://msdn.microsoft.com/en-us/library/78dfe2yb(v=vs.110).aspx)
-- [IList Interface](https://msdn.microsoft.com/en-us/library/system.collections.ilist(v=vs.110).aspx)
-- [IDictionary Interface](https://msdn.microsoft.com/en-us/library/system.collections.idictionary(v=vs.110).aspx)
+- [IComparer<T> Interface](https://msdn.microsoft.com/en-us/library/8ehhxeaf(v=vs.110).aspx)
+- [IEnumerable<T> Interface](https://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx)
+- [IList<T> Interface](https://msdn.microsoft.com/en-us/library/5y536ey6(v=vs.110).aspx)
+- [IDictionary<TKey, TValue> Interface](https://msdn.microsoft.com/en-us/library/s4ys34ea(v=vs.110).aspx)

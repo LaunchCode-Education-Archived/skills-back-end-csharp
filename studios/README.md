@@ -62,3 +62,9 @@ Create an app that allows users to "sign up" via a form, and creates a new `User
 Use ViewModels and validation in your User Signup code from the last studio.
 
 [User Signup Continued](user-signup-continued/)
+
+## Cities
+
+Implement the `IComparer<T>` interface to sort cities based on various criteria.
+
+[Cities](cities/)
