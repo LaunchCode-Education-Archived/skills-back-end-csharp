@@ -49,7 +49,7 @@ There's one more object-oriented mechanism that empowers us to code in a polymor
 
 ## Interfaces
 
-An **interface** is a formal construction within C# that allows us to create a contract consisting of properties and method signatures (and a few other member types that we haven't covered). An interface *contains not method implementations*. In other words, we may not create a fully-functioning method within an interface.
+An **interface** is a formal construction within C# that allows us to create a contract consisting of properties and method signatures (and a few other member types that we haven't covered). An interface *contains no method implementations*. In other words, we may not create a fully-functioning method within an interface.
 
 Here's a simple example:
 
@@ -101,7 +101,7 @@ You should list the subclass before any interfaces.
 
 As with classes, interfaces define a type that can be used when declaring properties, fields, parameters, and local variables.
 
-Using an interface allows us to relax the requirements on our code elsewhere, thus making it more extensible and adaptable. For example, here's how we might modify `PetOwner`:
+Using an interface allows us to relax the requirements on our code elsewhere, thus making it more extensible and adaptable. For example, here's how we might modify `CatOwner`:
 
 ```csharp
 public class CatOwner
@@ -183,6 +183,18 @@ This interface can be used to determine, given two objects of the given type, wh
 
 This interface is implemented by the `List<T>` class, which we've been using throughout this course.
 
+**Example**
+
+```csharp
+IEnumerable<string> collection = new List<String>();
+
+// add items to the collection
+
+foreach (string item in collection) {
+    // do something with the items
+}
+```
+
 ### IList<T>
 
 **Purpose**: Enable access to objects in a collection by index.
@@ -192,6 +204,16 @@ This interface is implemented by the `List<T>` class, which we've been using thr
 [IList<T> Documentation](https://msdn.microsoft.com/en-us/library/5y536ey6(v=vs.110).aspx)
 
 This interface is also implemented by the `List<T>` class, which we've been using throughout this course. In face, `IList<T>` extends `IEnumerable<T>`. An interface may extend another interface, in the same way that classes may extend each other.
+
+**Example**
+
+```csharp
+IList<string> collection = new List<string>();
+
+// Add items to the collection
+
+string firstItem = collection[0];
+```
 
 ### IDictionary
 
@@ -203,12 +225,23 @@ This interface is also implemented by the `List<T>` class, which we've been usin
 
 This interface is implemented by the `Dictionary<TDey, TValue>` class, which we've been using throughout this course.
 
+**Example**
+
+```csharp
+IDictionary<string> collection = new Dictionary<string, string>();
+
+// Add items to the collection
+
+// Get item with key "hello"
+string hello = collection["hello"];
+```
+
 ## Comparison to Abstract Classes
 
-We mentioned above -- and you likely noticed yourself -- that interfaces share some characteristics with abstract classes. Recall that an abstract class is one declared with the `abstract` keyword. You may not create an abstract class, and like an interface, an abstract class is allowed to contain methods that only have signatures (that is, they don't have implementation code).
+We mentioned above -- and you likely noticed yourself -- that interfaces share some characteristics with abstract classes. Recall that an abstract class is one declared with the `abstract` keyword. You may not create an object from an abstract class, and like an interface, an abstract class is allowed to contain methods that only have signatures (that is, they don't have implementation code).
 
 The main differences between interfaces and abstract classes are:
-- You *implement* an interface, while you *extend* an abstract class. The net effect of this is that we can implement many interfaces while also extending a class.
+- You *implement* an interface, while you *extend* an abstract class. The net effect of this is that a class may implement many interfaces while also extending a class.
 - An abstract class may contain non-abstract methods. In other words, it may contain methods that have code. Interfaces may not.
 - Abstract classes should be used to collect and specify behavior by related classes, while an interface should be used to specify related behaviors that may be common across unrelated classes.
 
