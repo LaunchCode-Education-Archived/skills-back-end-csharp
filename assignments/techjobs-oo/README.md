@@ -216,6 +216,8 @@ In Visual Studio, select *View > Task List* to pop open a small pane at the bott
 The tasks may not immediately be populated in the Task List. If you don't see all of them, open up the files manually to see your TODOs.
 </aside>
 
+As you work on your tasks, refer to the [demo app][demo-app].
+
 #### Display A Single Job
 
 Your first two tasks involve displaying data associated with a single job. When you're done, visiting the URL `/Job?id=X` will display the details of the job with ID equal to X.
@@ -275,11 +277,11 @@ Before submitting, make sure that your application:
 - Within `ViewModels` you have a new class that combines the repeated members of `SearchJobsViewModel` and `JobFieldsViewModel`
 
 
-<!--Refer to the [demo app][demo-app] if you're not sure how thing are supposed to work.-->
+Refer to the [demo app][demo-app] if you're not sure how thing are supposed to work.
 
 ### How to Submit
 
 To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
 
 [submission-instructions]: ../
-<!--[demo-app]:-->
+[demo-app]: http://techjobsoo.azurewebsites.net/
