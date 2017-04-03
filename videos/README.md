@@ -26,3 +26,11 @@ currentMenu: videos
 [ViewModels and Validation](intro-to-mvc-viewmodels-1/)
 
 [Enums, Selects, and ViewModels](intro-to-mvc-viewmodels-2/)
+
+## Intro to EntityFrameworkCore
+
+[Introduction to Object-Relational Mapping](intro-to-orm/)
+
+[Intro to EntityFrameworkCore: Working With Entities](intro-to-ef-basics/)
+
+[Intro to EntityFrameworkCore: One-to-Many Relationships](intro-to-ef-one-to-many/)

@@ -26,7 +26,7 @@ For the purpose of illustration, all examples will assume you're working with th
     One of the results of this search will be `Microsoft.EntityFrameworkCore.Tools.DotNet`. This is *not* the same package as `Microsoft.EntityFrameworkCore.Tools`. Be sure to install the correct version.
     </aside>
 - In the Solution Explorer, open `appsettings.json`
-    ![appsettings.json](images/appsettings-json.png)
+    <img alt="appsettings.json" src="images/appsettings-json.png" style="width:500px;" />
     Add the following setting within the outer curly-braces.
     ```json
     "ConnectionStrings": {
@@ -51,7 +51,7 @@ For the purpose of illustration, all examples will assume you're working with th
     ```
     This sets up a connection string for a local database, [SQL Server Express LocalDB](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-2016-express-localdb). This is a lightweight database that is useful for development. You would never use this database for an active public application (aka a "production application").
 - Open `project.json`:
-    ![project.json](images/project-json.png)
+    <img alt="project.json" src="images/project-json.png" style="width:500px;" />
     In the `tools` section, add:
     ```json
     "Microsoft.EntityFrameworkCore.Tools": "1.0.0-preview2-final"
