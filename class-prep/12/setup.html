@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Videos :: Unit 3: Back-End C# Skill Track</title>
+        <title>EntityFrameworkCore Setup :: Unit 3: Back-End C# Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-videos'>
+    <body id='page-entityframeworkcore-setup'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -21,7 +21,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                         <ul class="dropdown-menu">
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
                                         Classes
                                     </a>
@@ -36,7 +36,7 @@
                                         Assignments
                                     </a>
                                 </li>
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/videos/">
                                         Videos
                                     </a>
@@ -119,23 +119,66 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Videos</h1>
-                    <h2 id="getting-started">Getting Started</h2>
-<p><a href="csharp-skill-track-overview/">C# Skill Track Overview</a></p>
-<p><a href="intro-to-visual-studio/">Intro to Visual Studio</a></p>
-<p><a href="using-the-visual-studio-debugger/">Using the Visual Studio Debugger</a></p>
-<h2 id="intro-to-aspnet-core-mvc">Intro to ASP.NET Core MVC</h2>
-<p><a href="intro-to-mvc-controllers/">Controllers</a></p>
-<p><a href="intro-to-mvc-routes/">Routes</a></p>
-<p><a href="intro-to-mvc-views-1/">Views (Part 1)</a></p>
-<p><a href="intro-to-mvc-views-2/">Views (Part 2)</a></p>
-<p><a href="intro-to-mvc-models/">Models</a></p>
-<p><a href="intro-to-mvc-viewmodels-1/">ViewModels and Validation</a></p>
-<p><a href="intro-to-mvc-viewmodels-2/">Enums, Selects, and ViewModels</a></p>
-<h2 id="intro-to-entityframeworkcore">Intro to EntityFrameworkCore</h2>
-<p><a href="intro-to-orm/">Introduction to Object-Relational Mapping</a></p>
-<p><a href="intro-to-ef-basics/">Intro to EntityFrameworkCore: Working With Entities</a></p>
-<p><a href="intro-to-ef-one-to-many/">Intro to EntityFrameworkCore: One-to-Many Relationships</a></p>
+                                        <h1>EntityFrameworkCore Setup</h1>
+                    <p>This article will show you how to enable the EntityFrameworkCore object-relational mapping framework. It assumes you are you are using <strong>Visual Studio 2015 v14 update 3</strong>.</p>
+<aside class="aside-warning">
+<p>If you try to follow along with a newer version of Visual Studio, then the package versions listed here will most likely not work for you. Additionally, you'll have problems with starter code for assignments.</p>
+</aside>
+<p>These instructions will enable EntityFrameworkCore (EF Core) for a given ASP.NET Core MVC project. You will need to follow these steps for every project you want to use EF Core with. At the bottom of this article we introduce an easier way to enable EF Core for new projects.</p>
+<p>For the purpose of illustration, all examples will assume you're working with the <code>CheeseMVC</code> project. If you use these instructions with another project, change project names accordingly.</p>
+<h2 id="setting-up-entityframeworkcore-with-an-existing-app">Setting Up EntityFrameworkCore With an Existing App</h2>
+<ul>
+<li>Open the NuGet Package Manager by right-clicking on the project name in the Solution Explorer and selecting <em>Manage NuGet Packages</em>.
+<img src="images/manage-nuget-packages.png" alt="Manage NuGet Packages" />
+<aside class="aside-warning">
+<p>You might be tempted carry out the updates listed in the package manager. Resist this temptation!</p>
+</aside></li>
+<li>In the <em>Browse</em> tab of the package manager, search for <code>Microsoft.EntityFrameworkCore.SqlServer</code>. Click on the matching package and select <strong>Version 1.0.1</strong>. Then hit <em>Install</em>. You'll be asked to accept the license agreement for the package, and then you'll see some console output.</li>
+<li>Check the <em>Include prerelease</em> box right of the search box. Then search for <code>Microsoft.EntityFrameworkCore.Tools</code>. Select the matching result and install <strong>Version 1.0.0-preview2-final</strong>.
+<aside class="aside-warning">
+<p>One of the results of this search will be <code>Microsoft.EntityFrameworkCore.Tools.DotNet</code>. This is <em>not</em> the same package as <code>Microsoft.EntityFrameworkCore.Tools</code>. Be sure to install the correct version.</p>
+</aside></li>
+<li>In the Solution Explorer, open <code>appsettings.json</code>
+<img alt="appsettings.json" src="images/appsettings-json.png" style="width:500px;" />
+<p>Add the following setting within the outer curly-braces.</p>
+<pre><code class="language-json">"ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=CheeseMVC;Trusted_Connection=True;MultipleActiveResultSets=true"
+  },</code></pre>
+<p>The full <code>appsettings.json</code> file will look like this:</p>
+<pre><code class="language-json">{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=CheeseMVC;Trusted_Connection=True;MultipleActiveResultSets=true"
+  },
+  "Logging": {
+    "IncludeScopes": false,
+    "LogLevel": {
+      "Default": "Debug",
+      "System": "Information",
+      "Microsoft": "Information"
+    }
+  }
+}</code></pre>
+<p>This sets up a connection string for a local database, <a href="https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-2016-express-localdb" target="_blank">SQL Server Express LocalDB</a>. This is a lightweight database that is useful for development. You would never use this database for an active public application (aka a &quot;production application&quot;).</p></li>
+<li>Open <code>project.json</code>:
+<img alt="project.json" src="images/project-json.png" style="width:500px;" />
+<p>In the <code>tools</code> section, add:</p>
+<pre><code class="language-json">"Microsoft.EntityFrameworkCore.Tools": "1.0.0-preview2-final"</code></pre>
+<p>The full <code>tools</code> section should look like this:</p>
+<pre><code class="language-json">"tools": {
+    "BundlerMinifier.Core": "2.0.238",
+    "Microsoft.AspNetCore.Razor.Tools": "1.0.0-preview2-final",
+    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final",
+    "Microsoft.EntityFrameworkCore.Tools": "1.0.0-preview2-final"
+  },</code></pre>
+<p>This enables some command-line tools that we'll use to update databases after making changes to our model classes.</p></li>
+</ul>
+<h2 id="setting-up-entityframeworkcore-with-a-new-app">Setting Up EntityFrameworkCore With a New App</h2>
+<p>You can create a brand new project with the above packages and settings already in place by enabling individual user accounts in the New Project dialog.</p>
+<p>When creating a new ASP.NET Core MVC app, select <em>Change Authentication</em> in the project template screen.</p>
+<p><img src="images/change-authentication.png" alt="Change Authentication" /></p>
+<p>In the modal that opens, select <em>Individual User Accounts</em>.</p>
+<p><img src="images/individual-user-accounts.png" alt="Individual User Accounts" /></p>
+<p>Aside from enabling a local database and EntityFrameworkCore, this also (as you might expect) enables basic user account functionality. We'll look at how to use this functionality in a future lesson.</p>
                                     </section>
 
             </div>

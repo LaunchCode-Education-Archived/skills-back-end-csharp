@@ -27,6 +27,7 @@ http://education.launchcode.org/skills-back-end-csharp/class-prep/10/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/11/exercises.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/11/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/12/index.html
+http://education.launchcode.org/skills-back-end-csharp/class-prep/12/setup.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/13/index.html
 http://education.launchcode.org/skills-back-end-csharp/class-prep/14/index.html
 http://education.launchcode.org/skills-back-end-csharp/classes/index.html
@@ -60,6 +61,8 @@ http://education.launchcode.org/skills-back-end-csharp/studios/user-signup-conti
 http://education.launchcode.org/skills-back-end-csharp/studios/user-signup/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/csharp-skill-track-overview/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/index.html
+http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-ef-basics/index.html
+http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-ef-one-to-many/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-controllers/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-models/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-project-structure/index.html
@@ -68,6 +71,7 @@ http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-viewm
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-viewmodels-2/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-views-1/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-views-2/index.html
+http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-orm/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-visual-studio/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/mvc-project-structure/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/using-the-visual-studio-debugger/index.html

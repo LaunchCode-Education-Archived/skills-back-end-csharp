@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Videos :: Unit 3: Back-End C# Skill Track</title>
+        <title>Intro to EntityFrameworkCore: Persisting Objects :: Unit 3: Back-End C# Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-videos'>
+    <body id='page-intro-to-entityframeworkcore-persisting-objects'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -119,23 +119,43 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Videos</h1>
-                    <h2 id="getting-started">Getting Started</h2>
-<p><a href="csharp-skill-track-overview/">C# Skill Track Overview</a></p>
-<p><a href="intro-to-visual-studio/">Intro to Visual Studio</a></p>
-<p><a href="using-the-visual-studio-debugger/">Using the Visual Studio Debugger</a></p>
-<h2 id="intro-to-aspnet-core-mvc">Intro to ASP.NET Core MVC</h2>
-<p><a href="intro-to-mvc-controllers/">Controllers</a></p>
-<p><a href="intro-to-mvc-routes/">Routes</a></p>
-<p><a href="intro-to-mvc-views-1/">Views (Part 1)</a></p>
-<p><a href="intro-to-mvc-views-2/">Views (Part 2)</a></p>
-<p><a href="intro-to-mvc-models/">Models</a></p>
-<p><a href="intro-to-mvc-viewmodels-1/">ViewModels and Validation</a></p>
-<p><a href="intro-to-mvc-viewmodels-2/">Enums, Selects, and ViewModels</a></p>
-<h2 id="intro-to-entityframeworkcore">Intro to EntityFrameworkCore</h2>
-<p><a href="intro-to-orm/">Introduction to Object-Relational Mapping</a></p>
-<p><a href="intro-to-ef-basics/">Intro to EntityFrameworkCore: Working With Entities</a></p>
-<p><a href="intro-to-ef-one-to-many/">Intro to EntityFrameworkCore: One-to-Many Relationships</a></p>
+                                        <h1>Intro to EntityFrameworkCore: Persisting Objects</h1>
+                    <p>If you haven't completed the <a href="../../class-prep/12/setup.html">EF Core setup steps</a> for <code>CheeseMVC</code>, go back and do so before watching this lesson.</p>
+<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/OeRW7NhTCpQ" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<h3 id="migrations">Migrations</h3>
+<p>To create a new migration after making changes to your model, right-click on the project in the Solution Explorer and select <em>Open Folder in File Explorer</em>.</p>
+<img alt="Open Folder in File Explorer" src="images/open-folder.png" style="width:500px;" />
+<p>This opens File Explorer to the top-level directory of the project.</p>
+<p>Within the File Explorer window, click on the far-right end of the Location field, and type <code>powershell</code>. Hit Enter.</p>
+<p><img src="images/powershell.png" alt="powershell" /></p>
+<p>This opens a Powershell with the path already set to the current directory. From this location, you can run .NET Tools commands.</p>
+<h4 id="new-migration">New Migration</h4>
+<p>To add a migration:</p>
+<pre><code class="language-nohighlight">&gt; dotnet ef migrations add MigrationName</code></pre>
+<p>Use a different and descriptive name for each migration.</p>
+<h4 id="update-database-to-latest-migration">Update Database to Latest Migration</h4>
+<pre><code class="language-nohighlight">&gt; dotnet ef database update</code></pre>
+<h4 id="change-state-to-a-specific-migration">Change State to a Specific Migration</h4>
+<p>To update the database to a specific migration -- either forward or backward from the current state -- run:</p>
+<pre><code class="language-nohighlight">&gt; dotnet ef database update MigrationName</code></pre>
+<h4 id="remove-a-migration">Remove a Migration</h4>
+<p>If you create a migration and later realize you don't want the associate changes, you can remove it. To remove a migration:</p>
+<pre><code class="language-nohighlight">&gt; dotnet ef migrations remove MigrationName</code></pre>
+<p>If you haven't done so already, you must first undo the given migration.</p>
+<h4 id="undo-all-migrations">Undo All Migrations</h4>
+<pre><code class="language-nohighlight">&gt; dotnet ef database update 0</code></pre>
+<aside class="aside-pro-tip">
+<p>If you wish to start with a clean database during development -- because, let's be honest, sometimes we'll break something or want to undo a bunch of work -- perhaps the easiest thing to do is change the database name in the connection string in <code>appsettings.json</code>. Then you can run <code>dotnet ef update database</code> and a new, empty database will be set up with all migrations run.</p>
+</aside>
+<h2 id="code">Code</h2>
+<p>We start this lesson with the code in the <code>video-ef-basics-start</code> branch of the CheeseMVC repo: <a href="https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-ef-basics-start" target="_blank">starting code</a></p>
+<p>We end this lesson with the code in the <code>video-ef-basics-end</code> branch of the CheeseMVC repo: <a href="https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-ef-basics-end" target="_blank">ending code</a></p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/ef/core/api/microsoft.entityframeworkcore.dbcontext#Microsoft_EntityFrameworkCore_DbContext" target="_blank">DbContext Class</a></li>
+<li><a href="https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet" target="_blank">.NET Command Line Tools</a></li>
+</ul>
                                     </section>
 
             </div>
