@@ -5,7 +5,7 @@ currentMenu: videos
 
 If you haven't completed the [EF Core setup steps](../../class-prep/12/setup.html) for `CheeseMVC`, go back and do so before watching this lesson.
 
-<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/OeRW7NhTCpQ" frameborder="0" allowfullscreen></iframe></div>
+<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/MxUOP2NPiEo" frameborder="0" allowfullscreen></iframe></div>
 
 ## Notes
 
