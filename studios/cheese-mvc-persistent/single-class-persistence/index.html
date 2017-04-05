@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Studio: CheeseMVC Persistent :: Unit 3: Back-End C# Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-studio-cheesemvc-persistent'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/videos/">
+                                        Videos
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/csharp4python/">
+                                        C# for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/glossary/">
+                                        Glossary
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/issues/">
+                                        Reporting Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-csharp/">
+                    <h1>Unit 3: Back-End C# Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-csharp/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End C# Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:-32orsjtyl4";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Studio: CheeseMVC Persistent</h1>
+                    <h2 id="part-2-persisting-a-single-class">Part 2: Persisting a Single Class</h2>
+<p>Be sure you've completed the <a href="../">setup steps</a> before starting these tasks.</p>
+<h2 id="setting-up-the-new-model">Setting Up the New Model</h2>
+<p>We'll use EntityFramework (EF) to create and object-relational mapping for a new class.</p>
+<p>In <code>Models/</code>, create a new model class named <code>CheeseCategory</code>. Give it an <code>ID</code> property and a <code>Name</code> property that's a string.</p>
+<p>We'll want instances of this class to be stored in the database, so open up <code>Data\CheeseDbContext</code> and add a new <code>DbSet</code>:</p>
+<pre><code class="language-csharp">public DbSet&lt;CheeseCategory&gt; Categories { get; set; }</code></pre>
+<p>Since <code>Cheese</code> and <code>CheeseCategory</code> will be related (we'll set this up in Part 2 of this studio), we can put these <code>DbSet</code> properties in the same <code>DbContext</code>.</p>
+<p>By naming this property <code>Categories</code>, EF will create a table within our database of the same name.</p>
+<h2 id="adding-categories">Adding Categories</h2>
+<p>Create a <code>CategoryController</code> in <code>Controllers\</code>, and add the following code to the class:</p>
+<pre><code class="language-csharp">private readonly CheeseDbContext context;
+
+public CategoryController(CheeseDbContext dbContext)
+{
+    context = dbContext;
+}</code></pre>
+<p>This creates a private field <code>context</code> of type <code>CheeseDbContext</code>. This object will be the way in which we interact with objects stored in the database throughout our controller. The MVC framework will do the work of creating an instance of <code>CheeseDbContext</code> and passing it into our controller's constructor.</p>
+<p>This code should be added to each controller class that you want to have access to the persistent collections defined within <code>CheeseDbContext</code>.</p>
+<h3 id="view-all-categories">View All Categories</h3>
+<p>Create an <code>Index</code> action within <code>CategoryController</code>, and the corresponding view template within the <code>Views</code> folder. You'll need to create <code>Views\Category\</code> yourself before creating the template file.</p>
+<p>The <code>Index</code> action should retrieve the list of all categories. This is done via the <code>context</code> object: <code>context.Categories.ToList()</code> returns a list of all <code>CheeseCategory</code> objects managed by <code>CheeseDbContext</code>. Use this snippet to retrieve the list of categories, and then pass the list into the view.</p>
+<p>Your view should display an unordered list (that is, a <code>&lt;ul&gt;</code>) of category names. The list will look a bit plain for now, but we will make it more interesting later on.</p>
+<h3 id="add-categories">Add Categories</h3>
+<p>Next, we want to enable the user to create a new category via a form. This will require multiple steps.</p>
+<h4 id="addcategoryviewmodel">AddCategoryViewModel</h4>
+<p>Create a new ViewModel, <code>AddCategoryViewModel</code>. A category thus far consists of only a name and an ID, so this ViewModel will be simple. It should have a <code>Name</code> property along with validation attributes to make the property required, along with <code>[Display(Name = "Category Name")]</code>. We don't need to worry about an ID property here because the ID will be generated for us when we store a new object in the database.</p>
+<h4 id="add-view">Add View</h4>
+<p>In <code>Views\Category\</code> create a new template, <code>Add.cshtml</code>. Within the template, create a form that renders a form using the <code>ViewModel</code>. Thus, you'll need to add at the top of the file:</p>
+<pre><code>@model CheeseMVC.ViewModels.AddCategoryViewModel</code></pre>
+<p>Be sure to use your tag helpers to render the form:</p>
+<ul>
+<li>On the <code>&lt;form&gt;</code> element: <code>asp-controller</code> and <code>asp-action</code> (our form should <code>POST</code> to the <code>Add</code> action of the <code>Category</code> controller).</li>
+<li>Within the form: <code>asp-for</code> (on <code>&lt;input&gt;</code> and <code>&lt;label&gt;</code>) and <code>asp-validation-for</code> (on a <code>&lt;span&gt;</code>).</li>
+</ul>
+<p>This is the same technique we've been using over the last couple of weeks.</p>
+<h4 id="add-action-methods">Add Action Methods</h4>
+<p>The last pieces of this puzzle are the controller actions to render and process the form.</p>
+<p>Create an <code>Add</code> action within <code>CategoryController</code> that creates an <code>AddCategoryViewModel</code> and passes it into the view.</p>
+<p>Create another <code>Add</code> action that has the <code>[HttpPost]</code> attribute, and has an instance of <code>AddCategoryViewModel</code> as a parameter, to be created and passed in via model binding.</p>
+<p>Within this second <code>Add</code> action:</p>
+<ul>
+<li>Check that the ViewModel is valid. If not, return the view, passing the ViewModel into the view as you do so.</li>
+<li>If it is valid:
+<ul>
+<li>Create a new <code>CheeseCategory</code> object, <code>newCategory</code>, with <code>Name</code> property having the value of <code>Name</code> from the ViewModel.</li>
+<li>Add <code>newCategory</code> to the database context: <code>context.Categories.Add(newCategory)</code></li>
+<li>Save changes to the database: <code>context.SaveChanges()</code></li>
+<li>Redirect to the <code>Index</code> action for <code>CategoryController</code>: <code>return Redirect("/")</code></li>
+</ul></li>
+</ul>
+<h3 id="adding-navigation-links">Adding Navigation Links</h3>
+<p>Let's make it easy to navigate to the new views that we've created.</p>
+<p>Within <code>Views\Category\Index.cshtml</code>, add the following link below the <code>&lt;ul&gt;</code> that you added earlier:</p>
+<pre><code class="language-nohighlight">&lt;p&gt;&lt;a asp-controller="Category" asp-action="Add"&gt;Add Category&lt;/a&gt;&lt;/p&gt;</code></pre>
+<p>And within <code>Views\Shared\_Layout.cshtml</code>, add the following link inside of the <code>&lt;ul class="nav navbar-nav"&gt;</code> element:</p>
+<pre><code class="language-nohighlight">&lt;li&gt;&lt;a asp-controller="Category" asp-action="Index"&gt;Categories&lt;/a&gt;&lt;/li&gt;</code></pre>
+<h2 id="creating-and-running-the-migration">Creating and Running the Migration</h2>
+<p>You're done coding for this portion of the studio, but you are note quite ready to run the application. Before we do that, we need to create a migration to apply our model changes to the database.</p>
+<p>To create a new migration after making changes to your model, right-click on the project in the Solution Explorer and select <em>Open Folder in File Explorer</em>.</p>
+<img alt="Open Folder in File Explorer" src="images/open-folder.png" style="width:500px;" />
+<p>This opens File Explorer to the top-level directory of the project.</p>
+<p>Within the File Explorer window, click on the far-right end of the Location field, and type <code>powershell</code>. Hit Enter.</p>
+<p><img src="images/powershell.png" alt="powershell" /></p>
+<p>This opens a Powershell window with the path already set to the project directory. From this location, you can run .NET Tools commands.</p>
+<p>Create your migration:</p>
+<pre><code class="language-nohighlight">&gt; dotnet ef migrations add AddCategory</code></pre>
+<p>This will create a new migration file in <code>Migrations\</code> within your project. Before doing so, however, it will build your project. If you encounter build errors, return to Visual Studio and fix them.</p>
+<p>Next, apply the migration to the database:</p>
+<pre><code class="language-nohighlight">&gt; dotnet ef database update</code></pre>
+<p>You can see the result of running this migration by moving back to Visual Studio, opening <em>View &gt; SQL Server Object Explorer</em> and navigating down to the database as shown below. Note that your database for this project is named <code>CheeseMVC-persistent</code> so that it doesn't conflict with any similarly-named databases that you may already have created.</p>
+<p><img src="view-db-changes.png" alt="View database changes" /></p>
+<p>What's the change that you're looking for? Well, that <code>Categories</code> table looks new, doesn't it? And if you right-click on the new table and select <em>View Data</em> you'll see any empty table with <code>ID</code> and <code>Name</code> columns.</p>
+<h2 id="test">Test!</h2>
+<p>Start up your application, and try to add a new category!</p>
+<p>Click on <em>Categories</em> in the main navigation bar, then on <em>Add Category</em>. Complete the form, and if everything works as expected, you'll see your new category in the list. If everything seems to work -- that is, you are able to submit the form without any errors -- but you don't see your category in the list, here's what you should check:</p>
+<ul>
+<li>Is there any data in the <code>Categories</code> table? Use <em>SQL Server Object Explorer</em> to check. If not, make sure you're calling <code>context.SaveChanges()</code> upon form submission, after creating the new <code>CheeseCategory</code> instance.</li>
+<li>If there's data in the database, check that you are correctly querying for the list of all categories in <code>CategoryController.Index</code>: <code>context.Categories.ToList()</code>.</li>
+<li>Ensure you're passing this list into the view, and looping over the list of categories to display them in the page.</li>
+</ul>
+<p>When everything works, move on to <a href="../one-to-many/">Part 2</a>.</p>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="http://education.launchcode.org/skills-back-end-csharp/js/bootstrap.min.js"></script>
+        <script src="http://education.launchcode.org/skills-back-end-csharp/js/highlight.pack.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-6", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

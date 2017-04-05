@@ -48,6 +48,10 @@ http://education.launchcode.org/skills-back-end-csharp/index.html
 http://education.launchcode.org/skills-back-end-csharp/issues/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/area/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/bonjour-asp-net/index.html
+http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc-persistent/index.html
+http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc-persistent/many-to-many/index.html
+http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc-persistent/one-to-many/index.html
+http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc-persistent/single-class-persistence/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/cities/index.html
 http://education.launchcode.org/skills-back-end-csharp/studios/counting-characters/index.html
