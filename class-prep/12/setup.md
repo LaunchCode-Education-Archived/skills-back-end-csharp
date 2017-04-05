@@ -21,7 +21,8 @@ For the purpose of illustration, all examples will assume you're working with th
     You might be tempted carry out the updates listed in the package manager. Resist this temptation!
     </aside>
 - In the *Browse* tab of the package manager, search for `Microsoft.EntityFrameworkCore.SqlServer`. Click on the matching package and select **Version 1.0.1** from the pane at right.
-    ![SqlServer version](images/sqlserver-version.png)
+
+    <img src="images/sqlserver-version.png" alt="SQLServer version" style="width:500px;"/>
     Then hit *Install*. You'll be asked to accept the license agreement for the package, and then you'll see some console output.
 - Check the *Include prerelease* box right of the search box. Then search for `Microsoft.EntityFrameworkCore.Tools`. Select the matching result and install **Version 1.0.0-preview2-final**.
     <aside class="aside-warning" markdown="1">
