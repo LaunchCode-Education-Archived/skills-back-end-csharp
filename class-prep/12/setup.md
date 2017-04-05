@@ -21,7 +21,7 @@ For the purpose of illustration, all examples will assume you're working with th
     You might be tempted carry out the updates listed in the package manager. Resist this temptation!
     </aside>
 - In the *Browse* tab of the package manager, search for `Microsoft.EntityFrameworkCore.SqlServer`. Click on the matching package and select **Version 1.0.1** from the pane at right.
-    ![SqlServer version](../images/sqlserver-version.png)
+    ![SqlServer version](images/sqlserver-version.png)
     Then hit *Install*. You'll be asked to accept the license agreement for the package, and then you'll see some console output.
 - Check the *Include prerelease* box right of the search box. Then search for `Microsoft.EntityFrameworkCore.Tools`. Select the matching result and install **Version 1.0.0-preview2-final**.
     <aside class="aside-warning" markdown="1">
@@ -53,6 +53,7 @@ For the purpose of illustration, all examples will assume you're working with th
     ```
     This sets up a connection string for a local database, [SQL Server Express LocalDB](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-2016-express-localdb). This is a lightweight database that is useful for development. You would never use this database for an active public application (aka a "production application").
 - Open `project.json`:
+
     <img alt="project.json" src="images/project-json.png" style="width:500px;" />
     In the `tools` section, add:
     ```json
