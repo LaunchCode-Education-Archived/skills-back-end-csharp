@@ -20,7 +20,9 @@ For the purpose of illustration, all examples will assume you're working with th
     <aside class="aside-warning" markdown="1">
     You might be tempted carry out the updates listed in the package manager. Resist this temptation!
     </aside>
-- In the *Browse* tab of the package manager, search for `Microsoft.EntityFrameworkCore.SqlServer`. Click on the matching package and select **Version 1.0.1**. Then hit *Install*. You'll be asked to accept the license agreement for the package, and then you'll see some console output.
+- In the *Browse* tab of the package manager, search for `Microsoft.EntityFrameworkCore.SqlServer`. Click on the matching package and select **Version 1.0.1** from the pane at right.
+    ![SqlServer version](../images/sqlserver-version.png)
+    Then hit *Install*. You'll be asked to accept the license agreement for the package, and then you'll see some console output.
 - Check the *Include prerelease* box right of the search box. Then search for `Microsoft.EntityFrameworkCore.Tools`. Select the matching result and install **Version 1.0.0-preview2-final**.
     <aside class="aside-warning" markdown="1">
     One of the results of this search will be `Microsoft.EntityFrameworkCore.Tools.DotNet`. This is *not* the same package as `Microsoft.EntityFrameworkCore.Tools`. Be sure to install the correct version.
