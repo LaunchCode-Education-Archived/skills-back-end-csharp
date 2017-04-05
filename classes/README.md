@@ -16,8 +16,8 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\*
 9 | [Prep Work](../class-prep/9/) | [User Signup Continued](../studios/user-signup-continued/) | ViewModels, Model Validation, Enum Types | [TechJobs (Object-Oriented Edition)](../assignments/techjobs-oo/)
 10 | [Prep Work](../class-prep/10/) | No Studio | Exceptions | &nbsp;
 11 | [Prep Work](../class-prep/11/) | [Cities](../studios/cities/) | Interfaces and polymorphism | &nbsp;
-12 | [Prep Work](../class-prep/12/) | | Persistence Part I | &nbsp;
-13 | [Prep Work](../class-prep/13/) | | Persistence Part II | &nbsp;
+12 | [Prep Work](../class-prep/12/) | [CheeseMVC Persistent](../studios/cheese-mvc-persistent/) | Persistence Part I: Setting Up EntityFrameworkCore, Storing Objects, One-to-many relationships | &nbsp;
+13 | [Prep Work](../class-prep/13/) | [CheeseMVC Persistent](../studios/cheese-mvc-persistent/) | Persistence Part II: Many-to-Many Relationships | &nbsp;
 14 | [Prep Work](../class-prep/14/) | | ASP.NET MVC Apps Beyond LC101 | &nbsp;
 
 <aside class="aside-note" markdown="1">

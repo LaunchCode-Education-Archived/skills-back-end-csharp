@@ -1,9 +1,9 @@
 ---
-title: 'Studio: CheeseMVC - Persistent'
+title: 'Studio: CheeseMVC Persistent'
 currentMenu: studios
 ---
 
-In this studio, you'll implement the functionality described in the [lesson on one-to-many relationships in EntityFrameworkCore](../../videos/intro-to-ef-one-to-many/).
+In this studio, you'll implement the functionality described in the video lessons on using EntityFrameworkCore.
 
 ## Getting Ready
 
@@ -21,5 +21,6 @@ Set up a local copy of the project:
 
 This studio has multiple parts that can be completed over the course of different class periods. Proceed at your own pace, but be sure to complete them all in order to learn the concepts.
 
-- [Part 1: Setting Up a One-to-Many Relationship](one-to-many/)
-- [Part 2: Setting Up a Many-to-Many Relationship](many-to-many/)
+- [Part 1: Persisting a Single Class](single-class-persistence/)
+- [Part 2: Setting Up a One-to-Many Relationship](one-to-many/)
+- [Part 3: Setting Up a Many-to-Many Relationship](many-to-many/)

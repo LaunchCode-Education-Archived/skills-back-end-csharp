@@ -68,3 +68,9 @@ Use ViewModels and validation in your User Signup code from the last studio.
 Implement the `IComparer<T>` interface to sort cities based on various criteria.
 
 [Cities](cities/)
+
+## CheeseMVC Persistence
+
+A guided walkthrough of adding a persistence/data layer to your CheeseMVC application.
+
+[CheeseMVC Persistence](cheese-mvc-persistent/)
