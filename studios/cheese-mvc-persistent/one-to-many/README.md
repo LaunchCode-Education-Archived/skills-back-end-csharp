@@ -5,11 +5,11 @@ currentMenu: studios
 
 ## Part 2: Setting Up a One-to-Many Relationship
 
-This continues the guided studio in which we set up `CheeseMVC` to work with EntityFramework. If you've completed [Part 1: Single Class Persistence](../single-class-persistence/) then you're ready to begin this activity.
+This continues the guided studio in which we set up `CheeseMVC` to work with the EntityFramework. If you've completed [Part 1: Single Class Persistence](../single-class-persistence/) then you're ready to begin this activity.
 
 ## Add Cheeses to CheeseCategory
 
-Within `CheeseCategory`, add a `Cheeses` property of type `IList<Cheese>`. Once we set up the `Cheese` class to work with `CheeseCategory` objects, this list will represent the list of all items in a given category.
+Within `CheeseCategory`, add a `Cheeses` property of type `IList<Cheese>`. After we set up the `Cheese` class to work with `CheeseCategory` objects, this list will represent the list of all items in a given category. We'll do this in a bit.
 
 ## Replace CheeseType with CheeseCategory
 
@@ -94,6 +94,6 @@ Update the table to display the category name of a given cheese instead of its t
 
 You made a lot of changes, so you might want to make sure you don't have any build errors: run *Build > Build Solution*.
 
-Assuming that looks good, start up your application. Make sure you can create a new cheese object, selecting a pre-existing category. Then make sure the proper category name is displayed in the table on the home page.
+Assuming that looks good, start up your application. Make sure you can create a new cheese object, selecting a pre-existing category. Then make sure the proper category name is displayed in the table on the home page after doing so.
 
 When everything works, move on to [Part 3](../many-to-many/).

@@ -38,7 +38,7 @@ public CategoryController(CheeseDbContext dbContext)
 
 This creates a private field `context` of type `CheeseDbContext`. This object will be the mechanism with which we interact with objects stored in the database. The MVC framework will do the work of creating an instance of `CheeseDbContext` and passing it into our controller's constructor.
 
-This code should be added to each controller class that you want to have access to the persistent collections defined within `CheeseDbContext`.
+This code would need to be added to each controller class that you want to have access to the persistent collections defined within `CheeseDbContext`.
 
 ### View All Categories
 
