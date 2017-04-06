@@ -123,6 +123,23 @@
                     <p>If you haven't completed the <a href="../../class-prep/12/setup.html">EF Core setup steps</a> for <code>CheeseMVC</code>, go back and do so before watching this lesson.</p>
 <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/MxUOP2NPiEo" frameborder="0" allowfullscreen></iframe></div>
 <h2 id="notes">Notes</h2>
+<h3 id="app-setup">App Setup</h3>
+<p>These are the code sections referenced in the video that were part of the starter code. Namespace and using statements are omitted.</p>
+<p><strong>Data\CheeseDbContext.cs</strong></p>
+<pre><code class="language-csharp">public class CheeseDbContext : DbContext
+{
+
+    public DbSet&lt;Cheese&gt; Cheeses { get; set; }
+
+    public CheeseDbContext(DbContextOptions&lt;CheeseDbContext&gt; options)
+        : base(options)
+    {
+    }
+}</code></pre>
+<p>In <strong>Startup.cs</strong> within the <code>ConfigureServices</code> method:</p>
+<pre><code class="language-csharp">services.AddDbContext&lt;CheeseDbContext&gt;(options =&gt;
+    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));</code></pre>
+<p>The <code>"DefaultConnection"</code> refers to the database connection string in <code>appsettings.json</code>, which you set up in the <a href="../../class-prep/12/setup.html">previous tutorial</a>.</p>
 <h3 id="migrations">Migrations</h3>
 <p>To create a new migration after making changes to your model, right-click on the project in the Solution Explorer and select <em>Open Folder in File Explorer</em>.</p>
 <img alt="Open Folder in File Explorer" src="images/open-folder.png" style="width:500px;" />
