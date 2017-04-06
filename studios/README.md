@@ -69,8 +69,8 @@ Implement the `IComparer<T>` interface to sort cities based on various criteria.
 
 [Cities](cities/)
 
-## CheeseMVC Persistence
+## CheeseMVC Persistent
 
 A guided walkthrough of adding a persistence/data layer to your CheeseMVC application.
 
-[CheeseMVC Persistence](cheese-mvc-persistent/)
+[CheeseMVC Persistent](cheese-mvc-persistent/)
