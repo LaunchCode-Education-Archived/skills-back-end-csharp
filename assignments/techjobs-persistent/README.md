@@ -3,4 +3,4 @@ title: 'Assignment: TechJobs (Persistent Edition)'
 currentMenu: assignments
 ---
 
-*Coming soon...*
+This assignment has been replace by [CheeseMVC Persistent](../cheese-mvc-persistent/).

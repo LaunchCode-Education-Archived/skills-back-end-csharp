@@ -30,8 +30,8 @@ The process for submitting your work is always the same:
 
 [Work on TechJobs (Object-Oriented Edition)](techjobs-oo/)
 
-## TechJobs (Persistent Edition)
+## CheeseMVC Persistent
 
 🐘 *Large Assignment*
 
-[Work on TechJobs (Persistent Edition)](techjobs-persistent/)
+[Work on CheeseMVC Persistent](cheese-mvc-persistent/)
