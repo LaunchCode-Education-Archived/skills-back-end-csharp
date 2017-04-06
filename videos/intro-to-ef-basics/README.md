@@ -9,6 +9,34 @@ If you haven't completed the [EF Core setup steps](../../class-prep/12/setup.htm
 
 ## Notes
 
+### App Setup
+
+These are the code sections referenced in the video that were part of the starter code. Namespace and using statements are omitted.
+
+**Data\CheeseDbContext.cs**
+
+```csharp
+public class CheeseDbContext : DbContext
+{
+
+    public DbSet<Cheese> Cheeses { get; set; }
+
+    public CheeseDbContext(DbContextOptions<CheeseDbContext> options)
+        : base(options)
+    {
+    }
+}
+```
+
+In **Startup.cs** within the `ConfigureServices` method:
+
+```csharp
+services.AddDbContext<CheeseDbContext>(options =>
+    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+```
+
+The `"DefaultConnection"` refers to the database connection string in `appsettings.json`, which you set up in the [previous tutorial](../../class-prep/12/setup.html).
+
 ### Migrations
 
 To create a new migration after making changes to your model, right-click on the project in the Solution Explorer and select *Open Folder in File Explorer*.
