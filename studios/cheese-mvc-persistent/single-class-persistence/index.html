@@ -138,7 +138,7 @@ public CategoryController(CheeseDbContext dbContext)
     context = dbContext;
 }</code></pre>
 <p>This creates a private field <code>context</code> of type <code>CheeseDbContext</code>. This object will be the mechanism with which we interact with objects stored in the database. The MVC framework will do the work of creating an instance of <code>CheeseDbContext</code> and passing it into our controller's constructor.</p>
-<p>This code should be added to each controller class that you want to have access to the persistent collections defined within <code>CheeseDbContext</code>.</p>
+<p>This code would need to be added to each controller class that you want to have access to the persistent collections defined within <code>CheeseDbContext</code>.</p>
 <h3 id="view-all-categories">View All Categories</h3>
 <p>Create an <code>Index</code> action within <code>CategoryController</code>, and the corresponding view template within the <code>Views</code> folder. You'll need to create <code>Views\Category\</code> yourself before creating the template file.</p>
 <p>The <code>Index</code> action should retrieve the list of all categories. This is done via the <code>context</code> object: <code>context.Categories.ToList()</code> returns a list of all <code>CheeseCategory</code> objects managed by <code>CheeseDbContext</code>. Use this snippet to retrieve the list of categories, and then pass the list into the view.</p>

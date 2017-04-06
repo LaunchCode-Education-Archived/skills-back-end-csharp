@@ -121,9 +121,9 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: CheeseMVC Persistent</h1>
                     <h2 id="part-2-setting-up-a-one-to-many-relationship">Part 2: Setting Up a One-to-Many Relationship</h2>
-<p>This continues the guided studio in which we set up <code>CheeseMVC</code> to work with EntityFramework. If you've completed <a href="../single-class-persistence/">Part 1: Single Class Persistence</a> then you're ready to begin this activity.</p>
+<p>This continues the guided studio in which we set up <code>CheeseMVC</code> to work with the EntityFramework. If you've completed <a href="../single-class-persistence/">Part 1: Single Class Persistence</a> then you're ready to begin this activity.</p>
 <h2 id="add-cheeses-to-cheesecategory">Add Cheeses to CheeseCategory</h2>
-<p>Within <code>CheeseCategory</code>, add a <code>Cheeses</code> property of type <code>IList&lt;Cheese&gt;</code>. Once we set up the <code>Cheese</code> class to work with <code>CheeseCategory</code> objects, this list will represent the list of all items in a given category.</p>
+<p>Within <code>CheeseCategory</code>, add a <code>Cheeses</code> property of type <code>IList&lt;Cheese&gt;</code>. After we set up the <code>Cheese</code> class to work with <code>CheeseCategory</code> objects, this list will represent the list of all items in a given category. We'll do this in a bit.</p>
 <h2 id="replace-cheesetype-with-cheesecategory">Replace CheeseType with CheeseCategory</h2>
 <p>Up until now, we've been using the enum class <code>CheeseType</code> to represent the type of cheese that the user may choose from. This isn't very flexible, however, as the user can't create new types. For a new type to be added to the application, the <code>CheeseType</code> enum class must be changed, which requires editing code, of course.</p>
 <p>Using the <code>CheeseCategory</code> class to categorize cheese objects will be much more flexible, as it will allow users to create new categories themselves.</p>
@@ -166,7 +166,7 @@ public List&lt;SelectListItem&gt; Categories { get; set; }</code></pre>
 <p>Update the table to display the category name of a given cheese instead of its type. Update the header as well, so it has &quot;Category&quot; in place of &quot;Type&quot;.</p>
 <h2 id="test">Test!</h2>
 <p>You made a lot of changes, so you might want to make sure you don't have any build errors: run <em>Build &gt; Build Solution</em>.</p>
-<p>Assuming that looks good, start up your application. Make sure you can create a new cheese object, selecting a pre-existing category. Then make sure the proper category name is displayed in the table on the home page.</p>
+<p>Assuming that looks good, start up your application. Make sure you can create a new cheese object, selecting a pre-existing category. Then make sure the proper category name is displayed in the table on the home page after doing so.</p>
 <p>When everything works, move on to <a href="../many-to-many/">Part 3</a>.</p>
                                     </section>
 
