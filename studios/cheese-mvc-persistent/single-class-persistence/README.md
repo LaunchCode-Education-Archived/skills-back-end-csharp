@@ -106,13 +106,13 @@ You're done coding for this portion of the studio, but you are note quite ready 
 
 To create a new migration after making changes to your model, right-click on the project in the Solution Explorer and select *Open Folder in File Explorer*.
 
-<img alt="Open Folder in File Explorer" src="images/open-folder.png" style="width:500px;" />
+<img alt="Open Folder in File Explorer" src="../images/open-folder.png" style="width:500px;" />
 
 This opens File Explorer to the top-level directory of the project.
 
 Within the File Explorer window, click on the far-right end of the Location field, and type `powershell`. Hit Enter.
 
-![powershell](images/powershell.png)
+![powershell](../images/powershell.png)
 
 This opens a Powershell window with the path already set to the project directory. From this location, you can run .NET Tools commands.
 
@@ -132,7 +132,7 @@ Next, apply the migration to the database:
 
 You can see the result of running this migration by moving back to Visual Studio, opening *View > SQL Server Object Explorer* and navigating down to the database as shown below. Note that your database for this project is named `CheeseMVC-persistent` so that it doesn't conflict with any similarly-named databases that you may already have created.
 
-![View database changes](view-db-changes.png)
+<img alt="View database changes" src="../images/view-db-changes.png" style="width:500px;" />
 
 What's the change that you're looking for? Well, that `Categories` table looks new, doesn't it? And if you right-click on the new table and select *View Data* you'll see any empty table with `ID` and `Name` columns.
 
