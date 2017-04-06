@@ -97,9 +97,9 @@ If you wish to start with a clean database during development -- because, let's 
 
 ## Code
 
-We start this lesson with the code in the `video-ef-basics-start` branch of the CheeseMVC repo: [starting code](https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-ef-basics-start)
+We start this lesson with the code in the `video-efbasic-start` branch of the CheeseMVC repo: [starting code](https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-efbasic-start)
 
-We end this lesson with the code in the `video-ef-basics-end` branch of the CheeseMVC repo: [ending code](https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-ef-basics-end)
+We end this lesson with the code in the `video-efbasic-end` branch of the CheeseMVC repo: [ending code](https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-efbasic-end)
 
 ## References
 
