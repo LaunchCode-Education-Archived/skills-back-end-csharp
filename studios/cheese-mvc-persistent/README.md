@@ -23,7 +23,8 @@ The code you are starting with has all of the correct packages and project setti
 
 ## Getting Started
 
-This studio has multiple parts that can be completed over the course of different class periods. Proceed at your own pace, but be sure to complete them all in order to learn the concepts.
+This studio has multiple parts that can be completed over the course of multiple class periods. Unlike previous studios, *do not* expect that you can complete all of the work here in a single class. Do as much as you can, and then pick up where you left off during the next class. Proceed at your own pace, but be sure to complete them all in order to learn the concepts.
+
 
 - [Part 1: Persisting a Single Class](single-class-persistence/)
 - [Part 2: Setting Up a One-to-Many Relationship](one-to-many/)
