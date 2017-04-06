@@ -3,13 +3,13 @@ title: 'Studio: CheeseMVC Persistent'
 currentMenu: studios
 ---
 
-## Part 2: Persisting a Single Class
+## Part 1: Persisting a Single Class
 
 Be sure you've completed the [setup steps](../) before starting these tasks.
 
 ## Setting Up the New Model
 
-We'll use EntityFramework (EF) to create and object-relational mapping for a new class.
+We'll use EntityFramework (EF) to create an object-relational mapping for a new class.
 
 In `Models/`, create a new model class named `CheeseCategory`. Give it an `ID` property and a `Name` property that's a string.
 
@@ -36,7 +36,7 @@ public CategoryController(CheeseDbContext dbContext)
 }
 ```
 
-This creates a private field `context` of type `CheeseDbContext`. This object will be the way in which we interact with objects stored in the database throughout our controller. The MVC framework will do the work of creating an instance of `CheeseDbContext` and passing it into our controller's constructor.
+This creates a private field `context` of type `CheeseDbContext`. This object will be the mechanism with which we interact with objects stored in the database. The MVC framework will do the work of creating an instance of `CheeseDbContext` and passing it into our controller's constructor.
 
 This code should be added to each controller class that you want to have access to the persistent collections defined within `CheeseDbContext`.
 
