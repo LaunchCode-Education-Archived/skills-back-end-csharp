@@ -180,10 +180,10 @@ public CategoryController(CheeseDbContext dbContext)
 <h2 id="creating-and-running-the-migration">Creating and Running the Migration</h2>
 <p>You're done coding for this portion of the studio, but you are note quite ready to run the application. Before we do that, we need to create a migration to apply our model changes to the database.</p>
 <p>To create a new migration after making changes to your model, right-click on the project in the Solution Explorer and select <em>Open Folder in File Explorer</em>.</p>
-<img alt="Open Folder in File Explorer" src="images/open-folder.png" style="width:500px;" />
+<img alt="Open Folder in File Explorer" src="../images/open-folder.png" style="width:500px;" />
 <p>This opens File Explorer to the top-level directory of the project.</p>
 <p>Within the File Explorer window, click on the far-right end of the Location field, and type <code>powershell</code>. Hit Enter.</p>
-<p><img src="images/powershell.png" alt="powershell" /></p>
+<p><img src="../images/powershell.png" alt="powershell" /></p>
 <p>This opens a Powershell window with the path already set to the project directory. From this location, you can run .NET Tools commands.</p>
 <p>Create your migration:</p>
 <pre><code class="language-nohighlight">&gt; dotnet ef migrations add AddCategory</code></pre>
@@ -191,7 +191,7 @@ public CategoryController(CheeseDbContext dbContext)
 <p>Next, apply the migration to the database:</p>
 <pre><code class="language-nohighlight">&gt; dotnet ef database update</code></pre>
 <p>You can see the result of running this migration by moving back to Visual Studio, opening <em>View &gt; SQL Server Object Explorer</em> and navigating down to the database as shown below. Note that your database for this project is named <code>CheeseMVC-persistent</code> so that it doesn't conflict with any similarly-named databases that you may already have created.</p>
-<p><img src="view-db-changes.png" alt="View database changes" /></p>
+<img alt="View database changes" src="../images/view-db-changes.png" style="width:500px;" />
 <p>What's the change that you're looking for? Well, that <code>Categories</code> table looks new, doesn't it? And if you right-click on the new table and select <em>View Data</em> you'll see any empty table with <code>ID</code> and <code>Name</code> columns.</p>
 <h2 id="test">Test!</h2>
 <p>Start up your application, and try to add a new category!</p>
