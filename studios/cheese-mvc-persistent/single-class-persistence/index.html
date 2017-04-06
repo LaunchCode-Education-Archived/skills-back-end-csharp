@@ -120,10 +120,10 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: CheeseMVC Persistent</h1>
-                    <h2 id="part-2-persisting-a-single-class">Part 2: Persisting a Single Class</h2>
+                    <h2 id="part-1-persisting-a-single-class">Part 1: Persisting a Single Class</h2>
 <p>Be sure you've completed the <a href="../">setup steps</a> before starting these tasks.</p>
 <h2 id="setting-up-the-new-model">Setting Up the New Model</h2>
-<p>We'll use EntityFramework (EF) to create and object-relational mapping for a new class.</p>
+<p>We'll use EntityFramework (EF) to create an object-relational mapping for a new class.</p>
 <p>In <code>Models/</code>, create a new model class named <code>CheeseCategory</code>. Give it an <code>ID</code> property and a <code>Name</code> property that's a string.</p>
 <p>We'll want instances of this class to be stored in the database, so open up <code>Data\CheeseDbContext</code> and add a new <code>DbSet</code>:</p>
 <pre><code class="language-csharp">public DbSet&lt;CheeseCategory&gt; Categories { get; set; }</code></pre>
@@ -137,7 +137,7 @@ public CategoryController(CheeseDbContext dbContext)
 {
     context = dbContext;
 }</code></pre>
-<p>This creates a private field <code>context</code> of type <code>CheeseDbContext</code>. This object will be the way in which we interact with objects stored in the database throughout our controller. The MVC framework will do the work of creating an instance of <code>CheeseDbContext</code> and passing it into our controller's constructor.</p>
+<p>This creates a private field <code>context</code> of type <code>CheeseDbContext</code>. This object will be the mechanism with which we interact with objects stored in the database. The MVC framework will do the work of creating an instance of <code>CheeseDbContext</code> and passing it into our controller's constructor.</p>
 <p>This code should be added to each controller class that you want to have access to the persistent collections defined within <code>CheeseDbContext</code>.</p>
 <h3 id="view-all-categories">View All Categories</h3>
 <p>Create an <code>Index</code> action within <code>CategoryController</code>, and the corresponding view template within the <code>Views</code> folder. You'll need to create <code>Views\Category\</code> yourself before creating the template file.</p>
