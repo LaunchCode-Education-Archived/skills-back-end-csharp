@@ -17,6 +17,10 @@ Set up a local copy of the project:
 - Open the solution via either the notification within *Team Explorer* or via *File > Open > Project/Solution*.
 - Pop back over to the *Solution Explorer* to preview the code.
 
+<aside class="aside-note" markdown="1">
+The code you are starting with has all of the correct packages and project settings need to enable EntityFrameworkCore. This means you *do not* need to walkthrough the setup steps that you carried out for [class 12 prep](../../class-prep/12/setup.html).
+</aside>
+
 ## Getting Started
 
 This studio has multiple parts that can be completed over the course of different class periods. Proceed at your own pace, but be sure to complete them all in order to learn the concepts.
