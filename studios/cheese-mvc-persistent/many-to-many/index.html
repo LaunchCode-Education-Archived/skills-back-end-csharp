@@ -122,8 +122,9 @@
                                         <h1>Studio: CheeseMVC Persistent</h1>
                     <h2 id="part-3-setting-up-a-many-to-many-relationship">Part 3: Setting Up a Many-to-Many Relationship</h2>
 <p>This continues the guided studio in which we set up <code>CheeseMVC</code> to work with EntityFrameworkCore. If you've completed <a href="../one-to-many/">Part 2: Setting Up a One-to-Many Relationship</a> then you're ready to begin this activity.</p>
+<p>If you get stuck on any of the steps here refer to the video lesson, or other code within the program that was provided. You'll often find the answers there.</p>
 <h2 id="creating-the-menu-model">Creating the Menu Model</h2>
-<p>This final section of the studio has us set up a many-to-many relationship between two classes. The classes in question will be <code>Cheese</code> and <code>Menu</code>. We don't have the latter in place yet, so let's get it set up.</p>
+<p>This final section of the studio has us set up a many-to-many relationship between two classes. The classes in question will be <code>Cheese</code> and <code>Menu</code>. We don't have the second of these in place yet, so let's get it set up.</p>
 <h3 id="the-menu-and-cheesemenu-classes">The Menu and CheeseMenu Classes</h3>
 <p>Create a new class in <code>Models\</code> named <code>Menu</code>. Add an <code>int</code> property named <code>ID</code> and a <code>string</code> property named <code>Name</code>.</p>
 <p>Since the relationship between <code>Menu</code> and <code>Cheese</code> will be many-to-many, we'll need a class to represent the join table. Create a class named <code>CheeseMenu</code> in <code>Models\</code>, and add the following properties:</p>
@@ -133,9 +134,9 @@ public Menu Menu { get; set; }
 public int CheeseID { get; set; }
 public Cheese Cheese { get; set; }</code></pre>
 <p>Be sure to write this code yourself. Don't copy/paste!</p>
-<p>In each of <code>Cheese</code> and <code>Menu</code>, add collections of type <code>IList</code> that hold <code>CheeseMenu</code> objects. In each case, it should be named <code>CheeseMenus</code>.</p>
+<p>In each of <code>Cheese</code> and <code>Menu</code>, add collections of type <code>IList</code> that hold <code>CheeseMenu</code> objects. In each case, the collection should be named <code>CheeseMenus</code>.</p>
 <h3 id="update-cheesedbcontext">Update CheeseDbContext</h3>
-<p>Open up the <code>CheeseDbContext</code> class (located in <code>Data\</code>). Add <code>DbSet</code> properties for each of <code>Menu</code> and <code>CheeseMenu</code>. Also add the following method:</p>
+<p>Open up the <code>CheeseDbContext</code> class (located in <code>Data\</code>). Add <code>DbSet</code> properties to use with each of the <code>Menu</code> and <code>CheeseMenu</code> classes. Also add the following method:</p>
 <pre><code class="language-csharp">protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
     modelBuilder.Entity&lt;CheeseMenu&gt;()
@@ -145,33 +146,50 @@ public Cheese Cheese { get; set; }</code></pre>
 <h2 id="controller-and-views">Controller and Views</h2>
 <p>Create a new controller class named <code>MenuController</code>, and add the private field <code>context</code>, as you did in previous controllers (don't forget to set up a constructor to initialize the field).</p>
 <h3 id="list-menus">List Menus</h3>
-<p>Write an action method <code>Index</code> that uses <code>context</code> to retrieve all menus and display them in a list within the template <code>Views\Menu\Index.cshtml</code> (the rest of our templates will be in this same folder, so we'll omit the full path for the rest of this part of the studio). You'll have to create the <code>Menu/</code> folder within <code>Views/</code>.</p>
-<p>Each menu in the list should link to a URL of the form <code>/Menu/ViewMenu/5</code>, where 5 could be the ID of any menu. Add these links now, using tag helpers like <code>asp-controller</code>, and we'll set up the handler to process these requests in a moment. The numeric ID in the URL should correspond to the <code>id</code> parameter. In other words, use <code>asp-route-id</code> to set this value.</p>
-<p>Within the <code>Index.cshtml</code> template, add a link below the list to the <code>Add</code> action of the <code>Menu</code> controller. We'll set up this page next.</p>
-<p>We'll need a ViewModel to display and process the form that allows the user to create a new menu. Create <code>AddMenuViewModel</code> in <code>ViewModels\</code>, with a single public property <code>Name</code> that is required, and has the display name &quot;Menu Name&quot;.</p>
+<p>We will now set up the view that displays a list of all menus in the system.</p>
+<p>In your new controller, create an action method <code>Index</code> that uses <code>context</code> to retrieve all menus and display them in a list within the template <code>Views\Menu\Index.cshtml</code> (the rest of our templates will be in this same folder, so we'll often omit full paths in this studio). You'll have to create the <code>Menu\</code> folder within <code>Views\</code>.</p>
+<p>Each menu in the list should link to a URL of the form <code>/Menu/ViewMenu/5</code>, where 5 could be the ID of any menu. Add these links now, using the tag helpers <code>asp-controller</code>, <code>asp-action</code>, and <code>asp-rout-*</code>, and we'll set up the handler to process these requests in a moment. The numeric ID in the URL should correspond to the <code>id</code> parameter. In other words, use <code>asp-route-id</code> to set this value.</p>
+<p>Within the <code>Index.cshtml</code> template, below the list, add a link to the <code>Add</code> action of the <code>Menu</code> controller. We'll set up this page next.</p>
+<p>We'll need a ViewModel to display and process the form that allows the user to create a new menu. Create <code>AddMenuViewModel</code> in <code>ViewModels\</code>, with a single public property <code>Name</code> that is required, and has the display name &quot;Menu Name&quot; (that is, uses the <code>[Display(Name="...")]</code> attribute).</p>
 <h3 id="display-the-add-menu-form">Display the Add Menu Form</h3>
+<p>We want to allow users to add new, empty menus via a form. This is our next task.</p>
+<p>Start off by adding a title to the page.</p>
+<pre><code class="language-nohighlight">@{
+    ViewBag.Title = "New Menu";
+}</code></pre>
 <p>In <code>MenuController</code>, create an action method named <code>Add</code> that responds to <code>GET</code> requests, and which displays the <code>Add.cshtml</code> template. The action should also pass in a new <code>AddMenuViewModel</code> object created by calling that class' default constructor. We'll use this object to help render the form.</p>
-<p>Within <code>Add.cshtml</code>, create a form that displays a single input and has a submit button. The form should use <code>asp-controller</code> and  <code>asp-action</code> tag helpers to post the form to the <code>Add</code> action in the <code>Menu</code> controller. Additionally, use <code>asp-for</code> and <code>asp-validation-for</code> to render label, input, and error display elements. Don't forget to declare the VieModel with <code>@model</code> at the top of the template.</p>
+<p>Within <code>Add.cshtml</code>, create a form that displays a single input and has a submit button. Use <code>asp-for</code> and <code>asp-validation-for</code> to render the label, input, and error display elements. Additionally, the form should use <code>asp-controller</code> and  <code>asp-action</code> tag helpers to configure the form to post to the <code>Add</code> action in the <code>Menu</code> controller. Don't forget to declare the VieWModel that we're using with <code>@model</code> at the top of the template.</p>
 <h3 id="process-the-add-menu">Process the Add Menu</h3>
-<p>In <code>MenuController</code> create an action named <code>Add</code> that responds to <code>POST</code> requests. It should accept a <code>AddMenuViewModel</code> object passed in via model binding.</p>
-<p>Check that the model is valid. If errors exist, render the <code>Add</code> view again. If not, create a new <code>Menu</code> object with the <code>Name</code> value from the ViewModel, add it to <code>context.Menus</code>, and save your changes. Then, redirect to the view for the new menu: <code>return Redirect("/Menu/ViewMenu/" + newMenu.ID)</code>. We'll set up this action and view template next.</p>
+<p>Once the user submits the form to create a new menu, we need to do the work to create the object and store it in the database.</p>
+<p>In <code>MenuController</code> create an action named <code>Add</code> that responds to <code>POST</code> requests. It should accept an <code>AddMenuViewModel</code> object passed in via model binding.</p>
+<p>Check that the model is valid. If errors exist, render the <code>Add</code> view again. If not, create a new <code>Menu</code> object with the <code>Name</code> value from the ViewModel, add it to <code>context.Menus</code>, and save your changes.</p>
+<p>Once a new menu has been created, let's display it to the user. Finish this action method by redirectiong to the view for the new menu: <code>return Redirect("/Menu/ViewMenu/" + newMenu.ID)</code>. We'll set up this action and view template next.</p>
 <h3 id="view-a-menu">View a Menu</h3>
+<p>Our next set of tasks has us creating functionality that allows the user to view the contents of a given menu.</p>
 <h4 id="the-viewmenuviewmodel">The ViewMenuViewModel</h4>
-<p>Create a ViewModel named <code>ViewMenuViewModel</code> that has two properties: a <code>Menu</code> named <code>Menu</code> and an <code>IList&lt;CheeseMenu&gt;</code> named <code>Items</code>. This will be used to pass data into the view for displaying a given menu. In order to get the items that belong to this menu, we'll need to interact with the <code>CheeseMenu</code> class, which joins <code>Menu</code> to <code>Cheese</code>. Thus, we'll pass in a list of <code>CheeseMenu</code> objects.</p>
+<p>We'll use a ViewModel to package up all of the data needed to display a menu.</p>
+<p>Create a ViewModel named <code>ViewMenuViewModel</code> that has two properties: a <code>Menu</code> named <code>Menu</code> and an <code>IList&lt;CheeseMenu&gt;</code> named <code>Items</code>. In order to get the items that belong to this menu, we'll need to interact with the <code>CheeseMenu</code> class, which joins <code>Menu</code> to <code>Cheese</code>. Thus, we'll pass in a list of <code>CheeseMenu</code> objects.</p>
 <h3 id="the-viewmenu-action">The ViewMenu Action</h3>
+<p>With the ViewModel in place, let's turn our attention to the corresponding action.</p>
 <p>In <code>MenuController</code>, create an action named <code>ViewMenu</code> that accepts <code>GET</code> requests at URLs like <code>/Menu/ViewMenu/5</code>, where 5 can be any menu ID. This should be passed into the action method as an <code>int</code> named <code>id</code>. Recall that the default routing for MVC applications is <code>/{Controller}/{Action}/{id}</code>, so based on the way we set up the links in the last section, this parameter will be passed in properly.</p>
-<p>Within the handler, retrieve the <code>Menu</code> object with the given ID using <code>context</code>. This can be done with the <code>Single</code> method. We'll also need the items associated with the menu. These can be retrieved with the following line:</p>
+<p>Within the handler, retrieve the <code>Menu</code> object with the given ID using <code>context</code>. This can be done with the <code>Single</code> method of <code>DbSet</code>. We'll also need the items associated with the menu. These can be retrieved with the following line:</p>
 <pre><code class="language-csharp">List&lt;CheeseMenu&gt; items = context
         .CheeseMenus
         .Include(item =&gt; item.Cheese)
         .Where(cm =&gt; cm.MenuID == id)
         .ToList();</code></pre>
-<p>Use <code>items</code> and the menu object to build a <code>ViewMenuViewModel</code> and pass it into the view.</p>
+<p>Use <code>items</code> and the menu object you found above, to build a <code>ViewMenuViewModel</code> and pass it into the view.</p>
 <h4 id="the-viewmenu-template">The ViewMenu Template</h4>
+<p>Now we're ready to build the view template for this feature.</p>
+<p>Start off by adding a title to the top of the template:</p>
+<pre><code class="language-nohighlight">@{
+    ViewBag.Title = "MENU NAME";
+}</code></pre>
+<p>Set the <code>Title</code> property to be the value of <code>Name</code> for the menu.</p>
 <p>Create <code>ViewMenu.cshtml</code>. It should display the name of the menu as the page title. It should display a list of menu items in a <code>&lt;ul&gt;</code> element. Note that you'll need to loop over <code>Model.Items</code>, which contains <code>CheeseMenu</code> objects. Thus, to get the actual <code>Cheese</code> objects, you'll need to use the <code>Cheese</code> property of each <code>CheeseMenu</code>. This will look something like <code>@cheseMenu.Cheeses.Name</code>.</p>
 <p>Below the list, add a link to the <code>AddItem</code> action of the <code>Menu</code> controller, with <code>asp-route-id=@Model.Menu.ID</code>. This will create URLs like <code>/Menu/AddItem/5</code>, where 5 is a menu ID, which will link to a form to add items to the given menu. We'll set up that code next.</p>
 <h2 id="add-menu-items">Add Menu Items</h2>
-<p>Within <code>MenuController</code>, create an action named <code>AddItem</code> that responds to <code>GET</code> requests and takes a single input parameter: <code>int id</code>. Within the action, retrieve the menu with the given ID using <code>context</code>.</p>
+<p>Within <code>MenuController</code>, create an action named <code>AddItem</code> that responds to <code>GET</code> requests and takes a single input parameter: <code>int id</code>. Within the action, retrieve the menu with the given ID via <code>context</code>.</p>
 <h3 id="addmenuitemform">AddMenuItemForm</h3>
 <p>Create a ViewModel named <code>AddMenuItemViewModel</code> to be used to render and process the form to add a new item to a given menu.</p>
 <p>We'll need two integer properties to process our form: <code>cheeseID</code> and <code>menuID</code>. And we'll need two properties to display the form: a <code>Menu</code> property of type <code>Menu</code> and a <code>Cheeses</code> property of type <code>List&lt;SelectListItem&gt;</code>.</p>
@@ -197,15 +215,16 @@ public Cheese Cheese { get; set; }</code></pre>
 <h3 id="process-the-form">Process the Form</h3>
 <p>Back in <code>MenuController</code>, create another action named <code>AddItem</code> that responds to <code>POST</code> requests. It should accept a <code>AddMenuItemViewModel</code> object via model binding.</p>
 <p>Check for errors, rendering the form again again if there are any.</p>
-<p>Next, we'll check to see if there is an existing relationship between the <code>Cheese</code> and <code>Menu</code> specified by the submitted data. Recall that data being submitted has <code>CheeseID</code> and <code>MenuID</code> properties, and to check for a relationship between the objects with these IDs we'll need to look for a <code>CheeseMenu</code> object with the given IDs. Run the following query:</p>
+<p>Next, we'll check to see if there is an existing relationship between the <code>Cheese</code> and <code>Menu</code> specified by the submitted data. If we try to add an entry to a table with a primary key that already exists, we'll get a SQL error, so we need to ensure this doesn't happen. In this case, the primary key of the join table is the combination of <code>CheeseID</code> and <code>MenuID</code>.</p>
+<p>Recall that data being submitted has <code>CheeseID</code> and <code>MenuID</code> properties, and to check for a relationship between the objects with these IDs we'll need to look for a <code>CheeseMenu</code> object with the given IDs. Run the following query:</p>
 <pre><code class="language-csharp">IList&lt;CheeseMenu&gt; existingItems = context.CheeseMenus
         .Where(cm =&gt; cm.CheeseID == cheeseID)
         .Where(cm =&gt; cm.MenuID == menuID).ToList();</code></pre>
 <p>If this list is empty, we can go ahead and create a new relationship. Create a new <code>CheeseMenu</code> with the ID values in the ViewModel, add it to the corresponding <code>DbSet</code> in <code>context</code>, and save your changes.</p>
 <aside class="aside-warning">
-<p>In the lesson video for this project, the code queries for the actual <code>Cheese</code> and <code>Menu</code> objects represented by the given IDs. This is unnecessary, since if we have the IDs and save to the database, EF Core will be able to pull the correct objects in the future, which are already stored in their respective tables.</p>
+<p>In the lesson video for this project, the code queries for the actual <code>Cheese</code> and <code>Menu</code> objects represented by the given IDs. This is unnecessary, since if we have the IDs and save to the database, EF Core will be able to pull the correct objects since they are already stored in their respective tables.</p>
 </aside>
-<p>To finish this handler, redirect to the URL corresponding to the full menu view for this menu. This was created above, and we leave it to you to figure out the correct redirect URL. Note that in the case that the relationship between the given <code>Cheese</code> and <code>Menu</code> already exists, we don't do anything other than redirect back to the menu.</p>
+<p>To finish this handler, let's display the menu that we just added an item to. Redirect to the URL corresponding to the full menu view for this menu. This was created above, and we leave it to you to figure out the correct redirect URL. Note that in the case that the relationship between the given <code>Cheese</code> and <code>Menu</code> already exists, we don't do anything other than redirect back to the menu.</p>
 <h2 id="test">Test!</h2>
 <p>You made a lot of changes! Great work.</p>
 <p>Assuming you don't have any remaining compiler errors, start up your application. (Don't forget to start MAMP first!) Make sure you can create a new cheese object, selecting a pre-existing category. Then make sure the proper category name is displayed in the table on the home page after doing so.</p>
