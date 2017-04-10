@@ -34,3 +34,7 @@ currentMenu: videos
 [Intro to EntityFrameworkCore: Working With Entities](intro-to-ef-basics/)
 
 [Intro to EntityFrameworkCore: One-to-Many Relationships](intro-to-ef-one-to-many/)
+
+[Intro to EntityFrameworkCore: Many-to-Many Relationships (Part 1)](intro-to-ef-many-to-many-1/)
+
+[Intro to EntityFrameworkCore: Many-to-Many Relationships (Part 2)](intro-to-ef-many-to-many-2/)
