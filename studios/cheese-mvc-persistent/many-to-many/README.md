@@ -5,7 +5,7 @@ currentMenu: studios
 
 ## Part 3: Setting Up a Many-to-Many Relationship
 
-This continues the guided studio in which we set up `cheese-mvc` to work with Spring Data. If you've completed [Part 2: Setting Up a One-to-Many Relationship](../one-to-many/) then you're ready to begin this activity.
+This continues the guided studio in which we set up `CheeseMVC` to work with EntityFrameworkCore. If you've completed [Part 2: Setting Up a One-to-Many Relationship](../one-to-many/) then you're ready to begin this activity.
 
 ## Creating the Menu Model
 
