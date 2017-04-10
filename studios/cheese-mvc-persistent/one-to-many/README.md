@@ -7,6 +7,8 @@ currentMenu: studios
 
 This continues the guided studio in which we set up `CheeseMVC` to work with the EntityFramework. If you've completed [Part 1: Single Class Persistence](../single-class-persistence/) then you're ready to begin this activity.
 
+If you get stuck on any of the steps here refer to the video lesson, or other code within the program that was provided. You'll often find the answers there.
+
 ## Add Cheeses to CheeseCategory
 
 Within `CheeseCategory`, add a `Cheeses` property of type `IList<Cheese>`. After we set up the `Cheese` class to work with `CheeseCategory` objects, this list will represent the list of all items in a given category. We'll do this in a bit.
