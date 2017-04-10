@@ -273,7 +273,7 @@ Before submitting, make sure that your application:
 - You can create a new job from `/Job/New` by entering the name of a job, and selecting employer, location, skill, and position type values from dropdown selects.
 - If you leave off the name of a job, you are presented with the form again, and a message describing the error is presented on the page.
 - Upon creating a new job, you are sent to a screen displaying the data for only the new job. The URL for this new job is of the form `/Job?id=X` where `X` is the numeric ID of the new job.
-- When searching and listing data, your new job shows up when appropriate. For example, you can see the job when searching for it by name, or by its employer.
+- When searching and listing data, your new job shows up when appropriate. For example, you can see the job when searching for it by name (using the "All" search option), or by its employer.
 - Within `ViewModels` you have a new class that combines the repeated members of `SearchJobsViewModel` and `JobFieldsViewModel`
 
 
