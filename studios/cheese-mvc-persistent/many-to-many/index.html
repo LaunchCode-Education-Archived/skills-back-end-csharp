@@ -225,6 +225,20 @@ public Cheese Cheese { get; set; }</code></pre>
 <p>In the lesson video for this project, the code queries for the actual <code>Cheese</code> and <code>Menu</code> objects represented by the given IDs. This is unnecessary, since if we have the IDs and save to the database, EF Core will be able to pull the correct objects since they are already stored in their respective tables.</p>
 </aside>
 <p>To finish this handler, let's display the menu that we just added an item to. Redirect to the URL corresponding to the full menu view for this menu. This was created above, and we leave it to you to figure out the correct redirect URL. Note that in the case that the relationship between the given <code>Cheese</code> and <code>Menu</code> already exists, we don't do anything other than redirect back to the menu.</p>
+<h2 id="clean-up-the-navigation">Clean Up the Navigation</h2>
+<p>Let's improve the navigation of our app. In <code>Views\Shared\_Layout.cshtml</code> modify the header navigation fragment so that it displays a menu like this:</p>
+<img src="../images/main-nav.png" />
+<p>The <em>Menus</em> link should link to the <code>Index</code> action of the <code>Menu</code> controller.</p>
+<p>And in <code>Views\Cheese\Index.cshtml</code>, ensure the navigation links below the table look like this:</p>
+<img src="../images/home-footer-nav.png" />
+<p>If you don't have a <em>Remove</em> link, create one! It should link to the <code>Remove</code> action of the <code>Cheese</code> controller.</p>
+<h2 id="migrations">Migrations</h2>
+<p>It's time to create and run the migration to apply our model changes to the database.</p>
+<p>Follow the <a href="../../../videos/intro-to-ef-basics/#migrations">instructions</a> from the initial lesson on EF to create and apply a new migration named <code>AddMenu</code>.</p>
+<p>Explicitly, once you're at the Powershell prompt in the project directory, run:</p>
+<pre><code class="language-nohighlight">&gt; dotnet ef migrations add AddMenu</code></pre>
+<p>And then to apply the migration, run:</p>
+<pre><code class="language-nohighlight">&gt; dotnet ef database update</code></pre>
 <h2 id="test">Test!</h2>
 <p>You made a lot of changes! Great work.</p>
 <p>Assuming you don't have any remaining compiler errors, start up your application. (Don't forget to start MAMP first!) Make sure you can create a new cheese object, selecting a pre-existing category. Then make sure the proper category name is displayed in the table on the home page after doing so.</p>
