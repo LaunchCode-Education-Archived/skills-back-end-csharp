@@ -205,6 +205,38 @@ In the lesson video for this project, the code queries for the actual `Cheese` a
 
 To finish this handler, let's display the menu that we just added an item to. Redirect to the URL corresponding to the full menu view for this menu. This was created above, and we leave it to you to figure out the correct redirect URL. Note that in the case that the relationship between the given `Cheese` and `Menu` already exists, we don't do anything other than redirect back to the menu.
 
+## Clean Up the Navigation
+
+Let's improve the navigation of our app. In `Views\Shared\_Layout.cshtml` modify the header navigation fragment so that it displays a menu like this:
+
+<img src="../images/main-nav.png" />
+
+The *Menus* link should link to the `Index` action of the `Menu` controller.
+
+And in `Views\Cheese\Index.cshtml`, ensure the navigation links below the table look like this:
+
+<img src="../images/home-footer-nav.png" />
+
+If you don't have a *Remove* link, create one! It should link to the `Remove` action of the `Cheese` controller.
+
+## Migrations
+
+It's time to create and run the migration to apply our model changes to the database.
+
+Follow the [instructions](../../../videos/intro-to-ef-basics/#migrations) from the initial lesson on EF to create and apply a new migration named `AddMenu`.
+
+Explicitly, once you're at the Powershell prompt in the project directory, run:
+
+```nohighlight
+> dotnet ef migrations add AddMenu
+```
+
+And then to apply the migration, run:
+
+```nohighlight
+> dotnet ef database update
+```
+
 ## Test!
 
 You made a lot of changes! Great work.
