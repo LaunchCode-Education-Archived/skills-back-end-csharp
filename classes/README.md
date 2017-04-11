@@ -18,7 +18,7 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\*
 11 | [Prep Work](../class-prep/11/) | [Cities](../studios/cities/) | Interfaces and polymorphism | &nbsp;
 12 | [Prep Work](../class-prep/12/) | [CheeseMVC Persistent](../studios/cheese-mvc-persistent/) | Persistence Part I: Setting Up EntityFrameworkCore, Storing Objects, One-to-many relationships | [Cheese MVC Persistent](../assignments/cheese-mvc-persistent/)
 13 | [Prep Work](../class-prep/13/) | [CheeseMVC Persistent](../studios/cheese-mvc-persistent/) | Persistence Part II: Many-to-Many Relationships | &nbsp;
-14 | [Prep Work](../class-prep/14/) | | ASP.NET MVC Apps Beyond LC101 | &nbsp;
+14 | [Prep Work](../class-prep/14/) | [CheeseMVC Persistent](../studios/cheese-mvc-persistent/) | ASP.NET MVC Apps Beyond LC101 | &nbsp;
 
 <aside class="aside-note" markdown="1">
 Check [learn.launchcode.org](https://learn.launchcode.org) for assignment due dates since these can vary by class section.
