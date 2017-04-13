@@ -47,6 +47,8 @@ public List<SelectListItem> Categories { get; set; }
 
 Update the ViewModel constructor to accept a parameter: `IEnumerable<CheeseCategory> categories`. This will be passed in when we create a new `AddCheeseViewModel` in the controller, and will be a collection of all categories. This is the best way for our ViewModel to get such a list, since it can only be obtained via the `CheeseDbContext`, which our controller has a reference to.
 
+Add an empty default constructor. Since we modified the existing constructor to no longer be a no-arg (aka default) constructor we need to add one so that model binding will work.
+
 Update the code in the controller to correctly populate the `Categories` property based on the changes we made. You can mimic that code that's there for the old `CheeseType` enum. When creating a new `SelectListItem`, the `Value` property should receive a category ID, and the `Text` property should receive the name of the category.
 
 ## Updating CheeseController

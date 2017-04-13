@@ -84,7 +84,7 @@ Within this second `Add` action:
     - Create a new `CheeseCategory` object, `newCategory`, with `Name` property having the value of `Name` from the ViewModel.
     - Add `newCategory` to the database context: `context.Categories.Add(newCategory)`
     - Save changes to the database: `context.SaveChanges()`
-    - Redirect to the `Index` action for `CategoryController`: `return Redirect("/")`
+    - Redirect to the `Index` action for `CategoryController`: `return Redirect("/Category")`
 
 ### Adding Navigation Links
 
