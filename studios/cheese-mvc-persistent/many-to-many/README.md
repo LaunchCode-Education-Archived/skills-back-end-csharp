@@ -241,7 +241,7 @@ And then to apply the migration, run:
 
 You made a lot of changes! Great work.
 
-Assuming you don't have any remaining compiler errors, start up your application. (Don't forget to start MAMP first!) Make sure you can create a new cheese object, selecting a pre-existing category. Then make sure the proper category name is displayed in the table on the home page after doing so.
+Assuming you don't have any remaining compiler errors, start up your application. Make sure you can create a new cheese object, selecting a pre-existing category. Then make sure the proper category name is displayed in the table on the home page after doing so.
 
 When everything works, you're done! Congrats!
 
