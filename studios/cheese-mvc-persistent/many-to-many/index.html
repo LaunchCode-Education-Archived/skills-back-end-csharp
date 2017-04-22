@@ -190,7 +190,7 @@ public Cheese Cheese { get; set; }</code></pre>
 <p>Below the list, add a link to the <code>AddItem</code> action of the <code>Menu</code> controller, with <code>asp-route-id=@Model.Menu.ID</code>. This will create URLs like <code>/Menu/AddItem/5</code>, where 5 is a menu ID, which will link to a form to add items to the given menu. We'll set up that code next.</p>
 <h2 id="add-menu-items">Add Menu Items</h2>
 <p>Within <code>MenuController</code>, create an action named <code>AddItem</code> that responds to <code>GET</code> requests and takes a single input parameter: <code>int id</code>. Within the action, retrieve the menu with the given ID via <code>context</code>.</p>
-<h3 id="addmenuitemform">AddMenuItemForm</h3>
+<h3 id="addmenuitemviewmodel">AddMenuItemViewModel</h3>
 <p>Create a ViewModel named <code>AddMenuItemViewModel</code> to be used to render and process the form to add a new item to a given menu.</p>
 <p>We'll need two integer properties to process our form: <code>cheeseID</code> and <code>menuID</code>. And we'll need two properties to display the form: a <code>Menu</code> property of type <code>Menu</code> and a <code>Cheeses</code> property of type <code>List&lt;SelectListItem&gt;</code>.</p>
 <p>Finally, add two constructors: a default no-arg constructor and one that accepts and sets a value for <code>Menu</code>, along with an <code>IEnumerable&lt;Cheese&gt;</code>. The latter parameter should be used to create <code>SelectListItem</code> objects and add to <code>Cheeses</code>. This will look something like this:</p>
@@ -202,7 +202,7 @@ public Cheese Cheese { get; set; }</code></pre>
 <p>Don't forget to initialize <code>Cheeses</code> to an empty list at some point.</p>
 <p>The default constructor is needed for model binding to work.</p>
 <h3 id="rendering-the-form">Rendering the Form</h3>
-<p>Now, back in <code>MenuController.AddItem</code>, create an instance of <code>AddMenuItemForm</code> with the given <code>Menu</code> object, as well as the list of all <code>Cheese</code> items in the database. Pass this ViewModel into the view.</p>
+<p>Now, back in <code>MenuController.AddItem</code>, create an instance of <code>AddMenuItemViewModel</code> with the given <code>Menu</code> object, as well as the list of all <code>Cheese</code> items in the database. Pass this ViewModel into the view.</p>
 <p>Create a new template, <code>AddItem.cshtml</code>, declare the ViewModel at the top, and add a title:</p>
 <pre><code class="language-nohighlight">@{
     ViewBag.Title = "Add Item to Menu: " + Model.Menu.Name;
