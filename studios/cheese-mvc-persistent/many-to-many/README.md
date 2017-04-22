@@ -137,7 +137,7 @@ Below the list, add a link to the `AddItem` action of the `Menu` controller, wit
 
 Within `MenuController`, create an action named `AddItem` that responds to `GET` requests and takes a single input parameter: `int id`. Within the action, retrieve the menu with the given ID via `context`.
 
-### AddMenuItemForm
+### AddMenuItemViewModel
 
 Create a ViewModel named `AddMenuItemViewModel` to be used to render and process the form to add a new item to a given menu.
 
@@ -159,7 +159,7 @@ The default constructor is needed for model binding to work.
 
 ### Rendering the Form
 
-Now, back in `MenuController.AddItem`, create an instance of `AddMenuItemForm` with the given `Menu` object, as well as the list of all `Cheese` items in the database. Pass this ViewModel into the view.
+Now, back in `MenuController.AddItem`, create an instance of `AddMenuItemViewModel` with the given `Menu` object, as well as the list of all `Cheese` items in the database. Pass this ViewModel into the view.
 
 Create a new template, `AddItem.cshtml`, declare the ViewModel at the top, and add a title:
 
