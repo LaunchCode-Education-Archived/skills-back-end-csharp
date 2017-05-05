@@ -11,12 +11,36 @@ Visual Studio is the Integrated Development Environment (IDE) used to develop C#
 
 ### Windows Users
 
-Visit the [Microsoft Free Developer Apps](https://www.visualstudio.com/free-developer-offers/) page and download Visual Studio Community.
+Visit the [Microsoft Free Developer Apps](https://www.visualstudio.com/free-developer-offers/) page and download the Visual Studio 2017 Community installer.
 
-When installing Visual Studio, select the option to Customize the install and be sure to check the GitHub Extension for Visual Studio check box. If you install Visual Studio without doing this -- or have a pre-existing intsall -- then you can add the GitHub extension after the fact by downloading and installing it from [visualstudio.github.com](https://visualstudio.github.com/).
+Run the installer, and select the following packages from the *Workloads* pane:
+- ASP.NET and web development
+- Azure development
+- Data storage and processing
+- .NET core cross-platform development
+
+Your selections will look like these screens:
+
+![Install packages](images/vs-packages.png)
+
+![Install packages](images/vs-packages-2.png)
+
+When the install finishes running, select *Launch* and then close the installer window.
+
+When prompted, create a Microsoft Developer account and use it to sign in to Visual Studio.
+
+The launcher window will prompt you with some choices via a window similar to what you see below. Select the displayed options.
+
+<img src="images/launch-options.png" style="width:400px;display:block;margin:0 auto;">
+
+<aside class="aside-note" markdown="1">
+If you fail to install one or more of the required packages, you can do so by closing Visual Studio and running the installer again. Select *Modify* in the Visual Studio 2017 section of the window, and then select the additional package(s) to install.
+</aside>
 
 <aside class="aside-warning" markdown="1">
-If you installed Visual Studio previously on your Windows computer, you will likely need to install the .NET Core Tools package. To do so, follow the [instructions provided by Microsoft](https://www.microsoft.com/net/core#windowsvs2015).
+If you installed Visual Studio previously, ensure that you are using Visual Studio 2017. If you don't have this most recent version installed, you will need to install it via the instructions above.
+
+If you have a pre-existing Visual Studio 2017 install, you may need to install the .NET Core Tools package. To do so, follow the [instructions provided by Microsoft](https://www.microsoft.com/net/core#windowsvs2017).
 </aside>
 
 ### Mac and Linux Users
