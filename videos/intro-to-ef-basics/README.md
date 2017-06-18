@@ -5,6 +5,10 @@ currentMenu: videos
 
 If you haven't completed the [EF Core setup steps](../../class-prep/12/setup.html) for `CheeseMVC`, go back and do so before watching this lesson.
 
+<aside class="aside-warning" markdown="1">
+In this video and others, we use Powershell to run migration commands. As of mid-2017, these migration command-line tools are only compatible with the cmd.exe command prompt, and *not* Powershell. Thus, whenever we type `powershell` in the location bar, you should instead type `cmd` to open the proper command line tools.
+</aside>
+
 <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/MxUOP2NPiEo" frameborder="0" allowfullscreen></iframe></div>
 
 ## Notes
@@ -45,11 +49,11 @@ To create a new migration after making changes to your model, right-click on the
 
 This opens File Explorer to the top-level directory of the project.
 
-Within the File Explorer window, click on the far-right end of the Location field, and type `powershell`. Hit Enter.
+Within the File Explorer window, click on the far-right end of the Location field, and type `cmd`. Hit Enter.
 
-![powershell](images/powershell.png)
+<img alt="Run cmd.exe" src="images/cmd-file-explorer.png" style="width:500px;" />
 
-This opens a Powershell with the path already set to the current directory. From this location, you can run .NET Tools commands.
+This opens a command prompt with the path already set to the current directory. From this location, you can run .NET Tools commands.
 
 #### New Migration
 

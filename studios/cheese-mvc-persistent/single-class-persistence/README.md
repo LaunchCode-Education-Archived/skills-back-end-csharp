@@ -112,11 +112,11 @@ To create a new migration after making changes to your model, right-click on the
 
 This opens File Explorer to the top-level directory of the project.
 
-Within the File Explorer window, click on the far-right end of the Location field, and type `powershell`. Hit Enter.
+Within the File Explorer window, click on the far-right end of the Location field, and type `cmd`. Hit Enter.
 
-![powershell](../images/powershell.png)
+![cmd](../images/cmd-file-explorer.png)
 
-This opens a Powershell window with the path already set to the project directory. From this location, you can run .NET Tools commands.
+This opens a command prompt with the path already set to the project directory. From this location, you can run .NET Tools commands.
 
 Create your migration:
 

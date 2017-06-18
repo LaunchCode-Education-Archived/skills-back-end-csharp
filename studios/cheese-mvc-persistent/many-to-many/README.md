@@ -225,7 +225,7 @@ It's time to create and run the migration to apply our model changes to the data
 
 Follow the [instructions](../../../videos/intro-to-ef-basics/#migrations) from the initial lesson on EF to create and apply a new migration named `AddMenu`.
 
-Explicitly, once you're at the Powershell prompt in the project directory, run:
+Explicitly, once you're at the command prompt in the project directory, run:
 
 ```nohighlight
 > dotnet ef migrations add AddMenu
