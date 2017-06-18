@@ -3,7 +3,7 @@ title: "Intro to ASP.NET Core MVC: Views (Part 2)"
 currentMenu: videos
 ---
 
-<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/4xvSOmGxyKQ" frameborder="0" allowfullscreen></iframe></div>
+<div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/4xvSOmGxyKQ?rel=0" frameborder="0" allowfullscreen></iframe></div>
 
 ## Notes
 

@@ -3,7 +3,7 @@ title: "Intro to ASP.NET Core MVC: Models"
 currentMenu: videos
 ---
 
-<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/zT_-KKlAoek" frameborder="0" allowfullscreen></iframe></div>
+<div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/zT_-KKlAoek?rel=0" frameborder="0" allowfullscreen></iframe></div>
 
 ## Code
 
