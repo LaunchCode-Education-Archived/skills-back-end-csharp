@@ -121,7 +121,10 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Intro to EntityFrameworkCore: Persisting Objects</h1>
                     <p>If you haven't completed the <a href="../../class-prep/12/setup.html">EF Core setup steps</a> for <code>CheeseMVC</code>, go back and do so before watching this lesson.</p>
-<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/MxUOP2NPiEo" frameborder="0" allowfullscreen></iframe></div>
+<aside class="aside-warning">
+<p>In this video and others, we use Powershell to run migration commands. As of mid-2017, these migration command-line tools are only compatible with the cmd.exe command prompt, and <em>not</em> Powershell. Thus, whenever we type <code>powershell</code> in the location bar, you should instead type <code>cmd</code> to open the proper command line tools.</p>
+</aside>
+<div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/MxUOP2NPiEo?rel=0" frameborder="0" allowfullscreen></iframe></div>
 <h2 id="notes">Notes</h2>
 <h3 id="app-setup">App Setup</h3>
 <p>These are the code sections referenced in the video that were part of the starter code. Namespace and using statements are omitted.</p>
@@ -144,9 +147,9 @@
 <p>To create a new migration after making changes to your model, right-click on the project in the Solution Explorer and select <em>Open Folder in File Explorer</em>.</p>
 <img alt="Open Folder in File Explorer" src="images/open-folder.png" style="width:500px;" />
 <p>This opens File Explorer to the top-level directory of the project.</p>
-<p>Within the File Explorer window, click on the far-right end of the Location field, and type <code>powershell</code>. Hit Enter.</p>
-<p><img src="images/powershell.png" alt="powershell" /></p>
-<p>This opens a Powershell with the path already set to the current directory. From this location, you can run .NET Tools commands.</p>
+<p>Within the File Explorer window, click on the far-right end of the Location field, and type <code>cmd</code>. Hit Enter.</p>
+<img alt="Run cmd.exe" src="images/cmd-file-explorer.png" style="width:500px;" />
+<p>This opens a command prompt with the path already set to the current directory. From this location, you can run .NET Tools commands.</p>
 <h4 id="new-migration">New Migration</h4>
 <p>To add a migration:</p>
 <pre><code class="language-nohighlight">&gt; dotnet ef migrations add MigrationName</code></pre>

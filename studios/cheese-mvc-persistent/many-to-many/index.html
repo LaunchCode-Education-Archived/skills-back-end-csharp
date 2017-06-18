@@ -235,7 +235,7 @@ public Cheese Cheese { get; set; }</code></pre>
 <h2 id="migrations">Migrations</h2>
 <p>It's time to create and run the migration to apply our model changes to the database.</p>
 <p>Follow the <a href="../../../videos/intro-to-ef-basics/#migrations">instructions</a> from the initial lesson on EF to create and apply a new migration named <code>AddMenu</code>.</p>
-<p>Explicitly, once you're at the Powershell prompt in the project directory, run:</p>
+<p>Explicitly, once you're at the command prompt in the project directory, run:</p>
 <pre><code class="language-nohighlight">&gt; dotnet ef migrations add AddMenu</code></pre>
 <p>And then to apply the migration, run:</p>
 <pre><code class="language-nohighlight">&gt; dotnet ef database update</code></pre>

@@ -183,9 +183,9 @@ public CategoryController(CheeseDbContext dbContext)
 <p>To create a new migration after making changes to your model, right-click on the project in the Solution Explorer and select <em>Open Folder in File Explorer</em>.</p>
 <img alt="Open Folder in File Explorer" src="../images/open-folder.png" style="width:500px;" />
 <p>This opens File Explorer to the top-level directory of the project.</p>
-<p>Within the File Explorer window, click on the far-right end of the Location field, and type <code>powershell</code>. Hit Enter.</p>
-<p><img src="../images/powershell.png" alt="powershell" /></p>
-<p>This opens a Powershell window with the path already set to the project directory. From this location, you can run .NET Tools commands.</p>
+<p>Within the File Explorer window, click on the far-right end of the Location field, and type <code>cmd</code>. Hit Enter.</p>
+<p><img src="../images/cmd-file-explorer.png" alt="cmd" /></p>
+<p>This opens a command prompt with the path already set to the project directory. From this location, you can run .NET Tools commands.</p>
 <p>Create your migration:</p>
 <pre><code class="language-nohighlight">&gt; dotnet ef migrations add AddCategory</code></pre>
 <p>This will create a new migration file in <code>Migrations\</code> within your project. Before doing so, however, it will build your project. If you encounter build errors, return to Visual Studio and fix them.</p>

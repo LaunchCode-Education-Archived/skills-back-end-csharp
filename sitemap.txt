@@ -72,7 +72,6 @@ http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-ef-many-t
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-ef-one-to-many/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-controllers/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-models/index.html
-http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-project-structure/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-routes/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-viewmodels-1/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-viewmodels-2/index.html
@@ -81,6 +80,5 @@ http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-mvc-views
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-orm/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/intro-to-visual-studio/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/many-to-many-relationships/index.html
-http://education.launchcode.org/skills-back-end-csharp/videos/mvc-project-structure/index.html
 http://education.launchcode.org/skills-back-end-csharp/videos/using-the-visual-studio-debugger/index.html
 http://education.launchcode.org/skills-back-end-csharp/sitemap.html
