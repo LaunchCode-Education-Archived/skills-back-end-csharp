@@ -5,8 +5,13 @@ currentMenu: classes
 
 For this unit we'll need to run Visual Studio for Windows. If you use macOS or a Linux-based operating system, you can install an application called a **hypervisor** that allows you to run **virtual machines** that contain other operating systems. This is what we'll do to get Windows running on your machine.
 
-<aside class="aside-note" markdown="1"> You may noticed on the Microsoft site that there is a preview version Microsoft Visual Studio for Mac. The .NET development environment on macOS isn't mature enough yet to warrant us to use it in this class.
+<aside class="aside-note" markdown="1"> You may have noticed on the Microsoft site that there is a preview version of Microsoft Visual Studio for Mac. The .NET development environment on macOS isn't mature enough yet to warrant using it in this class.
 </aside>
+
+
+<aside class="aside-warning" markdown="1"> It's important to make sure you have enough space for the following installations. The VM takes up about 60GB, but you should ideally have 75GB or more free. Memory of 8GB or more is recommended, but 4GB should work (though the machine will be taxed and run more slowly).
+As far as creating space, I recommend using a program to give a high-level diagnostic of how space is being used currently such as Grand Perspective: http://grandperspectiv.sourceforge.net/.
+Running this on the root folder will show areas of large disk space usage. You should generally be able to make space by cleaning up old files and programs, and possibly putting stuff in cloud storage. </aside>
 
 ## Install VirtualBox
 
@@ -16,7 +21,7 @@ The hypervisor we'll use is VirtualBox. [Visit their download page](https://www.
 
 Download a free Windows 10 Development Virtual Machine (VM) at the [Windows Dev Center](https://developer.microsoft.com/en-us/windows/downloads/virtual-machines). Choose the VirtualBox edition of Windows 10 Enterprise.
 
-Unzip the downloaded file and install the VM by double-clicking on the resulting .ova or .ovf file. Follow the prompts within the VM to complete the Windows setup process.
+Unzip the downloaded file and install the VM by double-clicking on the resulting  `.ova` or `.ovf` file. Follow the prompts within the VM to complete the Windows setup process.
 
 ### Guest Additions and Other Tweaks
 
@@ -24,14 +29,14 @@ Let's do a few things to make our experience working in this VM a little better.
 
 Install VirtualBox Guest Additions by selecting the Guest Additions icon from the system tray in the lower right of your Windows VM. This additional package will enable a better experience and closer integration between the host and guest operating systems. You'll then need to restart the VM for the changes to take effect.
 
-> *NOTE:* Whenever you want to "shut down" the virtual operating system, you have three choices:
+*NOTE:* Whenever you want to "shut down" the virtual operating system, you have three choices:
     - *Save the machine state* - The equivalent to putting the VM to sleep, or shutting your laptop. You'll want to do this most often. We'll call this *pausing* your VM.
     - *Send the shutdown signal* - The equivalent to shutting down the operating system via the Start Menu's *Power Off* item. You'll want to do this when you want to reboot your VM, such as after installing the Guest Additions.
     - *Power off the machine* - The equivalent of turning off the VM by holding down a physical power button on a computer until it "force quits". Don't do this unless you absolutely have to.
 
 It's very handy to be able to copy/paste between your host operating system (Mac or Linux) and the guest operating system (Windows). To enable this, pause your VM, and from the main VirtualBox window, select the Settings icon to access the VM's settings. From the *General* section, choose the *Advanced* tab, and choose *Bidirectional* from the *Shared Clipboard* menu. This will allow you to copy/paste back and forth.
 
-> *NOTE:* On a Mac, the copy/paste shortcuts (among others) use the *command* key, while in Windows they use the *control* key. Keep this in mind. You'll need to use *ctrl+c* and *ctrl+v* from your Mac keyboard to copy/paste within the Windows VM.
+<aside class="aside-note" markdown="1"> On a Mac, the copy/paste shortcuts (among others) use the *command* key, while in Windows they use the *control* key. Keep this in mind. You'll need to use *ctrl+c* and *ctrl+v* from your Mac keyboard to copy/paste within the Windows VM.</aside>
 
 ### Visual Studio Setup
 
@@ -53,4 +58,4 @@ To setup a new image after the current one expires, revisit this page and follow
 
 ### Install Other Apps
 
-At this point, you'll probably want to install a few more apps that you use frequently, such as [Firefox](https://www.mozilla.org/en-US/firefox/new/) and [Atom](https://atom.io/).
+At this point, you'll probably want to install a couple more apps that you use frequently, such as [Firefox](https://www.mozilla.org/en-US/firefox/new/) and [Visual Studio Code](https://code.visualstudio.com/). 
