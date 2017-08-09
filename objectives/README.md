@@ -10,6 +10,15 @@ Listed below are the competencies you should demonstrate by the time you've comp
 ### Class 1
 
 * Install Visual Studio
+* Open a Project/Solution
+* Create a simple *Hello World* console app   
+* Navigate files and folders in Visual Studio
+* Explain the difference between dynamically and statically typed languages
+* Create a static method
+* Use arrays in C#
+* Explain the difference between value and reference types
+* Describe what `using` does
+* Use `Console.ReadLine` and `Console.WriteLine`
 
 ### Class 2
 

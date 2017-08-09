@@ -29,7 +29,7 @@ When the install finishes running, select *Launch* and then close the installer 
 
 When prompted, create a Microsoft Developer account and use it to sign in to Visual Studio.
 
-The launcher window will prompt you with some choices via a window similar to what you see below. Select the displayed options.
+The launcher window will prompt you with some choices via a window similar to what you see below. Select the displayed options. (If you don't see the box about applying customizations, don't worry about it, just proceed.)
 
 <img src="images/launch-options.png" style="width:400px;display:block;margin:0 auto;">
 
@@ -61,7 +61,7 @@ VM (Mac/Linux) users: Don't forget to use the `lc101` directory within your Drop
 
 If your solution isn't open, open it via *File > Open > Project/Solution* and browse to the `.sln` file within the `csharp-exercises` directory.
 
-Right-click on the top-level "Solution 'csharp-exercises'" item in the *Solution Explorer* and select *Properties*. In the modal that opens, select *Common Properties > Startup Project* and then choose *Current Selection* in the pane at the right.
+Right-click on the top-level "Solution 'csharp-exercises'" item in the *Solution Explorer* and select *Properties*. (If right-clicking doesn't work, just select "Solution 'charp-exercises'" and then click the tool/wrench icon near the top of *Solution Explorer*). In the modal that opens, select *Common Properties > Startup Project* and then choose *Current Selection* in the pane at the right.
 
 <aside class="aside-pro-tip" markdown="1">
 This setting makes the default behavior of Visual Studio to run the currently-selected program when you hit the <span style="color:green">▶︎</span> *Start* button in the toolbar.

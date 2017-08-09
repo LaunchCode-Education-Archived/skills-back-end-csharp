@@ -9,7 +9,7 @@ How C# handles values and variables is one of the most significant differences b
 
 Python is a **dynamically typed** language. In a dynamically typed language a variable or parameter can refer to any kind of value at any time. When the variable is used, the interpreter figures out what type it is and behaves accordingly.
 
-C# is a **statically typed** language. In a statically typed language the association between a variable or parameter and the type of value it can refer to is determined *when the variable or parameter is declared*. Once the declaration is made it is an illegal for a it to refer to a value of any other type.
+C# is a **statically typed** language. In a statically typed language the association between a variable or parameter and the type of value it can refer to is determined *when the variable or parameter is declared*. Once the declaration is made it is illegal for it to refer to a value of any other type.
 
 For example, this is legal in Python:
 
@@ -29,13 +29,13 @@ x = 42;
 
 The compiler error would occur when we try to assign `42` to a variable of type `string`. This is simply not allowed in C#.
 
-Formally, this means that *we must declare the type of every variable and parameter* in a statically typed language. This is done by preceding the variable or parameter name with the name of its type, as we did in the example above: `string x = "dog"`.
+Formally, this means that in a statically typed language *we must declare the type of every variable and parameter*. This is done by preceding the variable or parameter name with the name of its data type, as we did in the example above: `string x = "dog"`.
 
-We only need to specify the type of a variable or paremeter when declaring it. Subsequent usage does not require specifying the type, and will result in an error.
+We only need to specify the type of a variable or parameter when declaring it. Subsequent usage does not require specifying the type, and doing so will result in an error.
 
-<aside class="aside-warning" markdown="1">It is allowed in some situations in C# to declare a variable without specifying a type by using the keyword `var`, as in `var x = "dog";`. In this case, C# still assigns a type to `x` through inference. It looks and sees that we are assigning `x` the value `"dog"`, which is `string`. Thus, `x` has type `string` and attempting to assign `x = 42` will still result in a build error.
+<aside class="aside-warning" markdown="1">It is allowed in some situations in C# to declare a variable without specifying a type by using the keyword `var`, as in `var x = "dog";`. In this case, C# still assigns a type to `x` through inference. It looks and sees that we are assigning `x` the value `"dog"`, which is a `string`. Thus, `x` has type `string` and attempting to assign `x = 42` will still result in a build error.
 
-We recommend avoiding use of `var` while you are learning C#, and even after you become more experienced with the langauge you will still only want to use it sparingly and in specific circumstances. Explicitly declaring the type of your variables makes for more readable code, in general.
+We recommend avoiding use of `var` while you are learning C#, and even after you become more experienced with the language you will still only want to use it sparingly and in specific circumstances. Explicitly declaring the type of your variables makes for more readable code, in general.
 </aside>
 
 Dynamic and static typing are examples of different [type systems](https://en.wikipedia.org/wiki/Type_system). The type system of a programming language is one of the most important high-level characteristics that programmers use when discussing the differences between languages. Here are a few examples of popular languages falling into these two categories:
@@ -57,11 +57,11 @@ Short name | .NET Class | Examples | Notes
 `double` | `Double` | 3.14159 <br> 2.0 | Doubles are twice as precise (i.e. can hold much longer decimal numbers) than floats
 `char` | `Char` | 'a' <br> '!' | A single Unicode character. Must be enclosed in single quotes `''` to be a character; double quotes `""` indicate a string
 `string` | `String` | "LaunchCode" <br> "a" | A sequent of characters. Must be enclosed in double quotes `"`; single quotes `'` indicate a character
-`bool` | `Boolean` | `true` <br> `false` | Note that booleans in C# are not capitalized as they are in Python.
+`bool` | `Boolean` | `true` <br> `false` | Note that booleans in C# are not capitalized as they are in Python
 
 Not all built-in data types in C# are listed here, only the most commonly used types that beginners are likely to encounter. If you're curious, [read more about built-in types in C#](https://msdn.microsoft.com/en-us/library/ya5y69ds.aspx).
 
-As in Python, operators -- such as `+` and `*` -- are type-dependent. That is, we can only use them on allowed types, and their effects are different depending on which types we use them on. The `+` operator is the most clear example of this. We can use `+` to add numeric types together, such as `2 + 2`. But we can also use it to concatenate strings: `"2" + "2"`. What the operators does depends on the type, and we may not mix types in arbitrary ways (`"2" + 2` results in a compiler error).
+As in Python, operators - such as `+` and `*` - are type-dependent. That is, we can only use them on allowed types, and their effects are different depending on which types we use them on. The `+` operator is a good example of this. We can use `+` to add numeric types together, such as `2 + 2` which results in `4`. But we can also use it to concatenate strings: `"2" + "2"`, for example, which results in `"22"`. What the operators do depends on the type they are operating on, and we may not mix types in arbitrary ways (`"2" + 2` results in a compiler error).
 
 <aside class="aside-note" markdown="1">
 Numeric types such as `int` and `double` may be freely mixed when using numeric operators. Generally, the result of such mixing is that the output has the type of the more precise input. For example, the following snippet would print out `System.double`.
@@ -77,7 +77,7 @@ Console.WriteLine((a + b).GetType());
 
 Since strings are so important, let's explore them in a bit more depth.
 
-Strings in C# and Python are quite similar. Like Python, C# strings are immutable. However, manipulating strings in C# is not quite as obvious since strings do not support an indexing or slicing operator. That is not to say that you can’t index into a C# string; you can. You can also pull out a substring just as you can with slicing. The difference is that C# uses method calls where Python uses operators.
+Strings in C# and Python are quite similar. Like Python, C# strings are immutable. However, manipulating strings in C# is not quite as obvious since strings do not support an indexing or slicing operator. That is not to say that you can’t index into a C# string; you can. You can also pull out a substring just as you can with slicing. The difference is that C# uses method calls where Python frequently uses operators.
 
 The table below maps common Python string operations to their C# counterparts. For the examples shown in the table, we will use a string variable called `str`.
 
@@ -94,7 +94,7 @@ Python | C# | Description
 
 ## Example: The TempConv Program
 
-Let's go back in time and look at another of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.
+Let's go back in time and look at one of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.
 
 ```python
 def main():
@@ -115,7 +115,7 @@ namespace TempConv
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             double fahrenheit;
             double celsius;
@@ -141,14 +141,14 @@ There are several new concepts introduced in this example. We will look at them 
 
 ### using
 
-In C#, you can use any class that is available without having to import the class subject to two very important conditions:
+In C#, you can use any class that is available without having to import the class - subject to two very important conditions:
 
 1. The C# compiler must know that the class exists
 2. You must use the full name of the class
 
 You can think of the `using` statement in C# as working a little bit like the `from module import xxx` statement in Python. However, behind the scenes the two statements actually do very different things.
 
-The first important difference to understand is that the class naming system in C# is very hierarchical. The *full* name of the `Console` class is really `System.Console`. You can think of this name as having two parts: The first part, `System`, is called the **namespace**, and the last part is the class. We’ll talk more about the class naming system a bit later. The second important difference is that it is not the `using` statement’s responsibility to load classes into memory. That task falls on the **assembly**, which is the unit of compiled code created by Visual Studio (or the C# compiler, more generally).
+The first important difference to understand is that the class naming system in C# is very hierarchical. The *full* name of the `Console` class is really `System.Console`. You can think of this name as having two parts. The first part, `System`, is called the **namespace**, and the last part is the **class. We’ll talk more about the class naming system a bit later. The second important difference is that it is not the `using` statement’s responsibility to load classes into memory. That task falls on the **assembly**, which is the unit of compiled code created by Visual Studio (or the C# compiler, more generally).
 
 The `using` statement tells the compiler that we are going to use a shortened version of the class’s name. In this example we are going to use the class `System.Console`, but we can refer to it as just `Console`. We could use the `System.Console` class without any problem and without any import statement provided that we always referred to it by its full name.
 
@@ -169,7 +169,7 @@ For Python programmers the following error is likely to be even more common. Sup
 
 ![Build error](build-error.png)
 
-The compiler detects an error and Visual Studio displays this message. Where you to look at the error pane, you would see the message: "The name 'celsius' does not exist in the current context".
+The compiler detects an error and Visual Studio displays this message. Were you to look at the error pane, you would see the message: "The name 'celsius' does not exist in the current context".
 
 <aside class="aside-note" markdown="1"> When using an IDE such as Visual Studio, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitly compile your code before finding compiler errors. Nice, huh?
 </aside>
@@ -197,8 +197,8 @@ Console.WriteLine("The year is " + year.ToString());
 Similarly, `Console.ReadLine` returns input as a string. To convert it to a desired type, you can generally use the syntax `[TYPE].Parse(value)`, with `[TYPE]` replaced by the given type. Here's an example:
 
 ```csharp
-string input = Console.ReadLine();
-int year = int.Parse(input);
+string userInput = Console.ReadLine();
+int year = int.Parse(userInput);
 ```
 
 This is very similar to what we did in Python:
@@ -210,7 +210,7 @@ year = int(user_input)
 
 ## Class Types
 
-In addition to the types introduced so far any class in C# defines a type. Classes and objects are conceptually the same as in Python: A class is a template for creating objects. We'll have much more to say about classes and objects, but for now you need to be comfortable seeing the basic syntax of class types and class creation.
+In addition to the types introduced so far, any class in C# defines a type. Classes and objects are conceptually the same as in Python: A class is a template, or blueprint, for creating objects. We'll have much more to say about classes and objects, but for now you need to be comfortable seeing the basic syntax of class types and class creation.
 
 If I have a class `Cat` with a constructor that takes no arguments, I can declare and create a new instance of `Cat` using its constructor. In Python, we did this as follows:
 
@@ -250,13 +250,13 @@ Since `int` is a value type, the variable `catAge` functions as a box holding th
 
 When we assign a value to a reference type, as in `Cat sameCat = myCat`, we are not creating a second copy of the object, but instead are creating a second "arrow" pointing to the same object.
 
-The distinction between references types and value types is important, if difficult to wrap your brain around at first. We will see that reference types are handled differently in essential and important ways in a lot of different situations.
+The distinction between reference types and value types is important, but can be difficult to wrap your brain around at first. We will see that reference types are handled differently in essential and important ways in a lot of different situations.
 
 ## Arrays
 
 While Python has the basic list type, C# has multiple ways of storing ordered data. The most basic is that of the array.
 
-An array is an ordered, fixed-size collection of elements. Since C# is statically-typed, arrays may only store one type of object. We can create an array of integers or an array of strings, but we may not create an array that holds both integers and strings.
+An array is an ordered, fixed-size collection of elements. Since C# is statically typed, arrays may only store one type of object. We can create an array of integers or an array of strings, but we may not create an array that holds both integers and strings.
 
 The syntax for creating an array capable of holding 10 integers is:
 
@@ -277,20 +277,20 @@ Here, the size is implicit in the number of elements in the literal expression `
 To access array elements, we use square brackets, as with Python lists.
 
 ```csharp
-int anInt = someInts[0];
+int anInt = someOtherInts[0];
 ```
 
 As with Python, arrays have zero-based indexing.
 
-Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they're a core part of C#, and are ubiquitous, so it's good to know how they work.
+Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they are ubiquitous in C# programming, so it's good to know how they work.
 
 ## Static Methods
 
-In pure object-oriented langauges like C# and Java, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as **methods**. We'll we adopt this terminology from now on, and will not utter the word "function" for the remainder of this unit.
+In pure object-oriented languages like C# and Java, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as **methods**. We'll we adopt this terminology from now on.
 
-We'll dive into learning about classes and objects in C# soon enough, but until we do, we'll frequently need to write methods, so we should understand a little bit about them. In particular, we'll use **static methods**, which behave somewhat similarly to functions as you knew them in Python.
+We'll dive into learning about classes and objects in C# soon enough, but first let's learn a little about **static methods**, which behave somewhat similarly to functions as you knew them in Python.
 
-A static method is one with the `static` keyword, as our `Main` method above did:
+A static method is one with the `static` keyword, as our `Main` method above had:
 
 ```csharp
 public static void Main(string[] args)
@@ -299,15 +299,13 @@ public static void Main(string[] args)
 }
 ```
 
-We've already disected each element of this line, however, we haven't really shown you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return and parameter types accordingly.
+Let's show you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return and parameter types accordingly.
 
 <aside class="aside-warning" markdown="1">
-For now, every method we write will have the `static` keyword. Leaving off `static` will prevent you from calling methods you define as you would like.
-
-We will explore exactly what `static` does in more detail in later lessons.
+For now, every method we write will have the `static` keyword. We will explore exactly what `static` does in more detail in later lessons.
 </aside>
 
-Let's create two classes in C# to demonstrate this. One will have a `Main` method and the other will have a method that we want to call from within `Main`.
+Let's create two classes in C# to demonstrate using static methods. One class will have a `Main` method and the other will have a method that we want to call from within `Main`.
 
 ```csharp
 namespace HelloMethods
@@ -353,13 +351,13 @@ The `Main` method in the `HelloMethods` class is the same in structure as that o
 
 The `Message` class has a method of its own: `GetMessage`. Like `Main`, it has the `static` keyword. Unlike `Main`, `GetMessage` has a return type of `string` and a single parameter, `string lang`.
 
-Since C# is statically typed, each method must declare its return type -- that is, the data type of what it will return -- along with the type of each parameter. One consequence of this that may not be immediately obvious is that methods in C# may not return different types of data. For example, we would not be able to replace the last `return` statement of `GetMessage` with something like `return 42;`. This would be flagged as a compiler error.
+Since C# is statically typed, each method must declare its return type - that is, the data type of what it will return - along with the type of each parameter. One consequence of this that may not be immediately obvious is that methods in C# may not return different types of data. For example, we would not be able to replace the last `return` statement of `GetMessage` with something like `return 42;`. This would be flagged as a compiler error.
 
 Finally, let's note how a static method is called. The first line of `Main` in the `Program` class is:
 ```csharp
 Message.GetMessage("fr");
 ```
-To call a static method we must use the name of the classin which it is defined, followed by `.`, followed by the name of the method.
+To call a static method we must use the name of the class in which it is defined, followed by `.`, followed by the name of the method.
 
 We are able to call this method from another class because it is declared to be `public`. If we wanted to restrict the method from being called by another class, we could instead use the `private` modifier. We'll explore access modifiers in more depth in coming lessons.
 
