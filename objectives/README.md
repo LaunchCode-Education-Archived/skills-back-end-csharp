@@ -19,7 +19,9 @@ Listed below are the competencies you should demonstrate by the time you've comp
 * Explain the difference between value and reference types
 * Describe what `using` does
 * Use `Console.ReadLine` and `Console.WriteLine`
-* Parse data types 
+* Parse data types
+* Use `string` methods
+* Use C# naming conventions
 
 ### Class 2
 

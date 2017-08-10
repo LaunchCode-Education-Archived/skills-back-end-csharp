@@ -3,11 +3,11 @@ title: Control Flow
 currentMenu: csharp4python
 ---
 
-In this section we examine the syntax of control flow statements n C# -- conditionals and loops -- comparing them to Python. We will find them to be very similar, with relatively predictable syntax variations based on the C# that we have learned to this point.
+In this section we examine the syntax of control flow statements - conditionals and loops - in C#, comparing it to Python's syntax. We will find it to be very similar, with relatively consistent syntax variations, given the C# that we have learned so far.
 
 ## Conditionals
 
-Conditional statements in Python and C# are very similar. In Python we have three patterns.
+Conditional statements in Python and C# are very similar. In Python we have the following three patterns.
 
 ### Simple if
 
@@ -31,11 +31,11 @@ if (condition)
 }
 ```
 
-Once again, you can see that in C# the curly braces define a block rather than indentation. In C#, the parentheses around the condition are required.
+Once again, you can see that in C# the curly braces, rather than the indentation, define a block. In C#, the parentheses around the condition are required.
 
 ### if-else
 
-Adding an `else` clause, we have:
+Adding an `else` clause gives us the following Python code:
 
 ```python
 if condition:
@@ -67,7 +67,7 @@ else
 
 ### elif / else if
 
-In C# we can utlize the same behavior that `elif` provides in Python, with a slightly different syntax. Here is a simple example in both Python and C#.
+In C# we can utilize the same behavior that `elif` provides in Python, with a slightly different syntax. Here is a simple example in Python and then C#.
 
 ```python
 grade = int(input('enter a grade'))
@@ -119,7 +119,7 @@ C# also supports a `switch` statement that acts something like the `elif` statem
 
 The `switch` statement is not used very often, and we generally recommend you avoid using it. It is not as powerful as the `else if` model because the switch variable can only be compared for equality with a very small class of types.
 
-Here's a quick example:
+If you would like to learn more about the switch statement, visit the link in the references section at the bottom of the page. Here is a quick example:
 
 ```csharp
 class Program
@@ -170,7 +170,7 @@ At a conceptual level, loops in C# aren't that different from loops in Python, t
 
 ### For Loops
 
-In Python the easiest way to write a definite loop (aka a for loop) is using the for loop in conjunction with the range function. For example:
+In Python the easiest way to write a definite loop (aka a "for loop") is using the for loop in conjunction with `range`. For example:
 
 ```python
 for i in range(10):
@@ -186,7 +186,7 @@ for (int i = 0; i < 10; i++ )
 }
 ```
 
-Recall that the `range` function provides you with a wide variety of options for controlling the value of the loop variable.
+Recall that `range` provides you with a wide variety of options for controlling the value of the loop variable.
 
 ```python
 range(stop)
@@ -221,21 +221,21 @@ for (int i = 100; i >= 0; i -= 5)
 }
 ```
 
-In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. C# also provides a variation of its for loop that provides the same functionality in its so called *for-each* loop.
+In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. C# also provides a variation of its for loop that provides the same functionality in its *for-each* loop.
 
 In Python we can iterate over a list as follows:
 
 ```python
-l = [1, 1, 2, 3, 5, 8, 13, 21]
-for fib in l:
+x = [1, 1, 2, 3, 5, 8, 13, 21]
+for fib in x:
    print fib
 ```
 
 In C#, this would look like:
 
 ```csharp
-int[] l = {1, 1, 2, 3, 5, 8, 13, 21};
-foreach (int i in l) {
+int[] x = {1, 1, 2, 3, 5, 8, 13, 21};
+foreach (int i in x) {
     Console.WriteLine(i);
 }
 ```
@@ -251,7 +251,7 @@ foreach (char c in msg) {
 
 ### While Loops
 
-Both Python and C# support the while loop, or indefinite loop. Recall that in Python the while loop is written as:
+Both Python and C# support the while, or indefinite, loop. Recall that in Python the while loop is written as:
 
 ```python
 while condition:
@@ -271,7 +271,7 @@ while (condition)
 }
 ```
 
-C# adds an additional, if seldom used, variation of the while loop called the do-while loop. The do-while loop is very similar to while except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop will be executed at least one time. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:
+C# adds an additional, if seldom used, variation of the while loop called the do-while loop. The do-while loop is very similar to while except that the condition is evaluated at *the end of the loop* rather than the beginning. This ensures that a loop will be executed at least one time. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:
 
 ```csharp
 do
@@ -287,3 +287,4 @@ do
 - [for statment (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/ch45axte.aspx)
 - [foreach statement (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/ttw7t8t6.aspx)
 - [switch (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/06tc147t.aspx)
+- [do-while loop](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/do)
