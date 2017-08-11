@@ -7,7 +7,7 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\* | Objectives
 -----|-----------|----------|--------|------------
 1 | [Prep Work](../class-prep/1/) | [Area of a circle](../studios/area/) | Setup, Intro to C#, Data types | &nbsp; | [Objectives](../objectives/#class-1)
 2 | [Prep Work](../class-prep/2/) | [Counting Characters](../studios/counting-characters/) | Flow control, C# Collections, More on strings | [TechJobs (Console Edition)](../assignments/techjobs-console/) | [Objectives](../objectives/#class-2)
-3 | [Prep Work](../class-prep/3/) | [Bonjour, ASP.NET!](../studios/bonjour-asp-net/) | MVC redux; Intro to ASP.NET MVC | &nbsp; | [Objectives](../objectives/#class-3)
+3 | [Prep Work](../class-prep/3/) | [Bonjour, ASP.NET!](../studios/bonjour-asp-net/) | MVC redux, Intro to ASP.NET MVC | &nbsp; | [Objectives](../objectives/#class-3)
 4 | [Prep Work](../class-prep/4/) | [CheeseMVC](../studios/cheese-mvc/) | Views and Razor Templates | &nbsp; | [Objectives](../objectives/#class-4)
 5 | [Prep Work](../class-prep/5/) | [Restaurant Menu](../studios/restaurant-menu/) | Objects and Data | [TechJobs (MVC Edition)](../assignments/techjobs-mvc/) | [Objectives](../objectives/#class-5)
 6 | [Prep Work](../class-prep/6/) | [Restaurant Menu Continued](../studios/restaurant-menu-continued/) | Objects and Behavior | &nbsp; | [Objectives](../objectives/#class-6)

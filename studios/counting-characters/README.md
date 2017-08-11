@@ -15,45 +15,45 @@ Your approach to this problem should be the same as with Python: Loop through th
 
 Some questions to ponder as you start this studio:
 - Which type of data structure (`Dictionary`, `List`, or `Array`) should you use to store character counts?
-- You'll need to "initialize" the counts for the characters in some fashion. It's probably better to do this as you go through the string, as opposed to doing to before you loop through the string. (Why?)
+- You'll need to "initialize" the counts for the characters in some fashion. It's probably better to do this as you go through the string, as opposed to doing so before you loop through the string. (Why?)
 
 If you're having trouble recalling how to create a new class, revisit the instructions in [Studio: Area of a Circle](../area/). And don't forget to check out the [Bonus Missions](#bonus-missions) below.
 
 For the example string above, your output should look something like:
 
 ```nohighlight
-A: 1
-D: 2
 L: 1
-N: 1
-P: 1
-U: 1
-V: 1
- : 50
-a: 22
-b: 3
-c: 17
-d: 4
-e: 26
-f: 2
-g: 7
-h: 1
-i: 27
-j: 1
-l: 17
-,: 4
-m: 11
-n: 14
-.: 8
 o: 15
-p: 7
-q: 3
 r: 9
+e: 26
+m: 11
+ : 50
+i: 27
+p: 7
 s: 29
-t: 29
 u: 28
+d: 4
+l: 17
+t: 29
+a: 22
+,: 4
+c: 17
+n: 14
+g: 7
+.: 8
+N: 1
+q: 3
+U: 1
+P: 1
+h: 1
+j: 1
+A: 1
 v: 4
+D: 2
+b: 3
+V: 1
 x: 1
+f: 2
 ```
 
 ## Bonus Missions

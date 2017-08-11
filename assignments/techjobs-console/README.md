@@ -5,7 +5,7 @@ currentMenu: assignments
 
 ## Introduction
 
-Congratulations! Based on your hard work and strong coding skills, you've been brought an as an apprentice at LaunchCode. You're an apprentice member of the LaunchCode Tech Team, and you've been paired with a mentor to help you get comfortable and continue learning.
+Congratulations! Based on your hard work and strong coding skills, you've been brought in as an apprentice at LaunchCode. As an apprentice member of the Tech Team, you've been paired with a mentor to help you get comfortable and continue learning.
 
 The Company Team at LaunchCode works with employer partners to match qualified programmers with apprenticeships. They've asked for a new tool to be built to help them easily manage data for currently available jobs. Over the next few weeks, you'll help them build this application alongside mentors from the Tech Team.
 
@@ -35,7 +35,7 @@ Kathy has created a console application and started to fill in some features. He
 
 Kathy has handed it off to you with the task of adding a couple of features, and then getting feedback from the Company Team.
 
-If you work through the tasks Kathy has laid out for you, tackle one or more of the [bonus missions](#bonus-missions).
+When you work through the tasks Kathy has laid out for you, try to tackle one or more of the [bonus missions](#bonus-missions).
 
 ### Getting Started
 
@@ -47,7 +47,7 @@ Set up a local copy of the project:
 - Open the solution via either the notification within *Team Explorer* or via *File > Open > Project/Solution*.
 - Pop back over to the *Solution Explorer* to preview the code.
 
-Before diving in and starting to code, make sure you understand what the code you've been given does. Since you're starting with a functioning -- albeit unfinished -- program, go ahead and run it to get an idea of how it works.
+Before diving in and starting to code, make sure you understand what the code you've been given does. Since you're starting with a functioning - albeit unfinished - program, go ahead and run it to get an idea of how it works.
 
 <aside class="aside-warning" markdown="1">
 The application will run until you force it to quit, re-prompting time after time. To kill it, ctrl+C and then stop debugging via the red "stop" icon in the Debug toolbar. We'll learn precisely how the program manages to work this way below.
@@ -86,15 +86,15 @@ Let's look at each of these.
 
 ##### The Main method
 
-The logic within `Main` presents menus in turn, and based on the user's choice, takes appropriate action.
+The logic within `Main` presents menus in turn and, based on the user's choice, takes appropriate action.
 
-It begins by declaring a two local variables: `columnChoices` and `actionChoices`. These contain information relating to the menus that we'll display, and we'll look at them in more detail later.
+It begins by declaring two local variables: `columnChoices` and `actionChoices`. These contain information relating to the menus that we'll display, and we'll look at them in more detail later.
 
-Next we notice a while loop that starts `while (true)`. This may seem odd, but actually makes a lot of sense after a short explanation. We want our application to continually run until the user has decided they want to quit. The simplest way to do this is to loop forever. When the user wants to quit, they can kill our program by pressing ctrl-C (a widely-known command to kill a console application). As you saw above, however, within Visual Studio you'll also need to use the red "stop" icon in the Debug toolbar to stop the program.
+Next we notice a while loop that starts `while (true)`. This may seem odd, but actually makes a lot of sense after a short explanation. We want our application to continually run until the user has decided they want to quit. The simplest way to do this is to loop forever. When the user wants to quit, they can kill our program by pressing ctrl-c (a widely-known command to kill a console application). As you saw above, however, within Visual Studio you'll also need to use the red "stop" icon in the Debug toolbar to stop the program.
 
 The `Main` method can be summarized as follows:
 
-1. Present the user with choices on how to view data, list or search.
+1. Present the user with choices on how to view data: list or search.
 2. Based on that choice, prompt them with the column that they would like to apply the choice to. In the case of a search, we also ask for a search term.
 3. Carry out the "query" to the `JobData` class via one of it's public methods.
 4. Display the results of the "query".
@@ -121,7 +121,7 @@ actionChoices.Add("search", "Search");
 actionChoices.Add("list", "List");
 ```
 
-If you recall how the program worked when you ran it, the first menu that you chose had two options, Search and List, which seem to correspond to the entries in `actionChoices`. This is, in fact, the case. This the data that is used to generate the first menu we see when running the program.
+If you recall how the program worked when you ran it, the first menu that you chose had two options, Search and List, which seem to correspond to the entries in `actionChoices`. This is, in fact, the case. This is the data that is used to generate the first menu we see when running the program.
 
 The second usage of `GetUserSelection` is a few lines below:
 
@@ -129,9 +129,9 @@ The second usage of `GetUserSelection` is a few lines below:
 string columnChoice = GetUserSelection("List", columnChoices);
 ```
 
-This references `columnChoices`, which is declared at the top of `main` has a similar structure to `actionChoices` (they're the same data type and are used in calls to the same method, so this shouldn't be surprising). Most of the entries in `columnChoices` correspond to columns in the jobs data set, but there's one additional entry with key/value pair `"all"`/`"All"`. These entries will help us present to the user the options for searching our data, which will correspond to searching within a given column, or searching all columns at once.
+This references `columnChoices`, which is declared at the top of `main` and has a similar structure to `actionChoices` (they're the same data type and are used in calls to the same method, so this shouldn't be surprising). Most of the entries in `columnChoices` correspond to columns in the jobs data set, but there's one additional entry with key/value pair `"all"`/`"All"`. These entries will help us present to the user the options for searching our data, which will correspond to searching within a given column, or searching all columns at once.
 
-The keys in `actionChoices` and `columnChoices` represent the "internal" string we'll use to refer to these options -- for example, when representing the user's menu choice, or querying data -- and the values in the dictionary represent the "external" way that these are represented to the user.
+The keys in `actionChoices` and `columnChoices` represent the "internal" strings we'll use to refer to these options -- for example, when representing the user's menu choice, or querying data -- and the values in the dictionary represent the "external" way that these are represented to the user.
 
 Within `GetUserSelection` itself, most of the code is within a do-while loop. A [do-while loop](https://msdn.microsoft.com/en-us/library/370s1zax.aspx) is similar to a while loop, but the conditional check is at the *end* of the loop's code block. This has the net consequence that the loop's code block *always runs at least once*. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.
 
@@ -148,7 +148,7 @@ The `JobData` class is responsible for importing the data from the CSV file and 
 If you want to create a new method in `JobData`, or add a property, be sure to declare it `static`.
 </aside>
 
-Let's look more closely at the data type of `AllJobs`. It purports to be an `List` that stores `Dictionary` objects which have `string` keys and `string` values. If we were to represent some of this data visually, using `[]` for an `List` and `{}` with key/value pairs (as in Python lists and dictionaries), it would look like this:
+Let's look more closely at the data type of `AllJobs`. It purports to be a `List` that stores `Dictionary` objects which have `string` keys and `string` values. If we were to represent some of this data visually, using `[]` for a `List` and `{}` for a collection - like a dictionary - of key/value pairs, it would look like this:
 
 ```nohighlight
 [
@@ -172,7 +172,7 @@ Let's look more closely at the data type of `AllJobs`. It purports to be an `Lis
 
 If you look at `LoadData` you'll see a lot of unfamiliar code. Kathy wrote this essential piece of code for you, and while you won't have to modify it, it will be useful to have an idea of how it works. Read through the code until you feel like you can describe its functionality at a basic level.
 
-There are three more methods in `JobData`, each of which is public (and `static`, per our earlier note): `FindAll()`, `FindAll(string)`, and `FindByColumnAndValue`. Note that there are two methods named `FindAll`, but this is allowed in C# via a feature called **overloading**. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters. In other words, their signatures are different even though their names are same.
+There are three more methods in `JobData`, each of which is public (and `static`, per our earlier note): `FindAll()`, `FindAll(string)`, and `FindByColumnAndValue`. Note that there are two methods named `FindAll`, but this is allowed in C# via a feature called **overloading**. Overloading happens when multiple methods have the same name, but they each have different input parameters. In other words, their signatures are different even though their names are same. You can read more about overloading [here](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/member-overloading).
 
 Hear are a few questions to ask yourself while reading this code:
 - What is the data type of a "job" record?
@@ -202,7 +202,7 @@ core competency: Statistical Analysis
 If there are no results, it should print an appropriate messages.
 
 <aside class="aside-pro-tip" markdown="1">
-To do this, you'll need to iterate over a `List` of jobs. Each job is itself a `Dictionary`. While you can get each of the items out of the dictionary using the known keys ("employer", "location", etc), think instead about creating a nested loop to loop over each dictionary. You'll want to use the `Dictionary.Keys` property to do this. If a new field is added to the job records, this approach will print out the new field without any updates to `PrintJobs`.
+To do this, you'll need to iterate over a `List` of jobs. Each job is itself a `Dictionary`. While you can get each of the items out of the dictionary using the known keys ("employer", "location", etc), think instead about creating a nested loop to loop over each dictionary key. You'll want to use the `Dictionary.Keys` property to do this. If a new field is added to the job records, this approach will print out the new field without any updates to `PrintJobs`.
 </aside>
 
 #### Implement FindByValue
@@ -230,7 +230,7 @@ Here are some questions to ask yourself as you get started:
 - How can you make this comparison in a way that effectively ignores the case of the strings?
 - How can  you do this *without* altering the capitalization of the items in `AllJobs`, that is, so that you don't change the data, and consequently it is printed out the same way that it appears in `job_data.csv`?
 
-Once you have an idea for how to approach this, you'll likely need your favorite search engine to find out exactly how to it in C#.
+Once you have an idea for how to approach this, you'll likely need your favorite search engine to find out exactly how to do it in C#.
 
 When this task is completed, you're done!
 
@@ -246,7 +246,7 @@ Before submitting, make sure that your application:
 
 Watch a demo of a working solution.
 
-<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/mKXOXVeeqOg" frameborder="0" allowfullscreen></iframe></div>
+<div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube.com/embed/mKXOXVeeqOg" frameborder="0" allowfullscreen></iframe></div>
 
 ### How to Submit
 
@@ -256,7 +256,7 @@ To turn in your assignment and get credit, follow the [submission instructions][
 
 If you want to take your learning a few steps further, here are some additional problems you can try to solve. We're not providing you much guidance here, but we have confidence that you can figure these problems out!
 
-- **Sorting list results**: When a user asks for a list of employers, locations, position types, etc it would be nice if results were sorted alphabetically. Make this happen.
+- **Sorting list results**: When a user asks for a list of employers, locations, position types, etc. it would be nice if results were sorted alphabetically. Make this happen.
 - **Returning a copy of AllJobs**: Look at `JobData.FindAll()`. Notice that it's returning the `AllJobs` property, which is a static property of the `JobData` class. In general, this is not a great thing to do, since the person calling our `FindAll` method could then mess with the data that `AllJobs` contains. Fix this by creating a copy of `AllJobs`. (*Hint:* Look at the methods of the `List` class listed in the Microsoft documentation.)
 
 [submission-instructions]: ../

@@ -25,7 +25,15 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 2
 
-*
+* Use for loops, for-each loops, while loops, and do-while loops
+* Use if, if-else, and else if conditional statements
+* Describe what a data structure is and why it is useful
+* Explain the differences between the collection types (`Array`, `List`, and `Dictionary`)
+* Create an `Array`, `List`, and `Dictionary`
+* Utilize `List` and `Dictionary` methods and properties
+* Iterate through lists and dictionaries
+* Format strings and escape characters
+* Use the `StringBuilder` class
 
 ### Class 3
 
