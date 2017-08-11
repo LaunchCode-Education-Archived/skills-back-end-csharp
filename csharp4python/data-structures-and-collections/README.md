@@ -111,7 +111,7 @@ namespace Gradebook
                 grades.Add(newGrade);
             }
 
-            // Print class roster
+            // Print roster
             Console.WriteLine("\nClass roster:");
             for (int i = 0; i < students.Count; i++)
             {
@@ -270,7 +270,7 @@ namespace GradebookArray
                 grades[i] = studentGrade;
             }
 
-            // Print class roster, summing grades as we go
+            // Print roster, summing grades as we go
             Console.WriteLine("\nClass roster:");
             double sum = 0;
 
@@ -376,7 +376,7 @@ namespace GradebookDict
             }
             while (newStudent != "");
 
-            // Print class roster
+            // Print roster
             Console.WriteLine("\nClass roster:");
             foreach (KeyValuePair<string, double> student in students)
             {
