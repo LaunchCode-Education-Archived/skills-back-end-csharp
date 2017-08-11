@@ -124,7 +124,7 @@
 <h2 id="visual-studio">Visual Studio</h2>
 <p>Visual Studio is the Integrated Development Environment (IDE) used to develop C# and .NET applications.</p>
 <h3 id="windows-users">Windows Users</h3>
-<p>Visit the <a href="https://www.visualstudio.com/free-developer-offers/" target="_blank">Microsoft Free Developer Apps</a> page and download the Visual Studio 2017 Community installer.</p>
+<p>Visit the <a href="https://www.visualstudio.com/free-developer-offers/" target="_blank">Microsoft Free Developer Apps</a> page and download the Visual Studio 2017 Community installer. Allow about at least an hour for the installation process.</p>
 <p>Run the installer, and select the following packages from the <em>Workloads</em> pane:</p>
 <ul>
 <li>ASP.NET and web development</li>
@@ -137,7 +137,7 @@
 <p><img src="images/vs-packages-2.png" alt="Install packages" /></p>
 <p>When the install finishes running, select <em>Launch</em> and then close the installer window.</p>
 <p>When prompted, create a Microsoft Developer account and use it to sign in to Visual Studio.</p>
-<p>The launcher window will prompt you with some choices via a window similar to what you see below. Select the displayed options.</p>
+<p>The launcher window will prompt you with some choices via a window similar to what you see below. Select the displayed options. (If you don't see the box about applying customizations, don't worry about it, just proceed.)</p>
 <img src="images/launch-options.png" style="width:400px;display:block;margin:0 auto;">
 <aside class="aside-note">
 <p>If you fail to install one or more of the required packages, you can do so by closing Visual Studio and running the installer again. Select <em>Modify</em> in the Visual Studio 2017 section of the window, and then select the additional package(s) to install.</p>
@@ -150,12 +150,12 @@
 <p>If you installed the Windows 10 development image, then you already have everything you need.</p>
 <h2 id="github-project-setup">GitHub Project Setup</h2>
 <p>Visit the <a href="https://github.com/LaunchCodeEducation/csharp-exercises" target="_blank">LaunchCodeEducation/csharp-exercises</a> repository page and fork the repository into your own GitHub account by selecting <em>Fork</em> from the top right of the page.</p>
-<p>After forking, open Visual Studio. From within Visual Studio, choose the <em>Team Explorer</em> tab near the bottom of the <em>Solution Explorer</em> pane. If you don't see this tab, you can open it via the application menu: <em>View &gt; Team Explorer</em>. The first time you do this, you'll need to sign in to GitHub.</p>
-<p>Once authenticated, select <em>Clone</em> from the GitHub section of the <em>Team Explorer</em> and select your <code>csharp-exercises</code> copy from the modal window. <strong>Be sure to change the Path field</strong> to the location you would like the project to live, ideally inside of a folder you've been using to store other projects.</p>
+<p>After forking, open Visual Studio. From within Visual Studio, choose the <em>Team Explorer</em> tab near the bottom of the <em>Solution Explorer</em> pane. If you don't see this tab, you can open it via the application menu: <em>View &gt; Team Explorer</em>. The first time you do this, you may need to sign in to GitHub.</p>
+<p>Select <em>Clone</em> from the GitHub section of the <em>Team Explorer</em> and select your <code>csharp-exercises</code> copy from the modal window. <strong>Be sure to change the Path field</strong> to the location you would like the project to live, ideally inside of a folder you've been using to store other projects.</p>
 <p>VM (Mac/Linux) users: Don't forget to use the <code>lc101</code> directory within your Dropbox folder for this purpose.</p>
 <h2 id="configure-and-test">Configure and test</h2>
 <p>If your solution isn't open, open it via <em>File &gt; Open &gt; Project/Solution</em> and browse to the <code>.sln</code> file within the <code>csharp-exercises</code> directory.</p>
-<p>Right-click on the top-level &quot;Solution 'csharp-exercises'&quot; item in the <em>Solution Explorer</em> and select <em>Properties</em>. In the modal that opens, select <em>Common Properties &gt; Startup Project</em> and then choose <em>Current Selection</em> in the pane at the right.</p>
+<p>Right-click on the top-level &quot;Solution 'csharp-exercises'&quot; item in the <em>Solution Explorer</em> and select <em>Properties</em>. (If right-clicking doesn't work, just select &quot;Solution 'charp-exercises'&quot; and then click the tool/wrench icon near the top of <em>Solution Explorer</em>). In the modal that opens, select <em>Common Properties &gt; Startup Project</em> and then choose <em>Current Selection</em> in the pane at the right.</p>
 <aside class="aside-pro-tip">
 <p>This setting makes the default behavior of Visual Studio to run the currently-selected program when you hit the <span style="color:green">▶︎</span> <em>Start</em> button in the toolbar.</p>
 </aside>

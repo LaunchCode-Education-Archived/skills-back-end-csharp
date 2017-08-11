@@ -121,7 +121,7 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Assignment: TechJobs (Console Edition)</h1>
                     <h2 id="introduction">Introduction</h2>
-<p>Congratulations! Based on your hard work and strong coding skills, you've been brought an as an apprentice at LaunchCode. You're an apprentice member of the LaunchCode Tech Team, and you've been paired with a mentor to help you get comfortable and continue learning.</p>
+<p>Congratulations! Based on your hard work and strong coding skills, you've been brought in as an apprentice at LaunchCode. As an apprentice member of the Tech Team, you've been paired with a mentor to help you get comfortable and continue learning.</p>
 <p>The Company Team at LaunchCode works with employer partners to match qualified programmers with apprenticeships. They've asked for a new tool to be built to help them easily manage data for currently available jobs. Over the next few weeks, you'll help them build this application alongside mentors from the Tech Team.</p>
 <p>This first project will be a simple proof-of-concept prototype. It won't be pretty, or have lots of features, but it'll give you a chance to work through some initial concepts and get feedback from LaunchCode staff.</p>
 <p>Your mentor on this project is Kathy.</p>
@@ -140,7 +140,7 @@
 <h2 id="your-assignment">Your Assignment</h2>
 <p>Kathy has created a console application and started to fill in some features. Her code allows users to search job listings by one of several fields. It also is capable of displaying lists of all of the values of a given field in the system (e.g. all employers, or all locations).</p>
 <p>Kathy has handed it off to you with the task of adding a couple of features, and then getting feedback from the Company Team.</p>
-<p>If you work through the tasks Kathy has laid out for you, tackle one or more of the <a href="#bonus-missions">bonus missions</a>.</p>
+<p>When you work through the tasks Kathy has laid out for you, try to tackle one or more of the <a href="#bonus-missions">bonus missions</a>.</p>
 <h3 id="getting-started">Getting Started</h3>
 <p>Set up a local copy of the project:</p>
 <ul>
@@ -151,7 +151,7 @@
 <li>Open the solution via either the notification within <em>Team Explorer</em> or via <em>File &gt; Open &gt; Project/Solution</em>.</li>
 <li>Pop back over to the <em>Solution Explorer</em> to preview the code.</li>
 </ul>
-<p>Before diving in and starting to code, make sure you understand what the code you've been given does. Since you're starting with a functioning -- albeit unfinished -- program, go ahead and run it to get an idea of how it works.</p>
+<p>Before diving in and starting to code, make sure you understand what the code you've been given does. Since you're starting with a functioning - albeit unfinished - program, go ahead and run it to get an idea of how it works.</p>
 <aside class="aside-warning">
 <p>The application will run until you force it to quit, re-prompting time after time. To kill it, ctrl+C and then stop debugging via the red &quot;stop&quot; icon in the Debug toolbar. We'll learn precisely how the program manages to work this way below.</p>
 </aside>
@@ -177,12 +177,12 @@
 </ol>
 <p>Let's look at each of these.</p>
 <h5 id="the-main-method">The Main method</h5>
-<p>The logic within <code>Main</code> presents menus in turn, and based on the user's choice, takes appropriate action.</p>
-<p>It begins by declaring a two local variables: <code>columnChoices</code> and <code>actionChoices</code>. These contain information relating to the menus that we'll display, and we'll look at them in more detail later.</p>
-<p>Next we notice a while loop that starts <code>while (true)</code>. This may seem odd, but actually makes a lot of sense after a short explanation. We want our application to continually run until the user has decided they want to quit. The simplest way to do this is to loop forever. When the user wants to quit, they can kill our program by pressing ctrl-C (a widely-known command to kill a console application). As you saw above, however, within Visual Studio you'll also need to use the red &quot;stop&quot; icon in the Debug toolbar to stop the program.</p>
+<p>The logic within <code>Main</code> presents menus in turn and, based on the user's choice, takes appropriate action.</p>
+<p>It begins by declaring two local variables: <code>columnChoices</code> and <code>actionChoices</code>. These contain information relating to the menus that we'll display, and we'll look at them in more detail later.</p>
+<p>Next we notice a while loop that starts <code>while (true)</code>. This may seem odd, but actually makes a lot of sense after a short explanation. We want our application to continually run until the user has decided they want to quit. The simplest way to do this is to loop forever. When the user wants to quit, they can kill our program by pressing ctrl-c (a widely-known command to kill a console application). As you saw above, however, within Visual Studio you'll also need to use the red &quot;stop&quot; icon in the Debug toolbar to stop the program.</p>
 <p>The <code>Main</code> method can be summarized as follows:</p>
 <ol>
-<li>Present the user with choices on how to view data, list or search.</li>
+<li>Present the user with choices on how to view data: list or search.</li>
 <li>Based on that choice, prompt them with the column that they would like to apply the choice to. In the case of a search, we also ask for a search term.</li>
 <li>Carry out the &quot;query&quot; to the <code>JobData</code> class via one of it's public methods.</li>
 <li>Display the results of the &quot;query&quot;.</li>
@@ -198,11 +198,11 @@
 Dictionary&lt;string, string&gt; actionChoices = new Dictionary&lt;string, string&gt;();
 actionChoices.Add("search", "Search");
 actionChoices.Add("list", "List");</code></pre>
-<p>If you recall how the program worked when you ran it, the first menu that you chose had two options, Search and List, which seem to correspond to the entries in <code>actionChoices</code>. This is, in fact, the case. This the data that is used to generate the first menu we see when running the program.</p>
+<p>If you recall how the program worked when you ran it, the first menu that you chose had two options, Search and List, which seem to correspond to the entries in <code>actionChoices</code>. This is, in fact, the case. This is the data that is used to generate the first menu we see when running the program.</p>
 <p>The second usage of <code>GetUserSelection</code> is a few lines below:</p>
 <pre><code class="language-csharp">string columnChoice = GetUserSelection("List", columnChoices);</code></pre>
-<p>This references <code>columnChoices</code>, which is declared at the top of <code>main</code> has a similar structure to <code>actionChoices</code> (they're the same data type and are used in calls to the same method, so this shouldn't be surprising). Most of the entries in <code>columnChoices</code> correspond to columns in the jobs data set, but there's one additional entry with key/value pair <code>"all"</code>/<code>"All"</code>. These entries will help us present to the user the options for searching our data, which will correspond to searching within a given column, or searching all columns at once.</p>
-<p>The keys in <code>actionChoices</code> and <code>columnChoices</code> represent the &quot;internal&quot; string we'll use to refer to these options -- for example, when representing the user's menu choice, or querying data -- and the values in the dictionary represent the &quot;external&quot; way that these are represented to the user.</p>
+<p>This references <code>columnChoices</code>, which is declared at the top of <code>main</code> and has a similar structure to <code>actionChoices</code> (they're the same data type and are used in calls to the same method, so this shouldn't be surprising). Most of the entries in <code>columnChoices</code> correspond to columns in the jobs data set, but there's one additional entry with key/value pair <code>"all"</code>/<code>"All"</code>. These entries will help us present to the user the options for searching our data, which will correspond to searching within a given column, or searching all columns at once.</p>
+<p>The keys in <code>actionChoices</code> and <code>columnChoices</code> represent the &quot;internal&quot; strings we'll use to refer to these options -- for example, when representing the user's menu choice, or querying data -- and the values in the dictionary represent the &quot;external&quot; way that these are represented to the user.</p>
 <p>Within <code>GetUserSelection</code> itself, most of the code is within a do-while loop. A <a href="https://msdn.microsoft.com/en-us/library/370s1zax.aspx" target="_blank">do-while loop</a> is similar to a while loop, but the conditional check is at the <em>end</em> of the loop's code block. This has the net consequence that the loop's code block <em>always runs at least once</em>. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.</p>
 <p>Within this loop, menu options are printed to the screen and user input is collected. If input is valid, it returns the choice as a string to the caller. This string corresponds to the chosen key (from <code>choices</code>, which will be either <code>actionChoices</code> or <code>columnChoices</code>) of the item the user selected. If invalid, it re-prompts the user.</p>
 <p>The local variable <code>choiceKeys</code> is used to easily enumerate the <code>choices</code> dictionary. In other words, it gives us a simple way to provide an ordering to <code>choices</code>, which doesn't have an ordering of its own.</p>
@@ -212,7 +212,7 @@ actionChoices.Add("list", "List");</code></pre>
 <p>We haven't covered static properties and methods in-depth yet. For this assignment, know simply that they allow us to use properties and methods of a class without creating an object from that class. For example, we can call <code>JobData.FindAll()</code> from the <code>TechJob</code> class.</p>
 <p>If you want to create a new method in <code>JobData</code>, or add a property, be sure to declare it <code>static</code>.</p>
 </aside>
-<p>Let's look more closely at the data type of <code>AllJobs</code>. It purports to be an <code>List</code> that stores <code>Dictionary</code> objects which have <code>string</code> keys and <code>string</code> values. If we were to represent some of this data visually, using <code>[]</code> for an <code>List</code> and <code>{}</code> with key/value pairs (as in Python lists and dictionaries), it would look like this:</p>
+<p>Let's look more closely at the data type of <code>AllJobs</code>. It purports to be a <code>List</code> that stores <code>Dictionary</code> objects which have <code>string</code> keys and <code>string</code> values. If we were to represent some of this data visually, using <code>[]</code> for a <code>List</code> and <code>{}</code> for a collection - like a dictionary - of key/value pairs, it would look like this:</p>
 <pre><code class="language-nohighlight">[
     {
         "name": "Junior Data Analyst",
@@ -231,7 +231,7 @@ actionChoices.Add("list", "List");</code></pre>
     ...
 ]</code></pre>
 <p>If you look at <code>LoadData</code> you'll see a lot of unfamiliar code. Kathy wrote this essential piece of code for you, and while you won't have to modify it, it will be useful to have an idea of how it works. Read through the code until you feel like you can describe its functionality at a basic level.</p>
-<p>There are three more methods in <code>JobData</code>, each of which is public (and <code>static</code>, per our earlier note): <code>FindAll()</code>, <code>FindAll(string)</code>, and <code>FindByColumnAndValue</code>. Note that there are two methods named <code>FindAll</code>, but this is allowed in C# via a feature called <strong>overloading</strong>. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters. In other words, their signatures are different even though their names are same.</p>
+<p>There are three more methods in <code>JobData</code>, each of which is public (and <code>static</code>, per our earlier note): <code>FindAll()</code>, <code>FindAll(string)</code>, and <code>FindByColumnAndValue</code>. Note that there are two methods named <code>FindAll</code>, but this is allowed in C# via a feature called <strong>overloading</strong>. Overloading happens when multiple methods have the same name, but they each have different input parameters. In other words, their signatures are different even though their names are same. You can read more about overloading <a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/member-overloading" target="_blank">here</a>.</p>
 <p>Hear are a few questions to ask yourself while reading this code:</p>
 <ul>
 <li>What is the data type of a &quot;job&quot; record?</li>
@@ -252,7 +252,7 @@ core competency: Statistical Analysis
 *****</code></pre>
 <p>If there are no results, it should print an appropriate messages.</p>
 <aside class="aside-pro-tip">
-<p>To do this, you'll need to iterate over a <code>List</code> of jobs. Each job is itself a <code>Dictionary</code>. While you can get each of the items out of the dictionary using the known keys (&quot;employer&quot;, &quot;location&quot;, etc), think instead about creating a nested loop to loop over each dictionary. You'll want to use the <code>Dictionary.Keys</code> property to do this. If a new field is added to the job records, this approach will print out the new field without any updates to <code>PrintJobs</code>.</p>
+<p>To do this, you'll need to iterate over a <code>List</code> of jobs. Each job is itself a <code>Dictionary</code>. While you can get each of the items out of the dictionary using the known keys (&quot;employer&quot;, &quot;location&quot;, etc), think instead about creating a nested loop to loop over each dictionary key. You'll want to use the <code>Dictionary.Keys</code> property to do this. If a new field is added to the job records, this approach will print out the new field without any updates to <code>PrintJobs</code>.</p>
 </aside>
 <h4 id="implement-findbyvalue">Implement FindByValue</h4>
 <p>At this stage, the application will allow users to search a given column of the data for a given string. Your next task is to enable a search to go across <em>all</em> of the columns.</p>
@@ -274,7 +274,7 @@ core competency: Statistical Analysis
 <li>How can you make this comparison in a way that effectively ignores the case of the strings?</li>
 <li>How can  you do this <em>without</em> altering the capitalization of the items in <code>AllJobs</code>, that is, so that you don't change the data, and consequently it is printed out the same way that it appears in <code>job_data.csv</code>?</li>
 </ul>
-<p>Once you have an idea for how to approach this, you'll likely need your favorite search engine to find out exactly how to it in C#.</p>
+<p>Once you have an idea for how to approach this, you'll likely need your favorite search engine to find out exactly how to do it in C#.</p>
 <p>When this task is completed, you're done!</p>
 <h3 id="sanity-check">Sanity Check</h3>
 <p>Before submitting, make sure that your application:</p>
@@ -285,13 +285,13 @@ core competency: Statistical Analysis
 </ul>
 <h3 id="solution-demo">Solution Demo</h3>
 <p>Watch a demo of a working solution.</p>
-<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/mKXOXVeeqOg" frameborder="0" allowfullscreen></iframe></div>
+<div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube.com/embed/mKXOXVeeqOg" frameborder="0" allowfullscreen></iframe></div>
 <h3 id="how-to-submit">How to Submit</h3>
 <p>To turn in your assignment and get credit, follow the <a href="../">submission instructions</a>.</p>
 <h2 id="bonus-missions">Bonus Missions</h2>
 <p>If you want to take your learning a few steps further, here are some additional problems you can try to solve. We're not providing you much guidance here, but we have confidence that you can figure these problems out!</p>
 <ul>
-<li><strong>Sorting list results</strong>: When a user asks for a list of employers, locations, position types, etc it would be nice if results were sorted alphabetically. Make this happen.</li>
+<li><strong>Sorting list results</strong>: When a user asks for a list of employers, locations, position types, etc. it would be nice if results were sorted alphabetically. Make this happen.</li>
 <li><strong>Returning a copy of AllJobs</strong>: Look at <code>JobData.FindAll()</code>. Notice that it's returning the <code>AllJobs</code> property, which is a static property of the <code>JobData</code> class. In general, this is not a great thing to do, since the person calling our <code>FindAll</code> method could then mess with the data that <code>AllJobs</code> contains. Fix this by creating a copy of <code>AllJobs</code>. (<em>Hint:</em> Look at the methods of the <code>List</code> class listed in the Microsoft documentation.)</li>
 </ul>
                                     </section>

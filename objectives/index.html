@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Running Windows on Mac or Linux :: Unit 3: Back-End C# Skill Track</title>
+        <title>Objectives :: Unit 3: Back-End C# Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-running-windows-on-mac-or-linux'>
+    <body id='page-objectives'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -21,7 +21,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                         <ul class="dropdown-menu">
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
                                         Classes
                                     </a>
@@ -119,45 +119,49 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Running Windows on Mac or Linux</h1>
-                    <p>For this unit we'll need to run Visual Studio for Windows. If you use macOS or a Linux-based operating system, you can install an application called a <strong>hypervisor</strong> that allows you to run <strong>virtual machines</strong> that contain other operating systems. This is what we'll do to get Windows running on your machine.</p>
-<aside class="aside-note">
-<p>You may have noticed on the Microsoft site that there is a preview version of Microsoft Visual Studio for Mac. The .NET development environment on macOS isn't mature enough yet to warrant using it in this class.</p>
-</aside>
-<aside class="aside-warning">
-<p>It's important to make sure you have enough space for the following installations. The VM takes up about 60GB, but you should ideally have 75GB or more free. Memory of 8GB or more is recommended, but 4GB should work (though the machine will be taxed and run more slowly).
-As far as creating space, I recommend using a program to give a high-level diagnostic of how space is being used currently such as Grand Perspective: <a href="http://grandperspectiv.sourceforge.net/" target="_blank">http://grandperspectiv.sourceforge.net/</a>.
-Running this on the root folder will show areas of large disk space usage. You should generally be able to make space by cleaning up old files and programs, and possibly putting stuff in cloud storage. </p>
-</aside>
-<h2 id="install-virtualbox">Install VirtualBox</h2>
-<p>The hypervisor we'll use is VirtualBox. <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">Visit their download page</a> and download the installer for your particular host system (Mac or Linux).</p>
-<h2 id="install-a-windows-virtual-machine">Install A Windows Virtual Machine</h2>
-<p>Download a free Windows 10 Development Virtual Machine (VM) at the <a href="https://developer.microsoft.com/en-us/windows/downloads/virtual-machines" target="_blank">Windows Dev Center</a>. Choose the VirtualBox edition of Windows 10 Enterprise.</p>
-<p>Unzip the downloaded file and install the VM by double-clicking on the resulting  <code>.ova</code> or <code>.ovf</code> file. Follow the prompts within the VM to complete the Windows setup process.</p>
-<h3 id="guest-additions-and-other-tweaks">Guest Additions and Other Tweaks</h3>
-<p>Let's do a few things to make our experience working in this VM a little better.</p>
-<p>Install VirtualBox Guest Additions by selecting the Guest Additions icon from the system tray in the lower right of your Windows VM. This additional package will enable a better experience and closer integration between the host and guest operating systems. You'll then need to restart the VM for the changes to take effect.</p>
-<p><em>NOTE:</em> Whenever you want to &quot;shut down&quot; the virtual operating system, you have three choices:</p>
+                                        <h1>Objectives</h1>
+                    <h2 id="learning-objectives">Learning Objectives</h2>
+<p>Listed below are the competencies you should demonstrate by the time you've completed each class's work.</p>
+<h3 id="class-1">Class 1</h3>
 <ul>
-<li><em>Save the machine state</em> - The equivalent to putting the VM to sleep, or shutting your laptop. You'll want to do this most often. We'll call this <em>pausing</em> your VM.</li>
-<li><em>Send the shutdown signal</em> - The equivalent to shutting down the operating system via the Start Menu's <em>Power Off</em> item. You'll want to do this when you want to reboot your VM, such as after installing the Guest Additions.</li>
-<li><em>Power off the machine</em> - The equivalent of turning off the VM by holding down a physical power button on a computer until it &quot;force quits&quot;. Don't do this unless you absolutely have to.</li>
+<li>Install Visual Studio</li>
+<li>Open a Project/Solution</li>
+<li>Create a simple <em>Hello World</em> console app   </li>
+<li>Navigate files and folders in Visual Studio</li>
+<li>Explain the difference between dynamically and statically typed languages</li>
+<li>Create a static method</li>
+<li>Use arrays in C#</li>
+<li>Explain the difference between value and reference types</li>
+<li>Describe what <code>using</code> does</li>
+<li>Use <code>Console.ReadLine</code> and <code>Console.WriteLine</code></li>
+<li>Parse data types</li>
+<li>Use <code>string</code> methods</li>
+<li>Use C# naming conventions</li>
 </ul>
-<p>It's very handy to be able to copy/paste between your host operating system (Mac or Linux) and the guest operating system (Windows). To enable this, pause your VM, and from the main VirtualBox window, select the Settings icon to access the VM's settings. From the <em>General</em> section, choose the <em>Advanced</em> tab, and choose <em>Bidirectional</em> from the <em>Shared Clipboard</em> menu. This will allow you to copy/paste back and forth.</p>
-<aside class="aside-note">
-<p>On a Mac, the copy/paste shortcuts (among others) use the <em>command</em> key, while in Windows they use the <em>control</em> key. Keep this in mind. You'll need to use <em>ctrl+c</em> and <em>ctrl+v</em> from your Mac keyboard to copy/paste within the Windows VM.</p>
-</aside>
-<h3 id="visual-studio-setup">Visual Studio Setup</h3>
-<p>Add the GitHub Visual Studio extension by downloading and installing from <a href="https://visualstudio.github.com/" target="_blank">visualstudio.github.com</a> (do this inside your VM). After installation, follow the prompt to sign in to your GitHub account.</p>
-<p>Open Visual Studio. On the view that opens, &quot;Sign in to Visual Studio&quot;, go ahead and create an account (or sign in if you already have one). It's free, and it will unlock the full features of the application.</p>
-<h3 id="install-dropbox">Install Dropbox</h3>
-<p>From within the Windows VM, visit <a href="https://www.dropbox.com/" target="_blank">dropbox.com</a> and install the Dropbox App, creating a free account if you don't already have one. Once the app is installed, create a new folder named <code>lc101</code> within the Dropbox folder.</p>
-<p><strong>Pre-existing Dropbox account</strong>: You likely don't want everything you've stored in Dropbox to download to your VM. To prevent this, open up Dropbox preferences and choose the Account tab. Then click on <em>Selective Sync</em>. From this window, you can make sure that only the <code>lc101</code> folder (and any others you might want) is selected to sync to your VM.</p>
-<p>Why are we doing this? As you may have noticed, the Windows VM that you installed will eventually expire. Microsoft doesn't give out free copies of Windows for indefinite use, and this is the mechanism they put in place to prevent indefinite free usage. Once the VM expires, you will be forced to get a new Windows development VM in order to continue developing on Windows. By storing your project files within Dropbox, you'll have a backup of your files, and it will be easy to sync all of your projects down to your new VM and continue working, with the minimal amount of hassle.</p>
-<p><strong>If you don't store your project files in Dropbox, they will be inaccesible once the VM expires.</strong></p>
-<p>To setup a new image after the current one expires, revisit this page and follow all steps, skipping the VirtualBox install step.</p>
-<h3 id="install-other-apps">Install Other Apps</h3>
-<p>At this point, you'll probably want to install a couple more apps that you use frequently, such as <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a> and <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>. </p>
+<h3 id="class-2">Class 2</h3>
+<ul>
+<li>Use for loops, for-each loops, while loops, and do-while loops</li>
+<li>Use if, if-else, and else if conditional statements</li>
+<li>Describe what a data structure is and why it is useful</li>
+<li>Explain the differences between the collection types (<code>Array</code>, <code>List</code>, and <code>Dictionary</code>)</li>
+<li>Create an <code>Array</code>, <code>List</code>, and <code>Dictionary</code></li>
+<li>Utilize <code>List</code> and <code>Dictionary</code> methods and properties</li>
+<li>Iterate through lists and dictionaries</li>
+<li>Format strings and escape characters</li>
+<li>Use the <code>StringBuilder</code> class</li>
+</ul>
+<h3 id="class-3">Class 3</h3>
+<h3 id="class-4">Class 4</h3>
+<h3 id="class-5">Class 5</h3>
+<h3 id="class-6">Class 6</h3>
+<h3 id="class-7">Class 7</h3>
+<h3 id="class-8">Class 8</h3>
+<h3 id="class-9">Class 9</h3>
+<h3 id="class-10">Class 10</h3>
+<h3 id="class-11">Class 11</h3>
+<h3 id="class-12">Class 12</h3>
+<h3 id="class-13">Class 13</h3>
+<h3 id="class-14">Class 14</h3>
                                     </section>
 
             </div>

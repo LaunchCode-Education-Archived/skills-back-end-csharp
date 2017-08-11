@@ -123,7 +123,7 @@
                     <p>How C# handles values and variables is one of the most significant differences between it and Python.</p>
 <h2 id="static-vs-dynamic-typing">Static vs. Dynamic Typing</h2>
 <p>Python is a <strong>dynamically typed</strong> language. In a dynamically typed language a variable or parameter can refer to any kind of value at any time. When the variable is used, the interpreter figures out what type it is and behaves accordingly.</p>
-<p>C# is a <strong>statically typed</strong> language. In a statically typed language the association between a variable or parameter and the type of value it can refer to is determined <em>when the variable or parameter is declared</em>. Once the declaration is made it is an illegal for a it to refer to a value of any other type.</p>
+<p>C# is a <strong>statically typed</strong> language. In a statically typed language the association between a variable or parameter and the type of value it can refer to is determined <em>when the variable or parameter is declared</em>. Once the declaration is made it is illegal for it to refer to a value of any other type.</p>
 <p>For example, this is legal in Python:</p>
 <pre><code class="language-python">x = "dog"
 x = 42</code></pre>
@@ -132,11 +132,11 @@ x = 42</code></pre>
 <pre><code class="language-csharp">string x = "dog";
 x = 42;</code></pre>
 <p>The compiler error would occur when we try to assign <code>42</code> to a variable of type <code>string</code>. This is simply not allowed in C#.</p>
-<p>Formally, this means that <em>we must declare the type of every variable and parameter</em> in a statically typed language. This is done by preceding the variable or parameter name with the name of its type, as we did in the example above: <code>string x = "dog"</code>.</p>
-<p>We only need to specify the type of a variable or paremeter when declaring it. Subsequent usage does not require specifying the type, and will result in an error.</p>
+<p>Formally, this means that in a statically typed language <em>we must declare the type of every variable and parameter</em>. This is done by preceding the variable or parameter name with the name of its data type, as we did in the example above: <code>string x = "dog"</code>.</p>
+<p>We only need to specify the type of a variable or parameter when declaring it. Subsequent usage does not require specifying the type, and doing so will result in an error.</p>
 <aside class="aside-warning">
-<p>It is allowed in some situations in C# to declare a variable without specifying a type by using the keyword <code>var</code>, as in <code>var x = "dog";</code>. In this case, C# still assigns a type to <code>x</code> through inference. It looks and sees that we are assigning <code>x</code> the value <code>"dog"</code>, which is <code>string</code>. Thus, <code>x</code> has type <code>string</code> and attempting to assign <code>x = 42</code> will still result in a build error.</p>
-<p>We recommend avoiding use of <code>var</code> while you are learning C#, and even after you become more experienced with the langauge you will still only want to use it sparingly and in specific circumstances. Explicitly declaring the type of your variables makes for more readable code, in general.</p>
+<p>It is allowed in some situations in C# to declare a variable without specifying a type by using the keyword <code>var</code>, as in <code>var x = "dog";</code>. In this case, C# still assigns a type to <code>x</code> through inference. It looks and sees that we are assigning <code>x</code> the value <code>"dog"</code>, which is a <code>string</code>. Thus, <code>x</code> has type <code>string</code> and attempting to assign <code>x = 42</code> will still result in a build error.</p>
+<p>We recommend avoiding use of <code>var</code> while you are learning C#, and even after you become more experienced with the language you will still only want to use it sparingly and in specific circumstances. Explicitly declaring the type of your variables makes for more readable code, in general.</p>
 </aside>
 <p>Dynamic and static typing are examples of different <a href="https://en.wikipedia.org/wiki/Type_system" target="_blank">type systems</a>. The type system of a programming language is one of the most important high-level characteristics that programmers use when discussing the differences between languages. Here are a few examples of popular languages falling into these two categories:</p>
 <ul>
@@ -191,12 +191,12 @@ x = 42;</code></pre>
 <td><code>bool</code></td>
 <td><code>Boolean</code></td>
 <td><code>true</code> <br> <code>false</code></td>
-<td>Note that booleans in C# are not capitalized as they are in Python.</td>
+<td>Note that booleans in C# are not capitalized as they are in Python</td>
 </tr>
 </tbody>
 </table>
 <p>Not all built-in data types in C# are listed here, only the most commonly used types that beginners are likely to encounter. If you're curious, <a href="https://msdn.microsoft.com/en-us/library/ya5y69ds.aspx" target="_blank">read more about built-in types in C#</a>.</p>
-<p>As in Python, operators -- such as <code>+</code> and <code>*</code> -- are type-dependent. That is, we can only use them on allowed types, and their effects are different depending on which types we use them on. The <code>+</code> operator is the most clear example of this. We can use <code>+</code> to add numeric types together, such as <code>2 + 2</code>. But we can also use it to concatenate strings: <code>"2" + "2"</code>. What the operators does depends on the type, and we may not mix types in arbitrary ways (<code>"2" + 2</code> results in a compiler error).</p>
+<p>As in Python, operators - such as <code>+</code> and <code>*</code> - are type-dependent. That is, we can only use them on allowed types, and their effects are different depending on which types we use them on. The <code>+</code> operator is a good example of this. We can use <code>+</code> to add numeric types together, such as <code>2 + 2</code> which results in <code>4</code>. But we can also use it to concatenate strings: <code>"2" + "2"</code>, for example, which results in <code>"22"</code>. What the operators do depends on the type they are operating on, and we may not mix types in arbitrary ways (<code>"2" + 2</code> results in a compiler error).</p>
 <aside class="aside-note">
 <p>Numeric types such as <code>int</code> and <code>double</code> may be freely mixed when using numeric operators. Generally, the result of such mixing is that the output has the type of the more precise input. For example, the following snippet would print out <code>System.double</code>.</p>
 <pre><code class="language-csharp">float a = 2;
@@ -205,7 +205,7 @@ Console.WriteLine((a + b).GetType());</code></pre>
 </aside>
 <h3 id="string">string</h3>
 <p>Since strings are so important, let's explore them in a bit more depth.</p>
-<p>Strings in C# and Python are quite similar. Like Python, C# strings are immutable. However, manipulating strings in C# is not quite as obvious since strings do not support an indexing or slicing operator. That is not to say that you can’t index into a C# string; you can. You can also pull out a substring just as you can with slicing. The difference is that C# uses method calls where Python uses operators.</p>
+<p>Strings in C# and Python are quite similar. Like Python, C# strings are immutable. However, manipulating strings in C# is not quite as obvious since strings do not support an indexing or slicing operator. That is not to say that you can’t index into a C# string; you can. You can also pull out a substring just as you can with slicing. The difference is that C# uses method calls where Python frequently uses operators.</p>
 <p>The table below maps common Python string operations to their C# counterparts. For the examples shown in the table, we will use a string variable called <code>str</code>.</p>
 <table>
 <thead>
@@ -259,7 +259,7 @@ Console.WriteLine((a + b).GetType());</code></pre>
 </tbody>
 </table>
 <h2 id="example-the-tempconv-program">Example: The TempConv Program</h2>
-<p>Let's go back in time and look at another of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.</p>
+<p>Let's go back in time and look at one of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.</p>
 <pre><code class="language-python">def main():
     fahrenheit = int(input("Enter the temperature in F: "))
     celsius = (fahrenheit - 32) * (5.0 / 9.0)
@@ -274,7 +274,7 @@ namespace TempConv
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             double fahrenheit;
             double celsius;
@@ -297,13 +297,13 @@ namespace TempConv
 <li>Input/output and the <code>Console</code> class</li>
 </ul>
 <h3 id="using">using</h3>
-<p>In C#, you can use any class that is available without having to import the class subject to two very important conditions:</p>
+<p>In C#, you can use any class that is available without having to import the class - subject to two very important conditions:</p>
 <ol>
 <li>The C# compiler must know that the class exists</li>
 <li>You must use the full name of the class</li>
 </ol>
 <p>You can think of the <code>using</code> statement in C# as working a little bit like the <code>from module import xxx</code> statement in Python. However, behind the scenes the two statements actually do very different things.</p>
-<p>The first important difference to understand is that the class naming system in C# is very hierarchical. The <em>full</em> name of the <code>Console</code> class is really <code>System.Console</code>. You can think of this name as having two parts: The first part, <code>System</code>, is called the <strong>namespace</strong>, and the last part is the class. We’ll talk more about the class naming system a bit later. The second important difference is that it is not the <code>using</code> statement’s responsibility to load classes into memory. That task falls on the <strong>assembly</strong>, which is the unit of compiled code created by Visual Studio (or the C# compiler, more generally).</p>
+<p>The first important difference to understand is that the class naming system in C# is very hierarchical. The <em>full</em> name of the <code>Console</code> class is really <code>System.Console</code>. You can think of this name as having two parts. The first part, <code>System</code>, is called the <strong>namespace</strong>, and the last part is the <strong>class. We’ll talk more about the class naming system a bit later. The second important difference is that it is not the <code>using</code> statement’s responsibility to load classes into memory. That task falls on the </strong>assembly**, which is the unit of compiled code created by Visual Studio (or the C# compiler, more generally).</p>
 <p>The <code>using</code> statement tells the compiler that we are going to use a shortened version of the class’s name. In this example we are going to use the class <code>System.Console</code>, but we can refer to it as just <code>Console</code>. We could use the <code>System.Console</code> class without any problem and without any import statement provided that we always referred to it by its full name.</p>
 <p>Don't just trust us, try it yourself! Remove the <code>using</code> statement and change <code>Console</code> to <code>System.Console</code> in the rest of the code. The program should still compile and run.</p>
 <h3 id="declaring-variables">Declaring Variables</h3>
@@ -314,7 +314,7 @@ string input;</code></pre>
 <p>Specifically we are saying that <code>fahrenheit</code> and <code>celsius</code> are going to reference objects that are of type <code>double</code>. The variable <code>input</code> will contain a string. This means that if we were to try an assignment like <code>fahrenheit = "xyz"</code> the compiler would generate an error because <code>"xyz"</code> is a string and <code>fahrenheit</code> is supposed to be a double.</p>
 <p>For Python programmers the following error is likely to be even more common. Suppose we forgot the declaration for <code>celsius</code> and instead left that line blank. What would happen if we try to run our program?</p>
 <p><img src="build-error.png" alt="Build error" /></p>
-<p>The compiler detects an error and Visual Studio displays this message. Where you to look at the error pane, you would see the message: &quot;The name 'celsius' does not exist in the current context&quot;.</p>
+<p>The compiler detects an error and Visual Studio displays this message. Were you to look at the error pane, you would see the message: &quot;The name 'celsius' does not exist in the current context&quot;.</p>
 <aside class="aside-note">
 <p>When using an IDE such as Visual Studio, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitly compile your code before finding compiler errors. Nice, huh?</p>
 </aside>
@@ -329,13 +329,13 @@ print("The year is:", year)</code></pre>
 Console.WriteLine("Hello" + "World")
 Console.WriteLine("The year is " + year.ToString());</code></pre>
 <p>Similarly, <code>Console.ReadLine</code> returns input as a string. To convert it to a desired type, you can generally use the syntax <code>[TYPE].Parse(value)</code>, with <code>[TYPE]</code> replaced by the given type. Here's an example:</p>
-<pre><code class="language-csharp">string input = Console.ReadLine();
-int year = int.Parse(input);</code></pre>
+<pre><code class="language-csharp">string userInput = Console.ReadLine();
+int year = int.Parse(userInput);</code></pre>
 <p>This is very similar to what we did in Python:</p>
 <pre><code class="language-python">user_input = input()
 year = int(user_input)</code></pre>
 <h2 id="class-types">Class Types</h2>
-<p>In addition to the types introduced so far any class in C# defines a type. Classes and objects are conceptually the same as in Python: A class is a template for creating objects. We'll have much more to say about classes and objects, but for now you need to be comfortable seeing the basic syntax of class types and class creation.</p>
+<p>In addition to the types introduced so far, any class in C# defines a type. Classes and objects are conceptually the same as in Python: A class is a template, or blueprint, for creating objects. We'll have much more to say about classes and objects, but for now you need to be comfortable seeing the basic syntax of class types and class creation.</p>
 <p>If I have a class <code>Cat</code> with a constructor that takes no arguments, I can declare and create a new instance of <code>Cat</code> using its constructor. In Python, we did this as follows:</p>
 <pre><code class="language-python">my_cat = Cat()</code></pre>
 <p>And the C# version is:</p>
@@ -353,10 +353,10 @@ Cat sameCat = myCat;</code></pre>
 <p><img src="references.png" alt="Reference Types" /></p>
 <p>Since <code>int</code> is a value type, the variable <code>catAge</code> functions as a box holding the integer value 11. On the other hand, <code>myCat</code> is a reference variable, since it holds an object. The variable actually stores the address of the object, which we visualize as an arrow from the variable box to the object.</p>
 <p>When we assign a value to a reference type, as in <code>Cat sameCat = myCat</code>, we are not creating a second copy of the object, but instead are creating a second &quot;arrow&quot; pointing to the same object.</p>
-<p>The distinction between references types and value types is important, if difficult to wrap your brain around at first. We will see that reference types are handled differently in essential and important ways in a lot of different situations.</p>
+<p>The distinction between reference types and value types is important, but can be difficult to wrap your brain around at first. We will see that reference types are handled differently in essential and important ways in a lot of different situations.</p>
 <h2 id="arrays">Arrays</h2>
 <p>While Python has the basic list type, C# has multiple ways of storing ordered data. The most basic is that of the array.</p>
-<p>An array is an ordered, fixed-size collection of elements. Since C# is statically-typed, arrays may only store one type of object. We can create an array of integers or an array of strings, but we may not create an array that holds both integers and strings.</p>
+<p>An array is an ordered, fixed-size collection of elements. Since C# is statically typed, arrays may only store one type of object. We can create an array of integers or an array of strings, but we may not create an array that holds both integers and strings.</p>
 <p>The syntax for creating an array capable of holding 10 integers is:</p>
 <pre><code class="language-csharp">int[] someInts = new int[10];</code></pre>
 <p>To create an array of a different size, or to hold different type values, replace 10 and <code>int</code> (on both sides of the assignment). Unlike lists in Python, arrays in C# <em>may not</em> change size once created. This turns out to be not very practical, so thankfully C# provides more flexible ways to store data, which we'll explore in a later lesson.</p>
@@ -364,23 +364,22 @@ Cat sameCat = myCat;</code></pre>
 <pre><code class="language-csharp">int[] someOtherInts = {1, 1, 2, 3, 5, 8};</code></pre>
 <p>Here, the size is implicit in the number of elements in the literal expression <code>{1, 1, 2, 3, 5, 8}</code>.</p>
 <p>To access array elements, we use square brackets, as with Python lists.</p>
-<pre><code class="language-csharp">int anInt = someInts[0];</code></pre>
+<pre><code class="language-csharp">int anInt = someOtherInts[0];</code></pre>
 <p>As with Python, arrays have zero-based indexing.</p>
-<p>Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they're a core part of C#, and are ubiquitous, so it's good to know how they work.</p>
+<p>Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they are ubiquitous in C# programming, so it's good to know how they work.</p>
 <h2 id="static-methods">Static Methods</h2>
-<p>In pure object-oriented langauges like C# and Java, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as <strong>methods</strong>. We'll we adopt this terminology from now on, and will not utter the word &quot;function&quot; for the remainder of this unit.</p>
-<p>We'll dive into learning about classes and objects in C# soon enough, but until we do, we'll frequently need to write methods, so we should understand a little bit about them. In particular, we'll use <strong>static methods</strong>, which behave somewhat similarly to functions as you knew them in Python.</p>
-<p>A static method is one with the <code>static</code> keyword, as our <code>Main</code> method above did:</p>
+<p>In pure object-oriented languages like C# and Java, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as <strong>methods</strong>. We'll we adopt this terminology from now on.</p>
+<p>We'll dive into learning about classes and objects in C# soon enough, but first let's learn a little about <strong>static methods</strong>, which behave somewhat similarly to functions as you knew them in Python.</p>
+<p>A static method is one with the <code>static</code> keyword, as our <code>Main</code> method above had:</p>
 <pre><code class="language-csharp">public static void Main(string[] args)
 {
     // some code
 }</code></pre>
-<p>We've already disected each element of this line, however, we haven't really shown you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return and parameter types accordingly.</p>
+<p>Let's show you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return and parameter types accordingly.</p>
 <aside class="aside-warning">
-<p>For now, every method we write will have the <code>static</code> keyword. Leaving off <code>static</code> will prevent you from calling methods you define as you would like.</p>
-<p>We will explore exactly what <code>static</code> does in more detail in later lessons.</p>
+<p>For now, every method we write will have the <code>static</code> keyword. We will explore exactly what <code>static</code> does in more detail in later lessons.</p>
 </aside>
-<p>Let's create two classes in C# to demonstrate this. One will have a <code>Main</code> method and the other will have a method that we want to call from within <code>Main</code>.</p>
+<p>Let's create two classes in C# to demonstrate using static methods. One class will have a <code>Main</code> method and the other will have a method that we want to call from within <code>Main</code>.</p>
 <pre><code class="language-csharp">namespace HelloMethods
 {
     public class Program
@@ -416,10 +415,10 @@ Cat sameCat = myCat;</code></pre>
 <p>We won't explore every new aspect of this example, but rather will focus on the two methods.</p>
 <p>The <code>Main</code> method in the <code>HelloMethods</code> class is the same in structure as that of our previous example. Take a look at the <code>Message</code> class. Note that it <em>does not</em> have a <code>Main</code> method. In a C# project, only one <code>Main</code> method is allowed. When the project is compiled and run, the <code>Main</code> method indicates what should be executed, and if there were multiple <code>Main</code> methods this would be ambiguous.</p>
 <p>The <code>Message</code> class has a method of its own: <code>GetMessage</code>. Like <code>Main</code>, it has the <code>static</code> keyword. Unlike <code>Main</code>, <code>GetMessage</code> has a return type of <code>string</code> and a single parameter, <code>string lang</code>.</p>
-<p>Since C# is statically typed, each method must declare its return type -- that is, the data type of what it will return -- along with the type of each parameter. One consequence of this that may not be immediately obvious is that methods in C# may not return different types of data. For example, we would not be able to replace the last <code>return</code> statement of <code>GetMessage</code> with something like <code>return 42;</code>. This would be flagged as a compiler error.</p>
+<p>Since C# is statically typed, each method must declare its return type - that is, the data type of what it will return - along with the type of each parameter. One consequence of this that may not be immediately obvious is that methods in C# may not return different types of data. For example, we would not be able to replace the last <code>return</code> statement of <code>GetMessage</code> with something like <code>return 42;</code>. This would be flagged as a compiler error.</p>
 <p>Finally, let's note how a static method is called. The first line of <code>Main</code> in the <code>Program</code> class is:</p>
 <pre><code class="language-csharp">Message.GetMessage("fr");</code></pre>
-<p>To call a static method we must use the name of the classin which it is defined, followed by <code>.</code>, followed by the name of the method.</p>
+<p>To call a static method we must use the name of the class in which it is defined, followed by <code>.</code>, followed by the name of the method.</p>
 <p>We are able to call this method from another class because it is declared to be <code>public</code>. If we wanted to restrict the method from being called by another class, we could instead use the <code>private</code> modifier. We'll explore access modifiers in more depth in coming lessons.</p>
 <h2 id="references">References</h2>
 <ul>
