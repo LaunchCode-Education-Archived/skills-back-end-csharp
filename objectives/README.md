@@ -37,6 +37,17 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 3
 
+* Describe what filters in ASP.NET Core MVC do
+* Explain the characteristics of each component of MVC
+* Create a new Web Application project in Visual Studio
+* Create new controllers and action methods
+* Explain why you have to pass another argument to render HTML when you use `return Content()`
+* Describe the default routing behavior and how you can customize it with `[Route("..")]`
+* Explain when and why you would want to use `[HttpGet]` and `[HttpPost]`
+* Handle GET requests that have query parameters
+* Handle GET requests that pass parameters via URL segments
+* Access POST parameters
+* Redirect users
 
 ### Class 4
 
