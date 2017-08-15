@@ -15,10 +15,9 @@ We begin this lesson by looking at the MVC design pattern and then discussing th
 
 Next we build a simple web app.
 
-1. Open a new Web project and select *ASP.NET Core Web Application (.NET Core)* and name the project *HelloMVC*. Make sure the two boxes shown in the video are selected (one is to create the directory, the other is to initialize a Git repository).
+1. Open a new Web project and select *ASP.NET Core Web Application (.NET Core)* and name the project *HelloMVC*. Make sure the two boxes shown in the video are selected (one is to create the directory, the other is to initialize a Git repository). And *be sure to change the file path* so that this project is created in your `lc101` folder.
 2. On the next screen, select Web Application for your template.
-3. Run the ready-made web application by pressing the green arrow "IIS Express" button. After you look at the web page that is created, you can stop the application with the red button.
-**I wasn't able to continue, localhost timed out, never saw the web page**
+3. Run the ready-made web application by pressing the green arrow "IIS Express" button. This may take several minutes before you see the web page shown in the video. After you look at the web page that is created, you can stop the application with the red button.
 4. Right click on the `Controllers` folder and select *Add->New Item*. Expand the .NET Core section on the left and select *ASP.NET->MVC Controller Class* and name the controller `HelloController`.
 5. Replace `return View();` with `return Content("Hello World");`.
 6. Run your application again as in step 3. Append this to your url in the browser: `/Hello`. Note that the first portion of the path refers to the controller and the second portion of the path refers to the action method that will be used within that controller. Hence, you can append this to your url instead and it will work the same: `/Hello/Index`.

@@ -20,6 +20,10 @@ In this video lesson we focus on routing and specifically:
 
 Be sure to code along with the video! The notes to videos only include highlights of the code that is featured in each video.
 
+<aside class="aside-note" markdown="1">
+Note that around minute 14 and minute 25 of the video we refer to "controllers" when we actually mean "action methods".
+</aside>
+
 ### Default Routing
 
 This is the kind of routing behavior we saw in the previous lesson. E.g. "Hello/Index" represents the default structure of "Controller/Action". And the default values for the controller and the action are, respectively, `Home` and `Index`.
