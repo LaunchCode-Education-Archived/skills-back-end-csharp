@@ -18,7 +18,7 @@ In this video lesson we focus on routing and specifically:
   * URL segments
 * Redirecting
 
-Be sure to code along with the video! The notes to videos only include highlights of the code that is featured in each video.
+Be sure to code along with the video! The notes below only include highlights of the code that is featured in each video.
 
 <aside class="aside-note" markdown="1">
 Note that around minute 14 and minute 25 of the video we refer to "controllers" when we actually mean "action methods".
@@ -32,7 +32,7 @@ This is the kind of routing behavior we saw in the previous lesson. E.g. "Hello/
 
 We can change the default routing behavior by using the `[Route("..")]` attribute. E.g., we can add this to the top of the `Goodbye` action method in our *HelloMVC* program: `[Route("/Hello/Aloha")]`. Now, in order to see the "Goodbye" message, we have to visit `/Hello/Aloha`.
 
-### Query Parameters
+### Get/Query Parameters
 
 We can add an input parameter to our action methods to enable them to accept query parameters. E.g.:
 
