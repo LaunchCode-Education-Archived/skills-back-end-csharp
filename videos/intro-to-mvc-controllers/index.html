@@ -121,6 +121,25 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Intro to ASP.NET Core MVC: Controllers</h1>
                     <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/2n7keI_E8tE?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<p>We begin this lesson by looking at the MVC design pattern and then discussing the .NET framework. MVC stands for Model, View, Controller. The nature of each component is as follows:</p>
+<ul>
+<li>Model: Business objects with a structure that is independent from the framework.</li>
+<li>View: An interface (typically a web page) that displays data to the user.</li>
+<li>Controller: The core &quot;traffic cops&quot; that handle requests and move data. It is the intermediary between the Model and the View components.</li>
+</ul>
+<p>Next we build a simple web app.</p>
+<ol>
+<li>Open a new Web project and select <em>ASP.NET Core Web Application (.NET Core)</em> and name the project <em>HelloMVC</em>. Make sure the two boxes shown in the video are selected (one is to create the directory, the other is to initialize a Git repository). And <em>be sure to change the file path</em> so that this project is created in your <code>lc101</code> folder.</li>
+<li>On the next screen, select Web Application for your template.</li>
+<li>Run the ready-made web application by pressing the green arrow &quot;IIS Express&quot; button. This may take several minutes before you see the web page shown in the video. After you look at the web page that is created, you can stop the application with the red button.</li>
+<li>Right click on the <code>Controllers</code> folder and select <em>Add-&gt;New Item</em>. Expand the .NET Core section on the left and select <em>ASP.NET-&gt;MVC Controller Class</em> and name the controller <code>HelloController</code>.</li>
+<li>Replace <code>return View();</code> with <code>return Content("Hello World");</code>.</li>
+<li>Run your application again as in step 3. Append this to your url in the browser: <code>/Hello</code>. Note that the first portion of the path refers to the controller and the second portion of the path refers to the action method that will be used within that controller. Hence, you can append this to your url instead and it will work the same: <code>/Hello/Index</code>.</li>
+<li>Create another action method in the controller called <code>Goodbye</code> that returns the string &quot;Goodbye&quot;.</li>
+<li>Stop and restart your server. Then append the url that appears with the following: <code>/Hello/Goodbye</code>.</li>
+<li>If we want to return HTML at this point, we'll need to pass in an argument specifying that format, e.g.: <code>return Content("&lt;h1&gt;Hello World&lt;/h1&gt;", "text/html");</code></li>
+</ol>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/actions" target="_blank">Handling requests with controllers in ASP.NET MVC Core</a></li>

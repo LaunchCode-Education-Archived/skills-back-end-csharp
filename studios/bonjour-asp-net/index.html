@@ -124,23 +124,22 @@
 <p>Modify your <code>HelloController</code> class to display a form on <code>GET</code> request that asks the user for both their name and the language they would like to greeted in. It should look something like this:</p>
 <p><img src="form.png" alt="Greeting Form" /></p>
 <p>The resulting form submission should return and display the message, &quot;Bonjour Chris&quot;.</p>
-<p>Note that the language is presented in a dropdown, more formally known as a <code>select</code> element. If the syntax of selects is fuzzy, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select" target="_blank">quickly brush up</a>.</p>
+<p>Note that the language is presented in a dropdown, more formally known as a <code>select</code> element. If the syntax of selects is fuzzy, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select" target="_blank">quickly brush up here</a> and <a href="https://www.w3schools.com/tags/att_option_selected.asp" target="_blank">here</a>.</p>
 <p>When the user submits the form (a <code>POST</code> request), they should be greeted in the selected language. Your new feature should:</p>
 <ul>
-<li>Include at least 5 languages, with English being the default. If you don't speak 5 lanugages yourself, ask your friend <a href="http://pocketcultures.com/2008/10/30/say-hello-in-20-languages/" target="_blank">the Internet</a>.</li>
-<li>Include a new (<code>public static</code>) method, <code>CreateMessage</code>, in the <code>HelloMessage</code> model class that takes a name as well as a language string. Based on the language string, you'll display the proper greeting.</li>
+<li>Include at least 5 languages, with English being the default. If you don't speak 5 languages yourself, ask your friend <a href="http://pocketcultures.com/2008/10/30/say-hello-in-20-languages/" target="_blank">the Internet</a>.</li>
+<li>Include a new (<code>public static</code>) method, <code>CreateMessage</code>, in <code>HelloController</code> that takes a name string as well as a language string. Based on the language string, you'll return the proper welcome message to be displayed.</li>
 </ul>
 <h2 id="bonus-missions">Bonus Missions</h2>
 <ul>
 <li>Instead of returning the greeting as plain text, add a bit of HTML to the response string so that the displayed message looks a bit nicer.</li>
-<li>Restructure your code so that the controller class doesn't know anything about the specific languages available. In other words, it asks the model for available languages to present to the user.</li>
 <li>Add some additional output that displays the number of times the user has been greeted. <em>Hint:</em> Use a <code>static</code> property to keep track of the count.</li>
 <li>
 <p>The bonus mission above doesn't discriminate between requests made by you or somebody else. In other words, it counts <em>total</em> greetings rather than greetings to a specific user. Fix this by using cookies. When a user is greeted for the first time, set a cookie that has the visit count 1. On subsequent visits, check for this cookie and update its value.</p>
 <p>Since cookies are stored within the browser, this will tie the visit count to a specific user an a specific browser. If the same user were to go to another browser, their counter would start over at 1.</p>
 <p>Here are a few tips to get you going:</p>
 <ul>
-<li>Every controller inherits the properties <code>Request</code> and <code>Response</code>, so these can be used directly in your controller code. The contain data and methods related to the current HTTP request and response being handled.</li>
+<li>Every controller inherits the properties <code>Request</code> and <code>Response</code>, so these can be used directly in your controller code. They contain data and methods related to the current HTTP request and response being handled.</li>
 <li><code>Request.Cookies</code> is a collection with key/value data that can be used like a dictionary. The keys are the cookie names, and the values are the cookie values. If a cookie doesn't exist, then trying to access its value will give <code>null</code>. Use this fact to check for the existence of a cookie, and to set it initially on the first request.</li>
 <li>The values in <code>Request.Cookies</code> are always strings, so you'll likely need to do some type conversion.</li>
 <li>To set a cookie in the response, use <code>Response.Cookies.Append(name, value)</code>, where <code>name</code> and <code>value</code> are strings.</li>

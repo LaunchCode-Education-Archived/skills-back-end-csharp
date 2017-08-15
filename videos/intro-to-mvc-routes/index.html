@@ -121,6 +121,44 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Intro to ASP.NET Core MVC: Routes</h1>
                     <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/ZAGpi88aPhw?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<p>In this video lesson we focus on routing and specifically:</p>
+<ul>
+<li>Default routing</li>
+<li>Customizing routes with the <code>[Route("..")]</code> attribute.</li>
+<li>Declaring HTTP request types with <code>[HttpGet]</code> and <code>[HttpPost]</code></li>
+<li>Passing parameters:
+<ul>
+<li>Get/query parameters</li>
+<li>Post parameters</li>
+<li>URL segments</li>
+</ul></li>
+<li>Redirecting</li>
+</ul>
+<p>Be sure to code along with the video! The notes below only include highlights of the code that is featured in each video.</p>
+<aside class="aside-note">
+<p>Note that around minute 14 and minute 25 of the video we refer to &quot;controllers&quot; when we actually mean &quot;action methods&quot;.</p>
+</aside>
+<h3 id="default-routing">Default Routing</h3>
+<p>This is the kind of routing behavior we saw in the previous lesson. E.g. &quot;Hello/Index&quot; represents the default structure of &quot;Controller/Action&quot;. And the default values for the controller and the action are, respectively, <code>Home</code> and <code>Index</code>.</p>
+<h3 id="customizing-routes">Customizing Routes</h3>
+<p>We can change the default routing behavior by using the <code>[Route("..")]</code> attribute. E.g., we can add this to the top of the <code>Goodbye</code> action method in our <em>HelloMVC</em> program: <code>[Route("/Hello/Aloha")]</code>. Now, in order to see the &quot;Goodbye&quot; message, we have to visit <code>/Hello/Aloha</code>.</p>
+<h3 id="getquery-parameters">Get/Query Parameters</h3>
+<p>We can add an input parameter to our action methods to enable them to accept query parameters. E.g.:</p>
+<pre><code class="language-nohighlight">public IActionResult Index(string name)</code></pre>
+<p>If you want to add a default value to the parameter you can do the following:</p>
+<pre><code class="language-nohighlight">public IActionResult Index(string name = "World")</code></pre>
+<h3 id="post-parameters">Post Parameters</h3>
+<p>After adding the string of HTML that will display a form as shown in the video, we can access post parameters in our <code>Display</code> method by adding the following lines above that method signature:</p>
+<pre><code class="language-nohighlight">[Route("/Hello/")]
+[HttpPost]</code></pre>
+<p>And add <code>[HttpGet]</code> above the <code>Index</code> method.</p>
+<h3 id="url-segments">URL Segments</h3>
+<p>To achieve the same functionality we had above with query parameters but with a url that looks like this <code>/Hello/Chris</code>, we add the following above the appropriate method:</p>
+<pre><code class="language-nohighlight">[Route("/Hello/{name}")]</code></pre>
+<h3 id="redirecting">Redirecting</h3>
+<p>To redirect a user we can return a <code>Redirect</code> object in an action method as follows:</p>
+<pre><code class="language-nohighlight">return Redirect("/Hello/Goodbye");</code></pre>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing#attribute-routing" target="_blank">Attribute Routing (docs.microsoft.com)</a></li>
