@@ -51,6 +51,14 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 4
 
+* Explain how the `View()` method works
+* Explain what it means to say that Core MVC is a "convention over configuration" approach.
+* Create a new Views folder
+* Create a new Razor template
+* Describe what is provided by the `_Layout.cshtml` file
+* Utilize C# code in a template
+* Use the `asp-controller` and `asp-action` attributes
+* Use the `ViewBag` class
 
 ### Class 5
 
