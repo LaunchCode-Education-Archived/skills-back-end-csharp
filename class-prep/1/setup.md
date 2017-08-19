@@ -11,7 +11,7 @@ Visual Studio is the Integrated Development Environment (IDE) used to develop C#
 
 ### Windows Users
 
-Visit the [Microsoft Free Developer Apps](https://www.visualstudio.com/free-developer-offers/) page and download the Visual Studio 2017 Community installer. Allow about at least an hour for the installation process.
+Visit the [Microsoft Free Developer Apps](https://www.visualstudio.com/free-developer-offers/) page and download the Visual Studio 2017 Community installer. Allow at least an hour for the installation process.
 
 Run the installer, and select the following packages from the *Workloads* pane:
 - ASP.NET and web development
@@ -43,15 +43,19 @@ If you installed Visual Studio previously, ensure that you are using Visual Stud
 If you have a pre-existing Visual Studio 2017 install, you may need to install the .NET Core Tools package. To do so, follow the [instructions provided by Microsoft](https://www.microsoft.com/net/core#windowsvs2017).
 </aside>
 
+#### Connect to GitHub for Windows Users
+
+Visit this page to download and install the [GitHub Extension for Visual Studio](https://visualstudio.github.com/).
+
 ### Mac and Linux Users
 
-If you installed the Windows 10 development image, then you already have everything you need.
+If you followed the instructions in [Running Windows on Mac or Linux](./running-windows-on-mac-linux.html) then you already have everything you need.
 
 ## GitHub Project Setup
 
 Visit the [LaunchCodeEducation/csharp-exercises](https://github.com/LaunchCodeEducation/csharp-exercises) repository page and fork the repository into your own GitHub account by selecting *Fork* from the top right of the page.
 
-After forking, open Visual Studio. From within Visual Studio, choose the *Team Explorer* tab near the bottom of the *Solution Explorer* pane. If you don't see this tab, you can open it via the application menu: *View > Team Explorer*. The first time you do this, you may need to sign in to GitHub.
+After forking, open Visual Studio. From within Visual Studio, choose the *Team Explorer* tab near the bottom of the *Solution Explorer* pane. If you don't see this tab, you can open it via the application menu: *View > Team Explorer*. The first time you do this, you will need to click *Connect...* and then sign in to GitHub.
 
 Select *Clone* from the GitHub section of the *Team Explorer* and select your `csharp-exercises` copy from the modal window. **Be sure to change the Path field** to the location you would like the project to live, ideally inside of a folder you've been using to store other projects.
 

@@ -34,6 +34,7 @@ Listed below are the competencies you should demonstrate by the time you've comp
 * Iterate through lists and dictionaries
 * Format strings and escape characters
 * Use the `StringBuilder` class
+* Demonstrate basic working knowledge of Visual Studio IDE, including use of the debugger
 
 ### Class 3
 

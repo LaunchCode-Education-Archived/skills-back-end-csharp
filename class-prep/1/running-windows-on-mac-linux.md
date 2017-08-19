@@ -40,7 +40,7 @@ It's very handy to be able to copy/paste between your host operating system (Mac
 
 ### Visual Studio Setup
 
-Add the GitHub Visual Studio extension by downloading and installing from [visualstudio.github.com](https://visualstudio.github.com/) (do this inside your VM). After installation, follow the prompt to sign in to your GitHub account.
+Add the GitHub Visual Studio extension by downloading and installing from [visualstudio.github.com](https://visualstudio.github.com/) (do this inside your VM). 
 
 Open Visual Studio. On the view that opens, "Sign in to Visual Studio", go ahead and create an account (or sign in if you already have one). It's free, and it will unlock the full features of the application.
 
@@ -58,4 +58,4 @@ To setup a new image after the current one expires, revisit this page and follow
 
 ### Install Other Apps
 
-At this point, you'll probably want to install a couple more apps that you use frequently, such as [Firefox](https://www.mozilla.org/en-US/firefox/new/) and [Visual Studio Code](https://code.visualstudio.com/). 
+At this point, you'll probably want to install a couple more apps that you use frequently, such as [Firefox](https://www.mozilla.org/en-US/firefox/new/) and [Visual Studio Code](https://code.visualstudio.com/).
