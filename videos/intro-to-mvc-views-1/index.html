@@ -121,6 +121,21 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Intro to ASP.NET Core MVC: Views (Part 1)</h1>
                     <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/H2Nf0w-YKcE?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<p>In this video we look at views and the Razor Template Engine. Be sure to code along with the video. These notes only include some of the code featured in the video.</p>
+<aside class="aside-note">
+<p>Note that at around 5:40 in the video, we say &quot;the default controller and the default action are <strong>Hello</strong> and Index&quot;, but what we should have said is that they are &quot;<strong>Home</strong> and Index&quot;.</p>
+</aside>
+<p>The <code>View()</code> method finds a template that's associated with the particular controller and action method that it is called from.</p>
+<p>Within the <code>Views</code> folder, there will be a folder corresponding to each controller. This folder will contain the templates for each action method in that controller.</p>
+<p>Razor templates are a mixture of C# and HTML. The C# code is enclosed within <code>@{}</code> To create a folder for a new controller and to create a razor template do the following:</p>
+<ul>
+<li>Right-click on the <code>Views</code> folder and select <em>Add-&gt;New Folder</em>. Name the folder <code>Cheese</code> so that it corresponds to your new controller.</li>
+<li>Then right-click on the <code>Cheese</code> folder and select <em>Add-&gt;New Item-&gt;MVC View Page</em>. You can leave the name, <code>Index.cshtml</code>, as is. In the future, if you are creating a template for a different method action, you would rename it to match the method action name.</li>
+</ul>
+<p>The header and footer that appear are provided by the <code>_Layout.cshtml</code> file found in your <code>Shared</code> folder. If you do not want to use this file, you can put <code>Layout = null;</code> in your template within the <code>@{}</code>.</p>
+<p>Note that when you make changes to your templates, you can just refresh the browser to see those changes. But when you make changes to your controller, you have to stop and restart the application.</p>
+<p>To override the default behavior of the <code>View()</code> method and have it look for a template with a different name than that of the action method, you can pass in a parameter which is the name of the template you want to render. E.g., <code>return View("Error");</code>.</p>
                                     </section>
 
             </div>

@@ -125,6 +125,18 @@
 <aside class="aside-warning">
 <p>When running the <code>CheeseMVC</code> application, your data will &quot;disappear&quot; each time you restart your app. This is because storing data in C# data structures only preserves that data while the application is running; this data only exists in-memory. We'll look at persisting data in a more permanent way in future lessons.</p>
 </aside>
+<p>In our <em>CheeseMVC</em> application we are going to create a main page that displays a list of cheeses and descriptions of those cheeses, and also an add page where users can add a cheese and its description. Be sure to code along with the video. These notes only include some of the code featured in the video.</p>
+<p>An example of working with C# syntax in a view file is looping through and displaying a list of cheeses in a Razor template. To do so, precede the C# code with an <code>@</code> symbol. For example:</p>
+<pre><code class="language-nohighlight">&lt;ul&gt;
+  @foreach (string cheese in cheeses)
+  {
+    &lt;li&gt;@cheese&lt;/li&gt;
+  }
+&lt;/ul&gt;</code></pre>
+<p>After moving the list data to the controller, you can modify the <code>foreach</code> like so:</p>
+<pre><code class="language-nohighlight">@foreach (string cheese in ViewBag.cheeses)</code></pre>
+<p>To add a link to the add page from the index page, add this to the <code>Index.cshtml</code>:</p>
+<pre><code class="language-nohighlight">&lt;p&gt;&lt;a asp-controller="Cheese" asp-action="Add"&gt;Add Cheese&lt;/a&gt;&lt;/p&gt;</code></pre>
 <h3 id="viewbag-and-viewdata">ViewBag and ViewData</h3>
 <p>In addition to using <code>ViewBag</code> to pass data from an action method to a view, you can use the <code>ViewData</code> dictionary. To set data in <code>ViewData</code> in the controller, use:</p>
 <pre><code class="language-csharp">ViewData["cheeses"] = cheeses;</code></pre>
