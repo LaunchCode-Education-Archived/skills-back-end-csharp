@@ -24,6 +24,10 @@ Based on these details, you'll need to include some methods:
 
 Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the methods that you'll need for these classes. List the method names and access levels, along with the types of all input and return parameters. Also consider whether any methods should be `static`.
 
+<aside class="aside-note" markdown="1">
+If you don't have an ID property on your `MenuItem` class then providing a `GetHashCode` method (in addition to `Equals`) will be beyond the scope of what we've learned so far. If this is the case for you, leave off `GetHashCode`. Visual Studio will give you a warning, but you will still be able to run your code.
+</aside>
+
 ## Presenting Your Design
 
 Once you have sketched out your methods, find a classmate to describe your design to. Class design can be subjective, so it's important to properly think and talk through your choices before coding.
