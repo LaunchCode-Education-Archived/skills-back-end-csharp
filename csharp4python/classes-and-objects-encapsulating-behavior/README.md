@@ -39,150 +39,6 @@ As mentioned before, methods should have the most restrictive level of access po
 Only make methods `public` when you expect other classes to use them, and when you are committed to maintaining those methods for other programmers that might use them.
 </aside>
 
-## Constructors
-
-**Constructor methods** allow for initialization behavior to occur when creating a new object from our class template. We have been using constructor syntax in our lessons, but we haven't yet seen how to create constructors for our own classes. For example, we created new `ArrayList` objects using the `new` keyword along with the `ArrayList` constructor:
-
-```csharp
-ArrayList<String> myList = new ArrayList<>();
-```
-
-In C#, constructors have the same name as the class and are most often declared public (though they can be private in certain situations). They are declared **without a return type**. Any function that is named the same as the class and has no return type is a constructor.
-
-Here is an example of a constructor definition within the `HelloWorld` class:
-
-```csharp
-public class HelloWorld {
-
-    private String message = "Hello World";
-
-    public HelloWorld(String message) {
-        this.message = message;
-    }
-
-    public void SayHello() {
-        Console.WriteLine(message);
-    }
-
-}
-```
-
-This constructor allows us to create `HelloWorld` objects with custom messages. The assignment `this.message = message` assigns the value passed into the constructor to the field `message`. Here's how we might use it:
-
-```csharp
-HelloWorld goodbye = new HelloWorld("Goodbye World");
-goodbye.SayHello(); // prints "Goodbye World"
-```
-
-<aside class="aside-warning" markdown="1">
-It's not required that every class to have a constructor. If you don't provide one, the C# compiler will generate an "empty" constructor for you, known as a **default constructor**. For example, when we left out a constructor in our `HelloWorld` class above, the compiler created the following constructor for us:
-
-```csharp
-public HelloWorld() {}
-```
-
-Be careful with this; you almost always want to provide a constructor to properly initialize your objects.
-</aside>
-
-### Overloading Constructors
-
-We can provide multiple constructors for a given class in order to allow for different initialization scenarios. This is known as **constructor overloading**. More generally, **method overloading** refers to the practice of defining different methods with the same name and return type, but different input parameters.
-
-Let's expand upon our `Student` class from the last section.
-
-```csharp
-public class Student {
-
-    public string Name { get; set; }
-    public int StudentId { get; set; }
-    public int NumberOfCredits { get; set; }
-    public double Gpa { get; set; }
-
-    public Student(string name, int studentId,
-            int numberOfCredits, double gpa) {
-        Name = name;
-        StudentId = studentId;
-        NumberOfCredits = numberOfCredits;
-        Gpa = gpa;
-    }
-
-    public Student(string name, int studentId) {
-        Name = name;
-        StudentId = studentId;
-        NumberOfCredits = 0;
-        Gpa = 0.0;
-    }
-
-}
-```
-
-The first constructor allows for creation of `Student` objects where the code creating the object provides data for all of the properties. The second allows for creation of `Student` objects with only `name` and `studentId`. The first constructor would be most useful for creating a transfer student, where credits and a GPA might already be non-zero. However, for all new students, it would be safe to initialize `NumberOfCredits` and `Gpa` to be 0.
-
-A better way to write the above constructors would be this:
-
-```csharp
-public class Student {
-
-    public string Name { get; set; }
-    public int StudentId { get; set; }
-    public int NumberOfCredits { get; set; }
-    public double Gpa { get; set; }
-
-    public Student(string name, int studentId,
-            int numberOfCredits, double gpa) {
-        Name = name;
-        StudentId = studentId;
-        NumberOfCredits = numberOfCredits;
-        Gpa = gpa;
-    }
-
-    public Student(string name, int studentId)
-        : this(name, studentId, 0, 0) {}
-
-}
-```
-
-Here, we use `: this()` to invoke another constructor within the same class. In this case, the second constructor calls the first with the "default" values for `studentId` and `gpa`. This call to the other constructor is effectively the first line of the method. Using this approach is a good practice not only because it makes your code shorter, but because it allows any initialization behavior that may be carried beyond just initializing variables to be contained in a smaller number of constructors.
-
-Note that a constructor often won't take values for all of the fields that need to be initialized, beyond even the case of default values. For example, we might also provide a third constructor that only requires the student's name, since theoretically the `studentId` would (or could) be generated by the class itself.
-
-```csharp
-public class Student {
-
-    private static int nextStudentId = 1;
-    public string Name { get; set; }
-    public int StudentId { get; set; }
-    public int NumberOfCredits { get; set; }
-    public double Gpa { get; set; }
-
-    public Student(string name, int studentId,
-            int numberOfCredits, double gpa) {
-        Name = name;
-        StudentId = studentId;
-        NumberOfCredits = numberOfCredits;
-        Gpa = gpa;
-    }
-
-    public Student(string name, int studentId)
-        : this(name, studentId, 0, 0) {}
-
-    public Student(string name)
-        : this(name, nextStudentId) {
-        nextStudentId++;
-    }
-
-}
-```
-
-In this example, we add a static integer field that will keep track of the next student ID available to be assigned to a student. Then, our new constructor takes only a name, and assigns the student the next available value. This works because static fields are shared across all objects created from the `Student` class, so it functions as a counter of sorts for the number of `Student` objects created.
-
-<aside class="aside-pro-tip" markdown="1">
-When defining constructors, think about:
-1. Which fields must be initialized properly for your class to work properly? Be sure you initialize every such field.
-1. Which fields should be initialized by the user creating an object, and which should be initialized by the class itself?
-2. What are the use-cases for your class that you should provide for?
-</aside>
-
 ## Instance Methods
 
 So far we've only looked at examples of methods that are relatively specialized: constructors, getters, and setters. Every class you create will have these methods. What will make your classes different from each other, and effective, are the specific behaviors that are unique to your classes.
@@ -194,7 +50,8 @@ What are the behaviors that our `Student` class should have? To start, it would 
 Our last look at the `Student` class stubs out these methods, without providing the implementation. That job is left to you to do as an exercise.
 
 ```csharp
-public class Student {
+public class Student
+{
 
     private static int nextStudentId = 1;
     public string Name { get; set; }
@@ -203,7 +60,8 @@ public class Student {
     public double Gpa { get; set; }
 
     public Student(string name, int studentId,
-            int numberOfCredits, double gpa) {
+            int numberOfCredits, double gpa)
+    {
         Name = name;
         StudentId = studentId;
         NumberOfCredits = numberOfCredits;
@@ -214,15 +72,18 @@ public class Student {
         : this(name, studentId, 0, 0) {}
 
     public Student(string name)
-        : this(name, nextStudentId) {
+        : this(name, nextStudentId)
+    {
         nextStudentId++;
     }
 
-    public void AddGrade(int courseCredits, double grade) {
+    public void AddGrade(int courseCredits, double grade)
+    {
         // Update the appropriate properties: NumberOfCredits, Gpa
     }
 
-    public string GetGradeLevel() {
+    public string GetGradeLevel()
+    {
         // Determine the grade level of the student based on NumberOfCredits
     }
 
@@ -240,9 +101,11 @@ Analogous to static fields, **static methods** belong to a class, and not to any
 A static method may be called by preceding it with the class name, using dot-notation. Here's an example that we looked at previously.
 
 ```csharp
-public class HelloMethods {
+public class HelloMethods
+{
 
-    public static void Main(string[] args) {
+    public static void Main(string[] args)
+    {
         string message = Message.GetMessage("fr");
         Console.WriteLine(message);
     }
@@ -253,13 +116,19 @@ public class HelloMethods {
 ```csharp
 public class Message {
 
-    public static string GetMessage(string lang) {
+    public static string GetMessage(string lang)
+    {
 
-        if (lang.equals("sp")) {
+        if (lang.equals("sp"))
+        {
             return "Hola Mundo";
-        } else if (lang.equals("fr")) {
+        }
+        else if (lang.equals("fr"))
+        {
             return "Bonjour le monde";
-        } else {
+        }
+        else
+        {
             return "Hello World";
         }
     }
@@ -289,7 +158,8 @@ School.Student
 Here, we called `ToString` on a `Student` object. Generally, the default `ToString` implementation is not very useful, and you'll want to override it. You can write your own `ToString`. Here's how we might do it for `Student`:
 
 ```csharp
-public override String ToString() {
+public override String ToString()
+{
     return Name + " (Credits: " + NumberOfCredits + ", GPA: " + Gpa + ")";
 }
 ```
@@ -309,7 +179,7 @@ Student john = new Student("John");
 Console.WriteLine(john);
 ```
 
-### equals
+### Equals
 
 Suppose we had two objects of type `Student`, say `student1` and `student2`, and we wanted to determine if they were equal. We might try to compare them using `==`, but since these are [references](../data-types#reference-and-value-types) -- that is, the variables hold a reference, or the address of the actual `Student` objects -- they will be determined to be equal only when they have the same address. In other words, they will be equal only when they refer to, or point at, the exact same object. This is often not what we want. For example, we might want to consider two student objects equal if they had the same name, email, or student ID.
 
@@ -319,7 +189,8 @@ The `Equals()` method can be used to determine if one object is equal to another
 Student bono1 = new Student("Paul David Hewson", 4);
 Student bono2 = new Student("Bono", 4);
 
-if (bono1.equals(bono2)) {
+if (bono1.equals(bono2))
+{
     Console.WriteLine(bono1.getName() +
         " is the same as " + bono2.getName());
 }
@@ -327,16 +198,19 @@ if (bono1.equals(bono2)) {
 
 If we don't provide our own `Equals()` method, then the one provided for us will only consider two objects equal if they are the *exact same object*. In other words, they will only be considered equal if the variables referring to the given objects both point at the same object. This is the same behavior that we would see when using the `==` operator: `bono1 == bono2`. This expression will evaluate to true only if the variables actually refer to the same object.
 
-This is often not what we want. The difference between the comparison carried out by the default `Equals()` method and the `==` operator, and how we would like our classes to behave, is the difference between *equality* and *identity*. Two things can be considered equal if they are not the exact same item, that is, if they are not identical.
+This is often not what we want. The difference between the comparison carried out by the default `Equals()` method and the `==` operator, and how we would like our classes to behave, is the difference between *equality* and *identity*. Two things can be considered equal even if they are not the exact same item, that is, even if they are not identical.
 
 In the case of the `Student` class, we might specify that two `Student` objects are equal if they have the same ID:
 
 ```csharp
-public override bool Equals(Object o) {
+public override bool Equals(Object o)
+{
     Student studentObj = o as Student;
     return StudentId == studentObj.StudentId;
 }
 ```
+
+One catch of working with `Equals()` is that its input parameter must be of type `Object`, even if we're working in a class like `Student`. The reason why will become more clear in the next lesson, where we introduce the `Object` class. For now, the practical implication is that we must convert, or **cast**, the input `o` to be of type `Student` with the syntax `Student studentObj = o as Student`. Then we compare the converted student's ID to that of the current student.
 
 Here's what this looks like conceptually:
 
@@ -348,12 +222,142 @@ Here's what this looks like conceptually:
 
 ![Identity](identity.png)
 
-You'll often want to implement `Equals()` yourself. However, if you do so, be sure to understand best practices around how the method should behave, which are [not so simple][implementing-equals]. In fact, the `Equals()` method we have here isn't very good by most C# programmers' standards. We'll dedicate time to learning how to best write an `Equals()` method in a future lesson.
+You'll often want to implement `Equals()` yourself. However, if you do so, be sure to understand best practices around how the method should behave, which are [not so simple][implementing-equals]. In fact, the `Equals()` method we have here isn't very good by most C# programmers' standards. We'll dedicate time to learning how to best write an `Equals()` method in a future lesson. Let's improve on it.
 
-One catch of working with `Equals()` is that its input parameter must be of type `Object`, even if we're working in a class like `Student`. The reason why will become more clear in the next lesson, where we introduce the `Object` class. For now, the practical implication is that we must convert, or **cast**, the input `o` to be of type `Student` with the syntax `Student studentObj = o as Student`. Then we compare the converted student's ID to that of the current student.
+**Problem #1**: The method argument can not be converted to a `Student` instance.
+
+When we attempt to cast the argument `o` to type `Student`, we'll get an exception if `o` can't be properly converted. This would happen if somebody passes something other than a `Student` object into `equals()`. To prevent this from happening, we'll return `false` if `o` was not created from the `Student` class, as determined by using the `getClass` method, which is available to every object (similarly to `toString`).
+
+```csharp
+public bool Equals(Object o)
+{
+
+    if (o.GetType() != GetType())
+    {
+        return false;
+    }
+
+    Student studentObj = o as Student;
+    return StudentId == studentObj.StudentId;
+}
+```
+
+This check ensures that the two objects that we want to compare were created from the same class.
+
+**Problem #2:** `o` might be `null`.
+
+If `o` is `null` then `o.GetType()` will result in an exception. This is an easy issue to fix, since comparing a non-null object to `null` will evaluate to `false`. Therefore, if this comparison evaluates to true then we know that the object is null and `Equals()` should return `false`.
+
+```csharp
+public bool Equals(Object o)
+{
+
+    if (o == null)
+    {
+        return false;
+    }
+
+    if (o.GetType() != GetType())
+    {
+        return false;
+    }
+
+    Student studentObj = o as Student;
+    return StudentId == studentObj.StudentId;
+}
+```
+
+**Problem #3:** The two objects to compare are _the same_ object.
+
+This is less of a problem per se and more of a way we can improve our `Equals()` method. If `o` is the same literal object that we are attempting to compare it to, then we can make a quick determination and save a few checks.
+
+```csharp
+public bool Equals(Object o)
+{
+
+    if (o == this)
+    {
+        return true;
+    }
+
+    if (o == null)
+    {
+        return false;
+    }
+
+    if (o.GetType() != GetType())
+    {
+        return false;
+    }
+
+    Student studentObj = o as Student;
+    return StudentId == studentObj.StudentId;
+}
+```
+
+#### Components of Equals
+
+Almost every equals method that you write will look similar to this one, and will contain the following segments, in order:
+
+1. **Reference check:** If the two objects are the same, return `true` right away.
+1. **Null check:** If the argument is `null`, return `false`.
+1. **Class check:** Compare the classes of the two objects to ensure a safe cast.
+1. **Cast:** Convert the argument to the type of our class, so getters and other methods can be called.
+1. **Custom comparison:** Use custom logic to determine whether or not the two objects should be considered equal. This will usually be a comparison of properties or fields.
+
+#### Characteristics of Equals
+
+Now that we know how to write an `Equals()` method, let's look at some characteristics that every such method should have. If you follow the general outline above, ensuring that your `Equals()` method has these characteristics should be straightforward.
+
+1. **Reflexivity:** For any non-null reference value `x`, `x.Equals(x)` should return `true`.
+1. **Symmetry:** For any non-null reference values `x` and `y`, `x.Equals(y)` should return `true` if and only if `y.Equals(x)` returns true.
+1. **Transitivity:** For any non-null reference values `x`, `y`, and `z`, if `x.Equals(y)` returns `true` and `y.Equals(z)` returns `true`, then `x.Equals(z)` should return `true`.
+1. **Consistency:** As long as `x` and `y` do not change `x.Equals(y)` should always return the same result.
+1. **Non-null:** For any non-null reference value `x`, `x.Equals(null)` should return `false`.
+
+If you think about your innate sense of the concept of equality, say, from a math class, then these concepts make sense. While using the general approach outlined above for implementing `Equals()` will generally make these relatively simple to guarantee, not doing so can be disastrous for your C# applications.
+
+### GetHashCode
+
+Seasoned C# developers will tell you that every time you implement your own version of `Equals()` you should also implement your own version of `GetHashCode()`. `GetHashCode()` is another special method that every class has. It is called on an object to return an integer, called a **hash code**, and is used frequently by the built-in data structures in C#.
+
+The main rules that you should follow with `GetHashCode` are:
+- Always provide a custom `GetHashCode` implementation whenever you provide a custom `Equals` implementation
+- When two objects are equal, as determined by `Equals`, then they should have the same hash code, as determined by `GetHashCode`. However, the reverse does not have to be the case. Two objects can have the same hash code and not be equal.
+
+One simple case is when we build our class to use unique IDs, as is the case with our `Student` class. In that case, we have `Equals` make its comparison using this ID, and we can have `GetHashCode` return the integer ID of the given object.
+
+```csharp
+public override bool Equals(Object o)
+{
+    if (o == this)
+    {
+        return true;
+    }
+
+    if (o == null) || o.GetType() != GetType())
+    {
+        return false;
+    }
+
+    Student studentObj = o as Student;
+    return StudentId == studentObj.StudentId;
+}
+
+public override int GetHashCode()
+{
+    return StudentId;
+}
+```
+
+You can check that these methods satisfy the rules discussed above.
+
+Understanding `GetHashCode()` in full detail would take us a bit far afield at this point, but we would be remiss to not mention it. If you want to read more, [go for it](https://docs.microsoft.com/en-us/dotnet/api/System.Object.GetHashCode?view=netcore-1.0)!
 
 <aside class="aside-pro-tip" markdown="1">
-Seasoned C# developers will tell you that every time you implement your own version of `Equals()` you should also implement your own version of `GetHashCode()`. `GetHashCode()` is another special method that every class has. Understanding `GetHashCode()` would take us a bit far afield at this point, but we would be remiss to not mention it. If you want to read more, [go for it](https://msdn.microsoft.com/en-us/library/system.object.gethashcode%28v=vs.110%29.aspx)!
+Visual Studio can generate an outline of the `Equals` and `GetHashCode` methods for you. To have it do so, go to the point in your class at which you'd like to define these methods (often near the bottom), type "equals" and then hit *TAB* twice.
+
+Be sure to customize these methods to use the fields you want these comparisons to be based on. They won't be ready to use as-is!
 </aside>
 
 While you may not need to write your own `Equals()` method for each class you create, the more immediate implication for you as a new C# programmer is that you should *always use* `Equals()` yourself when comparing objects. This is especially true when working with objects of types provided by C#, such as `string`. A class that is part of C# or a third-party library will have implemented `Equals()` in a way appropriate for the particular class, whereas `==` will only check to see if two objects are the same literal object.
@@ -377,6 +381,7 @@ As you go forth and create classes, the main thing to keep in mind is that your 
 - [Single Responsibility Principle][srp]
 - [Using Constructors (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/ms173115.aspx)
 - [Object.Equals Method (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/bsc2ak47(v=vs.110).aspx)
+- [Object.GetHashCode Method](https://docs.microsoft.com/en-us/dotnet/api/System.Object.GetHashCode?view=netcore-1.0)
 - [Object.ToString Method (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/system.object.tostring%28v=vs.110%29.aspx)
 - [Reference Types (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/490f96s2.aspx)
 - [Value Types (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/s1ax56ch.aspx)

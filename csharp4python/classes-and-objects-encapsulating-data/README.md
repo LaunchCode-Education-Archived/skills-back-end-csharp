@@ -170,6 +170,153 @@ public double Celsius
 
 Since there's a link between Fahrenheit and Celsius, we want to make sure that when one is updated, so is the other. In this case, we only store one field value (`fahrenheit`, the backing field for `Fahrenheit`) and make the appropriate calculation when getting or setting the `Celsius` property. Using a property like this is the same as when there is a private field behind it; the code using it can't tell the difference.
 
+## Constructors
+
+We'll often want to initialize, or set the initial value of, some of our fields when creating a new object from a class. **Constructors** allow for such initialization behavior to occur. We have been using constructor syntax in our lessons, but we haven't yet seen how to create constructors for our own classes. For example, we created new `ArrayList` objects using the `new` keyword along with the `ArrayList` constructor:
+
+```csharp
+ArrayList<String> myList = new ArrayList<>();
+```
+
+In C#, constructors have the same name as the class and are most often declared public (though they can be private in certain situations). They are declared **without a return type**. Any function that is named the same as the class and has no return type is a constructor.
+
+Here is an example of a constructor definition within the `HelloWorld` class:
+
+```csharp
+public class HelloWorld {
+
+    private String message = "Hello World";
+
+    public HelloWorld(String message) {
+        this.message = message;
+    }
+
+    public void SayHello() {
+        Console.WriteLine(message);
+    }
+
+}
+```
+
+This constructor allows us to create `HelloWorld` objects with custom messages. The assignment `this.message = message` assigns the value passed into the constructor to the field `message`. Here's how we might use it:
+
+```csharp
+HelloWorld goodbye = new HelloWorld("Goodbye World");
+goodbye.SayHello(); // prints "Goodbye World"
+```
+
+<aside class="aside-warning" markdown="1">
+It's not required that every class to have a constructor. If you don't provide one, the C# compiler will generate an "empty" constructor for you, known as a **default constructor**. For example, when we left out a constructor in our `HelloWorld` class above, the compiler created the following constructor for us:
+
+```csharp
+public HelloWorld() {}
+```
+
+Be careful with this; you almost always want to provide a constructor to properly initialize your objects.
+</aside>
+
+### Overloading Constructors
+
+We can provide multiple constructors for a given class in order to allow for different initialization scenarios. This is known as **constructor overloading**. More generally, **method overloading** refers to the practice of defining different methods with the same name and return type, but different input parameters.
+
+Let's expand upon our `Student` class from the last section.
+
+```csharp
+public class Student {
+
+    public string Name { get; set; }
+    public int StudentId { get; set; }
+    public int NumberOfCredits { get; set; }
+    public double Gpa { get; set; }
+
+    public Student(string name, int studentId,
+            int numberOfCredits, double gpa) {
+        Name = name;
+        StudentId = studentId;
+        NumberOfCredits = numberOfCredits;
+        Gpa = gpa;
+    }
+
+    public Student(string name, int studentId) {
+        Name = name;
+        StudentId = studentId;
+        NumberOfCredits = 0;
+        Gpa = 0.0;
+    }
+
+}
+```
+
+The first constructor allows for creation of `Student` objects where the code creating the object provides data for all of the properties. The second allows for creation of `Student` objects with only `name` and `studentId`. The first constructor would be most useful for creating a transfer student, where credits and a GPA might already be non-zero. However, for all new students, it would be safe to initialize `NumberOfCredits` and `Gpa` to be 0.
+
+A better way to write the above constructors would be this:
+
+```csharp
+public class Student {
+
+    public string Name { get; set; }
+    public int StudentId { get; set; }
+    public int NumberOfCredits { get; set; }
+    public double Gpa { get; set; }
+
+    public Student(string name, int studentId,
+            int numberOfCredits, double gpa) {
+        Name = name;
+        StudentId = studentId;
+        NumberOfCredits = numberOfCredits;
+        Gpa = gpa;
+    }
+
+    public Student(string name, int studentId)
+        : this(name, studentId, 0, 0) {}
+
+}
+```
+
+Here, we use `: this()` to invoke another constructor within the same class. In this case, the second constructor calls the first with the "default" values for `studentId` and `gpa`. This call to the other constructor is effectively the first line of the method. Using this approach is a good practice not only because it makes your code shorter, but because it allows any initialization behavior that may be carried beyond just initializing variables to be contained in a smaller number of constructors.
+
+Note that a constructor often won't take values for all of the fields that need to be initialized, beyond even the case of default values. For example, we might also provide a third constructor that only requires the student's name, since theoretically the `studentId` would (or could) be generated by the class itself.
+
+```csharp
+public class Student {
+
+    private static int nextStudentId = 1;
+    public string Name { get; set; }
+    public int StudentId { get; set; }
+    public int NumberOfCredits { get; set; }
+    public double Gpa { get; set; }
+
+    public Student(string name, int studentId,
+            int numberOfCredits, double gpa) {
+        Name = name;
+        StudentId = studentId;
+        NumberOfCredits = numberOfCredits;
+        Gpa = gpa;
+    }
+
+    public Student(string name, int studentId)
+        : this(name, studentId, 0, 0) {}
+
+    public Student(string name)
+        : this(name, nextStudentId) {
+        nextStudentId++;
+    }
+
+}
+```
+
+In this example, we add a static integer field that will keep track of the next student ID available to be assigned to a student. Then, our new constructor takes only a name, and assigns the student the next available value. This works because static fields are shared across all objects created from the `Student` class, so it functions as a counter of sorts for the number of `Student` objects created.
+
+<aside class="aside-pro-tip" markdown="1">
+When defining constructors, think about:
+1. Which fields must be initialized properly for your class to work properly? Be sure you initialize every such field.
+1. Which fields should be initialized by the user creating an object, and which should be initialized by the class itself?
+2. What are the use-cases for your class that you should provide for?
+</aside>
+
+
+## Customizing Fields
+
 ### Readonly Fields
 
 A **readonly field** is one that can not be changed once it is initialized (assigned a value). This means slightly different things for primitive and class types. We create readonly fields by declaring them with the `readonly` keyword.
