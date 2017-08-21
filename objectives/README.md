@@ -63,6 +63,19 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 5
 
+* Define encapsulation and explain how it results in better code
+* Explain the relationship between a class and an object
+* Properly use the `this` keyword
+* Explain and properly use access modifiers
+- Explain why fields should almost always be `private`
+* Describe what accessors (getters and setters) are and why they are useful
+* Explain what a property is and what code is created by the compiler when you create an auto-implemented property
+* Describe what a constructor is and how you can identify it
+* Create overloaded constructors
+* Use `this()` to invoke one constructor from within another in the same class
+* Utilize static fields and properties (and explain when you would want to)
+* Explain what constants are and how to declare them (and what naming convention to use)
+
 
 ### Class 6
 
