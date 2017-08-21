@@ -16,7 +16,9 @@ For the restaurant application, you know you'll need to create classes to facili
 - It should be possible to display whether a menu item is new or not
 - The app should know when the menu was last updated, so visitors can see that the restaurant is constantly changing and adding exciting new items
 
-Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the design for two classes, `Menu` and `MenuItem`. List the fields and properties that each should have, along with the data type and access level of each. Also consider whether any field should be `static` or `readonly`. When thinking of data types, don't forget to consider collections (lists and dictionaries), and if using a collection type, to specify the type it will contain.
+Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the design for two classes, `Menu` and `MenuItem`. List the fields and properties that each should have, along with the data type and access level of each. Also consider whether any field should be `static` or `readonly`. Also consider what constructors your class might need, and whether any field should be `static` or `readonly`.
+
+When thinking of data types, don't forget to consider collections (lists and dictionaries), and if using a collection type, to specify the type it will contain.
 
 At this stage, don't think about how the application will work or behave; you should focus on the way that data will be represented within these classes, and how they should relate to each other.
 
