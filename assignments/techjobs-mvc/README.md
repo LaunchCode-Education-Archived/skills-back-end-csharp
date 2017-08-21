@@ -80,7 +80,7 @@ At the top of `ListController` is a special method known as a **static construct
 
 In the `Values` action, the controller uses the query parameter passed in as `column` to determine which values to fetch from `JobData`. In the case of `"all"` it will fetch all job data, and then render the `Jobs.cshtml` view template rather than the default view. In all other cases, it fetches only the values for the given column and passes them to the `Values.cshtml` view template. We'll explore these templates in a moment.
 
-In the `Jobs` action, we take in two query parameters: `column` and `value`. This has the net result of working similarly to the search functionality, in that we are "searching" for a particular value with in a particular column and display jobs that match. However, this is slightly different from search in that the user will arrive at this action as a result of clicking on a link within one of our views, rather than via submitting a form. We'll see where these links originate when we look at the views. Also note that the `Jobs` action doesn't deal with an "all" scenario; it only displays jobs matching a specific value in a specific column.
+In the `Jobs` action, we take in two query parameters: `column` and `value`. This has the net result of working similarly to the search functionality, in that we are "searching" for a particular value within a particular column and displaying jobs that match. However, this is slightly different from search in that the user will arrive at this action as a result of clicking on a link within one of our views, rather than via submitting a form. We'll see where these links originate when we look at the views. Also note that the `Jobs` action doesn't deal with an "all" scenario; it only displays jobs matching a specific value in a specific column.
 
 #### The Views
 
@@ -107,7 +107,7 @@ Turn your attention to `Views/List/Index.cshtml`. This template displays the lis
     asp-route-column="@column.Key">@column.Value</a>
 ```
 
-We've seen `asp-controller` and `asp-action` before, as attributes that cause the Razor engine to create links to the appropriate controller and action for us. The `asp-route-*` attribute is new though. This attribute will add a query parameter with key equal to whatever the third slot of the attribute name is. The `*` is a placeholder that we can replace with any valid identifier.
+We've seen `asp-controller` and `asp-action` before, as attributes that cause the Razor engine to create links to the appropriate controller and action for us. The `asp-route-*` attribute is new though. This attribute will add a query parameter with a key equal to whatever the third slot of the attribute name is. The `*` is a placeholder that we can replace with any valid identifier.
 
 In `Views/List/Index.cshtml`, we specify a query parameter named `column` by using `asp-route-column`. The value of the query parameter is determined dynamically based on the value of `@column.Key`. Since these values come from `ViewBag.columns` in the template (which in turn comes from `columnChoices` in the controller), they will be employer, location, etc. When the user clicks on these links, they will be routed to the `Values` action in the `List` controller, which looks for these parameters.
 
@@ -150,9 +150,9 @@ You'll also need to pass `ListController.columnChoices` to the view, as is done 
 
 #### Display Search Results
 
-After you have your `Results` action above passing data to the view, you need to display the data. Open up `Views/Search/Index.cshtml` and create a loop to display each job passed in from the controller. You should put each job in its own table, with job field per row.
+After you have your `Results` action above passing data to the view, you need to display the data. Open up `Views/Search/Index.cshtml` and create a loop to display each job passed in from the controller. You should put each job in its own table, with one job field per row.
 
-Add the class `"job-listing"` to each of the tables to get some nice styling, courtesy of Eliot's work!
+Add the CSS class `"job-listing"` to each of the tables to get some nice styling, courtesy of Eliot's work!
 
 #### Display List of All Jobs
 
