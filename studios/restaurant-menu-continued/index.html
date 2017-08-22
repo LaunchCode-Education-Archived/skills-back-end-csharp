@@ -131,16 +131,19 @@
 </ul>
 <p>Based on these details, you'll need to include some methods:</p>
 <ul>
-<li>One or more constructors for each class</li>
 <li>A way to add and remove menu items from the menu</li>
 <li>A way to tell if a menu item is new</li>
 <li>A way to tell when the menu was last updated</li>
 <li>A way to print out both a menu item and an entire menu</li>
+<li>A way to determine whether or not two menu items are equal</li>
 </ul>
-<p>Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the methods that you'll need for these classes. List the method names and access levels, along with the types of all input and return parameters. Also consider whether any methods should be <code>static</code>.</p>
+<p>Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the methods that you'll need for these classes. List the method names and access levels, along with the input parameter types and return types. Also consider whether any methods should be <code>static</code>.</p>
+<aside class="aside-note">
+<p>If you don't have an ID property on your <code>MenuItem</code> class then providing a <code>GetHashCode</code> method to supplement your <code>Equals</code> method will be beyond the scope of what we've learned so far. If this is the case for you, leave off <code>GetHashCode</code>. Visual Studio will give you a warning, but you will still be able to run your code.</p>
+</aside>
 <h2 id="presenting-your-design">Presenting Your Design</h2>
 <p>Once you have sketched out your methods, find a classmate to describe your design to. Class design can be subjective, so it's important to properly think and talk through your choices before coding.</p>
-<p>While a classmate is presenting their design to you, ask questions about why they made the decisions that they did, and think about use cases that that might come up, to see if their design fits with those.</p>
+<p>While a classmate is presenting their design to you, ask questions about why they made the decisions that they did, and think about use cases that might come up, to see if their design accommodates those.</p>
 <h2 id="implementation">Implementation</h2>
 <p>Within the <code>Restaurant</code> project in the <code>csharp-exercises</code> solution, begin adding the methods you designed to <code>Menu</code> and <code>MenuItem</code>. Within the <code>Program.cs</code> file, test your classes in the <code>Main</code> method by creating several menu items, adding them to a menu, and printing the menu to the screen.</p>
                                     </section>
