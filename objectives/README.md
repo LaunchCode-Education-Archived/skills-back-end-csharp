@@ -79,9 +79,22 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 6
 
+- Define and call instance methods of an object
+- Define and call static methods
+- Explain why instance variables may not be referenced within static methods
+- Write a custom `ToString` method for a given class
+- Explain the concepts of object identity and equality, and how they differ
+- Explain the use of `Equals` to determine when two objects are equal
+- Explain the behavior of `==` with respect to objects in C#
+- Use the Single Responsibility Principle to create small, well-designed classes
+- Describe and implement the best practices for implementing `Equals` within a class
+- Explain when `GetHashCode` should be implemented within a class
+- Use the `GetType` method to determine the class of an object
+- Use Visual Studio's shortcuts to generate well-structured `Equals` and `GetHashCode` methods
 
 ### Class 7
 
+- 
 
 ### Class 8
 

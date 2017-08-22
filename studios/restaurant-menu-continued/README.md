@@ -22,17 +22,17 @@ Based on these details, you'll need to include some methods:
 - A way to print out both a menu item and an entire menu
 - A way to determine whether or not two menu items are equal
 
-Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the methods that you'll need for these classes. List the method names and access levels, along with the types of all input and return parameters. Also consider whether any methods should be `static`.
+Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the methods that you'll need for these classes. List the method names and access levels, along with the input parameter types and return types. Also consider whether any methods should be `static`.
 
 <aside class="aside-note" markdown="1">
-If you don't have an ID property on your `MenuItem` class then providing a `GetHashCode` method (in addition to `Equals`) will be beyond the scope of what we've learned so far. If this is the case for you, leave off `GetHashCode`. Visual Studio will give you a warning, but you will still be able to run your code.
+If you don't have an ID property on your `MenuItem` class then providing a `GetHashCode` method to supplement your `Equals` method will be beyond the scope of what we've learned so far. If this is the case for you, leave off `GetHashCode`. Visual Studio will give you a warning, but you will still be able to run your code.
 </aside>
 
 ## Presenting Your Design
 
 Once you have sketched out your methods, find a classmate to describe your design to. Class design can be subjective, so it's important to properly think and talk through your choices before coding.
 
-While a classmate is presenting their design to you, ask questions about why they made the decisions that they did, and think about use cases that that might come up, to see if their design fits with those.
+While a classmate is presenting their design to you, ask questions about why they made the decisions that they did, and think about use cases that might come up, to see if their design accommodates those.
 
 ## Implementation
 

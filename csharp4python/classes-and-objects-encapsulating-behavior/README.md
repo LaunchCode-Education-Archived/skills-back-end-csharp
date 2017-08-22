@@ -3,11 +3,11 @@ title: 'Classes and Objects: Encapsulating Behavior'
 currentMenu: java4python
 ---
 
-Having explored configuring data within classes (via fields and properties), let's turn our attention to behavior (methods).
+Having explored configuring data within classes (via fields and properties), let's turn our attention to configuring behavior (methods).
 
 ## Calling Methods on Objects
 
-A **method** is a procedure that belongs to a class. In C#, all procedures must be part of a class, a significant difference from Python, where functions may stand on their own. Let's revisit our minimal class example.
+A **method** is a procedure that belongs to a class. In C# all procedures must be part of a class, which is a significant difference from Python where functions may stand on their own. Let's revisit our minimal class example.
 
 
 ```csharp
@@ -34,20 +34,20 @@ hello.SayHello();
 It is not possible to call `SayHello` without having a `HelloWorld` object. This begins to make more sense when you note that the `message` field is used within `SayHello`, and unless we are calling `SayHello` off of an object, there will be no `message` field available to print.
 
 <aside class="aside-pro-tip" markdown="1">
-As mentioned before, methods should have the most restrictive level of access possible. If you create a utility method that should only be used within your class, then it should be `private`.
+As mentioned before with fields, methods should also have the most restrictive level of access possible. If you create a utility method that should only be used within your class, then it should be `private`.
 
 Only make methods `public` when you expect other classes to use them, and when you are committed to maintaining those methods for other programmers that might use them.
 </aside>
 
 ## Instance Methods
 
-So far we've only looked at examples of methods that are relatively specialized: constructors, getters, and setters. Every class you create will have these methods. What will make your classes different from each other, and effective, are the specific behaviors that are unique to your classes.
+So far we've only looked at examples of methods that are relatively specialized: constructors, getters, and setters. Virtually every class you create will have these methods. What will make your classes different from each other, and effective, are the specific behaviors that are unique to your classes.
 
 Let's add a couple of such methods to our `Student` class. These methods will be **instance methods** since they will belong to each `Student` object created, and will use the data of each such object.
 
-What are the behaviors that our `Student` class should have? To start, it would make sense for a student to take a class and get a grade, and for their data to be updated accordingly. Additionally, it would be nice to be able to easily tell the grade level of a student -- freshman, sophomore, junior, or senior.
+What are the behaviors that our `Student` class should have? To start, it would make sense for a student to take a class and get a grade, and for their data to be updated accordingly. Additionally, it would be nice to be able to easily tell the grade level of a student - freshman, sophomore, junior, or senior.
 
-Our last look at the `Student` class stubs out these methods, without providing the implementation. That job is left to you to do as an exercise.
+For our last look at the `Student` class we will stub out these methods below, without providing the implementation. That job is left to you to do as an exercise.
 
 ```csharp
 public class Student
@@ -94,11 +94,11 @@ When creating your classes, think about the behaviors that you want to make avai
 
 ## Static Methods
 
-Static methods are not new to us. We've used them quite a bit, all the way back to our first C# method: `public static void main(string[] args)`. Let's present them in context of the rest of what we've recently learned about classes, however.
+Static methods are not new to us. We've used them quite a bit, all the way back to our first C# method: `public static void main(string[] args)`. Now let's present them in the context of the rest of what we've recently learned about classes.
 
-Analogous to static fields, **static methods** belong to a class, and not to any of the objects created by the class. Thus, they are sometimes also called **class methods**.  A static method is can be thought of as the opposite of an instance method, since the two cases are mutually exclusive, and one relies on data from an object (instance methods) while the other must *not* rely on data from an object (static methods).
+Analogous to static fields, **static methods** belong to a class, and not to any of the objects created by the class. Thus, they are sometimes also called **class methods**.  A static method can be thought of as the opposite of an instance method, since the two cases are mutually exclusive; one relies on data from an object (instance methods) while the other must *not* rely on data from an object (static methods).
 
-A static method may be called by preceding it with the class name, using dot-notation. Here's an example that we looked at previously.
+A static method may be called by preceding it with the class name and using dot-notation. Here's an example that we looked at previously.
 
 ```csharp
 public class HelloMethods
@@ -135,7 +135,7 @@ public class Message {
 }
 ```
 
-The call in question is: `Message.getMessage("fr")`. We call the static method `getMessage` without needing an instance of the `Message` class, using the name of the class itself.
+The call in question is: `Message.GetMessage("fr")`. We call the static method `GetMessage` without needing an instance of the `Message` class, using the name of the class itself.
 
 <aside class="aside-warning" markdown="1">
 It is technically allowed to call a static method using an instance of a class: `myObject.SomeStaticMethod()`. However, this should be avoided in favor of using the class name to call the method.
@@ -172,7 +172,7 @@ John (Credits: 0, GPA: 0.0)
 
 In the definition of `ToString` we are required to use a new keyword, `override`. This is a flag to the compiler that the method is meant to override the default `ToString` behavior.
 
-Note that `ToString` is often implicitly called for you. For example, the output above could have been generated by the following code, which calls `ToString` on `john` within `Console.WriteLine`.
+Note that `ToString` is often implicitly called for you. For example, the output above could have been generated by the following code, which implicitly calls `ToString` on `john` within `Console.WriteLine`.
 
 ```csharp
 Student john = new Student("John");
@@ -181,7 +181,7 @@ Console.WriteLine(john);
 
 ### Equals
 
-Suppose we had two objects of type `Student`, say `student1` and `student2`, and we wanted to determine if they were equal. We might try to compare them using `==`, but since these are [references](../data-types#reference-and-value-types) -- that is, the variables hold a reference, or the address of the actual `Student` objects -- they will be determined to be equal only when they have the same address. In other words, they will be equal only when they refer to, or point at, the exact same object. This is often not what we want. For example, we might want to consider two student objects equal if they had the same name, email, or student ID.
+Suppose we had two objects of type `Student`, say `student1` and `student2`, and we wanted to determine if they were equal. We might try to compare them using `==`, but since these are [references](../data-types#reference-and-value-types) -- that is, the variables hold a reference, or the address of the actual `Student` objects -- they will be determined to be equal only when they have the same address. In other words, they will be equal only when they refer to, or point at, the exact same object. This is often not what we want to check for. For example, we might want to consider two student objects equal if they had the same name, email, or student ID.
 
 The `Equals()` method can be used to determine if one object is equal to another in this sense. We introduced this method when discussing strings, but it also applies to all other classes. Here's now you might use it:
 
@@ -189,7 +189,7 @@ The `Equals()` method can be used to determine if one object is equal to another
 Student bono1 = new Student("Paul David Hewson", 4);
 Student bono2 = new Student("Bono", 4);
 
-if (bono1.equals(bono2))
+if (bono1.Equals(bono2))
 {
     Console.WriteLine(bono1.getName() +
         " is the same as " + bono2.getName());
@@ -222,11 +222,11 @@ Here's what this looks like conceptually:
 
 ![Identity](identity.png)
 
-You'll often want to implement `Equals()` yourself. However, if you do so, be sure to understand best practices around how the method should behave, which are [not so simple][implementing-equals]. In fact, the `Equals()` method we have here isn't very good by most C# programmers' standards. We'll dedicate time to learning how to best write an `Equals()` method in a future lesson. Let's improve on it.
+You'll often want to implement `Equals()` yourself. However, if you do so, be sure to understand best practices around how the method should behave, which are [not so simple][implementing-equals]. In fact, the `Equals()` method we have here isn't very good by most C# programmers' standards. Let's improve on it.
 
 **Problem #1**: The method argument can not be converted to a `Student` instance.
 
-When we attempt to cast the argument `o` to type `Student`, we'll get an exception if `o` can't be properly converted. This would happen if somebody passes something other than a `Student` object into `equals()`. To prevent this from happening, we'll return `false` if `o` was not created from the `Student` class, as determined by using the `getClass` method, which is available to every object (similarly to `toString`).
+When we attempt to cast the argument `o` to type `Student`, we'll get an exception if `o` can't be properly converted. This would happen if somebody passes something other than a `Student` object into `Equals()`. To prevent this from happening, we'll return `false` if `o` was not created from the `Student` class, as determined by using the `GetType` method, which is available to every object (similarly to `ToString`).
 
 ```csharp
 public bool Equals(Object o)
@@ -315,7 +315,7 @@ Now that we know how to write an `Equals()` method, let's look at some character
 1. **Consistency:** As long as `x` and `y` do not change `x.Equals(y)` should always return the same result.
 1. **Non-null:** For any non-null reference value `x`, `x.Equals(null)` should return `false`.
 
-If you think about your innate sense of the concept of equality, say, from a math class, then these concepts make sense. While using the general approach outlined above for implementing `Equals()` will generally make these relatively simple to guarantee, not doing so can be disastrous for your C# applications.
+If you think about your general sense of the concept of equality, say, from a math class, then these concepts make sense. While using the general approach outlined above for implementing `Equals()` will generally make these relatively simple to guarantee, not guaranteeing these characteristics can be disastrous for your C# applications.
 
 ### GetHashCode
 
@@ -323,7 +323,7 @@ Seasoned C# developers will tell you that every time you implement your own vers
 
 The main rules that you should follow with `GetHashCode` are:
 - Always provide a custom `GetHashCode` implementation whenever you provide a custom `Equals` implementation
-- When two objects are equal, as determined by `Equals`, then they should have the same hash code, as determined by `GetHashCode`. However, the reverse does not have to be the case. Two objects can have the same hash code and not be equal.
+- When two objects are equal, as determined by `Equals`, then they should have the same hash code, as determined by `GetHashCode`.
 
 One simple case is when we build our class to use unique IDs, as is the case with our `Student` class. In that case, we have `Equals` make its comparison using this ID, and we can have `GetHashCode` return the integer ID of the given object.
 
