@@ -38,7 +38,7 @@ Code the classes that you designed above. If you like, get some feedback on your
 
 ## Putting it all together
 
-You're now ready to present these questions as a Quiz. Use your classes in a `Main` method  within the `Program.cs` file of the project. The program should create several questions, present them to the user, accept the user's responses, and then tell them whether their answers were correct or incorrect.
+You're now ready to present these questions as a quiz. Use your classes in a `Main` method  within the `Program.cs` file of the project. The program should create several questions, present them to the user, accept the user's responses, and then tell them whether their answers were correct or incorrect.
 
 ## Bonus Missions
 

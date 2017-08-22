@@ -57,7 +57,7 @@ As with Python, fields and non-constructor methods are directly available to ins
 This is a good time to review [access modifiers in C#](../introduction-to-classes-and-objects/#access-modifiers) if anything in the last paragraph was fuzzy.
 </aside>
 
-For an example, let's revisit our `Cat` and `HouseCat` implementations from [Chapter 14 of Unit 1](https://runestone.launchcode.org/runestone/static/thinkcspy/ClassesDiggingDeeper/Inheritance.html), modified to illustrate some C#-specific concepts.
+For an example, let's revisit our `Cat` and `HouseCat` implementations from [Chapter 13 of Unit 1](https://runestone.launchcode.org/runestone/static/thinkcspy/ClassesDiggingDeeper/Inheritance.html), modified to illustrate some C#-specific concepts.
 
 ```csharp
 public class Cat {
@@ -171,7 +171,7 @@ public HouseCat(string name, double weight) : base(weight)
 }
 ```
 
-Here we use the `:` operator in conjunction with they keyword `base` to specify that our constructor should call the base class constructor with the argument `weight`. This call to the base class constructor will run before the body of the subclass constructor executes. This is a useful way to ensure that we're fully initializing our objects.
+Here we use the `:` operator in conjunction with the keyword `base` to specify that our constructor should call the base class constructor with the argument `weight`. This call to the base class constructor will run before the body of the subclass constructor executes. This is a useful way to ensure that we're fully initializing our objects.
 
 You may leave out such a call to a base class constructor only when the base class has a default, or *no-arg*, constructor (that is, a constructor that takes no arguments). In such a case, the default constructor is implicitly called for you. Here's what this would look like in `HouseCat`, if `Cat` had a default constructor.
 
@@ -269,13 +269,13 @@ This calls the overridden method in the base class via `base.Noise()`, carrying 
 
 In a previous lesson, we introduced the "special" methods `Equals` and `ToString`, noting that all classes were provided default implementations of these methods that could be overridden.
 
-In fact, these default methods are part of a class called `Object`. If a class does not explicitly extend another class, then it implicitly extends `Object`. So the default implementations of `Equals` and `ToString` (along with a few [other methods](https://msdn.microsoft.com/en-us/library/system.object(v=vs.110).aspx#Methods)) are made available to us via inheritance. Those that are marked `virtual` -- such as `Equals` and `ToString` both are -- may be overridden.
+In fact, these default methods are part of a class called `Object`. If a class does not explicitly extend another class, then it implicitly extends `Object`. So the default implementations of `Equals` and `ToString` (along with a few [other methods](https://msdn.microsoft.com/en-us/library/system.object(v=vs.110).aspx#Methods)) are made available to us via inheritance. Those that are marked `virtual` - such as `Equals` and `ToString` - may be overridden.
 
 ### Abstract Classes and Class Members
 
 In this section we briefly introduce an intermediate object-oriented concept. We will not use it much in this course, but you're likely to encounter it in the "real world" and it is a useful one to know.
 
-We noted in the introduction to this section that inheritance is a way to share behaviors among classes. You'll sometimes find yourself creating a base class as a way to share behaviors among related classes. However, in such situations is not always desirable for instances of the base class to be created.
+We noted in the introduction to this section that inheritance is a way to share behaviors among classes. You'll sometimes find yourself creating a base class as a way to share behaviors among related classes. However, in such situations it is not always desirable for instances of the base class to be created.
 
 For example, suppose we began coding two classes, `HouseCat` and `Tiger`. Upon writing the code, we realized that there was some common data and behaviors. For example, they both make a noise, come from the same biological family, and get hungry. In order to reduce code repetition, we combined those in `Cat` (as above).
 
@@ -305,7 +305,7 @@ public abstract class Cat
 }
 ```
 
-To reiterate, abstract classes are classes that may not be instantiated. In order to use the behavior of an abstract class, *we must extend it*.
+To reiterate, *abstract classes are classes that may not be instantiated*. In order to use the behavior of an abstract class, *we must extend it*.
 
 We have a further tool that we may use here, which is an **abstract method**. An abstract method is a method in an abstract class that does not have a body. In other words, it does not have any associated code, only a signature. It must also be marked `abstract`.
 
@@ -320,7 +320,7 @@ public abstract class Cat
 }
 ```
 
-Any class extending `Cat` is then forced to provide its own version of `Noise`, with the exact same method signature.
+Any class extending `Cat` is then forced to provide its own version of `Noise`, with the exact same method signature (but without the `abstract` keyword).
 
 ## Data Typing And Inheritance
 
@@ -332,10 +332,10 @@ In other words, this is allowed:
 Cat suki = new HouseCat("Suki", 8);
 ```
 
-This is acceptable because a `HouseCat` *is a* `Cat`. Furthermore, when we call methods on such an object, the compiler is smart enough to determine which method it should call. For example, the following call to `noise()` will call the version defined in `HouseCat`:
+This is acceptable because a `HouseCat` *is a* `Cat`. Furthermore, when we call methods on such an object, the compiler is smart enough to determine which method it should call. For example, the following call to `Noise()` will call the version defined in `HouseCat`:
 
 ```csharp
-// Calls HouseCat's noise() method
+// Calls HouseCat's Noise() method
 suki.Noise();
 ```
 

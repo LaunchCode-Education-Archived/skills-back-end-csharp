@@ -94,7 +94,15 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 7
 
-- 
+- Define inheritance and explain how it works in C#
+- Use `:` to allow one class to inherit from another
+- Explain which fields and methods are inherited by a class extension, based on C#'s rules and taking into account access modifiers
+- Call a parent class constructor from a child class constructor using `base`
+- Override methods when extending a class (and declare which methods can be overridden using `virtual`)
+- Describe the role of the `Object` class in each class' hierarchy
+- Describe and use abstract classes and abstract methods
+- Explain how variable and parameter declaration relates to inheritance (i.e. how inheritance enables polymorphic behavior)
+- Use basic class diagrams to visualize and design class relationships
 
 ### Class 8
 
