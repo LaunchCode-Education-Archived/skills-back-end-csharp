@@ -16,4 +16,5 @@ currentMenu: classes
     - In the `CheeseController.Add` action that handles form submission, create the new cheese with the rating
     - Display the rating in `Views/Cheese/Index.cshtml`
     - Add validation in the ViewModel to ensure the rating is within a proper range, say 1-5. Refer to the [validation attributes overview](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation#validation-attributes) for options on doing this.
+    
 1. Within `AddCheeseViewModel` create a method `CreateCheese` that returns a `Cheese` object that has been created using the properties of `AddCheeseViewModel`. Refactor `CheeseController.Add` (the one that processes the form) to use this method, rather than creating a `Cheese` object directly. This encapsulates this functionality in the ViewModel, and makes the code more reusable.

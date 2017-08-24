@@ -172,7 +172,7 @@ List<Job> allOfTheJobs = jobData.Jobs;
 jobData.Jobs.Add(newJob);
 ```
 
-Additionally, collections of classes that make up the individual properties of a `Job` object -- `Employer`, `Location`, `CoreCompetency`, `PositionType` -- are available as properties of `JobData`. For example, all employers are contained in property called `Employers`.
+Additionally, collections of classes that make up the individual properties of a `Job` object -- `Employer`, `Location`, `CoreCompetency`, `PositionType` -- are available as properties of `JobData`. For example, all employers are contained in a property called `Employers`.
 
 There are two methods that you might want to use here. Here they are:
 
@@ -196,7 +196,7 @@ You won't be working on search and list functionality in this assignment, but yo
 
 While you won't be working in these classes, you'll likely learn something new by reading that code, so we encourage you to dive into those files.
 
-There's another ViewModel class that you *will* be working with: `NewJobViewModel`. This class is meant to enable display of a form for creating a new job, along with processing of the form. The code for doing this with two properties, `Name` and `EmployerID` is already in place. The field for `Name` is a string and will be displayed as a text box, while `EmployerID` will be displayed as a dropdown (that is, a `<select>` element) that will allow the user to select from the list of all existing employers.
+There's another ViewModel class that you *will* be working with: `NewJobViewModel`. This class is meant to enable display of a form for creating a new job, along with processing of the form. The code for doing this with two properties, `Name` and `EmployerID`, is already in place. The field for `Name` is a string and will be displayed as a text box, while `EmployerID` will be displayed as a dropdown (that is, a `<select>` element) that will allow the user to select from the list of all existing employers.
 
 Part of your work will be to complete this ViewModel to enable full creation of a `Job` object, including all necessary fields.
 
@@ -230,9 +230,9 @@ Within `Views/Job/Index.cshtml` you need to declare the ViewModel type and then 
 
 Our `JobController` class and the `Views/Job/New.cshtml` view template is set up to allow a user to create new jobs through the interface, but it isn't complete. Getting this to work comprises your next set of tasks.
 
-First, you'll need to work within `NewJobViewModel` to set up the properties to allow for both form display and form submission. Cheryl has put in place the code to display and process the `Name` and the data associate with an employer.
+First, you'll need to work within `NewJobViewModel` to set up the properties to allow for both form display and form submission. Cheryl has put in place the code to display and process the `Name` and the data associated with an employer.
 
-Notice that rather having a property for `Employer`, we have a field for `EmployerID`.
+Notice that rather than having a property for `Employer`, we have a field for `EmployerID`.
 
 ```csharp
 [Required]
@@ -262,13 +262,13 @@ If the ViewModel fails validation, display the form again.
 
 #### Make the ViewModels DRY
 
-Remember the DRY principle ("Don't Repeat Yourself")? Well, our ViewModels aren't very DRY. `JobFieldsViewModel` and `SearchJobsViewModel` have some repeated code, since the associate views contain related data.
+Remember the DRY principle ("Don't Repeat Yourself")? Well, our ViewModels aren't very DRY. `JobFieldsViewModel` and `SearchJobsViewModel` have some repeated code, since the associated views contain related data.
 
 Fix this by finding the common code (including potentially repeated code in methods), and placing it in a `BaseViewModel`. Then have each of these classes extend `BaseViewModel`.
 
 ### Sanity Check
 
-Before submitting, make sure that your application:
+Before submitting, make sure that with your application:
 
 - You can create a new job from `/Job/New` by entering the name of a job, and selecting employer, location, skill, and position type values from dropdown selects.
 - If you leave off the name of a job, you are presented with the form again, and a message describing the error is presented on the page.

@@ -119,6 +119,13 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 9
 
+* Describe how ViewModels work and why you would want to use them
+* Use tag helpers, such as `asp-for` and `asp-validation-for` in your view to utilize the ViewModel
+* Explain how you can use ViewModels to help add a layer of validation
+* Use the `[Required]` attribute
+* Display error messages in the view
+* Explain what *enum types* are and when you would want to use them
+* Use an enum type and then represent that data in a `<select>` element.
 
 ### Class 10
 
