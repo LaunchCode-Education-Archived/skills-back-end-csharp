@@ -126,7 +126,8 @@
 <p>This ViewModel will need most of the same properties and methods as <code>AddCheeseViewModel</code>, so create a ViewModel class that extends <code>AddCheeseViewModel</code>. The only property you'll need to add right now is a <code>cheeseId</code> property to hold the ID of the cheese being edited.</p>
 <p>After creating the ViewModel, use it in both <code>Edit</code> actions. Since you'll be populating the form with the data from an existing cheese, you'll need to initialize the <code>cheeseId</code> in the <code>Edit</code> action that displays the form.</p>
 </li>
-<li>Add an integer property to <code>Cheese</code> to allow the user to give each cheese a rating. Follow these steps:
+<li>
+<p>Add an integer property to <code>Cheese</code> to allow the user to give each cheese a rating. Follow these steps:</p>
 <ul>
 <li>Add the property to <code>Cheese.cs</code></li>
 <li>Add the property to <code>AddCheeseViewModel</code></li>
@@ -134,7 +135,8 @@
 <li>In the <code>CheeseController.Add</code> action that handles form submission, create the new cheese with the rating</li>
 <li>Display the rating in <code>Views/Cheese/Index.cshtml</code></li>
 <li>Add validation in the ViewModel to ensure the rating is within a proper range, say 1-5. Refer to the <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation#validation-attributes" target="_blank">validation attributes overview</a> for options on doing this.</li>
-</ul></li>
+</ul>
+</li>
 <li>Within <code>AddCheeseViewModel</code> create a method <code>CreateCheese</code> that returns a <code>Cheese</code> object that has been created using the properties of <code>AddCheeseViewModel</code>. Refactor <code>CheeseController.Add</code> (the one that processes the form) to use this method, rather than creating a <code>Cheese</code> object directly. This encapsulates this functionality in the ViewModel, and makes the code more reusable.</li>
 </ol>
                                     </section>

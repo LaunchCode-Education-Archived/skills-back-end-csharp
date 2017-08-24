@@ -239,7 +239,7 @@ List&lt;Job&gt; allOfTheJobs = jobData.Jobs;
 
 // add a new Job object to the list
 jobData.Jobs.Add(newJob);</code></pre>
-<p>Additionally, collections of classes that make up the individual properties of a <code>Job</code> object -- <code>Employer</code>, <code>Location</code>, <code>CoreCompetency</code>, <code>PositionType</code> -- are available as properties of <code>JobData</code>. For example, all employers are contained in property called <code>Employers</code>.</p>
+<p>Additionally, collections of classes that make up the individual properties of a <code>Job</code> object -- <code>Employer</code>, <code>Location</code>, <code>CoreCompetency</code>, <code>PositionType</code> -- are available as properties of <code>JobData</code>. For example, all employers are contained in a property called <code>Employers</code>.</p>
 <p>There are two methods that you might want to use here. Here they are:</p>
 <pre><code class="language-csharp">// Find the employer with id=7
 Employer anEmployer = jobData.Employers.Find(7);
@@ -253,7 +253,7 @@ List&lt;Employer&gt; allEmployers = jobData.Employers.ToList();</code></pre>
 <h3 id="the-viewmodel">The ViewModel</h3>
 <p>You won't be working on search and list functionality in this assignment, but you should know that Cheryl has refactored all of that code to use ViewModels as well as model classes. These ViewModels are <code>JobFieldsViewModel</code> and <code>SearchJobsViewModel</code>.</p>
 <p>While you won't be working in these classes, you'll likely learn something new by reading that code, so we encourage you to dive into those files.</p>
-<p>There's another ViewModel class that you <em>will</em> be working with: <code>NewJobViewModel</code>. This class is meant to enable display of a form for creating a new job, along with processing of the form. The code for doing this with two properties, <code>Name</code> and <code>EmployerID</code> is already in place. The field for <code>Name</code> is a string and will be displayed as a text box, while <code>EmployerID</code> will be displayed as a dropdown (that is, a <code>&lt;select&gt;</code> element) that will allow the user to select from the list of all existing employers.</p>
+<p>There's another ViewModel class that you <em>will</em> be working with: <code>NewJobViewModel</code>. This class is meant to enable display of a form for creating a new job, along with processing of the form. The code for doing this with two properties, <code>Name</code> and <code>EmployerID</code>, is already in place. The field for <code>Name</code> is a string and will be displayed as a text box, while <code>EmployerID</code> will be displayed as a dropdown (that is, a <code>&lt;select&gt;</code> element) that will allow the user to select from the list of all existing employers.</p>
 <p>Part of your work will be to complete this ViewModel to enable full creation of a <code>Job</code> object, including all necessary fields.</p>
 <h3 id="the-view">The View</h3>
 <p>Previously-existing view templates are still in place, though they've been refactored to use ViewModels rather than the <code>ViewBag</code>.</p>
@@ -271,8 +271,8 @@ List&lt;Employer&gt; allEmployers = jobData.Employers.ToList();</code></pre>
 <p>Within <code>Views/Job/Index.cshtml</code> you need to declare the ViewModel type and then display the properties of the job in a table.</p>
 <h4 id="create-new-jobs">Create New Jobs</h4>
 <p>Our <code>JobController</code> class and the <code>Views/Job/New.cshtml</code> view template is set up to allow a user to create new jobs through the interface, but it isn't complete. Getting this to work comprises your next set of tasks.</p>
-<p>First, you'll need to work within <code>NewJobViewModel</code> to set up the properties to allow for both form display and form submission. Cheryl has put in place the code to display and process the <code>Name</code> and the data associate with an employer.</p>
-<p>Notice that rather having a property for <code>Employer</code>, we have a field for <code>EmployerID</code>.</p>
+<p>First, you'll need to work within <code>NewJobViewModel</code> to set up the properties to allow for both form display and form submission. Cheryl has put in place the code to display and process the <code>Name</code> and the data associated with an employer.</p>
+<p>Notice that rather than having a property for <code>Employer</code>, we have a field for <code>EmployerID</code>.</p>
 <pre><code class="language-csharp">[Required]
 [Display(Name = "Employer")]
 public int EmployerID { get; set; }</code></pre>
@@ -287,10 +287,10 @@ public int EmployerID { get; set; }</code></pre>
 <p>Once you've created the new job, redirect to the single job display page that you created above.</p>
 <p>If the ViewModel fails validation, display the form again.</p>
 <h4 id="make-the-viewmodels-dry">Make the ViewModels DRY</h4>
-<p>Remember the DRY principle (&quot;Don't Repeat Yourself&quot;)? Well, our ViewModels aren't very DRY. <code>JobFieldsViewModel</code> and <code>SearchJobsViewModel</code> have some repeated code, since the associate views contain related data.</p>
+<p>Remember the DRY principle (&quot;Don't Repeat Yourself&quot;)? Well, our ViewModels aren't very DRY. <code>JobFieldsViewModel</code> and <code>SearchJobsViewModel</code> have some repeated code, since the associated views contain related data.</p>
 <p>Fix this by finding the common code (including potentially repeated code in methods), and placing it in a <code>BaseViewModel</code>. Then have each of these classes extend <code>BaseViewModel</code>.</p>
 <h3 id="sanity-check">Sanity Check</h3>
-<p>Before submitting, make sure that your application:</p>
+<p>Before submitting, make sure that with your application:</p>
 <ul>
 <li>You can create a new job from <code>/Job/New</code> by entering the name of a job, and selecting employer, location, skill, and position type values from dropdown selects.</li>
 <li>If you leave off the name of a job, you are presented with the form again, and a message describing the error is presented on the page.</li>
