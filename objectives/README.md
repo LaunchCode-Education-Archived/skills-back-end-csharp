@@ -106,6 +106,16 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 8
 
+* Write LINQ queries and methods
+* Explain how the `var` keyword works
+* Explain what a *lambda* function is and how you would use it in a LINQ method
+* Define what a *POCO* is
+* Describe what the *Model* part of MVC is used for
+* Differentiate between what kind of functionality should be handled by the Model versus the Controller
+* Explain what *refactoring* is
+* Describe what model binding does, what its benefits are, and how to use it
+* Describe how to use a unique identifier in a class (as we did when we solved the "remove" functionality problem)
+* Explain why the names of the class fields must match the names of the form fields for model binding to work
 
 ### Class 9
 

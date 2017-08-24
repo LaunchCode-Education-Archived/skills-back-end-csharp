@@ -3,7 +3,7 @@ title: Class 8 Prep Exercises
 currentMenu: classes
 ---
 
-Add edit functionality to the `CheeseMVC` application by following these steps. It assumes that you've added all of the code from the [models lesson](../../videos/intro-to-mvc-models/).
+Add edit functionality to the `CheeseMVC` application by following these steps. Make sure you've added all of the code from the [models lesson](../../videos/intro-to-mvc-models/).
 
 1. Add two action methods to `CheeseController`. Just stub them out for now; we'll implement the code to make them work in a minute.
     - An action method to display the form:
@@ -30,4 +30,4 @@ Add edit functionality to the `CheeseMVC` application by following these steps. 
     <a asp-controller="Cheese" asp-action="Edit" asp-route-id="@cheese.CheeseId">edit</a>
     ```
     You can put this link in a third table column, or in one of the existing table cells.
-1. Test your code! With so many changes, it's likely that you made an error somewhere. Be patient, use the Visual Studio debugger, and read your error messages.
+1. Test your code! With so many changes, it's not unlikely that you've made an error somewhere. Be patient, use the Visual Studio debugger, and read your error messages.
