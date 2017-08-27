@@ -129,9 +129,23 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 10
 
+- Define what an exception is
+- Describe what happens "behind the scenes" when an exception occurs
+- Explain what the following terms and phrases mean: *throw an exception*, *call stack*, *exception handler*, *catch the exception*
+- Explain how to throw an exception
+- Describe the practices to avoid when throwing an exception
+- Explain what purposes the `StackTrace` and `Message` properties of exceptions serve
+- Describe how to use the three exception handler components: the `try`, `catch`, and `finally` blocks
+- Explain how to use the `InnerException` property
+- Create your own custom exception classes
+- Describe some of the exceptions that .NET's CLR automatically throws (e.g., `Arithmetic Exception`, `InvalidCastException`, `StackOverflowException`)
+- Describe the advantages of exceptions
+- Explain what the best practices are for exception handling
+- Use exceptions appropriately in your programs (follow the golden rules of handling exceptions)
 
 ### Class 11
 
+- 
 
 ### Class 12
 
