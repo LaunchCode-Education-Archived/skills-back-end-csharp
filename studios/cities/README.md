@@ -33,9 +33,9 @@ cities.Sort(comparer);
 
 To sort the `cities` list, we use `NameComparer`, which is located in the `Comparers/` folder and namespace of the project. `NameComparer` implements `IComparer<City>` by providing the `Compare(City, City)` method. Since sorting by `Name` is just sorting alphabetically by name, we use the `string.Compare(string, string)` method with the `Name` properties of the given input parameters.
 
-The `IComparer<T>` interface contains one method: `Compare(T, T)`. It returns an integer which determines which of the two objects comes "before" the other, or is "less than" the other. If the int is less than zero, then the first parameter comes before the second. If the int is zero, then they are "the same". If the int is greater than zero, then the second parameter comes before the first. You can think of the result of calling `Compare(x, y)` as being the "value" of subtracting `x - y`. If `x` is smaller than `y`, this value is negative, if `x` is larger than `y`, this value is positive.
+The `IComparer<T>` interface contains one method: `Compare(T, T)`. It returns an integer which determines which of the two objects comes "before" (in other words, "is less than") the other. If the integer is less than zero, then the first parameter comes before the second. If the integer is zero, then they are "the same". If the integer is greater than zero, then the second parameter comes before the first. You can think of the result of calling `Compare(x, y)` as being the "value" of subtracting `x - y`. If `x` is smaller than `y`, this value is negative, if `x` is larger than `y`, this value is positive.
 
-In order to sort the list, the comparer object is passed in to the `Sort` method for it to use. The list is sorted "in place". In other words, rather than returning a new list that is sorted, `Sort` sorts the given list by reordering its contents.
+In order to sort the list, the comparer object is passed in to the `Sort` method for it to use. The list is sorted "in place". In other words, rather than returning a new list that is sorted, `Sort` sorts the given list by reordering its contents (i.e., the original list is mutated).
 
 ## Your Task
 
@@ -66,7 +66,7 @@ Here are the steps to carry this out:
 
     This method should use each of the comparers in `Comparers` in order. You'll first use `Comparer[0]` to compare `x` and `y`.
 
-    You only need to move on to the next comparer if the first comparer returns 0. For example, of you're comparing cities by state and then by population, when comparing St. Louis and New York, you don't need to compare population. You know that St. Louis comes before New York because "Missouri" comes before "New York". However, when comparing St. Louis and Kansas City, you would need to compare population, since the cities are in the same state.
+    You only need to move on to the next comparer if the first comparer returns 0. For example, if you're comparing cities by state and then by population, when comparing St. Louis and New York, you don't need to compare population. You know that St. Louis comes before New York because "Missouri" comes before "New York". However, when comparing St. Louis and Kansas City, you would need to compare population, since the cities are in the same state.
 
     We suggest using a `while` loop to do this.
 5. To use `CompoundComparer`, create an instance of the class and then add individual comparers in the order that want them to be used:

@@ -22,7 +22,7 @@ public class CatOwner
 {
     public Cat Pet { get; set; }
 
-    public  void FeedTheCat() {
+    public void FeedTheCat() {
 
         // ...code to prepare the cat's meal...
 
@@ -31,7 +31,7 @@ public class CatOwner
 }
 ```
 
-The method `FeedTheCat` uses the property `Pet`, which is  of type `Cat`, but since a `HouseCat` *is a* `Cat` via inheritance, it is perfectly acceptable to use an instance of `HouseCat` to fill the `Pet` property.
+The method `FeedTheCat` uses the property `Pet`, which is of type `Cat`, but since a `HouseCat` *is a* `Cat` via inheritance, it is perfectly acceptable to use an instance of `HouseCat` to fill the `Pet` property.
 
 ```csharp
 HouseCat suki = new HouseCat("Suki", 12);
@@ -64,7 +64,7 @@ public interface IFeedable
 
 And here are some observations:
 
-- An interface is defined similarly to an abstract class, using the keyword `interface`. (We'll discuss similarities and differences between interfaces and abstract classes below.)
+- An interface is defined similarly to an abstract class, but using the keyword `interface`. (We'll discuss similarities and differences between interfaces and abstract classes below.)
 - `Eat` only has a signature. We are not allowed to provide a body for methods defined in interfaces.
 - `Eat` does not have an access modifier. Interface members are always `public`. [Read about why this is the case.](http://stackoverflow.com/questions/6040785/why-do-interface-members-have-no-access-modifier).
 - The interface itself is declared `public`, which means any other class may use it.
@@ -108,7 +108,7 @@ public class CatOwner
 {
     public IFeedable Pet { get; set; }
 
-    public  void FeedTheCat() {
+    public void FeedTheCat() {
 
         // ...code to prepare the cat's meal...
 
@@ -117,7 +117,7 @@ public class CatOwner
 }
 ```
 
-Note that we've declared the property `Pet` to be of type `IFeedable`. This class assumes that the only behavior of `Pet` that we'll need within the class is the ability to `Eat`. But if that's all we need, then we should relax the requirements on the `Pet` property as much as possible. In fact, there's nothing specific about cats in this class, so we might make our code a step more abstract and flexible by doing the following:
+Note that we've declared the property `Pet` to be of type `IFeedable`. This `CatOwner` class assumes that the only behavior of `Pet` that we'll need to utilize within this class is the ability to `Eat`. But if that's all we need, then we should relax the requirements on the `Pet` property as much as possible. In fact, there's nothing specific about cats in this class, so we might make our code a bit more abstract and flexible by doing the following:
 
 ```csharp
 public class PetOwner
@@ -140,7 +140,7 @@ public class CatOwner : PetOwner
 
 We've created a `PetOwner` class that encapsulates the behavior that could apply to any pet (any `IFeedable`, actually), and have `CatOwner` extend `PetOwner`. This allows other classes to extend `PetOwner` to make, say, a `DogOwner` that knows how to play fetch with their pet, or a `HorseOwner` that knows how to ride their pet. It also reduces the dependency of the `FeedThePet` method on the specific type of pet, since it doesn't need to care.
 
-To use this new class design, we can look at the exact same sample code from above:
+To use this new class design, we can revise the sample code from above like so:
 
 ```csharp
 HouseCat suki = new HouseCat("Suki", 12);
@@ -148,16 +148,16 @@ CatOwner Annie = new CatOwner {
     Pet = suki
 };
 
-Annie.FeedTheCat();
+Annie.FeedThePet();
 ```
 
-While the code usage here remains unchanged, the opportunities for using the classes we've built are much wider since the defined classes are no longer dependent on the specific `Cat` class. Also notice that we've used the object `suki` in a polymorphic way, creating it as a `HouseCat`, but using it as an `IFeedable` within the `CatOwner` class.
+While the code usage here remains unchanged except for changing the method name from `FeedTheCat` to the more generic `FeedThePet`,  the opportunities for using the classes we've built are much wider since the defined classes are no longer dependent on the specific `Cat` class. Also notice that we've used the object `suki` in a polymorphic way, creating it as a `HouseCat`, but using it as an `IFeedable` within the `CatOwner` class.
 
 <aside class="aside-note" markdown="1">
 Like inheritance, interfaces enable polymorphic usage of objects. We can create an object, and then use it in different contexts based on any interfaces that it implements.
 </aside>
 
-One final note before discussing how we might use interfaces in our code: *Interfaces may not be created like objects are, with* `new`. You may implement an interface, or declare variables and parameters as interface types. You can not, however, create an interface.
+One final note before discussing how we might use interfaces in our code: *Interfaces may not be created like objects are, with* `new`. You may implement an interface, or declare variables and parameters as interface types. You can not, however, create an instance of an interface.
 
 ## Interfaces In The Wild
 
@@ -191,7 +191,7 @@ IEnumerable<string> collection = new List<String>();
 // add items to the collection
 
 foreach (string item in collection) {
-    // do something with the items
+    // do something with the item
 }
 ```
 
@@ -203,7 +203,7 @@ foreach (string item in collection) {
 
 [IList<T> Documentation](https://msdn.microsoft.com/en-us/library/5y536ey6(v=vs.110).aspx)
 
-This interface is also implemented by the `List<T>` class, which we've been using throughout this course. In face, `IList<T>` extends `IEnumerable<T>`. An interface may extend another interface, in the same way that classes may extend each other.
+This interface is also implemented by the `List<T>` class, which we've been using throughout this course. In fact, `IList<T>` extends `IEnumerable<T>`. An interface may extend another interface, in the same way that classes may extend each other.
 
 **Example**
 
@@ -223,7 +223,7 @@ string firstItem = collection[0];
 
 [IDictionary<TKey, TValue> Documentation](https://msdn.microsoft.com/en-us/library/s4ys34ea(v=vs.110).aspx)
 
-This interface is implemented by the `Dictionary<TDey, TValue>` class, which we've been using throughout this course.
+This interface is implemented by the `Dictionary<TKey, TValue>` class, which we've been using throughout this course.
 
 **Example**
 
@@ -238,24 +238,24 @@ string hello = collection["hello"];
 
 ## Comparison to Abstract Classes
 
-We mentioned above -- and you likely noticed yourself -- that interfaces share some characteristics with abstract classes. Recall that an abstract class is one declared with the `abstract` keyword. You may not create an object from an abstract class, and like an interface, an abstract class is allowed to contain methods that only have signatures (that is, they don't have implementation code).
+We mentioned above - and you likely noticed yourself - that interfaces share some characteristics with abstract classes. Recall that an *abstract* class is one declared with the `abstract` keyword. Like an interface, you may not create an object from an abstract class and they are both allowed to contain methods that only have signatures (i.e., that don't have implementation code).
 
 The main differences between interfaces and abstract classes are:
 - You *implement* an interface, while you *extend* an abstract class. The net effect of this is that a class may implement many interfaces while also extending a class.
 - An abstract class may contain non-abstract methods. In other words, it may contain methods that have code. Interfaces may not.
-- Abstract classes should be used to collect and specify behavior by related classes, while an interface should be used to specify related behaviors that may be common across unrelated classes.
+- Abstract classes should be used to collect and specify behavior by *related* classes, while an interface should be used to specify related behaviors that may be common across *unrelated classes*.
 
 For example, we could implement `IComparer` in many ways, to sort a wide variety of classes whose objects may be compared to one another: `Date` (compare by temporal order), `Student` (compare by GPA), `Person` (compare by age), `City` (compare by population). However, it's unlikely that these classes would have any implementable behavior that would warrant that they have the same base class.
 
 ## Benefits of Using Interfaces
 
-Interfaces are great! Trust us, they really are. Once you get use to them, you'll begin to think more abstractly about which *behaviors* your code requires rather than which *classes* your code requires. This means you'll be able to code to interfaces instead of coding to classes, and your code will become more flexible and extensible.
+Interfaces are great! Trust us, they really are. Once you get used to them, you'll begin to think more abstractly about which *behaviors* your code requires rather than which *classes* your code requires. This means you'll be able to code to interfaces instead of coding to classes, and your code will become more flexible and extensible.
 
-Here are a few benefits of using interfaces:
+Here are a few benefits of using interfaces (aka "Coding to an Interface"):
 
 - You can only extend one class, but you may implement many interfaces.
 - You can extend a class and implement an interface at the same time.
-- By declaring variables and parameters as interface types, you make your useful for a much wider variety of situations.
+- By declaring variables and parameters as interface types, you make your code more useful for a wider variety of situations.
 - When you declare properties and return types to be interface types, you decouple code using your classes from the actual class types you use. This means that you are free to change the specific implementation of your classes without affecting those using them. For example, if from a public method you returned an object of type `IEnumerable<Job>` then you would be free to change the method's internal structure to use, say, a [HashSet](https://msdn.microsoft.com/en-us/library/bb359438(v=vs.110).aspx) instead of a [List](https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx).
 
 Remember that you don't need to start creating interfaces to use their power! When working with collections, in particular, think about the behaviors that your code requires, and declare variables and parameters to be interface types if you only need to use specific behaviors such as ordering or iteration.
