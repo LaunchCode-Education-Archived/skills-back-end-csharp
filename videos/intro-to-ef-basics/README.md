@@ -13,6 +13,8 @@ In this video and others, we use Powershell to run migration commands. As of mid
 
 ## Notes
 
+See the link to the starter code branch at the bottom of this page if you want to start with the same code as Chris has in the video. Here are some useful notes to review, but be sure to code along with the video!
+
 ### App Setup
 
 These are the code sections referenced in the video that were part of the starter code. Namespace and using statements are omitted.
@@ -73,7 +75,7 @@ Use a different and descriptive name for each migration.
 
 #### Change State to a Specific Migration
 
-To update the database to a specific migration -- either forward or backward from the current state -- run:
+To update the database to a specific migration - either forward or backward from the current state - run:
 
 ```nohighlight
 > dotnet ef database update MigrationName
@@ -81,7 +83,7 @@ To update the database to a specific migration -- either forward or backward fro
 
 #### Remove a Migration
 
-If you create a migration and later realize you don't want the associate changes, you can remove it. To remove a migration:
+If you create a migration and later realize you don't want the associated changes, you can remove it. To remove a migration:
 
 ```nohighlight
 > dotnet ef migrations remove MigrationName
@@ -96,7 +98,7 @@ If you haven't done so already, you must first undo the given migration.
 ```
 
 <aside class="aside-pro-tip" markdown="1">
-If you wish to start with a clean database during development -- because, let's be honest, sometimes we'll break something or want to undo a bunch of work -- perhaps the easiest thing to do is change the database name in the connection string in `appsettings.json`. Then you can run `dotnet ef update database` and a new, empty database will be set up with all migrations run.
+If you wish to start with a clean database during development - because, let's be honest, sometimes we'll break something or we'll want to undo a bunch of work - perhaps the easiest thing to do is change the database name in the connection string in `appsettings.json`. Then you can run `dotnet ef update database` and a new, empty database will be set up with all migrations run.
 </aside>
 
 ## Code

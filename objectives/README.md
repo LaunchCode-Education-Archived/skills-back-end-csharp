@@ -156,6 +156,13 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 12
 
+- Setup EntityFrameworkCore in Visual Studio
+- Define Object-Relational Mapping
+- Describe what a data layer is and how it is used in ORM
+- Explain what the acronym *CRUD* stands for
+- Describe the one-to-many relationship
+- Describe the many-to-many relationship
+
 
 ### Class 13
 

@@ -11,9 +11,9 @@ In this video and others, we use Powershell to run migration commands. As of mid
 
 ## Code
 
-We start this lesson with the code in the `video-one2many-start` branch of the CheeseMVC repo: [starting code](https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-one2many-start)
+We start this lesson with the code in the `video-one2many-start` branch of the CheeseMVC repo: [starting code](https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-one2many-start).
 
-You'll create the code for the end of the lesson yourself as part of an in-class studio!
+You'll create the code for the end of the lesson yourself as part of an in-class studio (which doubles as your final assignment)!
 
 ## References
 

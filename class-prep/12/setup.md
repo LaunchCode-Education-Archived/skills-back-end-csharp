@@ -3,9 +3,9 @@ title: EntityFrameworkCore Setup
 currentMenu: classes
 ---
 
-This article will show you how to enable the EntityFrameworkCore object-relational mapping framework. It assumes you are you are using **Visual Studio 2017**.
+This article will show you how to enable the EntityFrameworkCore object-relational mapping framework. It assumes you are using **Visual Studio 2017**.
 
-These instructions will enable EntityFrameworkCore (EF Core) for a given ASP.NET Core MVC project. You will need to follow these steps for every project you want to use EF Core with. At the bottom of this article we introduce an easier way to enable EF Core for new projects.
+These instructions will enable EntityFrameworkCore (EF Core) for a given ASP.NET Core MVC project. You will need to follow these steps for *every project* you want to use EF Core with. At the bottom of this article we introduce an easier way to enable EF Core for new projects.
 
 For the purpose of illustration, all examples will assume you're working with the `CheeseMVC` project. If you use these instructions with another project, change project names accordingly.
 
@@ -25,7 +25,7 @@ In the *Browse* tab of the package manager, search for `Microsoft.EntityFramewor
 
 <img alt="Sql Server Packages" src="images/sqlserver-dependencies.png" style="width:500px;" />
 
-Install **v1.1.1** of both packages by selecting this version from the pane at right. This **is not** the default version, so be sure to select it manually.
+Install **v1.1.1** of both packages by selecting this version from the pane at right. **This is not the default version, so be sure to select it manually**.
 
 <img alt="Sql Server Package Version" src="images/sqlserver-dependencies-version.png" style="width:500px;" />
 
@@ -33,7 +33,7 @@ You'll be asked to accept the license agreement for the package, and then you'll
 
 ### Install EntityFrameworkTools
 
-Right-click on the CheeseMVC project (just below src/) in the Solution Explorer, and select *Edit CheeseMVC.csproj*.
+Right-click on the CheeseMVC project in the Solution Explorer, and select *Edit CheeseMVC.csproj*.
 
 <img alt="Edit .csproj" src="images/edit-csproj.png" style="width:500px;" />
 
@@ -45,16 +45,16 @@ In the file that opens, copy and paste the following lines near the bottom, just
 </ItemGroup>
 ```
 
-Again, right-click on the CheeseMVC project (just below src/) in the Solution Explorer, and this time select *Open Folder in File Explorer*
+Again, right-click on the CheeseMVC project in the Solution Explorer, and this time select *Open Folder in File Explorer*
 
 <img alt="Open Folder in File Explorer" src="images/open-folder.png" style="width:500px;" />
 
-In the window that opens, click the far right portion of the address bar, type in *cmd*, and hit Enter. This will open a command prompt in the project folder
+In the window that opens, click the far right portion of the address bar which will highlight the file path, and then type in *cmd*, and hit Enter. This will open a command prompt in the project folder
 
 <img alt="Run cmd from File Explorer" src="images/cmd-file-explorer.png" style="width:500px;" />
 
 <aside class="aside-warning" markdown="1">
-This step must be carried out in the given project folder, and must be run using the *cmd.exe* program, and **not** Powershell.
+This step must be carried out in the given project folder, and must be run using the *cmd.exe* program, and **not** Powershell or Git Bash.
 </aside>
 
 At the command prompt, run `dotnet restore` to have the NuGet package manager fetch the packages that you added in `CheeseMVC.csproj`.
@@ -65,7 +65,7 @@ When this completes, test that the EntityFramework CLI (Command-Line Interface) 
 
 <img alt="dotnet ef" src="images/dotnet-ef.png"  />
 
-If see an error message, or anything other than this output, go back to the top of this tutorial and double-check each of the steps, paying special attention to the package versions.
+Now you can close the cmd by typing "exit" and Enter. If you see an error message, or anything other than this output, go back to the top of this tutorial and double-check each of the steps, paying special attention to the package versions.
 
 ### Configure Database Location
 
@@ -73,7 +73,7 @@ In the Solution Explorer, open `appsettings.json`
 
 <img alt="appsettings.json" src="images/appsettings-json.png" style="width:500px;" />
 
-Add the following setting within the outer curly-braces:
+Add the following setting at the top of the file within the outer curly-braces:
 
 ```json
 "ConnectionStrings": {
@@ -104,7 +104,7 @@ This sets up a connection string for a local database, [SQL Server Express Local
 
 ## Setting Up EntityFrameworkCore With a New App
 
-You can create a brand new project with the above packages and settings already in place by enabling individual user accounts in the New Project dialog.
+You can create a brand new project with the above packages and settings already in place (so that you won't have to follow all the steps above that you must do for *existing* projects) by enabling individual user accounts in the New Project dialog.
 
 When creating a new ASP.NET Core MVC app, select *Change Authentication* in the project template screen.
 
