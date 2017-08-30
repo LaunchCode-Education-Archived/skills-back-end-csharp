@@ -126,6 +126,7 @@
 </aside>
 <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/MxUOP2NPiEo?rel=0" frameborder="0" allowfullscreen></iframe></div>
 <h2 id="notes">Notes</h2>
+<p>See the link to the starter code branch at the bottom of this page if you want to start with the same code as Chris has in the video. Here are some useful notes to review, but be sure to code along with the video!</p>
 <h3 id="app-setup">App Setup</h3>
 <p>These are the code sections referenced in the video that were part of the starter code. Namespace and using statements are omitted.</p>
 <p><strong>Data\CheeseDbContext.cs</strong></p>
@@ -157,16 +158,16 @@
 <h4 id="update-database-to-latest-migration">Update Database to Latest Migration</h4>
 <pre><code class="language-nohighlight">&gt; dotnet ef database update</code></pre>
 <h4 id="change-state-to-a-specific-migration">Change State to a Specific Migration</h4>
-<p>To update the database to a specific migration -- either forward or backward from the current state -- run:</p>
+<p>To update the database to a specific migration - either forward or backward from the current state - run:</p>
 <pre><code class="language-nohighlight">&gt; dotnet ef database update MigrationName</code></pre>
 <h4 id="remove-a-migration">Remove a Migration</h4>
-<p>If you create a migration and later realize you don't want the associate changes, you can remove it. To remove a migration:</p>
+<p>If you create a migration and later realize you don't want the associated changes, you can remove it. To remove a migration:</p>
 <pre><code class="language-nohighlight">&gt; dotnet ef migrations remove MigrationName</code></pre>
 <p>If you haven't done so already, you must first undo the given migration.</p>
 <h4 id="undo-all-migrations">Undo All Migrations</h4>
 <pre><code class="language-nohighlight">&gt; dotnet ef database update 0</code></pre>
 <aside class="aside-pro-tip">
-<p>If you wish to start with a clean database during development -- because, let's be honest, sometimes we'll break something or want to undo a bunch of work -- perhaps the easiest thing to do is change the database name in the connection string in <code>appsettings.json</code>. Then you can run <code>dotnet ef update database</code> and a new, empty database will be set up with all migrations run.</p>
+<p>If you wish to start with a clean database during development - because, let's be honest, sometimes we'll break something or we'll want to undo a bunch of work - perhaps the easiest thing to do is change the database name in the connection string in <code>appsettings.json</code>. Then you can run <code>dotnet ef update database</code> and a new, empty database will be set up with all migrations run.</p>
 </aside>
 <h2 id="code">Code</h2>
 <p>We start this lesson with the code in the <code>video-efbasic-start</code> branch of the CheeseMVC repo: <a href="https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-efbasic-start" target="_blank">starting code</a></p>
