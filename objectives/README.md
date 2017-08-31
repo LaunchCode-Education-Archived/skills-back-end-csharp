@@ -162,9 +162,20 @@ Listed below are the competencies you should demonstrate by the time you've comp
 - Explain what the acronym *CRUD* stands for
 - Describe the one-to-many relationship
 - Describe the many-to-many relationship
+- Explain what migrations are
+- Use the cmd.exe command prompt
+- Create, add, and remove migrations in the EntityFrameworkCore
 
 
 ### Class 13
 
+- Describe the many-to-many relationship and give an example of when this may be a good way to represent data in your database
+- Explain what a join table is and how it is used
+- Define what a composite key is
+- Build model classes that enable persistent many-to-many relationships
+- Work with many-to-many relationships in the view and controller
+- Push the changes you make to objects in your program to the database
 
 ### Class 14
+
+- Celebrate your completion of LC101!

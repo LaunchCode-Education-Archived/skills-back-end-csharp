@@ -7,11 +7,11 @@ currentMenu: studios
 
 Be sure you've completed the [setup steps](../) before starting these tasks.
 
-If you get stuck on any of the steps here refer to the video lesson, or other code within the program that was provided. You'll often find the answers there.
+If you get stuck on any of the steps here refer to the video lessons. You'll often find the answers there.
 
 ## Setting Up the New Model
 
-We'll use EntityFramework (EF) to create an object-relational mapping for a new class.
+We'll use EntityFrameworkCore to create an object-relational mapping for a new class.
 
 In `Models/`, create a new model class named `CheeseCategory`. Give it an `ID` property and a `Name` property that's a string.
 
@@ -136,13 +136,13 @@ You can see the result of running this migration by moving back to Visual Studio
 
 <img alt="View database changes" src="../images/view-db-changes.png" style="width:500px;" />
 
-What's the change that you're looking for? Well, that `Categories` table looks new, doesn't it? And if you right-click on the new table and select *View Data* you'll see any empty table with `ID` and `Name` columns.
+What's the change that you're looking for? Well, that `Categories` table looks new, doesn't it? And if you right-click on the new table and select *View Data* you'll see an empty table with `ID` and `Name` columns.
 
 ## Test!
 
 Start up your application, and try to add a new category!
 
-Click on *Categories* in the main navigation bar, then on *Add Category*. Complete the form, and if everything works as expected, you'll see your new category in the list. If everything seems to work -- that is, you are able to submit the form without any errors -- but you don't see your category in the list, here's what you should check:
+Click on *Categories* in the main navigation bar, then on *Add Category*. Complete the form, and if everything works as expected, you'll see your new category in the list. If everything seems to work - that is, you are able to submit the form without any errors - but you don't see your category in the list, here's what you should check:
 
 - Is there any data in the `Categories` table? Use *SQL Server Object Explorer* to check. If not, make sure you're calling `context.SaveChanges()` upon form submission, after creating the new `CheeseCategory` instance.
 - If there's data in the database, check that you are correctly querying for the list of all categories in `CategoryController.Index`: `context.Categories.ToList()`.

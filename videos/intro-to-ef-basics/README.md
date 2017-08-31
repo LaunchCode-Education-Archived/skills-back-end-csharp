@@ -13,7 +13,7 @@ In this video and others, we use Powershell to run migration commands. As of mid
 
 ## Notes
 
-See the link to the starter code branch at the bottom of this page if you want to start with the same code as Chris has in the video. Here are some useful notes to review, but be sure to code along with the video!
+See the link to the starter code branch at the bottom of this page if you want to start with the same code as we do in the video. Here are some useful notes to review, but be sure to code along with the video!
 
 ### App Setup
 
