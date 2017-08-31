@@ -122,7 +122,7 @@
                                         <h1>Studio: CheeseMVC Persistent</h1>
                     <h2 id="part-2-setting-up-a-one-to-many-relationship">Part 2: Setting Up a One-to-Many Relationship</h2>
 <p>This continues the guided studio in which we set up <code>CheeseMVC</code> to work with the EntityFramework. If you've completed <a href="../single-class-persistence/">Part 1: Single Class Persistence</a> then you're ready to begin this activity.</p>
-<p>If you get stuck on any of the steps here refer to the video lesson, or other code within the program that was provided. You'll often find the answers there.</p>
+<p>If you get stuck on any of the steps here refer to the video lessons. You'll often find the answers there.</p>
 <h2 id="add-cheeses-to-cheesecategory">Add Cheeses to CheeseCategory</h2>
 <p>Within <code>CheeseCategory</code>, add a <code>Cheeses</code> property of type <code>IList&lt;Cheese&gt;</code>. After we set up the <code>Cheese</code> class to work with <code>CheeseCategory</code> objects, this list will represent the list of all items in a given category. We'll do this in a bit.</p>
 <h2 id="replace-cheesetype-with-cheesecategory">Replace CheeseType with CheeseCategory</h2>
@@ -145,7 +145,7 @@ public int CategoryID { get; set; }
 public List&lt;SelectListItem&gt; Categories { get; set; }</code></pre>
 <p>Update the ViewModel constructor to accept a parameter: <code>IEnumerable&lt;CheeseCategory&gt; categories</code>. This will be passed in when we create a new <code>AddCheeseViewModel</code> in the controller, and will be a collection of all categories. This is the best way for our ViewModel to get such a list, since it can only be obtained via the <code>CheeseDbContext</code>, which our controller has a reference to.</p>
 <p>Add an empty default constructor. Since we modified the existing constructor to no longer be a no-arg (aka default) constructor we need to add one so that model binding will work.</p>
-<p>Update the code in the controller to correctly populate the <code>Categories</code> property based on the changes we made. You can mimic that code that's there for the old <code>CheeseType</code> enum. When creating a new <code>SelectListItem</code>, the <code>Value</code> property should receive a category ID, and the <code>Text</code> property should receive the name of the category.</p>
+<p>Update the code in the controller to correctly populate the <code>Categories</code> property based on the changes we made. You can mimic the code that's there for the old <code>CheeseType</code> enum. When creating a new <code>SelectListItem</code>, the <code>Value</code> property should receive a category ID, and the <code>Text</code> property should receive the name of the category.</p>
 <h2 id="updating-cheesecontroller">Updating CheeseController</h2>
 <p>Open up <code>CheeseController</code>. We'll make several updates here.</p>
 <h3 id="index">Index</h3>

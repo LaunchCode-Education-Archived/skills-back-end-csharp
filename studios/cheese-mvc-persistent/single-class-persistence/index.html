@@ -122,9 +122,9 @@
                                         <h1>Studio: CheeseMVC Persistent</h1>
                     <h2 id="part-1-persisting-a-single-class">Part 1: Persisting a Single Class</h2>
 <p>Be sure you've completed the <a href="../">setup steps</a> before starting these tasks.</p>
-<p>If you get stuck on any of the steps here refer to the video lesson, or other code within the program that was provided. You'll often find the answers there.</p>
+<p>If you get stuck on any of the steps here refer to the video lessons. You'll often find the answers there.</p>
 <h2 id="setting-up-the-new-model">Setting Up the New Model</h2>
-<p>We'll use EntityFramework (EF) to create an object-relational mapping for a new class.</p>
+<p>We'll use EntityFrameworkCore to create an object-relational mapping for a new class.</p>
 <p>In <code>Models/</code>, create a new model class named <code>CheeseCategory</code>. Give it an <code>ID</code> property and a <code>Name</code> property that's a string.</p>
 <p>We'll want instances of this class to be stored in the database, so open up <code>Data\CheeseDbContext</code> and add a new <code>DbSet</code>:</p>
 <pre><code class="language-csharp">public DbSet&lt;CheeseCategory&gt; Categories { get; set; }</code></pre>
@@ -193,10 +193,10 @@ public CategoryController(CheeseDbContext dbContext)
 <pre><code class="language-nohighlight">&gt; dotnet ef database update</code></pre>
 <p>You can see the result of running this migration by moving back to Visual Studio, opening <em>View &gt; SQL Server Object Explorer</em> and navigating down to the database as shown below. Note that your database for this project is named <code>CheeseMVC-persistent</code> so that it doesn't conflict with any similarly-named databases that you may already have created.</p>
 <img alt="View database changes" src="../images/view-db-changes.png" style="width:500px;" />
-<p>What's the change that you're looking for? Well, that <code>Categories</code> table looks new, doesn't it? And if you right-click on the new table and select <em>View Data</em> you'll see any empty table with <code>ID</code> and <code>Name</code> columns.</p>
+<p>What's the change that you're looking for? Well, that <code>Categories</code> table looks new, doesn't it? And if you right-click on the new table and select <em>View Data</em> you'll see an empty table with <code>ID</code> and <code>Name</code> columns.</p>
 <h2 id="test">Test!</h2>
 <p>Start up your application, and try to add a new category!</p>
-<p>Click on <em>Categories</em> in the main navigation bar, then on <em>Add Category</em>. Complete the form, and if everything works as expected, you'll see your new category in the list. If everything seems to work -- that is, you are able to submit the form without any errors -- but you don't see your category in the list, here's what you should check:</p>
+<p>Click on <em>Categories</em> in the main navigation bar, then on <em>Add Category</em>. Complete the form, and if everything works as expected, you'll see your new category in the list. If everything seems to work - that is, you are able to submit the form without any errors - but you don't see your category in the list, here's what you should check:</p>
 <ul>
 <li>Is there any data in the <code>Categories</code> table? Use <em>SQL Server Object Explorer</em> to check. If not, make sure you're calling <code>context.SaveChanges()</code> upon form submission, after creating the new <code>CheeseCategory</code> instance.</li>
 <li>If there's data in the database, check that you are correctly querying for the list of all categories in <code>CategoryController.Index</code>: <code>context.Categories.ToList()</code>.</li>
