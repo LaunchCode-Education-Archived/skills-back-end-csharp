@@ -34,7 +34,11 @@ Then design the `Quiz` class. A quiz has a list of questions, and we should be a
 
 ## Implementation
 
-Code the classes that you designed above. If you like, get some feedback on your design by talking through it with a classmate.
+Code the classes that you designed above. Get some feedback on your design by talking through it with a classmate.
+
+<aside class="aside-pro-tip" markdown="1">
+Depending on how you implement your classes, you may find yourself in a situation in which you want to check to see if two lists contain the same elements. To do so, sort the lists, and then use the `SequenceEqual` method provided by `System.Linq`. See the [method documentation](https://msdn.microsoft.com/en-us/library/bb348567(v=vs.110).aspx) for details and examples.
+</aside>
 
 ## Putting it all together
 
