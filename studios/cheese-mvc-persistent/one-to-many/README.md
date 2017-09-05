@@ -7,7 +7,7 @@ currentMenu: studios
 
 This continues the guided studio in which we set up `CheeseMVC` to work with the EntityFramework. If you've completed [Part 1: Single Class Persistence](../single-class-persistence/) then you're ready to begin this activity.
 
-If you get stuck on any of the steps here refer to the video lesson, or other code within the program that was provided. You'll often find the answers there.
+If you get stuck on any of the steps here refer to the video lessons. You'll often find the answers there.
 
 ## Add Cheeses to CheeseCategory
 
@@ -49,7 +49,7 @@ Update the ViewModel constructor to accept a parameter: `IEnumerable<CheeseCateg
 
 Add an empty default constructor. Since we modified the existing constructor to no longer be a no-arg (aka default) constructor we need to add one so that model binding will work.
 
-Update the code in the controller to correctly populate the `Categories` property based on the changes we made. You can mimic that code that's there for the old `CheeseType` enum. When creating a new `SelectListItem`, the `Value` property should receive a category ID, and the `Text` property should receive the name of the category.
+Update the code in the controller to correctly populate the `Categories` property based on the changes we made. You can mimic the code that's there for the old `CheeseType` enum. When creating a new `SelectListItem`, the `Value` property should receive a category ID, and the `Text` property should receive the name of the category.
 
 ## Updating CheeseController
 

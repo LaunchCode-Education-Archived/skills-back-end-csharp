@@ -7,7 +7,7 @@ currentMenu: studios
 
 This continues the guided studio in which we set up `CheeseMVC` to work with EntityFrameworkCore. If you've completed [Part 2: Setting Up a One-to-Many Relationship](../one-to-many/) then you're ready to begin this activity.
 
-If you get stuck on any of the steps here refer to the video lesson, or other code within the program that was provided. You'll often find the answers there.
+If you get stuck on any of the steps here refer to the video lessons. You'll often find the answers there.
 
 ## Creating the Menu Model
 
@@ -29,7 +29,7 @@ public Cheese Cheese { get; set; }
 
 Be sure to write this code yourself. Don't copy/paste!
 
-In each of `Cheese` and `Menu`, add collections of type `IList` that hold `CheeseMenu` objects. In each case, the collection should be named `CheeseMenus`.
+In each of the classes `Cheese` and `Menu`, add collections of type `IList` that hold `CheeseMenu` objects. In each case, the collection should be named `CheeseMenus`.
 
 ### Update CheeseDbContext
 
@@ -73,9 +73,9 @@ Start off by adding a title to the page.
 }
 ```
 
-In `MenuController`, create an action method named `Add` that responds to `GET` requests, and which displays the `Add.cshtml` template. The action should also pass in a new `AddMenuViewModel` object created by calling that class' default constructor. We'll use this object to help render the form.
+In `MenuController`, create an action method named `Add` that responds to `GET` requests, and which displays the `Add.cshtml` template. The action should also pass in a new `AddMenuViewModel` object created by calling that class's default constructor. We'll use this object to help render the form.
 
-Within `Add.cshtml`, create a form that displays a single input and has a submit button. Use `asp-for` and `asp-validation-for` to render the label, input, and error display elements. Additionally, the form should use `asp-controller` and  `asp-action` tag helpers to configure the form to post to the `Add` action in the `Menu` controller. Don't forget to declare the VieWModel that we're using with `@model` at the top of the template.
+Within `Add.cshtml`, create a form that displays a single input and has a submit button. Use `asp-for` and `asp-validation-for` to render the label, input, and error display elements. Additionally, the form should use `asp-controller` and  `asp-action` tag helpers to configure the form to post to the `Add` action in the `Menu` controller. Don't forget to declare the ViewModel that we're using with `@model` at the top of the template.
 
 ### Process the Add Menu
 
@@ -85,11 +85,11 @@ In `MenuController` create an action named `Add` that responds to `POST` request
 
 Check that the model is valid. If errors exist, render the `Add` view again. If not, create a new `Menu` object with the `Name` value from the ViewModel, add it to `context.Menus`, and save your changes.
 
-Once a new menu has been created, let's display it to the user. Finish this action method by redirectiong to the view for the new menu: `return Redirect("/Menu/ViewMenu/" + newMenu.ID)`. We'll set up this action and view template next.
+Once a new menu has been created, let's display it to the user. Finish this action method by redirecting to the view for the new menu: `return Redirect("/Menu/ViewMenu/" + newMenu.ID)`. We'll set up this action and view template next.
 
 ### View a Menu
 
-Our next set of tasks has us creating functionality that allows the user to view the contents of a given menu.
+In our next set of tasks we create functionality that allows the user to view the contents of a given menu.
 
 #### The ViewMenuViewModel
 
@@ -103,7 +103,7 @@ With the ViewModel in place, let's turn our attention to the corresponding actio
 
 In `MenuController`, create an action named `ViewMenu` that accepts `GET` requests at URLs like `/Menu/ViewMenu/5`, where 5 can be any menu ID. This should be passed into the action method as an `int` named `id`. Recall that the default routing for MVC applications is `/{Controller}/{Action}/{id}`, so based on the way we set up the links in the last section, this parameter will be passed in properly.
 
-Within the handler, retrieve the `Menu` object with the given ID using `context`. This can be done with the `Single` method of `DbSet`. We'll also need the items associated with the menu. These can be retrieved with the following line:
+Within the handler, retrieve the `Menu` object with the given ID using `context`. This can be done with the `Single` method of `DbSet`. We'll also need the items associated with the menu. These can be retrieved with the following code:
 
 ```csharp
 List<CheeseMenu> items = context
@@ -185,7 +185,7 @@ Add a submit button, and you're ready to process the form!
 
 Back in `MenuController`, create another action named `AddItem` that responds to `POST` requests. It should accept a `AddMenuItemViewModel` object via model binding.
 
-Check for errors, rendering the form again again if there are any.
+Check for errors, rendering the form again if there are any.
 
 Next, we'll check to see if there is an existing relationship between the `Cheese` and `Menu` specified by the submitted data. If we try to add an entry to a table with a primary key that already exists, we'll get a SQL error, so we need to ensure this doesn't happen. In this case, the primary key of the join table is the combination of `CheeseID` and `MenuID`.
 
@@ -200,7 +200,7 @@ IList<CheeseMenu> existingItems = context.CheeseMenus
 If this list is empty, we can go ahead and create a new relationship. Create a new `CheeseMenu` with the ID values in the ViewModel, add it to the corresponding `DbSet` in `context`, and save your changes.
 
 <aside class="aside-warning" markdown="1">
-In the lesson video for this project, the code queries for the actual `Cheese` and `Menu` objects represented by the given IDs. This is unnecessary, since if we have the IDs and save to the database, EF Core will be able to pull the correct objects since they are already stored in their respective tables.
+In the lesson video for this project, the code queries for the actual `Cheese` and `Menu` objects represented by the given IDs. This is unnecessary, since if we have the IDs and they are saved to the database, EF Core will be able to pull the correct objects since they are already stored in their respective tables.
 </aside>
 
 To finish this handler, let's display the menu that we just added an item to. Redirect to the URL corresponding to the full menu view for this menu. This was created above, and we leave it to you to figure out the correct redirect URL. Note that in the case that the relationship between the given `Cheese` and `Menu` already exists, we don't do anything other than redirect back to the menu.
@@ -245,8 +245,8 @@ Assuming you don't have any remaining compiler errors, start up your application
 
 When everything works, you're done! Congrats!
 
-[Turn in your work](../../../assignments/), or tackle one of the Bonus Missions below.
+[Turn in your work](../../../assignments/), or tackle the Bonus Mission below.
 
 ## Bonus Missions
 
-- Add the ability to edit a `Cheese`. To do this, follow the instructions outlined in [Class 8 Prep Exercises](../../../class-prep/8/exercises.html), with the following modifications. In steps 5 and 9, rather than using `CheeseData` to get and save the object, use `context`. And don't forget to call `.SaveChanges()` to make sure your edits are stored in the database!.
+- Add the ability to edit a `Cheese`. To do this, follow the instructions outlined in [Class 8 Prep Exercises](../../../class-prep/8/exercises.html), with the following modifications. In steps 5 and 9, rather than using `CheeseData` to get and save the object, use `context`. And don't forget to call `.SaveChanges()` to make sure your edits are stored in the database!

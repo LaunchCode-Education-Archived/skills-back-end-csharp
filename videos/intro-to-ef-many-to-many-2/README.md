@@ -11,7 +11,7 @@ In this video and others, we use Powershell to run migration commands. As of mid
 
 ## Code
 
-You'll create the code for this in an upcoming studio.
+For a detailed walkthrough of how to create the code featured in this video, work through all parts of the [CheeseMVC Persistent studio](http://education.launchcode.org/skills-back-end-csharp/studios/cheese-mvc-persistent/).
 
 ## References
 
