@@ -435,7 +435,7 @@ Name | Type | Description | Example |
 `Values` | Property | A collection containing all values in the dictionary. This collection may be used in a `foreach` loop just as lists are, but the dictionary may not be modified within such a loop. | `students.Values`
 `Add` | Method | Add a key/value pair to a dictionary. | `students.Add("Mark", 3.5)`
 `ContainsKey` | Method | Returns a boolean indicating whether or not the dictionary contains a given key. | `students.ContainsKey("Chris")`
-`ContainsValue` | Method | Returns a boolean indicating whether or not the dictionary contains a given key. | `students.ContainsValue(4.0)`
+`ContainsValue` | Method | Returns a boolean indicating whether or not the dictionary contains a given value. | `students.ContainsValue(4.0)`
 
 
 We have only brushed the surface of how lists and dictionaries work, and we leave it to you to refer to the official documentation linked below for more details. You'll certainly be using lists and dictionaries in ways not outlined in this lesson, but with the knowledge you have now, you should be able to use C# collections and pick up new uses as you go.
