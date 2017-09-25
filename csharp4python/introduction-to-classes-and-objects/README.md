@@ -26,7 +26,7 @@ public class HelloWorld {
 }
 ```
 
-The only field in this class is the C# `message`, while the only method is `SayHello`, which prints `this.message` and doesn't return anything. Note that there is no `Main` method, so there is no way to run the code in this class directly. We'll need to do that from another class.
+The only field in this class is the C# `message`, while the only method is `SayHello`, which prints the message and doesn't return anything. Note that there is no `Main` method, so there is no way to run the code in this class directly. We'll need to do that from another class.
 
 To do this, we'll need to create an **instance** of the class `HelloWorld`. Recall from learning about classes and objects in Python that a class is a blueprint for creating objects. We refer to an object created from a particular class as an instance of that class.
 

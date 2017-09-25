@@ -330,7 +330,7 @@ namespace HelloMethods
         public static string GetMessage(string lang)
         {
             if (lang.Equals("sp")) {
-                return "Hello World";
+                return "Hola Mundo";
             }
             else if (lang.Equals("fr"))
             {
@@ -338,7 +338,7 @@ namespace HelloMethods
             }
             else
             {
-                return "Hola Mundo";
+                return "Hello World";
             }
         }
     }
