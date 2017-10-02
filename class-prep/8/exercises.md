@@ -27,7 +27,7 @@ Add edit functionality to the `CheeseMVC` application by following these steps. 
 1. Back in the `Edit(int id, string name, string description)` action, query `CheeseData` for the cheese with the given id, and then update its name and description. Redirect the user to the home page.
 1. In `Views/Cheese/Index.cshtml`, add a link to edit the cheese:
     ```html
-    <a asp-controller="Cheese" asp-action="Edit" asp-route-id="@cheese.CheeseId">edit</a>
+    <a asp-controller="Cheese" asp-action="Edit" asp-route-cheeseId="@cheese.CheeseId">edit</a>
     ```
     You can put this link in a third table column, or in one of the existing table cells.
 1. Test your code! With so many changes, it's not unlikely that you've made an error somewhere. Be patient, use the Visual Studio debugger, and read your error messages.
