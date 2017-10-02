@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Control Flow :: Unit 3: Back-End C# Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-control-flow'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/videos/">
+                                        Videos
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/csharp4python/">
+                                        C# for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/glossary/">
+                                        Glossary
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/issues/">
+                                        Reporting Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-csharp/">
+                    <h1>Unit 3: Back-End C# Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-csharp/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End C# Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:-32orsjtyl4";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Control Flow</h1>
+                    <p>In this section we examine the syntax of control flow statements - conditionals and loops - in C#, comparing it to Python's syntax. We will find it to be very similar, with relatively consistent syntax variations, given the C# that we have learned so far.</p>
+<h2 id="conditionals">Conditionals</h2>
+<p>Conditional statements in Python and C# are very similar. In Python we have the following three patterns.</p>
+<h3 id="simple-if">Simple if</h3>
+<p>Let's consider an <code>if</code> statement with no <code>else</code> clause. Here's the Python version.</p>
+<pre><code class="language-python">if condition:
+    statement1
+    statement2
+    ...</code></pre>
+<p>In C# this same pattern is simply written as:</p>
+<pre><code class="language-csharp">if (condition)
+{
+    statement1
+    statement2
+    ...
+}</code></pre>
+<p>Once again, you can see that in C# the curly braces, rather than the indentation, define a block. In C#, the parentheses around the condition are required.</p>
+<h3 id="if-else">if-else</h3>
+<p>Adding an <code>else</code> clause gives us the following Python code:</p>
+<pre><code class="language-python">if condition:
+    statement1
+    statement2
+    ...
+else:
+    statement1
+    statement2
+    ...</code></pre>
+<p>In C# this is written as:</p>
+<pre><code class="language-csharp">if (condition)
+{
+    statement1
+    statement2
+    ...
+}
+else
+{
+    statement1
+    statement2
+    ...
+}</code></pre>
+<h3 id="elif--else-if">elif / else if</h3>
+<p>In C# we can utilize the same behavior that <code>elif</code> provides in Python, with a slightly different syntax. Here is a simple example in Python and then C#.</p>
+<pre><code class="language-python">grade = int(input('enter a grade'))
+if grade &lt; 60:
+    print 'F'
+elif grade &lt; 70:
+    print 'D'
+elif grade &lt; 80:
+    print 'C'
+elif grade &lt; 90:
+    print 'B'
+else:
+    print 'A'</code></pre>
+<p>In C# we would write this as follows:</p>
+<pre><code class="language-csharp">public class ElseIf {
+    public static void main(string args[]) {
+        int grade = 85;
+        if (grade &lt; 60)
+        {
+            Console.WriteLine('F');
+        }
+        else if (grade &lt; 70)
+        {
+            Console.WriteLine('D');
+        }
+        else if (grade &lt; 80)
+        {
+            Console.WriteLine('C');
+        }
+        else if (grade &lt; 90)
+        {
+            Console.WriteLine('B');
+        }
+        else
+        {
+            Console.WriteLine('A');
+        }
+    }
+}</code></pre>
+<h3 id="switch">switch</h3>
+<p>C# also supports a <code>switch</code> statement that acts something like the <code>elif</code> statement of Python under certain conditions.</p>
+<p>The <code>switch</code> statement is not used very often, and we generally recommend you avoid using it. It is not as powerful as the <code>else if</code> model because the switch variable can only be compared for equality with a very small class of types.</p>
+<p>If you would like to learn more about the switch statement, visit the link in the references section at the bottom of the page. Here is a quick example:</p>
+<pre><code class="language-csharp">class Program
+{
+   static void Main(string[] args)
+   {
+       Console.WriteLine("Enter an integer: ");
+       string input = Console.ReadLine();
+       int dayNum = int.Parse(input);
+
+       string day;
+       switch (dayNum) {
+           case 0:
+               day = "Sunday";
+               break;
+           case 1:
+               day = "Monday";
+               break;
+           case 2:
+               day = "Tuesday";
+               break;
+           case 3:
+               day = "Wednesday";
+               break;
+           case 4:
+               day = "Thursday";
+               break;
+           case 5:
+               day = "Friday";
+               break;
+           case 6:
+               day = "Saturday";
+               break;
+           default:
+               day = "Int does not correspond to a day of the week";
+               break;
+       }
+
+       Console.WriteLine(day);
+       Console.ReadLine();
+   }
+}</code></pre>
+<h2 id="iteration">Iteration</h2>
+<p>At a conceptual level, loops in C# aren't that different from loops in Python, though the syntax varies significantly in some cases.</p>
+<h3 id="for-loops">For Loops</h3>
+<p>In Python the easiest way to write a definite loop (aka a &quot;for loop&quot;) is using the for loop in conjunction with <code>range</code>. For example:</p>
+<pre><code class="language-python">for i in range(10):
+   print i</code></pre>
+<p>In C# we would write this as:</p>
+<pre><code class="language-csharp">for (int i = 0; i &lt; 10; i++ )
+{
+    Console.WriteLine(i);
+}</code></pre>
+<p>Recall that <code>range</code> provides you with a wide variety of options for controlling the value of the loop variable.</p>
+<pre><code class="language-python">range(stop)
+range(start,stop)
+range(start,stop,step)</code></pre>
+<p>The C# for loop is really analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parenthesis. You can think of it this way:</p>
+<pre><code class="language-csharp">for (start clause; stop clause; step clause)
+{
+    statement1
+    statement2
+    ...
+}</code></pre>
+<p>If you want to start at 100, stop at 0 and count backward by 5 the Python loop would be written as:</p>
+<pre><code class="language-python">for i in range(100,-1,-5):
+    print i</code></pre>
+<p>In C# we would write this as:</p>
+<pre><code class="language-csharp">for (int i = 100; i &gt;= 0; i -= 5)
+{
+    Console.WriteLine(i);
+}</code></pre>
+<p>In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. C# also provides a variation of its for loop that provides the same functionality in its <em>for-each</em> loop.</p>
+<p>In Python we can iterate over a list as follows:</p>
+<pre><code class="language-python">x = [1, 1, 2, 3, 5, 8, 13, 21]
+for fib in x:
+   print fib</code></pre>
+<p>In C#, this would look like:</p>
+<pre><code class="language-csharp">int[] x = {1, 1, 2, 3, 5, 8, 13, 21};
+foreach (int i in x) {
+    Console.WriteLine(i);
+}</code></pre>
+<p>This version translates nicely to iterating through a string, where the string acts essentially like an array of characters:</p>
+<pre><code class="language-csharp">string msg = "Hello World";
+foreach (char c in msg) {
+    Console.WriteLine(c);
+}</code></pre>
+<h3 id="while-loops">While Loops</h3>
+<p>Both Python and C# support the while, or indefinite, loop. Recall that in Python the while loop is written as:</p>
+<pre><code class="language-python">while condition:
+   statement1
+   statement2
+   ...</code></pre>
+<p>In C# we add parenthesis and curly braces to get:</p>
+<pre><code class="language-csharp">while (condition)
+{
+    statement1
+    statement2
+    ...
+}</code></pre>
+<p>C# adds an additional, if seldom used, variation of the while loop called the do-while loop. The do-while loop is very similar to while except that the condition is evaluated at <em>the end of the loop</em> rather than the beginning. This ensures that a loop will be executed at least one time. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:</p>
+<pre><code class="language-csharp">do
+{
+    statement1
+    statement2
+    ...
+} while (condition);</code></pre>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://msdn.microsoft.com/en-us/library/ch45axte.aspx" target="_blank">for statment (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/ttw7t8t6.aspx" target="_blank">foreach statement (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/06tc147t.aspx" target="_blank">switch (msdn.microsoft.com)</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/do" target="_blank">do-while loop</a></li>
+</ul>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/libgif.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-6", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

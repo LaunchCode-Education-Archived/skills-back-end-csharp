@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Assignment: TechJobs (MVC Edition) :: Unit 3: Back-End C# Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-assignment-techjobs-mvc-edition'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/videos/">
+                                        Videos
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/csharp4python/">
+                                        C# for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/glossary/">
+                                        Glossary
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/issues/">
+                                        Reporting Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-csharp/">
+                    <h1>Unit 3: Back-End C# Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-csharp/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End C# Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:-32orsjtyl4";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Assignment: TechJobs (MVC Edition)</h1>
+                    <h2 id="introduction">Introduction</h2>
+<p>Your first task as an apprentice went well! You and Kathy built the TechJobs console prototype, and after demoing it to the Company Team at LaunchCode, the project has been green-lit to be fully built out as a web application.</p>
+<p>The first step in this process will be to quickly develop a <a href="https://en.wikipedia.org/wiki/Minimum_viable_product" target="_blank">minimum viable product</a>, or MVP. The goal is to get a functioning web app up and running with as little work as possible, so additional feedback and testing can be done early on in the development process. Then additional behind-the-scenes work will be carried out to fully develop the model and data side of the application.</p>
+<p>After working with Kathy on the console demo, you'll be working with Eliot on this project. Here's a picture of Eliot:</p>
+<p><img src="../images/eliot.jpg" alt="Eliot" /></p>
+<p>Eliot was once a LaunchCode apprentice as well, so he knows just what it's like to be in your shoes. He's done some initial work on the project and left you some TODOs that he knows you can handle.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>In this project, you'll show that you can:</p>
+<ul>
+<li>Read and understand code written by others</li>
+<li>Work within the controller and view portions of an MVC application</li>
+<li>Create new action methods to process form submission</li>
+<li>Use Razor syntax to display data within a view</li>
+</ul>
+<h2 id="techjobs-mvc-edition">TechJobs (MVC Edition)</h2>
+<p>You'll start with some code that Eliot has written to get you started. The idea behind your current assignment is to quickly deliver a functioning MVC application, so you'll focus on the controllers and views.</p>
+<p>In order to do this, you'll be reusing the <code>JobData</code> class and <code>job_data.csv</code> file from the console app. You know you'll have to go back and rewrite the data portion of the application in the future, to make a true, database-backed model, but using the existing <code>JobData</code> class to provide some basic data functionality will let you focus on the views and controllers for now.</p>
+<h2 id="your-assignment">Your Assignment</h2>
+<p>Eliot has created an MVC application and filled in some features. It has controllers and views for a home page, along with functionality to display lists of data values for each column/field of the data (employer, location, etc). Eliot also started working on the search functionality, but only got as far as writing the code to display the search form.</p>
+<p>He's handed it off to you to finish the rest. You'll add code to controllers and views to process and display search results, along with allowing users to see all jobs in the system via the List page.</p>
+<h3 id="getting-started">Getting Started</h3>
+<p>Set up a local copy of the project:</p>
+<ul>
+<li>Visit the <a href="https://github.com/LaunchCodeEducation/TechJobsMVC" target="_blank">repository page</a> for this project and fork the repository to create a copy under your own GitHub account.</li>
+<li>From within Visual Studio, choose the <em>Team Explorer</em> tab near the bottom of the <em>Solution Explorer</em> pane. If you don't see this tab, you can open it via the application menu: <em>View &gt; Team Explorer</em>.</li>
+<li>Click on the <em>Manage Connections</em> icon (see below), and select <em>Clone</em> from the GitHub section of the <em>Team Explorer</em> and select your fork of the <code>TechJobsMVC</code> repository. <strong>Be sure to change the Path field</strong> to the location at which you would like the project to live, ideally inside of a folder - like <code>lc101</code> - that you've been using to store other projects.
+<img src="../images/team-explorer-connections.png" alt="Manage Connections" /></li>
+<li>Open the solution via either the notification within <em>Team Explorer</em> or via <em>File &gt; Open &gt; Project/Solution</em>.</li>
+<li>Pop back over to the <em>Solution Explorer</em> to preview the code.</li>
+</ul>
+<p>Go ahead and start up the application, so you can refer to both the code as well as the running app while we look at what's in place already.</p>
+<aside class="aside-note">
+<p>You'll spend a lot of time reading and understanding the code that's provided for you. That's okay, and in fact should be considered part of the assignment! It's an essential skill for a programmer to be able to read and understand code that others have written.</p>
+</aside>
+<h4 id="the-model">The Model</h4>
+<p>The &quot;model&quot; is contained in the <code>Models</code> folder, in the <code>JobData</code> class. We put &quot;model&quot; in quotes, since this class isn't a model in the typical, object-oriented sense that we usually mean (maybe a better name for this assignment would be TechJobs VC!).</p>
+<p>The <code>JobData</code> class is the exact same class that you used in the console app. The only modification is that Eliot changed the path to the <code>job_data.csv</code> file so that it could also be stored in the <code>Models</code> directory.</p>
+<p>You'll use some of the static methods provided by <code>JobData</code> in your controller code. Since you're already familiar with these, we'll leave it to you to review their functionality as you go.</p>
+<h4 id="the-controllers">The Controllers</h4>
+<p>Expand the <code>Controllers</code> folder, and you'll see that you have three controllers already in place. Let's look at these one at a time.</p>
+<h5 id="homecontroller">HomeController</h5>
+<p>This class has only one action method, <code>Index</code>, which displays the home page for the app. We'll be primarily relying on default routing behavior, so this uses the <code>Views/Index.cshtml</code> template.</p>
+<p>If you haven't already, go to the app's home page to see what this looks like.</p>
+<h5 id="listcontroller">ListController</h5>
+<p>This controller provides functionality for users to see lists of all values of a given data column: employer, location, skill, and position type. If you look at the corresponding page at <code>/List</code> you'll see there's also an &quot;All&quot; option presented. That one doesn't work yet; you'll fully implement that view in your work.</p>
+<p>At the top of <code>ListController</code> is a special method known as a <strong>static constructor</strong>. This is probably the only place that we'll use one of these in this course, and all you need to understand for the purpose of this assignment is that it allows for static fields to be initialized without having to call a regular constructor (which would make a new object from the given class). We use it to populate <code>columnChoices</code> with values. This dictionary plays the same role as it did in the console app, which is to provide a centralized collection of the different list and search options presented throughout the user interface.</p>
+<p><code>ListController</code> also has <code>Index</code>, <code>Values</code>, and <code>Jobs</code> actions. The first of these simply displays the different types of lists that the user can view. The latter two display actual data obtained from <code>JobData</code>.</p>
+<p>In the <code>Values</code> action, the controller uses the query parameter passed in as <code>column</code> to determine which values to fetch from <code>JobData</code>. In the case of <code>"all"</code> it will fetch all job data, and then render the <code>Jobs.cshtml</code> view template rather than the default view. In all other cases, it fetches only the values for the given column and passes them to the <code>Values.cshtml</code> view template. We'll explore these templates in a moment.</p>
+<p>In the <code>Jobs</code> action, we take in two query parameters: <code>column</code> and <code>value</code>. This has the net result of working similarly to the search functionality, in that we are &quot;searching&quot; for a particular value within a particular column and displaying jobs that match. However, this is slightly different from search in that the user will arrive at this action as a result of clicking on a link within one of our views, rather than via submitting a form. We'll see where these links originate when we look at the views. Also note that the <code>Jobs</code> action doesn't deal with an &quot;all&quot; scenario; it only displays jobs matching a specific value in a specific column.</p>
+<h4 id="the-views">The Views</h4>
+<p>Let's turn our attention to the views.</p>
+<h5 id="shared_layoutcshtml">Shared/_Layout.cshtml</h5>
+<p>Open up the <code>Views/Home/Index.cshtml</code> file in Visual Studio, and in your browser navigate to the site's home page. You'll notice that there is a fair amount of markup visible on the page that isn't contained in <code>Views/Home/Index.cshtml</code>. This is because we're using <code>Views/Shared/_Layout.cshtml</code> to share the basic page layout and navigation across all of our templates. Have a look at <code>Views/Shared/_Layout.cshtml</code>, but know you won't have to do any work within this file for this assignment.</p>
+<aside class="aside-pro-tip">
+<p>We use <a href="http://getbootstrap.com/" target="_blank">Twitter's Bootstrap</a> CSS, HTML, and JS framework to provide some styling and functionality to our views. The appropriate files are included at the top of <code>Views/Shared/_Layout.cshtml</code> and thus are included on every page of our app.</p>
+<p>You won't have to explicitly use Bootstrap at all in this assignment, but it's a great way to make your sites look good with minimal work. Consider using it on your own projects!</p>
+<p>Bootstrap is included in the default MVC <code>Views/Shared/_Layout.cshtml</code> that you're given when you create a new MVC project in Visual Studio, making it easy to incorporate into your projects.</p>
+</aside>
+<h5 id="list-views">List Views</h5>
+<p>Turn your attention to <code>Views/List/Index.cshtml</code>. This template displays the list options, using data from the <code>columnChoices</code> dictionary passed in via <code>ViewBag.columns</code>. The only remarkable thing in this template is how we generate the links:</p>
+<pre><code class="language-html">&lt;a asp-controller="List" asp-action="Values"
+    asp-route-column="@column.Key"&gt;@column.Value&lt;/a&gt;</code></pre>
+<p>We've seen <code>asp-controller</code> and <code>asp-action</code> before, as attributes that cause the Razor engine to create links to the appropriate controller and action for us. The <code>asp-route-*</code> attribute is new though. This attribute will add a query parameter with a key equal to whatever the third slot of the attribute name is. The <code>*</code> is a placeholder that we can replace with any valid identifier.</p>
+<p>In <code>Views/List/Index.cshtml</code>, we specify a query parameter named <code>column</code> by using <code>asp-route-column</code>. The value of the query parameter is determined dynamically based on the value of <code>@column.Key</code>. Since these values come from <code>ViewBag.columns</code> in the template (which in turn comes from <code>columnChoices</code> in the controller), they will be employer, location, etc. When the user clicks on these links, they will be routed to the <code>Values</code> action in the <code>List</code> controller, which looks for these parameters.</p>
+<p>In your browser, click on the Locations link. This sends a request as we just outlined, resulting in a list of all of the locations in the data set. The page you're seeing at <code>/List/Values?column=location</code> is generated by the <code>Views/List/Values.cshtml</code> template. It has a similar structure as <code>Views/List/Index.cshtml</code>, with the exception that the various links are presented in a table, and their URLs have not one, but two <code>asp-route-*</code> attributes: one for the column and one for the value. In the case of the locations list, these will result in URL paths like:</p>
+<pre><code class="language-nohighlight">/List/Jobs?column=location&amp;value=Kansas%20City</code></pre>
+<p>(note that Razor inserts <code>%20</code> for us, to represent a space).</p>
+<p>Clicking on these links will display a list of jobs in the given location, via the <code>Jobs</code> action method. However, that display isn't working yet. While the action method is fully implemented, as we noted above, the view template needs some additional work.</p>
+<h5 id="search-view">Search View</h5>
+<p>Finally, click on Search from the home page, or the navigation bar, and open up <code>Views/Search/Index.cshtml</code>. You'll see a search form (in both the browser and template file) that gives the user the option of searching by a given column, or across all columns. This is an exact visual analog of our console application.</p>
+<p>This template will be used to display search results, in addition to displaying the form. This will give the nice user experience of easily searching multiple times in a row.</p>
+<h3 id="your-tasks">Your Tasks</h3>
+<p>Once you understand the controllers and views that are already in place, you're ready to begin your work. In Visual Studio, select <em>View &gt; Task List</em> to pop open a small pane at the bottom of the window. This list is populated by any code comments that start with <code>TODO</code>. In particular, you'll see your 3 tasks listed.</p>
+<p><img src="../images/task-list-mvc.png" alt="Task List" /></p>
+<aside class="aside-note">
+<p>The tasks may not immediately be populated in the Task List. If you don't see all three, open up the files manually to see your TODOs:</p>
+<ul>
+<li><code>Controllers/SearchController.cs</code></li>
+<li><code>Views/Search/Index.cshtml</code></li>
+<li><code>Views/List/Jobs.cshtml</code></li>
+</ul>
+</aside>
+<p>As you work on your tasks, refer to the <a href="http://techjobs20170314011743.azurewebsites.net/" target="_blank">demo app</a>.</p>
+<h4 id="add-results-action">Add Results Action</h4>
+<p>Add a <code>Results</code> action method to <code>SearchController</code>. The method should take in two parameters, specifying the type of search and the search term. In order for the parameters to be properly passed in by the MVC framework, you'll need to name them appropriately, based on the corresponding form field names.</p>
+<p>After looking up the search results via the <code>JobData</code> class, you'll need to pass them into the <code>Views/Search/Index.cshtml</code> view. Note that this <em>is not the default view for this action</em>.</p>
+<p>You'll also need to pass <code>ListController.columnChoices</code> to the view, as is done in the <code>Index</code> method.</p>
+<h4 id="display-search-results">Display Search Results</h4>
+<p>After you have your <code>Results</code> action above passing data to the view, you need to display the data. Open up <code>Views/Search/Index.cshtml</code> and create a loop to display each job passed in from the controller. You should put each job in its own table, with one job field per row.</p>
+<p>Add the CSS class <code>"job-listing"</code> to each of the tables to get some nice styling, courtesy of Eliot's work!</p>
+<h4 id="display-list-of-all-jobs">Display List of All Jobs</h4>
+<p>Recall that the page at the path <code>/List/Values?column=all</code> doesn't display any results. This page needs to display full job listings, just like the search results page. Add code to the appropriate view template so that this page displays jobs with the same structure as the search results.</p>
+<aside class="aside-warning">
+<p>You can reuse code from the search results page, but make sure you account for the name of the jobs list passed in from the controller, which may or may not be different, depending on how you structured your code.</p>
+</aside>
+<h3 id="sanity-check">Sanity Check</h3>
+<p>Before submitting, make sure that your application:</p>
+<ul>
+<li>Allows a user at <code>/Search</code> to search for jobs matching a specific search term, both within a specific column and across all columns.</li>
+<li>Displays search results at the same URL as the search form.</li>
+<li>Displays jobs with alternately white and gray backgrounds (this is provided by the <code>"job-listing"</code> class).</li>
+<li>Displays a listing of all 98 jobs in the system, when the user goes to the List page and selects &quot;All&quot;.</li>
+</ul>
+<p>Refer to the <a href="http://techjobs20170314011743.azurewebsites.net/" target="_blank">demo app</a> if you're not sure how thing are supposed to work.</p>
+<h3 id="how-to-submit">How to Submit</h3>
+<p>To turn in your assignment and get credit, follow the <a href="../">submission instructions</a>.</p>
+<h2 id="bonus-missions">Bonus Missions</h2>
+<p>Here are some additional challenges, for those willing to take them on:</p>
+<ul>
+<li>When searching, if we select a given field to search within and submit, our choice is forgotten. Modify the view template to keep the previous search field selected when displaying results.</li>
+<li>The field names in the tables displaying full job data are not capitalized. Fix this.</li>
+<li>In the search results listing and the listing of all jobs, make each value (except for the name field) hyperlinked to the listing of all jobs with that value, as is done on the <code>/List/Values</code> page.</li>
+<li>Using the same loop in two different places -- as we did in <code>Views/Search/Index.cshtml</code> and <code>Views/List/Jobs.cshtml</code>-- isn't very DRY (<strong>D</strong>on't <strong>R</strong>epeat <strong>Y</strong>ourself). To fix this would require <strong>partial views</strong>. <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/partial" target="_blank">Read up on partial views</a> and use them to eliminate this repeated code.</li>
+<li>
+<p>This is a big one. First, a warning:</p>
+<aside class="aside-warning">
+<p>This task requires material that is covered in class 7, so only take this on if you're willing to work ahead a bit, or have some previous object-oriented programming experience.</p>
+</aside>
+<p>Notice that we went to the trouble of passing in the <code>actionChoices</code> list to the view in <code>HomeController.Index</code>. This puts the responsibility of which actions should be presented on the controller, and not the view. However, we didn't go to such lengths for the navigation links displayed on every page of the site. In order to make the navigation links similarly detached, we'd need to pass <code>actionChoices</code> in to <em>every</em> view, since the nav links are generated by <code>Shared/_Layout.cshtml</code>. We'd have to do something like the line below in every action method, which would be a pain, not to mention error-prone and difficult to update.</p>
+<pre><code class="language-csharp">ViewBag.actions = actionChoices;</code></pre>
+<p>Let's fix this.</p>
+<ol>
+<li>Make a new controller, <code>TechJobsController</code>, that extends <code>Controller</code>. This new controller should have a static dictionary, <code>actionChoices</code>. The dictionary should be populated via a static constructor, just like <code>columnChoices</code> is populated in <code>ListController</code>.</li>
+<li>Write a method <code>View</code> in <code>TechJobsController</code> with the signature
+<pre><code class="language-csharp">public override ViewResult View();</code></pre></li>
+<li>Add code to this method to add <code>actionChoices</code> to the <code>ViewBag</code> and then return the result of calling the overridden view method via <code>base.View()</code>.</li>
+<li>Take the same two above steps with the method:
+<pre><code class="language-csharp">public override ViewResult View(string viewName);</code></pre>
+<p>This method is used when returning a view other than the default.</p></li>
+<li>Modify every one of your other controllers to extend <code>TechJobsController</code> instead of <code>Controller</code>.</li>
+<li>Modify <code>_Layout.cshtml</code> to use the passed-in action choices to generate the navigation links.</li>
+<li>If you did the previous Bonus Mission, update your code so that <code>columnnChoices</code> also lives in <code>TechJobsController</code>.</li>
+</ol>
+</li>
+</ul>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/libgif.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-6", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

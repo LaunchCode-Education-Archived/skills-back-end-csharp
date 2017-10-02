@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Data Types :: Unit 3: Back-End C# Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-data-types'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/videos/">
+                                        Videos
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/csharp4python/">
+                                        C# for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/glossary/">
+                                        Glossary
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/issues/">
+                                        Reporting Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-csharp/">
+                    <h1>Unit 3: Back-End C# Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-csharp/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End C# Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:-32orsjtyl4";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Data Types</h1>
+                    <p>How C# handles values and variables is one of the most significant differences between it and Python.</p>
+<h2 id="static-vs-dynamic-typing">Static vs. Dynamic Typing</h2>
+<p>Python is a <strong>dynamically typed</strong> language. In a dynamically typed language a variable or parameter can refer to any kind of value at any time. When the variable is used, the interpreter figures out what type it is and behaves accordingly.</p>
+<p>C# is a <strong>statically typed</strong> language. In a statically typed language the association between a variable or parameter and the type of value it can refer to is determined <em>when the variable or parameter is declared</em>. Once the declaration is made it is illegal for it to refer to a value of any other type.</p>
+<p>For example, this is legal in Python:</p>
+<pre><code class="language-python">x = "dog"
+x = 42</code></pre>
+<p>If we were to inspect the type of <code>x</code> after the first line executes (e.g. using Python's <code>type()</code> function) we would find that it was a string. After the next line executes, it is an integer. <code>x</code> is allowed to hold values of different types.</p>
+<p>However, the corresponding code in C# will result in a build error:</p>
+<pre><code class="language-csharp">string x = "dog";
+x = 42;</code></pre>
+<p>The compiler error would occur when we try to assign <code>42</code> to a variable of type <code>string</code>. This is simply not allowed in C#.</p>
+<p>Formally, this means that in a statically typed language <em>we must declare the type of every variable and parameter</em>. This is done by preceding the variable or parameter name with the name of its data type, as we did in the example above: <code>string x = "dog"</code>.</p>
+<p>We only need to specify the type of a variable or parameter when declaring it. Subsequent usage does not require specifying the type, and doing so will result in an error.</p>
+<aside class="aside-warning">
+<p>It is allowed in some situations in C# to declare a variable without specifying a type by using the keyword <code>var</code>, as in <code>var x = "dog";</code>. In this case, C# still assigns a type to <code>x</code> through inference. It looks and sees that we are assigning <code>x</code> the value <code>"dog"</code>, which is a <code>string</code>. Thus, <code>x</code> has type <code>string</code> and attempting to assign <code>x = 42</code> will still result in a build error.</p>
+<p>We recommend avoiding use of <code>var</code> while you are learning C#, and even after you become more experienced with the language you will still only want to use it sparingly and in specific circumstances. Explicitly declaring the type of your variables makes for more readable code, in general.</p>
+</aside>
+<p>Dynamic and static typing are examples of different <a href="https://en.wikipedia.org/wiki/Type_system" target="_blank">type systems</a>. The type system of a programming language is one of the most important high-level characteristics that programmers use when discussing the differences between languages. Here are a few examples of popular languages falling into these two categories:</p>
+<ul>
+<li><strong>Dynamic</strong>: Python, Ruby, C#script, PHP</li>
+<li><strong>Static</strong>: C#, C, C++, Java, Ada</li>
+</ul>
+<p>This major difference between Python and C# will mean that we'll need to pay much more attention to types when writing C#. Let's begin by exploring the most common and important data types in this language.</p>
+<h2 id="built-in-types">Built-In Types</h2>
+<p>One of the great things about Python is that all of the basic data types are objects. In C# this is also the case, though the so-called built-in data types also have short names that differ from typical class name conventions.</p>
+<p>We provide here a list of some of the most common types, along with both short and class names. We'll generally prefer to use the short names for each of these.</p>
+<table>
+<thead>
+<tr>
+<th>Short name</th>
+<th>.NET Class</th>
+<th>Examples</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td><code>Int32</code></td>
+<td>-5 <br> 1024</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td><code>Single</code></td>
+<td>1.212 <br> 3.14</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td><code>Double</code></td>
+<td>3.14159 <br> 2.0</td>
+<td>Doubles are twice as precise (i.e. can hold much longer decimal numbers) than floats</td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td><code>Char</code></td>
+<td>'a' <br> '!'</td>
+<td>A single Unicode character. Must be enclosed in single quotes <code>''</code> to be a character; double quotes <code>""</code> indicate a string</td>
+</tr>
+<tr>
+<td><code>string</code></td>
+<td><code>String</code></td>
+<td>&quot;LaunchCode&quot; <br> &quot;a&quot;</td>
+<td>A sequent of characters. Must be enclosed in double quotes <code>"</code>; single quotes <code>'</code> indicate a character</td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td><code>Boolean</code></td>
+<td><code>true</code> <br> <code>false</code></td>
+<td>Note that booleans in C# are not capitalized as they are in Python</td>
+</tr>
+</tbody>
+</table>
+<p>Not all built-in data types in C# are listed here, only the most commonly used types that beginners are likely to encounter. If you're curious, <a href="https://msdn.microsoft.com/en-us/library/ya5y69ds.aspx" target="_blank">read more about built-in types in C#</a>.</p>
+<p>As in Python, operators - such as <code>+</code> and <code>*</code> - are type-dependent. That is, we can only use them on allowed types, and their effects are different depending on which types we use them on. The <code>+</code> operator is a good example of this. We can use <code>+</code> to add numeric types together, such as <code>2 + 2</code> which results in <code>4</code>. But we can also use it to concatenate strings: <code>"2" + "2"</code>, for example, which results in <code>"22"</code>. What the operators do depends on the type they are operating on, and we may not mix types in arbitrary ways (<code>"2" + 2</code> results in a compiler error).</p>
+<aside class="aside-note">
+<p>Numeric types such as <code>int</code> and <code>double</code> may be freely mixed when using numeric operators. Generally, the result of such mixing is that the output has the type of the more precise input. For example, the following snippet would print out <code>System.double</code>.</p>
+<pre><code class="language-csharp">float a = 2;
+double b = 3;
+Console.WriteLine((a + b).GetType());</code></pre>
+</aside>
+<h3 id="string">string</h3>
+<p>Since strings are so important, let's explore them in a bit more depth.</p>
+<p>Strings in C# and Python are quite similar. Like Python, C# strings are immutable. However, manipulating strings in C# is not quite as obvious since strings do not support an indexing or slicing operator. That is not to say that you can’t index into a C# string; you can. You can also pull out a substring just as you can with slicing. The difference is that C# uses method calls where Python frequently uses operators.</p>
+<p>The table below maps common Python string operations to their C# counterparts. For the examples shown in the table, we will use a string variable called <code>str</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Python</th>
+<th>C#</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str[3]</code></td>
+<td><code>str.Substring(3,1)</code></td>
+<td>Return character in 3rd position</td>
+</tr>
+<tr>
+<td><code>str[2:5]</code></td>
+<td><code>str.Substring(2,3)</code></td>
+<td>Return substring from 2nd to 4th, i.e. substring starting at index 2 and 3 characters long</td>
+</tr>
+<tr>
+<td><code>len(str)</code></td>
+<td><code>str.Length</code></td>
+<td>Return the length of the string</td>
+</tr>
+<tr>
+<td><code>str.find('x')</code></td>
+<td><code>str.IndexOf('x')</code></td>
+<td>Find the first occurrence of <code>'x'</code></td>
+</tr>
+<tr>
+<td><code>str.split(',')</code></td>
+<td><code>str.split(',')</code></td>
+<td>Split the string at <code>','</code> into a list/array of strings</td>
+</tr>
+<tr>
+<td><code>str + str</code></td>
+<td><code>str + str</code></td>
+<td>Concatenate two strings together</td>
+</tr>
+<tr>
+<td><code>str.strip()</code></td>
+<td><code>str.Trim()</code></td>
+<td>Remove any whitespace at the beginning or end</td>
+</tr>
+<tr>
+<td><code>str.lower()</code></td>
+<td><code>str.ToLower()</code></td>
+<td>Return a copy of <code>str</code> with all characters lowercase</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-the-tempconv-program">Example: The TempConv Program</h2>
+<p>Let's go back in time and look at one of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.</p>
+<pre><code class="language-python">def main():
+    fahrenheit = int(input("Enter the temperature in F: "))
+    celsius = (fahrenheit - 32) * (5.0 / 9.0)
+    print("the temperature in C is: ", celsius)
+
+if __name__ == '__main__':
+    main()</code></pre>
+<p>Next, lets look at the C# Equivalent.</p>
+<pre><code class="language-csharp">using System;
+
+namespace TempConv
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            double fahrenheit;
+            double celsius;
+            string input;
+
+            Console.WriteLine("Temperature in F:");
+            input = Console.ReadLine();
+            fahrenheit = double.Parse(input);
+
+            celsius = (fahrenheit - 32) * 5 / 9;
+            Console.WriteLine("The Temperature in C is: " + celsius);
+            Console.ReadLine();
+        }
+    }
+}</code></pre>
+<p>There are several new concepts introduced in this example. We will look at them in the following order:</p>
+<ul>
+<li><code>using</code> statement</li>
+<li>Variable declaration</li>
+<li>Input/output and the <code>Console</code> class</li>
+</ul>
+<h3 id="using">using</h3>
+<p>In C#, you can use any class that is available without having to import the class - subject to two very important conditions:</p>
+<ol>
+<li>The C# compiler must know that the class exists</li>
+<li>You must use the full name of the class</li>
+</ol>
+<p>You can think of the <code>using</code> statement in C# as working a little bit like the <code>from module import xxx</code> statement in Python. However, behind the scenes the two statements actually do very different things.</p>
+<p>The first important difference to understand is that the class naming system in C# is very hierarchical. The <em>full</em> name of the <code>Console</code> class is really <code>System.Console</code>. You can think of this name as having two parts. The first part, <code>System</code>, is called the <strong>namespace</strong>, and the last part is the <strong>class. We’ll talk more about the class naming system a bit later. The second important difference is that it is not the <code>using</code> statement’s responsibility to load classes into memory. That task falls on the </strong>assembly**, which is the unit of compiled code created by Visual Studio (or the C# compiler, more generally).</p>
+<p>The <code>using</code> statement tells the compiler that we are going to use a shortened version of the class’s name. In this example we are going to use the class <code>System.Console</code>, but we can refer to it as just <code>Console</code>. We could use the <code>System.Console</code> class without any problem and without any import statement provided that we always referred to it by its full name.</p>
+<p>Don't just trust us, try it yourself! Remove the <code>using</code> statement and change <code>Console</code> to <code>System.Console</code> in the rest of the code. The program should still compile and run.</p>
+<h3 id="declaring-variables">Declaring Variables</h3>
+<p>In the example above, these lines contain variable declarations:</p>
+<pre><code class="language-csharp">double fahrenheit;
+double celsius;
+string input;</code></pre>
+<p>Specifically we are saying that <code>fahrenheit</code> and <code>celsius</code> are going to reference objects that are of type <code>double</code>. The variable <code>input</code> will contain a string. This means that if we were to try an assignment like <code>fahrenheit = "xyz"</code> the compiler would generate an error because <code>"xyz"</code> is a string and <code>fahrenheit</code> is supposed to be a double.</p>
+<p>For Python programmers the following error is likely to be even more common. Suppose we forgot the declaration for <code>celsius</code> and instead left that line blank. What would happen if we try to run our program?</p>
+<p><img src="build-error.png" alt="Build error" /></p>
+<p>The compiler detects an error and Visual Studio displays this message. Were you to look at the error pane, you would see the message: &quot;The name 'celsius' does not exist in the current context&quot;.</p>
+<aside class="aside-note">
+<p>When using an IDE such as Visual Studio, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitly compile your code before finding compiler errors. Nice, huh?</p>
+</aside>
+<p>The general rule in C# is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. There is much more to say about the static typing of C# but for now this is enough.</p>
+<h3 id="input--output-and-the-console-class">Input / Output and the Console Class</h3>
+<p>Console input and output is facilitated by the class <code>System.Console</code>. We'll rely heavily on just two methods of this class: <code>Console.WriteLine</code> and <code>Console.ReadLine</code>.</p>
+<p><code>Console.WriteLine</code> can take parameters of various types, including <code>string</code>, <code>char</code>, <code>double</code>, <code>bool</code>, and others. However, unlike the <code>print</code> function in Python, we can only provide it with a single argument. Thus, we'll need to manually concatenate strings and other values, converting types if necessary. As with Python, a newline character is output after the given message.</p>
+<pre><code class="language-python">year = 2017
+print("Hello", "World")
+print("The year is:", year)</code></pre>
+<pre><code class="language-csharp">int year = 2017;
+Console.WriteLine("Hello" + "World")
+Console.WriteLine("The year is " + year.ToString());</code></pre>
+<p>Similarly, <code>Console.ReadLine</code> returns input as a string. To convert it to a desired type, you can generally use the syntax <code>[TYPE].Parse(value)</code>, with <code>[TYPE]</code> replaced by the given type. Here's an example:</p>
+<pre><code class="language-csharp">string userInput = Console.ReadLine();
+int year = int.Parse(userInput);</code></pre>
+<p>This is very similar to what we did in Python:</p>
+<pre><code class="language-python">user_input = input()
+year = int(user_input)</code></pre>
+<h2 id="class-types">Class Types</h2>
+<p>In addition to the types introduced so far, any class in C# defines a type. Classes and objects are conceptually the same as in Python: A class is a template, or blueprint, for creating objects. We'll have much more to say about classes and objects, but for now you need to be comfortable seeing the basic syntax of class types and class creation.</p>
+<p>If I have a class <code>Cat</code> with a constructor that takes no arguments, I can declare and create a new instance of <code>Cat</code> using its constructor. In Python, we did this as follows:</p>
+<pre><code class="language-python">my_cat = Cat()</code></pre>
+<p>And the C# version is:</p>
+<pre><code class="language-csharp">Cat myCat = new Cat();</code></pre>
+<p>Each of these statements creates a new variable that is initialized to hold a new <code>Cat</code> object. Note that in C#, we must declare the variable's type. Also note that we precede the constructor with the <code>new</code> keyword. And, of course, the C# example ends with a semi-colon.</p>
+<p>Variables and parameters that are of the type of a class are said to be of <strong>reference type</strong> (in contrast to <strong>primitive type</strong>). In plain English, we would say of the C# example: &quot;<code>myCat</code> is a reference variable of type <code>Cat</code>.&quot;</p>
+<h3 id="reference-and-value-types">Reference and Value Types</h3>
+<p>We can group types in C# into two categories: <strong>value types</strong> and <strong>reference types</strong>. Variables holding value types directly contain their data, and include numeric types (<code>int</code>, <code>double</code>, etc.), <code>bool</code>, and a handful of others that we won't encounter in this course.</p>
+<p>As mentioned above, classes define reference types. A variable of a reference type (such as <code>myCat</code> above) does not actually store the object in question. Instead, it stores a <strong>reference</strong> to the object. A reference is literally a memory address. We visualize references as an arrow pointing to the object in memory.</p>
+<p>Consider this code:</p>
+<pre><code class="language-csharp">int catAge = 11;
+Cat myCat = new Cat();
+Cat sameCat = myCat;</code></pre>
+<p>Visually we can represent these three variables as shown here.</p>
+<p><img src="references.png" alt="Reference Types" /></p>
+<p>Since <code>int</code> is a value type, the variable <code>catAge</code> functions as a box holding the integer value 11. On the other hand, <code>myCat</code> is a reference variable, since it holds an object. The variable actually stores the address of the object, which we visualize as an arrow from the variable box to the object.</p>
+<p>When we assign a value to a reference type, as in <code>Cat sameCat = myCat</code>, we are not creating a second copy of the object, but instead are creating a second &quot;arrow&quot; pointing to the same object.</p>
+<p>The distinction between reference types and value types is important, but can be difficult to wrap your brain around at first. We will see that reference types are handled differently in essential and important ways in a lot of different situations.</p>
+<h2 id="arrays">Arrays</h2>
+<p>While Python has the basic list type, C# has multiple ways of storing ordered data. The most basic is that of the array.</p>
+<p>An array is an ordered, fixed-size collection of elements. Since C# is statically typed, arrays may only store one type of object. We can create an array of integers or an array of strings, but we may not create an array that holds both integers and strings.</p>
+<p>The syntax for creating an array capable of holding 10 integers is:</p>
+<pre><code class="language-csharp">int[] someInts = new int[10];</code></pre>
+<p>To create an array of a different size, or to hold different type values, replace 10 and <code>int</code> (on both sides of the assignment). Unlike lists in Python, arrays in C# <em>may not</em> change size once created. This turns out to be not very practical, so thankfully C# provides more flexible ways to store data, which we'll explore in a later lesson.</p>
+<p>In addition to the technique above, we can initialize an array using a literal expression:</p>
+<pre><code class="language-csharp">int[] someOtherInts = {1, 1, 2, 3, 5, 8};</code></pre>
+<p>Here, the size is implicit in the number of elements in the literal expression <code>{1, 1, 2, 3, 5, 8}</code>.</p>
+<p>To access array elements, we use square brackets, as with Python lists.</p>
+<pre><code class="language-csharp">int anInt = someOtherInts[0];</code></pre>
+<p>As with Python, arrays have zero-based indexing.</p>
+<p>Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they are ubiquitous in C# programming, so it's good to know how they work.</p>
+<h2 id="static-methods">Static Methods</h2>
+<p>In pure object-oriented languages like C# and Java, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as <strong>methods</strong>. We'll we adopt this terminology from now on.</p>
+<p>We'll dive into learning about classes and objects in C# soon enough, but first let's learn a little about <strong>static methods</strong>, which behave somewhat similarly to functions as you knew them in Python.</p>
+<p>A static method is one with the <code>static</code> keyword, as our <code>Main</code> method above had:</p>
+<pre><code class="language-csharp">public static void Main(string[] args)
+{
+    // some code
+}</code></pre>
+<p>Let's show you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return and parameter types accordingly.</p>
+<aside class="aside-warning">
+<p>For now, every method we write will have the <code>static</code> keyword. We will explore exactly what <code>static</code> does in more detail in later lessons.</p>
+</aside>
+<p>Let's create two classes in C# to demonstrate using static methods. One class will have a <code>Main</code> method and the other will have a method that we want to call from within <code>Main</code>.</p>
+<pre><code class="language-csharp">namespace HelloMethods
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            string message = Message.GetMessage("fr");
+            Console.WriteLine(message);
+            Console.ReadLine();
+        }
+    }
+}</code></pre>
+<pre><code class="language-csharp">namespace HelloMethods
+{
+    public class Message
+    {
+        public static string GetMessage(string lang)
+        {
+            if (lang.Equals("sp")) {
+                return "Hola Mundo";
+            }
+            else if (lang.Equals("fr"))
+            {
+                return "Bonjour le monde";
+            }
+            else
+            {
+                return "Hello World";
+            }
+        }
+    }
+}</code></pre>
+<p>We won't explore every new aspect of this example, but rather will focus on the two methods.</p>
+<p>The <code>Main</code> method in the <code>HelloMethods</code> class is the same in structure as that of our previous example. Take a look at the <code>Message</code> class. Note that it <em>does not</em> have a <code>Main</code> method. In a C# project, only one <code>Main</code> method is allowed. When the project is compiled and run, the <code>Main</code> method indicates what should be executed, and if there were multiple <code>Main</code> methods this would be ambiguous.</p>
+<p>The <code>Message</code> class has a method of its own: <code>GetMessage</code>. Like <code>Main</code>, it has the <code>static</code> keyword. Unlike <code>Main</code>, <code>GetMessage</code> has a return type of <code>string</code> and a single parameter, <code>string lang</code>.</p>
+<p>Since C# is statically typed, each method must declare its return type - that is, the data type of what it will return - along with the type of each parameter. One consequence of this that may not be immediately obvious is that methods in C# may not return different types of data. For example, we would not be able to replace the last <code>return</code> statement of <code>GetMessage</code> with something like <code>return 42;</code>. This would be flagged as a compiler error.</p>
+<p>Finally, let's note how a static method is called. The first line of <code>Main</code> in the <code>Program</code> class is:</p>
+<pre><code class="language-csharp">Message.GetMessage("fr");</code></pre>
+<p>To call a static method we must use the name of the class in which it is defined, followed by <code>.</code>, followed by the name of the method.</p>
+<p>We are able to call this method from another class because it is declared to be <code>public</code>. If we wanted to restrict the method from being called by another class, we could instead use the <code>private</code> modifier. We'll explore access modifiers in more depth in coming lessons.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://msdn.microsoft.com/en-us/library/ya5y69ds.aspx" target="_blank">Built-In Types (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/6a71f45d.aspx" target="_blank">C# Operators (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/system.string_methods(v=vs.110).aspx" target="_blank">String Methods (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/system.console(v=vs.110).aspx" target="_blank">The <code>Console</code> class (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/aa288453(v=vs.71).aspx" target="_blank">Array Tutorial (msdn.microsoft.com)</a></li>
+</ul>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/libgif.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-6", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

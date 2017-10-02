@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Initial Setup :: Unit 3: Back-End C# Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-initial-setup'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/videos/">
+                                        Videos
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/csharp4python/">
+                                        C# for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/glossary/">
+                                        Glossary
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/issues/">
+                                        Reporting Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-csharp/">
+                    <h1>Unit 3: Back-End C# Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-csharp/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End C# Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:-32orsjtyl4";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Initial Setup</h1>
+                    <p>The steps here will walk you through setting up a repository that you'll use to study example code, work on studios, and complete your first assignment of this unit.</p>
+<h2 id="visual-studio">Visual Studio</h2>
+<p>Visual Studio is the Integrated Development Environment (IDE) used to develop C# and .NET applications.</p>
+<h3 id="windows-users">Windows Users</h3>
+<p>Visit the <a href="https://www.visualstudio.com/free-developer-offers/" target="_blank">Microsoft Free Developer Apps</a> page and download the Visual Studio 2017 Community installer. Allow at least an hour for the installation process.</p>
+<p>Run the installer, and select the following packages from the <em>Workloads</em> pane:</p>
+<ul>
+<li>ASP.NET and web development</li>
+<li>Azure development</li>
+<li>Data storage and processing</li>
+<li>.NET core cross-platform development</li>
+</ul>
+<p>Your selections will look like these screens:</p>
+<p><img src="images/vs-packages.png" alt="Install packages" /></p>
+<p><img src="images/vs-packages-2.png" alt="Install packages" /></p>
+<p>When the install finishes running, select <em>Launch</em> and then close the installer window.</p>
+<p>When prompted, create a Microsoft Developer account and use it to sign in to Visual Studio.</p>
+<p>The launcher window will prompt you with some choices via a window similar to what you see below. Select the displayed options. (If you don't see the box about applying customizations, don't worry about it, just proceed.)</p>
+<img src="images/launch-options.png" style="width:400px;display:block;margin:0 auto;">
+<aside class="aside-note">
+<p>If you fail to install one or more of the required packages, you can do so by closing Visual Studio and running the installer again. Select <em>Modify</em> in the Visual Studio 2017 section of the window, and then select the additional package(s) to install.</p>
+</aside>
+<aside class="aside-warning">
+<p>If you installed Visual Studio previously, ensure that you are using Visual Studio 2017. If you don't have this most recent version installed, you will need to install it via the instructions above.</p>
+<p>If you have a pre-existing Visual Studio 2017 install, you may need to install the .NET Core Tools package. To do so, follow the <a href="https://www.microsoft.com/net/core#windowsvs2017" target="_blank">instructions provided by Microsoft</a>.</p>
+</aside>
+<h4 id="connect-to-github-for-windows-users">Connect to GitHub for Windows Users</h4>
+<p>Visit this page to download and install the <a href="https://visualstudio.github.com/" target="_blank">GitHub Extension for Visual Studio</a>.</p>
+<h3 id="mac-and-linux-users">Mac and Linux Users</h3>
+<p>If you followed the instructions in <a href="./running-windows-on-mac-linux.html">Running Windows on Mac or Linux</a> then you already have everything you need.</p>
+<h2 id="github-project-setup">GitHub Project Setup</h2>
+<p>Visit the <a href="https://github.com/LaunchCodeEducation/csharp-exercises" target="_blank">LaunchCodeEducation/csharp-exercises</a> repository page and fork the repository into your own GitHub account by selecting <em>Fork</em> from the top right of the page.</p>
+<p>After forking, open Visual Studio. From within Visual Studio, choose the <em>Team Explorer</em> tab near the bottom of the <em>Solution Explorer</em> pane. If you don't see this tab, you can open it via the application menu: <em>View &gt; Team Explorer</em>. The first time you do this, you will need to click <em>Connect...</em> and then sign in to GitHub.</p>
+<p>Select <em>Clone</em> from the GitHub section of the <em>Team Explorer</em> and select your <code>csharp-exercises</code> copy from the modal window. <strong>Be sure to change the Path field</strong> to the location you would like the project to live, ideally inside of a folder you've been using to store other projects.</p>
+<p>VM (Mac/Linux) users: Don't forget to use the <code>lc101</code> directory within your Dropbox folder for this purpose.</p>
+<h2 id="configure-and-test">Configure and test</h2>
+<p>If your solution isn't open, open it via <em>File &gt; Open &gt; Project/Solution</em> and browse to the <code>.sln</code> file within the <code>csharp-exercises</code> directory.</p>
+<p>Right-click on the top-level &quot;Solution 'csharp-exercises'&quot; item in the <em>Solution Explorer</em> and select <em>Properties</em>. (If right-clicking doesn't work, just select &quot;Solution 'charp-exercises'&quot; and then click the tool/wrench icon near the top of <em>Solution Explorer</em>). In the modal that opens, select <em>Common Properties &gt; Startup Project</em> and then choose <em>Current Selection</em> in the pane at the right.</p>
+<aside class="aside-pro-tip">
+<p>This setting makes the default behavior of Visual Studio to run the currently-selected program when you hit the <span style="color:green">▶︎</span> <em>Start</em> button in the toolbar.</p>
+</aside>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/libgif.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-6", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

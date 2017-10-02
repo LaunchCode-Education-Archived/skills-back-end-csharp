@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Studio: Cities :: Unit 3: Back-End C# Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-studio-cities'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/videos/">
+                                        Videos
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/csharp4python/">
+                                        C# for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/glossary/">
+                                        Glossary
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/issues/">
+                                        Reporting Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-csharp/">
+                    <h1>Unit 3: Back-End C# Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-csharp/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End C# Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:-32orsjtyl4";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Studio: Cities</h1>
+                    <p>This studio has some starter code. So let's get it set up first. You might enjoy <a href="https://www.youtube.com/watch?v=jJMxwBmQWHA" target="_blank">some music</a> while you do so.</p>
+<h2 id="getting-ready">Getting Ready</h2>
+<p>Set up a local copy of the project:</p>
+<ul>
+<li>Visit the <a href="https://github.com/LaunchCodeEducation/Cities" target="_blank">repository page</a> for this project and fork the repository to create a copy under your own GitHub account.</li>
+<li>From within Visual Studio, choose the <em>Team Explorer</em> tab near the bottom of the <em>Solution Explorer</em> pane. If you don't see this tab, you can open it via the application menu: <em>View &gt; Team Explorer</em>.</li>
+<li>Click on the <em>Manage Connections</em> icon (see below), and select <em>Clone</em> from the GitHub section of the <em>Team Explorer</em> and select your <code>TechJobsOO</code> copy from the modal window. <strong>Be sure to change the Path field</strong> to the location at which you would like the project to live, ideally inside of a folder you've been using to store other projects.</li>
+<li>Open the solution via either the notification within <em>Team Explorer</em> or via <em>File &gt; Open &gt; Project/Solution</em>.</li>
+</ul>
+<h2 id="cities-project-overview">Cities Project Overview</h2>
+<p>The project contains a data file, <code>city_data.csv</code>, that contains data on over 300 U.S. cities. It has columns representing name, state, population (from the 2010 census) and land area (in square miles).</p>
+<p>There is also a <code>City</code> class. This class encapsulates the same properties contained in our data file, along with providing a couple of methods to make printing info about cities easier.</p>
+<p>The class <code>CityDataImporter</code> has a static <code>LoadData</code> method that opens the data file and parses it, returning a list of <code>City</code> objects.</p>
+<p>Within <code>Program.cs</code>, we load the data, sort the list of <code>City</code> objects by the <code>City.Name</code> property, and print it out. Here's part of that code:</p>
+<pre><code class="language-csharp">List&lt;City&gt; cities = CityDataImporter.LoadData();
+
+IComparer&lt;City&gt; comparer = new NameComparer();
+
+cities.Sort(comparer);</code></pre>
+<p>To sort the <code>cities</code> list, we use <code>NameComparer</code>, which is located in the <code>Comparers/</code> folder and namespace of the project. <code>NameComparer</code> implements <code>IComparer&lt;City&gt;</code> by providing the <code>Compare(City, City)</code> method. Since sorting by <code>Name</code> is just sorting alphabetically by name, we use the <code>string.Compare(string, string)</code> method with the <code>Name</code> properties of the given input parameters.</p>
+<p>The <code>IComparer&lt;T&gt;</code> interface contains one method: <code>Compare(T, T)</code>. It returns an integer which determines which of the two objects comes &quot;before&quot; (in other words, &quot;is less than&quot;) the other. If the integer is less than zero, then the first parameter comes before the second. If the integer is zero, then they are &quot;the same&quot;. If the integer is greater than zero, then the second parameter comes before the first. You can think of the result of calling <code>Compare(x, y)</code> as being the &quot;value&quot; of subtracting <code>x - y</code>. If <code>x</code> is smaller than <code>y</code>, this value is negative, if <code>x</code> is larger than <code>y</code>, this value is positive.</p>
+<p>In order to sort the list, the comparer object is passed in to the <code>Sort</code> method for it to use. The list is sorted &quot;in place&quot;. In other words, rather than returning a new list that is sorted, <code>Sort</code> sorts the given list by reordering its contents (i.e., the original list is mutated).</p>
+<h2 id="your-task">Your Task</h2>
+<p>Your task is to implement at least two of the following comparers:</p>
+<ul>
+<li><code>StateComparer</code> - results in alphabetical sorting by state</li>
+<li><code>PopulationComparer</code> - results in sorting by population, from largest to smallest</li>
+<li><code>AreaComparer</code> - results in sorting by land area, from largest to smallest</li>
+</ul>
+<p>Your comparers should be placed in the <code>Comparers/</code> folder, and they should implement <code>IComparer&lt;City&gt;</code>. Test them out by modifying the code in <code>Program.cs</code>.</p>
+<p>Refer to <code>NameComparer</code> and the <a href="https://msdn.microsoft.com/en-us/library/8ehhxeaf(v=vs.110).aspx" target="_blank">IComparer<T> documentation</a> for guidance.</p>
+<h2 id="bonus-mission">Bonus Mission</h2>
+<p>Create a <code>CompoundComparer</code> class that is able to order based on multiple factors. For example, we should be able to order by state name alphabetically, and then by population.</p>
+<p>Here are the steps to carry this out:</p>
+<ol>
+<li>Create a class that implements <code>IComparer&lt;City&gt;</code>.</li>
+<li>Create a property <code>Comparers</code> of type <code>IList&lt;IComparer&lt;City&gt;&gt;</code>.</li>
+<li>Initialize <code>Comparers</code> to be an empty list: <code>new List&lt;IComparer&lt;City&gt;&gt;()</code>. You can do this in a constructor, or in the same line that you declare the property.</li>
+<li>
+<p>You'll need the following method in order to implement the interface:</p>
+<pre><code class="language-csharp">public int Compare(City x, City y)</code></pre>
+<p>This method should use each of the comparers in <code>Comparers</code> in order. You'll first use <code>Comparer[0]</code> to compare <code>x</code> and <code>y</code>.</p>
+<p>You only need to move on to the next comparer if the first comparer returns 0. For example, if you're comparing cities by state and then by population, when comparing St. Louis and New York, you don't need to compare population. You know that St. Louis comes before New York because &quot;Missouri&quot; comes before &quot;New York&quot;. However, when comparing St. Louis and Kansas City, you would need to compare population, since the cities are in the same state.</p>
+<p>We suggest using a <code>while</code> loop to do this.</p>
+</li>
+<li>To use <code>CompoundComparer</code>, create an instance of the class and then add individual comparers in the order that want them to be used:
+<pre><code class="language-csharp">CompoundComparer comparer = new CompoundComparer();
+comparer.Comparers.Add(new StateComparer());
+comparer.Comparers.Add(new PopulationComparer());</code></pre></li>
+</ol>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/libgif.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-6", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

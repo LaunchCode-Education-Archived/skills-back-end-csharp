@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Assignment: TechJobs (Object-Oriented Edition) :: Unit 3: Back-End C# Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-csharp/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-assignment-techjobs-object-oriented-edition'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/videos/">
+                                        Videos
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/csharp4python/">
+                                        C# for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/glossary/">
+                                        Glossary
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/issues/">
+                                        Reporting Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-csharp/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-csharp/">
+                    <h1>Unit 3: Back-End C# Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-csharp/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End C# Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:-32orsjtyl4";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Assignment: TechJobs (Object-Oriented Edition)</h1>
+                    <h2 id="introduction">Introduction</h2>
+<p>Your apprenticeship at LaunchCode is going well! Only a few weeks in and you're regularly making contributions to code that will eventually be used by all LaunchCode staff.</p>
+<p>Your last task was to get the controller and view layers in good shape, so now it's time to turn your attention to the Model.</p>
+<p>Your mentor on this project is Cheryl, one of the developers at LaunchCode. She regularly mentors developers that are just getting started with their careers.</p>
+<p><img src="../images/cheryl.jpg" alt="Cheryl Schaeffer" /></p>
+<p>(If you're interested, you can listen Cheryl <a href="https://www.greaterthancode.com/podcast/episode-018-cheryl-schaefer/" target="_blank">talk about mentorship</a> on the Greater Than Code podcast.)</p>
+<p>She's done some initial work on the project and left you some TODOs. After seeing your strong work on your last project, Eliot reported that you've been doing great work, and learning quickly, so the tasks in this project are a notch up from the last in difficulty.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>In this project, you'll show that you can:</p>
+<ul>
+<li>Read and understand code written by others</li>
+<li>Work with model classes via a data access layer (in this case, <code>JobData</code>)</li>
+<li>Use model binding and validation with ViewModel classes</li>
+<li>Create class extensions (that is, use inheritance)</li>
+</ul>
+<h2 id="techjobs-object-oriented-edition">TechJobs (Object-Oriented Edition)</h2>
+<p>Cheryl has gotten the ball rolling in the Model and ViewModel, having added a <code>Job</code> class, along with classes to represent the individual properties of a job: <code>Employer</code>, <code>Location</code>, <code>PositionType</code>, and <code>CoreCompetency</code>. She has also refactored the View and Controller layers to use these new classes. Finally, she has modified the <code>JobData</code> class to properly create <code>Job</code> and related objects when importing data from <code>job_data.csv</code>.</p>
+<p>As the team gets closer to hooking the app up to a database -- and abandoning the test data they've been using -- they'll want an easy way to add new jobs via the user interface.</p>
+<h2 id="your-assignment">Your Assignment</h2>
+<p>You've been tasked with completing a feature that allows new <code>Job</code> objects to be created and added to the system. You'll touch all layers of the application, but you'll be primarily working with Model and ViewModel classes to complete this feature.</p>
+<h3 id="getting-started">Getting Started</h3>
+<p>Set up a local copy of the project:</p>
+<ul>
+<li>Visit the <a href="https://github.com/LaunchCodeEducation/TechJobsOO" target="_blank">repository page</a> for this project and fork the repository to create a copy under your own GitHub account.</li>
+<li>From within Visual Studio, choose the <em>Team Explorer</em> tab near the bottom of the <em>Solution Explorer</em> pane. If you don't see this tab, you can open it via the application menu: <em>View &gt; Team Explorer</em>.</li>
+<li>Click on the <em>Manage Connections</em> icon (see below), and select <em>Clone</em> from the GitHub section of the <em>Team Explorer</em> and select your fork of the <code>TechJobsOO</code> repository. <strong>Be sure to change the Path field</strong> to the location at which you would like the project to live, ideally inside of a folder - like <code>lc101</code> - that you've been using to store other projects.
+<img src="../images/team-explorer-connections.png" alt="Manage Connections" /></li>
+<li>Open the solution via either the notification within <em>Team Explorer</em> or via <em>File &gt; Open &gt; Project/Solution</em>.</li>
+<li>Pop back over to the <em>Solution Explorer</em> to preview the code.</li>
+</ul>
+<p>We've said it before, but it still rings true: A big part of your assignment is reading and understanding code that others have written. You'll spend a significant amount of time reading the code that you are starting with, and that's to be expected.</p>
+<h3 id="the-model">The Model</h3>
+<p>The largest amount of new code is in the Model. Open up the <code>Models/</code> folder and you'll see several classes, some of which you'll work with directly, and some of which you won't.</p>
+<h4 id="the-job-class">The Job Class</h4>
+<p>Working with data stored as strings in dictionaries and lists isn't a good long-term solution, for various reasons that we will discuss momentarily. The <code>Job</code> class introduces an object-oriented design to the application.</p>
+<p>It contains all of the properties that you've grown used to while working on TechJobs: <code>Name</code>, <code>Employer</code>, <code>Location</code>, <code>CoreCompetency</code>, and <code>PositionType</code>. There's also an <code>ID</code> property which will be used to uniquely identify <code>Job</code> objects.</p>
+<p>The main difference between the object representation of a job and the string-based representation is that the values of <code>Employer</code>, <code>Location</code>, and the other non-ID properties are no longer strings, but instead are classes of their own.</p>
+<h4 id="job-fields">Job Fields</h4>
+<p>If you don't have it open already, open the <code>Job</code> class. You'll see the following properties (among others):</p>
+<pre><code class="language-csharp">public string Name { get; set; }
+public Employer Employer { get; set; }
+public Location Location { get; set; }
+public CoreCompetency CoreCompetency { get; set; }
+public PositionType PositionType { get; set; }</code></pre>
+<p>Of these, only <code>Name</code> is a string. Cheryl has created classes to represent each of the other properties. Each of these classes -- <code>Employer</code>, <code>Location</code>, <code>CoreCompetency</code>, <code>PositionType</code> -- have <code>Value</code> and <code>ID</code> properties.</p>
+<p>If you look at the guts of any of these job property classes, you'll see that they each extend <code>JobField</code>, and don't have any additional properties or methods of their own. We'll customize and add to these classes in a future assignment, but for now we only need to work with their inherited <code>Value</code> and <code>ID</code> properties.</p>
+<p>So, for example, if you had a <code>Job</code> instance, you could get the name of the employer this way:</p>
+<pre><code class="language-csharp">// job is an instance of Job
+string employerName = job.Employer.Value;</code></pre>
+<p>Additionally, the <code>ToString()</code> method of these classes is set up to return the <code>Value</code> property. Thus, using one of these objects in a template, or in another string context like <code>Console.WriteLine</code>, will print the <code>Value</code> property.</p>
+<pre><code class="language-csharp">// prints the name of the employer
+Console.WriteLine(job.Employer);</code></pre>
+<p>Why do we go to all of this trouble, when we could store this job-related data as strings? Well, here are a couple.</p>
+<h5 id="eliminate-duplication-of-data">Eliminate duplication of data</h5>
+<p>In our application we'll have multiple jobs that have the same value in a given field. For example, there are multiple jobs with position type &quot;Web - Full Stack&quot;, and for several employers, there are several jobs with that employer. Were we to store the values of these fields as strings directly within the <code>Job</code> class, these strings would be repeated in several places across the application.</p>
+<p>By using objects, we can have a single <code>PositionType</code> object with value &quot;Web - Full Stack&quot;, and then have each job that wants to use that position type hold onto a reference to the given object. Similarly, we can have one <code>Employer</code> object for each employer.</p>
+<p>Aside from reducing the amount of raw data / memory that the application uses, this will allow data to be updated more easily and properly. If we need to change the name of an employer (e.g. due to a typo, or a name change at a company), we can change it in one place: the single <code>Employer</code> object that represents that employer.</p>
+<h5 id="enable-extension">Enable extension</h5>
+<p>While the four <code>Job</code> properties represented by objects will primarily be used for their string values, it's not hard to imagine that we would want to add additional properties to them.</p>
+<p>For example, it would be useful for an <code>Employer</code> object to have an address, a primary contact, and a list of jobs available at that employer.</p>
+<p>For a <code>Location</code> object, it would be useful to have a list of zip codes associated with that location, in order to determine which location an employer or job is located in.</p>
+<p>If we were to store these properties as strings, extending and modifying this behavior would be much more complicated and difficult in the future.</p>
+<p>There's one more class on <code>Models/</code> that we need to introduce.</p>
+<h4 id="jobfieldtypecs">JobFieldType.cs</h4>
+<p>This class is an enum that enables the view and controller layers to easily ask for data related to a specific job field, or to all fields.</p>
+<p>The enum has the values <code>Employer</code>, <code>Location</code>, <code>PositionType</code>, <code>CoreCompetency</code>, and <code>All</code>. These take the place of the &quot;magic strings&quot; that we were using all across our code in the first two iterations of TechJobs. Previously, we would find all employers this way:</p>
+<pre><code class="language-csharp">List&lt;string&gt; employers = JobData.FindByColumnAndValue("employer", "LaunchCode");</code></pre>
+<p>Now, however, we can do this:</p>
+<pre><code class="language-csharp">List&lt;JobField&gt; employers = jobData.FindByColumnAndValue(JobFieldType.Employer, "LaunchCode");</code></pre>
+<p>By using enum values instead of strings, we eliminate the possibility of runtime errors. In other words, the compiler will force us to use a valid <code>JobFieldType</code>, whereas if we had misspelled &quot;employer&quot; in the first example, we wouldn't have found out until running our code.</p>
+<p>Many of the methods in <code>JobData</code> now work by taking in a <code>JobFieldType</code> parameter rather than a string.</p>
+<p>We also use the <code>JobFieldType</code> values to render search and list options in the view, and to collect these options in the ViewModel and controller layers.</p>
+<h3 id="the-data-layer">The Data Layer</h3>
+<h4 id="jobdatacs-and-jobdataimportercs">JobData.cs and JobDataImporter.cs</h4>
+<p>In this updated version, the data access functionality has been moved into its own directory, <code>Data/</code>. This is partly to better organize our code as the application grows, and also to anticipate the move to a database in the near future. Additionally, we've moved the logic to import data from the CSV file into <code>JobDataImporter.cs</code>.</p>
+<p>The <code>JobData</code> class has been refactored to work with <code>Job</code> objects, and the objects that a <code>Job</code> has references to (<code>Employer</code>, <code>Location</code>, etc), rather than strings. You won't need to understand the internals of how this works. Instead, you'll need to understand how to use the class.</p>
+<p>Rather than having a collection of static methods, <code>JobData</code> now has several instance methods, with usage outlined below. Each controller already has a <code>JobData</code> object set up for you, named <code>jobData</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Find(int)</code></td>
+<td><code>Job</code></td>
+<td>Find a job by its ID</td>
+</tr>
+<tr>
+<td><code>FindByColumnAndValue(JobFieldType, string)</code></td>
+<td><code>List&lt;Job&gt;</code></td>
+<td>Find all jobs matching the given string in the given column/property</td>
+</tr>
+<tr>
+<td><code>FindByValue(string)</code></td>
+<td><code>List&lt;Job&gt;</code></td>
+<td>Find all jobs matching the given string in any fields</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<pre><code class="language-csharp">// Find the job with id 42
+Job someJob = jobData.Find(42);
+
+// Find all jobs at LaunchCode
+List&lt;Job&gt; jobsAtLaunchcode =
+    jobData.FindByColumnAndValue(JobFieldType.Employer, "LaunchCode");
+
+// Find all jobs involving Ruby
+List&lt;Job&gt; jobsInvolvingRuby = jobData.FindByValue("ruby");</code></pre>
+<p>The full list of jobs is available as a property of <code>JobData</code>. Thus, you can do fun stuff like:</p>
+<pre><code class="language-csharp">// Get the full list of jobs
+List&lt;Job&gt; allOfTheJobs = jobData.Jobs;
+
+// add a new Job object to the list
+jobData.Jobs.Add(newJob);</code></pre>
+<p>Additionally, collections of classes that make up the individual properties of a <code>Job</code> object -- <code>Employer</code>, <code>Location</code>, <code>CoreCompetency</code>, <code>PositionType</code> -- are available as properties of <code>JobData</code>. For example, all employers are contained in a property called <code>Employers</code>.</p>
+<p>There are two methods that you might want to use here. Here they are:</p>
+<pre><code class="language-csharp">// Find the employer with id=7
+Employer anEmployer = jobData.Employers.Find(7);
+
+// Get all employers
+List&lt;Employer&gt; allEmployers = jobData.Employers.ToList();</code></pre>
+<aside class="aside-warning">
+<p>You should not try to create a new <code>Job</code> object with <code>Employer</code>, <code>Location</code>, etc. properties that don't already exist. Our non-database system isn't as robust as it will be shortly, and doing something like this might break it.</p>
+<p>When you create a new <code>Job</code> object for this assignment, you'll always be doing so using existing employers, locations, etc.</p>
+</aside>
+<h3 id="the-viewmodel">The ViewModel</h3>
+<p>You won't be working on search and list functionality in this assignment, but you should know that Cheryl has refactored all of that code to use ViewModels as well as model classes. These ViewModels are <code>JobFieldsViewModel</code> and <code>SearchJobsViewModel</code>.</p>
+<p>While you won't be working in these classes, you'll likely learn something new by reading that code, so we encourage you to dive into those files.</p>
+<p>There's another ViewModel class that you <em>will</em> be working with: <code>NewJobViewModel</code>. This class is meant to enable display of a form for creating a new job, along with processing of the form. The code for doing this with two properties, <code>Name</code> and <code>EmployerID</code>, is already in place. The field for <code>Name</code> is a string and will be displayed as a text box, while <code>EmployerID</code> will be displayed as a dropdown (that is, a <code>&lt;select&gt;</code> element) that will allow the user to select from the list of all existing employers.</p>
+<p>Part of your work will be to complete this ViewModel to enable full creation of a <code>Job</code> object, including all necessary fields.</p>
+<h3 id="the-view">The View</h3>
+<p>Previously-existing view templates are still in place, though they've been refactored to use ViewModels rather than the <code>ViewBag</code>.</p>
+<p>There are two new view templates in <code>Views/Job/</code>: <code>Index.cshtml</code> and <code>New.cshtml</code>. You'll be adding code to each of these. The first will be used to display data associated with a single job, while the second will display the form used to create a new job.</p>
+<h3 id="your-tasks">Your Tasks</h3>
+<p>In Visual Studio, select <em>View &gt; Task List</em> to pop open a small pane at the bottom of the window. This list is populated by any code comments that start with <code>TODO</code>. In particular, you'll see your tasks listed.</p>
+<p><img src="../images/task-list-oo.png" alt="Task List" /></p>
+<aside class="aside-note">
+<p>The tasks may not immediately be populated in the Task List. If you don't see all of them, open up the files manually to see your TODOs.</p>
+</aside>
+<p>As you work on your tasks, refer to the <a href="http://techjobsoo.azurewebsites.net/" target="_blank">demo app</a>.</p>
+<h4 id="display-a-single-job">Display A Single Job</h4>
+<p>Your first two tasks involve displaying data associated with a single job. When you're done, visiting the URL <code>/Job?id=X</code> will display the details of the job with ID equal to X.</p>
+<p>Within the <code>Index</code> action method of <code>JobController</code>, you should retrieve the job with the given ID, and then pass it into the view <em>without</em> using <code>ViewBag</code>. In other words, use the <code>Job</code> as a ViewModel.</p>
+<p>Within <code>Views/Job/Index.cshtml</code> you need to declare the ViewModel type and then display the properties of the job in a table.</p>
+<h4 id="create-new-jobs">Create New Jobs</h4>
+<p>Our <code>JobController</code> class and the <code>Views/Job/New.cshtml</code> view template is set up to allow a user to create new jobs through the interface, but it isn't complete. Getting this to work comprises your next set of tasks.</p>
+<p>First, you'll need to work within <code>NewJobViewModel</code> to set up the properties to allow for both form display and form submission. Cheryl has put in place the code to display and process the <code>Name</code> and the data associated with an employer.</p>
+<p>Notice that rather than having a property for <code>Employer</code>, we have a field for <code>EmployerID</code>.</p>
+<pre><code class="language-csharp">[Required]
+[Display(Name = "Employer")]
+public int EmployerID { get; set; }</code></pre>
+<p>In the user interface (that is, on the web page) we'll only need to display the name of each employer, and when processing the form, we'll use the ID to retrieve the employer from the data layer.</p>
+<p>Below the property declarations we build up lists of <code>SelectListItem</code> objects, which we've seen are used to render <code>&lt;select&gt;</code> lists.</p>
+<p>For tasks #3-5, you'll need to mimic the code that's in place for <code>EmployerID</code> and the <code>Employers</code> list.</p>
+<p>Once you have that stuff in place, you'll be ready to process the form in task #6. Validate the form in <code>JobController.New</code>, and if it's valid create a new <code>Job</code> object and add it to the data layer by calling <code>jobData.Jobs.Add(newJob)</code>.</p>
+<p>To create the new job, you'll need to find the pre-existing objects for all properties other than <code>Name</code> (<code>Employer</code>, <code>Location</code>, etc). Do this using the methods discussed above. There isn't a constructor for <code>Job</code>, so you'll need to use the property initializer syntax:</p>
+<pre><code class="language-csharp">Job newJob = Job {
+    // set properties within braces
+};</code></pre>
+<p>Once you've created the new job, redirect to the single job display page that you created above.</p>
+<p>If the ViewModel fails validation, display the form again.</p>
+<h4 id="make-the-viewmodels-dry">Make the ViewModels DRY</h4>
+<p>Remember the DRY principle (&quot;Don't Repeat Yourself&quot;)? Well, our ViewModels aren't very DRY. <code>JobFieldsViewModel</code> and <code>SearchJobsViewModel</code> have some repeated code, since the associated views contain related data.</p>
+<p>Fix this by finding the common code (including potentially repeated code in methods), and placing it in a <code>BaseViewModel</code>. Then have each of these classes extend <code>BaseViewModel</code>.</p>
+<h3 id="sanity-check">Sanity Check</h3>
+<p>Before submitting, make sure that with your application:</p>
+<ul>
+<li>You can create a new job from <code>/Job/New</code> by entering the name of a job, and selecting employer, location, skill, and position type values from dropdown selects.</li>
+<li>If you leave off the name of a job, you are presented with the form again, and a message describing the error is presented on the page.</li>
+<li>Upon creating a new job, you are sent to a screen displaying the data for only the new job. The URL for this new job is of the form <code>/Job?id=X</code> where <code>X</code> is the numeric ID of the new job.</li>
+<li>When searching and listing data, your new job shows up when appropriate. For example, you can see the job when searching for it by name (using the &quot;All&quot; search option), or by its employer.</li>
+<li>Within <code>ViewModels</code> you have a new class that combines the repeated members of <code>SearchJobsViewModel</code> and <code>JobFieldsViewModel</code></li>
+</ul>
+<p>Refer to the <a href="http://techjobsoo.azurewebsites.net/" target="_blank">demo app</a> if you're not sure how thing are supposed to work.</p>
+<h3 id="how-to-submit">How to Submit</h3>
+<p>To turn in your assignment and get credit, follow the <a href="../">submission instructions</a>.</p>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-csharp/js/libgif.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-6", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>
