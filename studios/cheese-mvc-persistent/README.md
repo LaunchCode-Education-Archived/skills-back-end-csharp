@@ -18,7 +18,7 @@ Set up a local copy of the project:
 - Pop back over to the *Solution Explorer* to preview the code.
 
 <aside class="aside-note" markdown="1">
-The code you are starting with has all of the correct packages and project settings need to enable EntityFrameworkCore. This means you *do not* need to walkthrough the setup steps that you carried out for [class 12 prep](../../class-prep/12/setup.html).
+The code you are starting with has all of the correct packages and project settings needed to enable EntityFrameworkCore. This means you *do not* need to walkthrough the setup steps that you carried out for [class 12 prep](../../class-prep/12/setup.html).
 </aside>
 
 ## Getting Started
