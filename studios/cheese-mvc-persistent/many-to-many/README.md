@@ -129,7 +129,7 @@ Start off by adding a title to the top of the template:
 
 Set the `Title` property to be the value of `Name` for the menu.
 
-Create `ViewMenu.cshtml`. It should display the name of the menu as the page title. It should display a list of menu items in a `<ul>` element. Note that you'll need to loop over `Model.Items`, which contains `CheeseMenu` objects. Thus, to get the actual `Cheese` objects, you'll need to use the `Cheese` property of each `CheeseMenu`. This will look something like `@cheseMenu.Cheeses.Name`.
+Create `ViewMenu.cshtml`. It should display the name of the menu as the page title. It should display a list of menu items in a `<ul>` element. Note that you'll need to loop over `Model.Items`, which contains `CheeseMenu` objects. Thus, to get the actual `Cheese` objects, you'll need to use the `Cheese` property of each `CheeseMenu`. This will look something like `@cheeseMenu.Cheeses.Name`.
 
 Below the list, add a link to the `AddItem` action of the `Menu` controller, with `asp-route-id=@Model.Menu.ID`. This will create URLs like `/Menu/AddItem/5`, where 5 is a menu ID, which will link to a form to add items to the given menu. We'll set up that code next.
 
@@ -169,7 +169,7 @@ Create a new template, `AddItem.cshtml`, declare the ViewModel at the top, and a
 }
 ```
 
-The template should contain a form that posts to `/Menu/AddItem` (using tag helpers), and renders the from using the ViewModel, which you'll need to declare at the top of the file. The form should have a single label and input, along with a `<span>` to hold any error messages. Use the appropriate ViewModel properties and tag helpers, as we've done previously.
+The template should contain a form that posts to `/Menu/AddItem` (using tag helpers) and renders the form using the ViewModel, which you'll need to declare at the top of the file. The form should have a single label and input, along with a `<span>` to hold any error messages. Use the appropriate ViewModel properties and tag helpers, as we've done previously.
 
 Below the `<select>`, add this input:
 
@@ -200,7 +200,7 @@ IList<CheeseMenu> existingItems = context.CheeseMenus
 If this list is empty, we can go ahead and create a new relationship. Create a new `CheeseMenu` with the ID values in the ViewModel, add it to the corresponding `DbSet` in `context`, and save your changes.
 
 <aside class="aside-warning" markdown="1">
-In the lesson video for this project, the code queries for the actual `Cheese` and `Menu` objects represented by the given IDs. This is unnecessary, since if we have the IDs and they are saved to the database, EF Core will be able to pull the correct objects since they are already stored in their respective tables.
+In the lesson video for this project, the code queries for the actual `Cheese` and `Menu` objects are represented by the given IDs. This is unnecessary, since if we have the IDs and they are saved to the database, EF Core will be able to pull the correct objects since they are already stored in their respective tables.
 </aside>
 
 To finish this handler, let's display the menu that we just added an item to. Redirect to the URL corresponding to the full menu view for this menu. This was created above, and we leave it to you to figure out the correct redirect URL. Note that in the case that the relationship between the given `Cheese` and `Menu` already exists, we don't do anything other than redirect back to the menu.
