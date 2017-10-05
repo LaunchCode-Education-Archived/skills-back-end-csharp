@@ -186,7 +186,7 @@ public Cheese Cheese { get; set; }</code></pre>
     ViewBag.Title = "MENU NAME";
 }</code></pre>
 <p>Set the <code>Title</code> property to be the value of <code>Name</code> for the menu.</p>
-<p>Create <code>ViewMenu.cshtml</code>. It should display the name of the menu as the page title. It should display a list of menu items in a <code>&lt;ul&gt;</code> element. Note that you'll need to loop over <code>Model.Items</code>, which contains <code>CheeseMenu</code> objects. Thus, to get the actual <code>Cheese</code> objects, you'll need to use the <code>Cheese</code> property of each <code>CheeseMenu</code>. This will look something like <code>@cheseMenu.Cheeses.Name</code>.</p>
+<p>Create <code>ViewMenu.cshtml</code>. It should display the name of the menu as the page title. It should display a list of menu items in a <code>&lt;ul&gt;</code> element. Note that you'll need to loop over <code>Model.Items</code>, which contains <code>CheeseMenu</code> objects. Thus, to get the actual <code>Cheese</code> objects, you'll need to use the <code>Cheese</code> property of each <code>CheeseMenu</code>. This will look something like <code>@cheeseMenu.Cheeses.Name</code>.</p>
 <p>Below the list, add a link to the <code>AddItem</code> action of the <code>Menu</code> controller, with <code>asp-route-id=@Model.Menu.ID</code>. This will create URLs like <code>/Menu/AddItem/5</code>, where 5 is a menu ID, which will link to a form to add items to the given menu. We'll set up that code next.</p>
 <h2 id="add-menu-items">Add Menu Items</h2>
 <p>Within <code>MenuController</code>, create an action named <code>AddItem</code> that responds to <code>GET</code> requests and takes a single input parameter: <code>int id</code>. Within the action, retrieve the menu with the given ID via <code>context</code>.</p>
@@ -207,7 +207,7 @@ public Cheese Cheese { get; set; }</code></pre>
 <pre><code class="language-nohighlight">@{
     ViewBag.Title = "Add Item to Menu: " + Model.Menu.Name;
 }</code></pre>
-<p>The template should contain a form that posts to <code>/Menu/AddItem</code> (using tag helpers), and renders the from using the ViewModel, which you'll need to declare at the top of the file. The form should have a single label and input, along with a <code>&lt;span&gt;</code> to hold any error messages. Use the appropriate ViewModel properties and tag helpers, as we've done previously.</p>
+<p>The template should contain a form that posts to <code>/Menu/AddItem</code> (using tag helpers) and renders the form using the ViewModel, which you'll need to declare at the top of the file. The form should have a single label and input, along with a <code>&lt;span&gt;</code> to hold any error messages. Use the appropriate ViewModel properties and tag helpers, as we've done previously.</p>
 <p>Below the <code>&lt;select&gt;</code>, add this input:</p>
 <pre><code class="language-html">&lt;input type="hidden" name="MenuID" value="@Model.Menu.ID" /&gt;</code></pre>
 <p>This will pass the ID of the menu in the post request, but will not be visible to the user.</p>
@@ -222,7 +222,7 @@ public Cheese Cheese { get; set; }</code></pre>
         .Where(cm =&gt; cm.MenuID == menuID).ToList();</code></pre>
 <p>If this list is empty, we can go ahead and create a new relationship. Create a new <code>CheeseMenu</code> with the ID values in the ViewModel, add it to the corresponding <code>DbSet</code> in <code>context</code>, and save your changes.</p>
 <aside class="aside-warning">
-<p>In the lesson video for this project, the code queries for the actual <code>Cheese</code> and <code>Menu</code> objects represented by the given IDs. This is unnecessary, since if we have the IDs and they are saved to the database, EF Core will be able to pull the correct objects since they are already stored in their respective tables.</p>
+<p>In the lesson video for this project, the code queries for the actual <code>Cheese</code> and <code>Menu</code> objects are represented by the given IDs. This is unnecessary, since if we have the IDs and they are saved to the database, EF Core will be able to pull the correct objects since they are already stored in their respective tables.</p>
 </aside>
 <p>To finish this handler, let's display the menu that we just added an item to. Redirect to the URL corresponding to the full menu view for this menu. This was created above, and we leave it to you to figure out the correct redirect URL. Note that in the case that the relationship between the given <code>Cheese</code> and <code>Menu</code> already exists, we don't do anything other than redirect back to the menu.</p>
 <h2 id="clean-up-the-navigation">Clean Up the Navigation</h2>
