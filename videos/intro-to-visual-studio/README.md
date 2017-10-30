@@ -24,6 +24,7 @@ To clone a repo from GitHub to your computer locally:
 * Then click "Clone"
 
 	![Manage Connections](images/team-explorer-connections.png)
+	
 
 If you haven't already done so by following the initial setup instructions exactly from Class 1, set the project startup configuration below.
 
