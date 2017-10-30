@@ -25,7 +25,6 @@ To clone a repo from GitHub to your computer locally:
 
 	![Manage Connections](images/team-explorer-connections.png)
 	
-
 If you haven't already done so by following the initial setup instructions exactly from Class 1, set the project startup configuration below.
 
 Right-click on the top-level "Solution" item in the *Solution Explorer* and select *Properties*. (If right-clicking doesn't work, just select "Solution" and then click the tool/wrench icon near the top of *Solution Explorer*). In the modal that opens, select *Common Properties > Startup Project* and then choose *Current Selection* in the pane at the right.
