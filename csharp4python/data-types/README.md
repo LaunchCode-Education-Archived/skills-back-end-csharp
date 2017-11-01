@@ -9,7 +9,7 @@ How C# handles values and variables is one of the most significant differences b
 
 Python is a **dynamically typed** language. In a dynamically typed language a variable or parameter can refer to any kind of value at any time. When the variable is used, the interpreter figures out what type it is and behaves accordingly.
 
-C# is a **statically typed** language. In a statically typed language the association between a variable or parameter and the type of value it can refer to is determined *when the variable or parameter is declared*. Once the declaration is made it is illegal for it to refer to a value of any other type.
+C# is a **statically typed** language. In a statically typed language the association between a variable or parameter and the type of value assigned is determined *when the variable or parameter is declared*. Once the declaration is made, it is illegal for that variable or parameter to be assigned a value of any other type.
 
 For example, this is legal in Python:
 
@@ -54,7 +54,7 @@ Short name | .NET Class | Examples | Notes
 |---------|--------|----------|-------|
 `int` | `Int32` | -5 <br> 1024 | &nbsp;
 `float` | `Single` | 1.212 <br> 3.14 | &nbsp;
-`double` | `Double` | 3.14159 <br> 2.0 | Doubles are twice as precise (i.e. can hold much longer decimal numbers) than floats
+`double` | `Double` | 3.14159 <br> 2.0 | Doubles are twice as precise (i.e. can hold much longer decimal numbers than floats)
 `char` | `Char` | 'a' <br> '!' | A single Unicode character. Must be enclosed in single quotes `''` to be a character; double quotes `""` indicate a string
 `string` | `String` | "LaunchCode" <br> "a" | A sequent of characters. Must be enclosed in double quotes `"`; single quotes `'` indicate a character
 `bool` | `Boolean` | `true` <br> `false` | Note that booleans in C# are not capitalized as they are in Python
@@ -286,7 +286,7 @@ Aside from using arrays to build some simple loop examples in the next lesson, w
 
 ## Static Methods
 
-In pure object-oriented languages like C# and Java, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as **methods**. We'll we adopt this terminology from now on.
+In pure object-oriented languages like C# and Java, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as **methods**. We'll adopt this terminology from now on.
 
 We'll dive into learning about classes and objects in C# soon enough, but first let's learn a little about **static methods**, which behave somewhat similarly to functions as you knew them in Python.
 

@@ -23,7 +23,7 @@ To clone a repo from GitHub to your computer locally:
 * Change the Path field to the location at which you would like the project to live, ideally inside of a folder - like `lc101` - that you've been using to store other projects
 * Then click "Clone"
 
-	![Manage Connections](images/team-explorer-connections.png)
+	![Manage Connections](../images/team-explorer-connections.png)
 	
 If you haven't already done so by following the initial setup instructions exactly from Class 1, set the project startup configuration below.
 
