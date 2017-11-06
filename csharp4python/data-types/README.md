@@ -87,7 +87,7 @@ Python | C# | Description
 `str[2:5]` | `str.Substring(2,3)` | Return substring from 2nd to 4th, i.e. substring starting at index 2 and 3 characters long
 `len(str)` | `str.Length` | Return the length of the string
 `str.find('x')` | `str.IndexOf('x')` | Find the first occurrence of `'x'`
-`str.split(',')` | `str.split(',')` | Split the string at `','` into a list/array of strings
+`str.split(',')` | `str.Split(',')` | Split the string at `','` into a list/array of strings
 `str + str` |  `str + str` | Concatenate two strings together
 `str.strip()` | `str.Trim()` | Remove any whitespace at the beginning or end
 `str.lower()` | `str.ToLower()` | Return a copy of `str` with all characters lowercase
