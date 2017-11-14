@@ -92,7 +92,7 @@ If you're following C# naming conventions, fields and local variables both start
 
 Every class member has an access level that determines who can access that class. For fields, the access level determines who can directly get or set the value of the field. For methods, the access level determines who can call the method. The access level of a class member is determined by an **access modifier**.
 
-In declaring the `message` field of `HelloWorld`, by omitting an access modifier we implicitly gave it **default access** which for C# means that it will be `private`. It is better make the access level explicit rather than relying on the default access, so after introducing each of the access modifiers we'll go back and fix this.
+In declaring the `message` field of `HelloWorld`, by omitting an access modifier we implicitly gave it **default access** which for C# means that it will be `private`. It is better to make the access level explicit rather than relying on the default access, so after introducing each of the access modifiers we'll go back and fix this.
 
 We've encountered two access modifiers so far: `public` and `private`. We noted that `public` allows a field or method to be used by anyone, and that `private` allows a field or method to be used only within the class in which it is defined. Two additional access modifiers are available, though they are used much less often than `public` and `private`.
 
