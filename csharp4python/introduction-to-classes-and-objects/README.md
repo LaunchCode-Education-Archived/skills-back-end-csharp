@@ -135,7 +135,4 @@ This makes your code more modular and modifiable. Each public member that you ex
 </aside>
 
 - [Access Modifiers in C# (msdn.microsoft.com)][access-modifiers]
-- [Using the this Keyword (docs.oracle.com)](https://docs.oracle.com/csharpse/tutorial/csharp/csharpOO/thiskey.html)
-
-
 [access-modifiers]: https://msdn.microsoft.com/en-us/library/ms173121.aspx
