@@ -21,7 +21,7 @@ In the *Browse* tab of the package manager, search for `Microsoft.EntityFramewor
 
 <img alt="Sql Server Packages" src="images/sqlserver-dependencies.png" style="width:500px;" />
 
-The latest version of both packages.
+Install the latest version of both packages.
 
 You'll be asked to accept the license agreement for the package, and then you'll see some console output as the packages are installed.
 
