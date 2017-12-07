@@ -127,21 +127,17 @@
 <h3 id="install-sqlserver-dependencies">Install SqlServer Dependencies</h3>
 <p>Open the NuGet Package Manager by right-clicking on the project name in the Solution Explorer and selecting <em>Manage NuGet Packages</em>.</p>
 <img alt="Manage NuGet Packages" src="images/manage-nuget-packages.png" style="width:500px;" />
-<aside class="aside-warning">
-<p>You might be tempted carry out the updates listed in the package manager. Resist this temptation!</p>
-</aside>
 <p>In the <em>Browse</em> tab of the package manager, search for <code>Microsoft.EntityFrameworkCore.SqlServer</code>. You will see this package along with one other, <code>Microsoft.EntityFrameworkCore.SqlServer.Design</code>, appear in the results.</p>
 <img alt="Sql Server Packages" src="images/sqlserver-dependencies.png" style="width:500px;" />
-<p>Install <strong>v1.1.1</strong> of both packages by selecting this version from the pane at right. <strong>This is not the default version, so be sure to select it manually</strong>.</p>
-<img alt="Sql Server Package Version" src="images/sqlserver-dependencies-version.png" style="width:500px;" />
+<p>The latest version of both packages.</p>
 <p>You'll be asked to accept the license agreement for the package, and then you'll see some console output as the packages are installed.</p>
 <h3 id="install-entityframeworktools">Install EntityFrameworkTools</h3>
 <p>Right-click on the CheeseMVC project in the Solution Explorer, and select <em>Edit CheeseMVC.csproj</em>.</p>
 <img alt="Edit .csproj" src="images/edit-csproj.png" style="width:500px;" />
 <p>In the file that opens, copy and paste the following lines near the bottom, just inside the closing <code>&lt;/Project&gt;</code> tag.</p>
 <pre><code class="language-xml">&lt;ItemGroup&gt;
-  &lt;PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.0.0-msbuild2-final" /&gt;
-  &lt;DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0-msbuild2-final" /&gt;
+  &lt;PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" /&gt;
+  &lt;DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" /&gt;
 &lt;/ItemGroup&gt;</code></pre>
 <p>Again, right-click on the CheeseMVC project in the Solution Explorer, and this time select <em>Open Folder in File Explorer</em></p>
 <img alt="Open Folder in File Explorer" src="images/open-folder.png" style="width:500px;" />
