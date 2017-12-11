@@ -146,7 +146,7 @@
 <li>Visit the <a href="https://github.com/LaunchCodeEducation/TechJobsOO" target="_blank">repository page</a> for this project and fork the repository to create a copy under your own GitHub account.</li>
 <li>From within Visual Studio, choose the <em>Team Explorer</em> tab near the bottom of the <em>Solution Explorer</em> pane. If you don't see this tab, you can open it via the application menu: <em>View &gt; Team Explorer</em>.</li>
 <li>Click on the <em>Manage Connections</em> icon (see below), and select <em>Clone</em> from the GitHub section of the <em>Team Explorer</em> and select your fork of the <code>TechJobsOO</code> repository. <strong>Be sure to change the Path field</strong> to the location at which you would like the project to live, ideally inside of a folder - like <code>lc101</code> - that you've been using to store other projects.
-<img src="images/team-explorer-connections.png" alt="Manage Connections" /></li>
+<img src="../images/team-explorer-connections.png" alt="Manage Connections" /></li>
 <li>Open the solution via either the notification within <em>Team Explorer</em> or via <em>File &gt; Open &gt; Project/Solution</em>.</li>
 <li>Pop back over to the <em>Solution Explorer</em> to preview the code.</li>
 </ul>
@@ -281,7 +281,7 @@ public int EmployerID { get; set; }</code></pre>
 <p>For tasks #3-5, you'll need to mimic the code that's in place for <code>EmployerID</code> and the <code>Employers</code> list.</p>
 <p>Once you have that stuff in place, you'll be ready to process the form in task #6. Validate the form in <code>JobController.New</code>, and if it's valid create a new <code>Job</code> object and add it to the data layer by calling <code>jobData.Jobs.Add(newJob)</code>.</p>
 <p>To create the new job, you'll need to find the pre-existing objects for all properties other than <code>Name</code> (<code>Employer</code>, <code>Location</code>, etc). Do this using the methods discussed above. There isn't a constructor for <code>Job</code>, so you'll need to use the property initializer syntax:</p>
-<pre><code class="language-csharp">Job newJob = Job {
+<pre><code class="language-csharp">Job newJob = new Job {
     // set properties within braces
 };</code></pre>
 <p>Once you've created the new job, redirect to the single job display page that you created above.</p>
