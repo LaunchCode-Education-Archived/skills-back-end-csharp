@@ -42,7 +42,7 @@ Set up a local copy of the project:
 - Visit the [repository page](https://github.com/LaunchCodeEducation/TechJobsOO) for this project and fork the repository to create a copy under your own GitHub account.
 - From within Visual Studio, choose the *Team Explorer* tab near the bottom of the *Solution Explorer* pane. If you don't see this tab, you can open it via the application menu: *View > Team Explorer*.
 - Click on the *Manage Connections* icon (see below), and select *Clone* from the GitHub section of the *Team Explorer* and select your fork of the `TechJobsOO` repository. **Be sure to change the Path field** to the location at which you would like the project to live, ideally inside of a folder - like `lc101` - that you've been using to store other projects.
-	![Manage Connections](images/team-explorer-connections.png)
+	![Manage Connections](../images/team-explorer-connections.png)
 - Open the solution via either the notification within *Team Explorer* or via *File > Open > Project/Solution*.
 - Pop back over to the *Solution Explorer* to preview the code.
 
@@ -251,7 +251,7 @@ Once you have that stuff in place, you'll be ready to process the form in task #
 To create the new job, you'll need to find the pre-existing objects for all properties other than `Name` (`Employer`, `Location`, etc). Do this using the methods discussed above. There isn't a constructor for `Job`, so you'll need to use the property initializer syntax:
 
 ```csharp
-Job newJob = Job {
+Job newJob = new Job {
     // set properties within braces
 };
 ```
