@@ -17,17 +17,11 @@ Open the NuGet Package Manager by right-clicking on the project name in the Solu
 
 <img alt="Manage NuGet Packages" src="images/manage-nuget-packages.png" style="width:500px;" />
 
-<aside class="aside-warning" markdown="1">
-You might be tempted carry out the updates listed in the package manager. Resist this temptation!
-</aside>
-
 In the *Browse* tab of the package manager, search for `Microsoft.EntityFrameworkCore.SqlServer`. You will see this package along with one other, `Microsoft.EntityFrameworkCore.SqlServer.Design`, appear in the results.
 
 <img alt="Sql Server Packages" src="images/sqlserver-dependencies.png" style="width:500px;" />
 
-Install **v1.1.1** of both packages by selecting this version from the pane at right. **This is not the default version, so be sure to select it manually**.
-
-<img alt="Sql Server Package Version" src="images/sqlserver-dependencies-version.png" style="width:500px;" />
+Install the latest version of both packages.
 
 You'll be asked to accept the license agreement for the package, and then you'll see some console output as the packages are installed.
 
@@ -40,8 +34,8 @@ Right-click on the CheeseMVC project in the Solution Explorer, and select *Edit 
 In the file that opens, copy and paste the following lines near the bottom, just inside the closing `</Project>` tag.
 ```xml
 <ItemGroup>
-  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.0.0-msbuild2-final" />
-  <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0-msbuild2-final" />
+  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
+  <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
 </ItemGroup>
 ```
 
