@@ -279,7 +279,7 @@ public int EmployerID { get; set; }</code></pre>
 <p>In the user interface (that is, on the web page) we'll only need to display the name of each employer, and when processing the form, we'll use the ID to retrieve the employer from the data layer.</p>
 <p>Below the property declarations we build up lists of <code>SelectListItem</code> objects, which we've seen are used to render <code>&lt;select&gt;</code> lists.</p>
 <p>For tasks #3-5, you'll need to mimic the code that's in place for <code>EmployerID</code> and the <code>Employers</code> list.</p>
-<p>Once you have that stuff in place, you'll be ready to process the form in task #6. Validate the form in <code>JobController.New</code>, and if it's valid create a new <code>Job</code> object and add it to the data layer by calling <code>jobData.Jobs.Add(newJob)</code>.</p>
+<p>Once you have that stuff in place, you'll be ready to process the form in task #6. Validate the form in <code>JobController.cs</code>, and if it's valid create a new <code>Job</code> object and add it to the data layer by calling <code>jobData.Jobs.Add(newJob)</code>.</p>
 <p>To create the new job, you'll need to find the pre-existing objects for all properties other than <code>Name</code> (<code>Employer</code>, <code>Location</code>, etc). Do this using the methods discussed above. There isn't a constructor for <code>Job</code>, so you'll need to use the property initializer syntax:</p>
 <pre><code class="language-csharp">Job newJob = new Job {
     // set properties within braces
