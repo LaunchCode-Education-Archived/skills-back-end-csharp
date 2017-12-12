@@ -246,7 +246,7 @@ Below the property declarations we build up lists of `SelectListItem` objects, w
 
 For tasks #3-5, you'll need to mimic the code that's in place for `EmployerID` and the `Employers` list.
 
-Once you have that stuff in place, you'll be ready to process the form in task #6. Validate the form in `JobController.New`, and if it's valid create a new `Job` object and add it to the data layer by calling `jobData.Jobs.Add(newJob)`.
+Once you have that stuff in place, you'll be ready to process the form in task #6. Validate the form in `JobController.cs`, and if it's valid create a new `Job` object and add it to the data layer by calling `jobData.Jobs.Add(newJob)`.
 
 To create the new job, you'll need to find the pre-existing objects for all properties other than `Name` (`Employer`, `Location`, etc). Do this using the methods discussed above. There isn't a constructor for `Job`, so you'll need to use the property initializer syntax:
 
