@@ -5,7 +5,7 @@ currentMenu: issues
 
 ## Urgent Issues
 
-Urgent issues are those that prevent you from working on class material. Examples include an error in assigment starter code or a broken link for a walkthrough video. Report these immediately in the `#errata` channel on Slack. Be sure to tag a staff member (`@chris`,  `@sarah` , or `@anna`) so that they are notified.
+Urgent issues are those that prevent you from working on class material. Examples include an error in assigment starter code or a broken link for a walkthrough video. Report these immediately in the `#errata` channel on Slack. Be sure to tag an Education Team staff member (`@chris`) so that they are notified.
 
 ## Non-urgent Issues and Enhancements
 
