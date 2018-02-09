@@ -72,15 +72,15 @@ In C# we can utilize the same behavior that `elif` provides in Python, with a sl
 ```python
 grade = int(input('enter a grade'))
 if grade < 60:
-    print 'F'
+    print('F')
 elif grade < 70:
-    print 'D'
+    print('D')
 elif grade < 80:
-    print 'C'
+    print('C')
 elif grade < 90:
-    print 'B'
+    print('B')
 else:
-    print 'A'
+    print('A')
 ```
 
 In C# we would write this as follows:
@@ -174,7 +174,7 @@ In Python the easiest way to write a definite loop (aka a "for loop") is using t
 
 ```python
 for i in range(10):
-   print i
+   print(i)
 ```
 
 In C# we would write this as:
@@ -209,7 +209,7 @@ If you want to start at 100, stop at 0 and count backward by 5 the Python loop w
 
 ```python
 for i in range(100,-1,-5):
-    print i
+    print(i)
 ```
 
 In C# we would write this as:
@@ -228,7 +228,7 @@ In Python we can iterate over a list as follows:
 ```python
 x = [1, 1, 2, 3, 5, 8, 13, 21]
 for fib in x:
-   print fib
+   print(fib)
 ```
 
 In C#, this would look like:
