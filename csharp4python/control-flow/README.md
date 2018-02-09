@@ -284,7 +284,7 @@ do
 
 ## References
 
-- [for statment (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/ch45axte.aspx)
+- [for statement (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/ch45axte.aspx)
 - [foreach statement (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/ttw7t8t6.aspx)
 - [switch (msdn.microsoft.com)](https://msdn.microsoft.com/en-us/library/06tc147t.aspx)
 - [do-while loop](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/do)
