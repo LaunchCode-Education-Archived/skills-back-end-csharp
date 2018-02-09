@@ -169,15 +169,15 @@ else
 <p>In C# we can utilize the same behavior that <code>elif</code> provides in Python, with a slightly different syntax. Here is a simple example in Python and then C#.</p>
 <pre><code class="language-python">grade = int(input('enter a grade'))
 if grade &lt; 60:
-    print 'F'
+    print('F')
 elif grade &lt; 70:
-    print 'D'
+    print('D')
 elif grade &lt; 80:
-    print 'C'
+    print('C')
 elif grade &lt; 90:
-    print 'B'
+    print('B')
 else:
-    print 'A'</code></pre>
+    print('A')</code></pre>
 <p>In C# we would write this as follows:</p>
 <pre><code class="language-csharp">public class ElseIf {
     public static void main(string args[]) {
@@ -253,7 +253,7 @@ else:
 <h3 id="for-loops">For Loops</h3>
 <p>In Python the easiest way to write a definite loop (aka a &quot;for loop&quot;) is using the for loop in conjunction with <code>range</code>. For example:</p>
 <pre><code class="language-python">for i in range(10):
-   print i</code></pre>
+   print(i)</code></pre>
 <p>In C# we would write this as:</p>
 <pre><code class="language-csharp">for (int i = 0; i &lt; 10; i++ )
 {
@@ -272,7 +272,7 @@ range(start,stop,step)</code></pre>
 }</code></pre>
 <p>If you want to start at 100, stop at 0 and count backward by 5 the Python loop would be written as:</p>
 <pre><code class="language-python">for i in range(100,-1,-5):
-    print i</code></pre>
+    print(i)</code></pre>
 <p>In C# we would write this as:</p>
 <pre><code class="language-csharp">for (int i = 100; i &gt;= 0; i -= 5)
 {
@@ -282,7 +282,7 @@ range(start,stop,step)</code></pre>
 <p>In Python we can iterate over a list as follows:</p>
 <pre><code class="language-python">x = [1, 1, 2, 3, 5, 8, 13, 21]
 for fib in x:
-   print fib</code></pre>
+   print(fib)</code></pre>
 <p>In C#, this would look like:</p>
 <pre><code class="language-csharp">int[] x = {1, 1, 2, 3, 5, 8, 13, 21};
 foreach (int i in x) {
@@ -315,7 +315,7 @@ foreach (char c in msg) {
 } while (condition);</code></pre>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://msdn.microsoft.com/en-us/library/ch45axte.aspx" target="_blank">for statment (msdn.microsoft.com)</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/ch45axte.aspx" target="_blank">for statement (msdn.microsoft.com)</a></li>
 <li><a href="https://msdn.microsoft.com/en-us/library/ttw7t8t6.aspx" target="_blank">foreach statement (msdn.microsoft.com)</a></li>
 <li><a href="https://msdn.microsoft.com/en-us/library/06tc147t.aspx" target="_blank">switch (msdn.microsoft.com)</a></li>
 <li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/do" target="_blank">do-while loop</a></li>
