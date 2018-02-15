@@ -220,7 +220,7 @@ You'll need to call `FindByValue` from somewhere in `Main`. We'll leave it up to
 
 #### Make Search Methods Case-Insensitive
 
-You've completed your first two tasks! Then you demoed the updated application or the Company Team and they noticed a feature that could be improved. When searching for jobs with the skill "JavaScript" some results were missing (e.g. the Watchtower Security job on line 31 of the CSV file). The search methods turn out to be case-sensitive, so they treat "JavaScript" and "Javascript" as different strings.
+You've completed your first two tasks! Then you demoed the updated application for the Company Team and they noticed a feature that could be improved. When searching for jobs with the skill "JavaScript" some results were missing (e.g. the Watchtower Security job on line 31 of the CSV file). The search methods turn out to be case-sensitive, so they treat "JavaScript" and "Javascript" as different strings.
 
 The Company Team has *demanded* (ahem, *strongly requested*, they politely clarify) that this be fixed. And you've told them that you're up to the task.
 
