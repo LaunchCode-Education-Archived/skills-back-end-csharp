@@ -224,9 +224,6 @@ hello.SayHello();</code></pre>
     }
 }</code></pre>
 <p>The call in question is: <code>Message.GetMessage("fr")</code>. We call the static method <code>GetMessage</code> without needing an instance of the <code>Message</code> class, using the name of the class itself.</p>
-<aside class="aside-warning">
-<p>It is technically allowed to call a static method using an instance of a class: <code>myObject.SomeStaticMethod()</code>. However, this should be avoided in favor of using the class name to call the method.</p>
-</aside>
 <p>A method should be static when it does not refer to any instance fields of the containing class (it <em>may</em> refer to static fields, however). These methods tend to be utility-like, carrying out a calculation, or using or fetching some external resource.</p>
 <h2 id="special-methods">Special Methods</h2>
 <p>Every class has a few special methods that belong to it, regardless of whether or not we define them. Exactly how every class obtains these methods will be explored in a future lesson. For now, let's look at the most important of these methods.</p>
