@@ -137,10 +137,6 @@ public class Message {
 
 The call in question is: `Message.GetMessage("fr")`. We call the static method `GetMessage` without needing an instance of the `Message` class, using the name of the class itself.
 
-<aside class="aside-warning" markdown="1">
-It is technically allowed to call a static method using an instance of a class: `myObject.SomeStaticMethod()`. However, this should be avoided in favor of using the class name to call the method.
-</aside>
-
 A method should be static when it does not refer to any instance fields of the containing class (it *may* refer to static fields, however). These methods tend to be utility-like, carrying out a calculation, or using or fetching some external resource.
 
 ## Special Methods
