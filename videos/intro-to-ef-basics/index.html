@@ -172,7 +172,7 @@
 <h4 id="undo-all-migrations">Undo All Migrations</h4>
 <pre><code class="language-nohighlight">&gt; dotnet ef database update 0</code></pre>
 <aside class="aside-pro-tip">
-<p>If you wish to start with a clean database during development - because, let's be honest, sometimes we'll break something or we'll want to undo a bunch of work - perhaps the easiest thing to do is change the database name in the connection string in <code>appsettings.json</code>. Then you can run <code>dotnet ef update database</code> and a new, empty database will be set up with all migrations run.</p>
+<p>If you wish to start with a clean database during development - because, let's be honest, sometimes we'll break something or we'll want to undo a bunch of work - perhaps the easiest thing to do is change the database name in the connection string in <code>appsettings.json</code>. Then you can run <code>dotnet ef database update</code> and a new, empty database will be set up with all migrations run.</p>
 </aside>
 <h2 id="code">Code</h2>
 <p>We start this lesson with the code in the <code>video-efbasic-start</code> branch of the CheeseMVC repo: <a href="https://github.com/LaunchCodeEducation/CheeseMVC/tree/video-efbasic-start" target="_blank">starting code</a></p>
