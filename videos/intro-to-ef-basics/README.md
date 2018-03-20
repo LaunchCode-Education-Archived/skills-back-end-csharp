@@ -98,7 +98,7 @@ If you haven't done so already, you must first undo the given migration.
 ```
 
 <aside class="aside-pro-tip" markdown="1">
-If you wish to start with a clean database during development - because, let's be honest, sometimes we'll break something or we'll want to undo a bunch of work - perhaps the easiest thing to do is change the database name in the connection string in `appsettings.json`. Then you can run `dotnet ef update database` and a new, empty database will be set up with all migrations run.
+If you wish to start with a clean database during development - because, let's be honest, sometimes we'll break something or we'll want to undo a bunch of work - perhaps the easiest thing to do is change the database name in the connection string in `appsettings.json`. Then you can run `dotnet ef database update` and a new, empty database will be set up with all migrations run.
 </aside>
 
 ## Code
