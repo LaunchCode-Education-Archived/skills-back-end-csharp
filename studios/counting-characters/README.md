@@ -3,7 +3,7 @@ title: 'Studio: Counting Characters'
 currentMenu: studios
 ---
 
-Let's revisit the [Counting Characters studio](https://runestone.launchcode.org/runestone/static/thinkcspy/Studios/counting-characters.html) from unit 1.
+Let's revisit the [Counting Characters studio](https://runestone.launchcode.org/runestone/static/thinkcspy/Studios/counting-characters.html) from unit 1 (you'll need to log into the Unit 1 site to view this page).
 
 Write a program that calculates the number of times each character occurs in a string and prints these counts to the console. You could get the string as input from the user, but for the sake of simplicity, you may also hard-code the string into your program as the value of a variable. Here’s a test string, for your convenience:
 

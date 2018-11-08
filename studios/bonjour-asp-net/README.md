@@ -3,7 +3,7 @@ title: 'Studio: Bonjour, ASP.NET!'
 currentMenu: studios
 ---
 
-In the [prep work](../class-prep/3/) for this class, you create a basic Hello, World application using ASP.NET MVC. Open that project up in Visual Studio, and get ready to add some features!
+In the [prep work](../../class-prep/3/) for this class, you create a basic Hello, World application using ASP.NET MVC. Open that project up in Visual Studio, and get ready to add some features!
 
 Modify your `HelloController` class to display a form on `GET` request that asks the user for both their name and the language they would like to greeted in. It should look something like this:
 
